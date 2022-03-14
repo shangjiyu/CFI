@@ -1,6 +1,7 @@
 import Foundation
 import CommonKit
 import ClashKit
+import NetworkExtension
 
 extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverProtocol, ClashRealTimeLoggerProtocol {
     
@@ -65,5 +66,17 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
             return
         }
         NSLog("Clash Core: [\(level.rawValue.uppercased())] \(payload)")
+    }
+}
+
+extension NEPacketTunnelFlow {
+    
+    var fileDescriptor: Int32 {
+        var buffer = Array<CChar>(repeating: 0, count: Int(IFNAMSIZ))
+        let utunPrefix = "utun".utf8CString.dropLast()
+        return (1...1024).first { (fd: Int32) -> Bool in
+            var length = socklen_t(buffer.count)
+            return getsockopt(fd, 2, 2, &buffer, &length) == 0 && buffer.starts(with: utunPrefix)
+        } ?? -1
     }
 }
