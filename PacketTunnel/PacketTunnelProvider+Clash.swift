@@ -69,14 +69,13 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
     }
 }
 
-extension NEPacketTunnelFlow {
+extension PacketTunnelProvider {
     
-    var fileDescriptor: Int32 {
-        var buffer = Array<CChar>(repeating: 0, count: Int(IFNAMSIZ))
-        let utunPrefix = "utun".utf8CString.dropLast()
-        return (1...1024).first { (fd: Int32) -> Bool in
-            var length = socklen_t(buffer.count)
-            return getsockopt(fd, 2, 2, &buffer, &length) == 0 && buffer.starts(with: utunPrefix)
+    var tunnelFileDescriptor: Int32 {
+        var buf = Array<CChar>(repeating: 0, count: Int(IFNAMSIZ))
+        return (1...1024).first {
+            var len = socklen_t(buf.count)
+            return getsockopt($0, 2, 2, &buf, &len) == 0 && String(cString: buf).hasPrefix("utun")
         } ?? -1
     }
 }
