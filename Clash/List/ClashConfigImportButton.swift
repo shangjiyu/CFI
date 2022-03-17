@@ -44,6 +44,9 @@ struct ClashConfigImportButton: View {
         }
         .sheet(isPresented: $isDocumentPickerViewPresented) {
             DispatchQueue.main.async {
+                guard let fileURL = fileURL else {
+                    return
+                }
                 importItem = ClashConfigImportItem(fileURL: fileURL)
             }
         } content: {
