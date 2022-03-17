@@ -2,6 +2,11 @@ import Foundation
 import CommonKit
 import ClashKit
 import NetworkExtension
+import os
+
+fileprivate extension Logger {
+    static let tunnel = Logger(subsystem: "com.Arror.Clash.PacketTunnel", category: "Clash")
+}
 
 extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverProtocol, ClashRealTimeLoggerProtocol {
     
@@ -65,7 +70,16 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
               let payload = payload, !payload.isEmpty else {
             return
         }
-        NSLog("Clash Core: [\(level.rawValue.uppercased())] \(payload)")
+        switch level {
+        case .silent:
+            break
+        case .info, .debug:
+            Logger.tunnel.notice("\(payload, privacy: .public)")
+        case .warning:
+            Logger.tunnel.warning("\(payload, privacy: .public)")
+        case .error:
+            Logger.tunnel.critical("\(payload, privacy: .public)")
+        }
     }
 }
 
