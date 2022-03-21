@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct PanelInfoView: View {
+struct ProxyInfoView: View {
     
     @EnvironmentObject private var model: PanelInfoModel
     

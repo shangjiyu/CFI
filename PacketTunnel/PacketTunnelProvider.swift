@@ -63,6 +63,12 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             ClashSetTunnelMode(UserDefaults.shared.string(forKey: Constant.tunnelMode))
         case .setLogLevel:
             ClashSetLogLevel(UserDefaults.shared.string(forKey: Constant.logLevel))
+        case .patchSelectGroup:
+            guard let id = UserDefaults.shared.string(forKey: Constant.currentConfigUUID), !id.isEmpty,
+                  let selection = UserDefaults.shared.dictionary(forKey: id) as? [String: String], !selection.isEmpty else {
+                break
+            }
+            selection.forEach { ClashPatchSelectGroup($0.0, $0.1) }
         }
         return nil
     }

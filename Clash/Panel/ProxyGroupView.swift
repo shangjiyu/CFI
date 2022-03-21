@@ -31,6 +31,9 @@ struct ProxyGroupView: View {
                     }
                 }
                 .onChange(of: selection) { newValue in
+                    guard group.isSelectEnable else {
+                        return
+                    }
                     model.setSelected(proxy: newValue, group: group.name)
                 }
                 .labelsHidden()

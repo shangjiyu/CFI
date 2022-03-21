@@ -19,10 +19,11 @@ struct PanelView: View {
         }
     }
     
+    @MainActor
     @ViewBuilder
     private func buildBody(result: FetchedResults<ClashConfig>) -> some View {
         if let reval = result.first {
-            PanelInfoView()
+            ProxyInfoView()
                 .environmentObject(PanelInfoModel(id: reval.uuid?.uuidString ?? "temp"))
         } else {
             Form {

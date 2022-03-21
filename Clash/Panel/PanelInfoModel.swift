@@ -29,7 +29,7 @@ struct RawConfig: Decodable {
     }
 }
 
-class PanelInfoModel: ObservableObject {
+@MainActor class PanelInfoModel: ObservableObject {
         
     @Published var raw = RawConfig(proxies: [], groups: [])
     @Published var selection: [String: String] = [:]
@@ -54,5 +54,15 @@ class PanelInfoModel: ObservableObject {
     func setSelected(proxy: String, group: String) {
         self.selection[group] = proxy
         UserDefaults.shared.setValue(self.selection, forKey: self.id)
+        guard let controller = VPNManager.shared.controller else {
+            return
+        }
+        Task(priority: .high) {
+            do {
+                try await controller.execute(command: .patchSelectGroup)
+            } catch {
+                debugPrint(error.localizedDescription)
+            }
+        }
     }
 }

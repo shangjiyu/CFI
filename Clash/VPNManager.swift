@@ -9,7 +9,9 @@ import CommonKit
         
     @Published public var controller: VPNController?
     
-    public init() {
+    public static let shared = VPNManager()
+    
+    private init() {
         NotificationCenter.default
             .publisher(for: UIApplication.willEnterForegroundNotification, object: nil)
             .receive(on: DispatchQueue.main)

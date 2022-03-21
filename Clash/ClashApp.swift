@@ -5,13 +5,11 @@ import CommonKit
 struct ClashApp: App {
     
     @UIApplicationDelegateAdaptor private var delegate: AppDelegate
-    
-    @StateObject var manager = VPNManager()
-    
+        
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(manager)
+                .environmentObject(VPNManager.shared)
                 .environment(\.trafficFormatter, ClashTrafficFormatterKey.defaultValue)
                 .environment(\.managedObjectContext, CoreDataStack.shared.container.viewContext)
         }
