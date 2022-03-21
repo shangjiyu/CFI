@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ProxyGroupView: View {
     
+    @EnvironmentObject private var model: PanelInfoModel
+    
     let group: RawProxyGroup
     
     @State private var selection: String = ""
@@ -28,13 +30,16 @@ struct ProxyGroupView: View {
                         Text(proxy)
                     }
                 }
+                .onChange(of: selection) { newValue in
+                    model.setSelected(proxy: newValue, group: group.name)
+                }
                 .labelsHidden()
                 .pickerStyle(InlinePickerStyle())
                 .disabled(!group.isSelectEnable)
             }
         }
         .onAppear {
-            selection = group.proxies.first ?? ""
+            selection = model.selectedProxy(group: group.name) ?? group.proxies.first ?? ""
         }
         .navigationTitle(group.name)
     }

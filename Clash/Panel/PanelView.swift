@@ -23,7 +23,7 @@ struct PanelView: View {
     private func buildBody(result: FetchedResults<ClashConfig>) -> some View {
         if let reval = result.first {
             PanelInfoView()
-                .environmentObject(PanelInfoModel(config: reval))
+                .environmentObject(PanelInfoModel(id: reval.uuid?.uuidString ?? "temp"))
         } else {
             Form {
                 Text("未选择配置")

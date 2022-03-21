@@ -28,6 +28,7 @@ struct PanelInfoView: View {
                 ForEach(model.raw.groups, id: \.name) { group in
                     NavigationLink {
                         ProxyGroupView(group: group)
+                            .environmentObject(model)
                     } label: {
                         HStack {
                             Image(systemName: "arrow.triangle.branch")
@@ -40,7 +41,7 @@ struct PanelInfoView: View {
                                     .foregroundColor(Color.secondary)
                             }
                             Spacer()
-                            Text(group.isSelectEnable ? group.proxies.first ?? "" : "")
+                            Text(group.isSelectEnable ? (model.selectedProxy(group: group.name) ?? group.proxies.first ?? "") : "")
                                 .foregroundColor(Color.secondary)
                         }
                         .padding(.vertical, 4)

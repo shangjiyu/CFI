@@ -39,39 +39,3 @@ public final class CoreDataStack {
         }
     }
 }
-
-@objc(NSMutableDictionaryTransformer)
-class NSMutableDictionaryTransformer: ValueTransformer {
-    
-    override class func transformedValueClass() -> AnyClass {
-        NSMutableDictionary.self
-    }
-    
-    override class func allowsReverseTransformation() -> Bool {
-        true
-    }
-    
-    override func transformedValue(_ value: Any?) -> Any? {
-        do {
-            guard let value = value else {
-                return nil
-            }
-            return try NSKeyedArchiver.archivedData(withRootObject: value, requiringSecureCoding: true)
-        } catch {
-            debugPrint(error.localizedDescription)
-            return nil
-        }
-    }
-    
-    override func reverseTransformedValue(_ value: Any?) -> Any? {
-        do {
-            guard let value = value as? Data else {
-                return nil
-            }
-            return try NSKeyedUnarchiver.unarchivedObject(ofClass: NSMutableDictionary.self, from: value)
-        } catch {
-            debugPrint(error.localizedDescription)
-            return nil
-        }
-    }
-}

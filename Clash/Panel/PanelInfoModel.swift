@@ -30,21 +30,29 @@ struct RawConfig: Decodable {
 }
 
 class PanelInfoModel: ObservableObject {
-    
-    private let config: ClashConfig
-    
+        
     @Published var raw = RawConfig(proxies: [], groups: [])
+    @Published var selection: [String: String] = [:]
     
-    init(config: ClashConfig) {
-        self.config = config
-        guard let uuid = self.config.uuid else {
-            return
-        }
-        let targetURL = Constant.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)/config.yaml")
+    private let id: String
+    
+    init(id: String) {
+        self.id = id
+        let targetURL = Constant.homeDirectoryURL.appendingPathComponent("\(id)/config.yaml")
         do {
             self.raw = try YAMLDecoder().decode(from: try Data(contentsOf: targetURL))
         } catch {
             debugPrint(error.localizedDescription)
         }
+        self.selection = UserDefaults.shared.dictionary(forKey: id) as? [String: String] ?? [:]
+    }
+    
+    func selectedProxy(group: String) -> String? {
+        self.selection[group]
+    }
+    
+    func setSelected(proxy: String, group: String) {
+        self.selection[group] = proxy
+        UserDefaults.shared.setValue(self.selection, forKey: self.id)
     }
 }

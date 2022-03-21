@@ -51,6 +51,7 @@ struct ClashConfigListView: View {
             if config.uuid.flatMap({ $0.uuidString }) == uuidString {
                 uuidString = ""
             }
+            UserDefaults.shared.set(nil, forKey: config.uuid?.uuidString ?? "temp")
             try context.deleteClashConfig(config)
         } catch {
             debugPrint(error.localizedDescription)
