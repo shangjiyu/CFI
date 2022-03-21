@@ -2,48 +2,42 @@ import SwiftUI
 
 struct ProxyGroupView: View {
     
-    @EnvironmentObject private var model: PanelInfoModel
-    
-    let group: RawProxyGroup
-    
-    @State private var selection: String = ""
-    
+    @EnvironmentObject private var model: ProxyInfoModel
+    @EnvironmentObject private var groupModel: ProxyGroupModel
+        
     var body: some View {
         Form {
             Section {
                 HStack {
                     Text("名称")
                     Spacer()
-                    Text(group.name)
+                    Text(groupModel.group.name)
                         .foregroundColor(.secondary)
                 }
                 HStack {
                     Text("类型")
                     Spacer()
-                    Text(group.type.uppercased())
+                    Text(groupModel.group.type.uppercased())
                         .foregroundColor(.secondary)
                 }
             }
             Section("包含") {
-                Picker(group.name, selection: group.isSelectEnable ? $selection : .constant("")) {
-                    ForEach(group.proxies, id: \.self) { proxy in
+                Picker(groupModel.group.name, selection: groupModel.isSelectEnable ? $groupModel.selection : .constant("")) {
+                    ForEach(groupModel.group.proxies, id: \.self) { proxy in
                         Text(proxy)
                     }
                 }
-                .onChange(of: selection) { newValue in
-                    guard group.isSelectEnable else {
+                .onChange(of: groupModel.selection) { newValue in
+                    guard groupModel.isSelectEnable else {
                         return
                     }
-                    model.setSelected(proxy: newValue, group: group.name)
+                    model.setSelected(proxy: newValue, group: groupModel.group.name)
                 }
                 .labelsHidden()
                 .pickerStyle(InlinePickerStyle())
-                .disabled(!group.isSelectEnable)
+                .disabled(!groupModel.isSelectEnable)
             }
         }
-        .onAppear {
-            selection = model.selectedProxy(group: group.name) ?? group.proxies.first ?? ""
-        }
-        .navigationTitle(group.name)
+        .navigationTitle(groupModel.group.name)
     }
 }

@@ -24,7 +24,7 @@ struct PanelView: View {
     private func buildBody(result: FetchedResults<ClashConfig>) -> some View {
         if let reval = result.first {
             ProxyInfoView()
-                .environmentObject(PanelInfoModel(id: reval.uuid?.uuidString ?? "temp"))
+                .environmentObject(ProxyInfoModel(id: reval.uuid?.uuidString ?? "temp"))
         } else {
             Form {
                 Text("未选择配置")

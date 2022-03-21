@@ -24,7 +24,7 @@
 		D96C3E5127E854CA00AD0DAA /* ProxyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C3E5027E854CA00AD0DAA /* ProxyInfoView.swift */; };
 		D96C3E5327E854EC00AD0DAA /* ProxyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C3E5227E854EC00AD0DAA /* ProxyListView.swift */; };
 		D96C3E5527E8550600AD0DAA /* ProxyGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C3E5427E8550600AD0DAA /* ProxyGroupView.swift */; };
-		D96C3E5727E8552500AD0DAA /* PanelInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C3E5627E8552500AD0DAA /* PanelInfoModel.swift */; };
+		D96C3E5727E8552500AD0DAA /* ProxyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C3E5627E8552500AD0DAA /* ProxyInfoModel.swift */; };
 		D9823B6D27CCD81C0043A9FB /* PacketTunnelProvider+Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9823B6C27CCD81C0043A9FB /* PacketTunnelProvider+Clash.swift */; };
 		D9A3992727CF6BA70047E47D /* ClashConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3992627CF6BA70047E47D /* ClashConfigView.swift */; };
 		D9A3992927CF6E800047E47D /* VPNStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3992827CF6E800047E47D /* VPNStateView.swift */; };
@@ -130,7 +130,7 @@
 		D96C3E5027E854CA00AD0DAA /* ProxyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyInfoView.swift; sourceTree = "<group>"; };
 		D96C3E5227E854EC00AD0DAA /* ProxyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyListView.swift; sourceTree = "<group>"; };
 		D96C3E5427E8550600AD0DAA /* ProxyGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupView.swift; sourceTree = "<group>"; };
-		D96C3E5627E8552500AD0DAA /* PanelInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelInfoModel.swift; sourceTree = "<group>"; };
+		D96C3E5627E8552500AD0DAA /* ProxyInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyInfoModel.swift; sourceTree = "<group>"; };
 		D9823B6227CCD06F0043A9FB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D9823B6627CCD25D0043A9FB /* UserDefaults+AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppGroup.swift"; sourceTree = "<group>"; };
 		D9823B6A27CCD7AF0043A9FB /* ClashTunnelMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashTunnelMode.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				D96C3E5027E854CA00AD0DAA /* ProxyInfoView.swift */,
 				D96C3E5227E854EC00AD0DAA /* ProxyListView.swift */,
 				D96C3E5427E8550600AD0DAA /* ProxyGroupView.swift */,
-				D96C3E5627E8552500AD0DAA /* PanelInfoModel.swift */,
+				D96C3E5627E8552500AD0DAA /* ProxyInfoModel.swift */,
 			);
 			path = Panel;
 			sourceTree = "<group>";
@@ -525,7 +525,7 @@
 				D964786927A0E793003A6648 /* ClashConfigListView.swift in Sources */,
 				D96C3E5327E854EC00AD0DAA /* ProxyListView.swift in Sources */,
 				D9ACEEFF2797F45F0004E32D /* ClashApp.swift in Sources */,
-				D96C3E5727E8552500AD0DAA /* PanelInfoModel.swift in Sources */,
+				D96C3E5727E8552500AD0DAA /* ProxyInfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

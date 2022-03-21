@@ -2,10 +2,10 @@ import SwiftUI
 
 struct ProxyListView: View {
     
-    let proxies: [RawProxy]
-    
+    @EnvironmentObject private var model: ProxyInfoModel
+        
     var body: some View {
-        List(proxies, id: \.name) { proxy in
+        List(model.proxies, id: \.name) { proxy in
             HStack {
                 Text(proxy.type.uppercased())
                     .fontWeight(.bold)
