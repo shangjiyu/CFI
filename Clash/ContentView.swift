@@ -8,6 +8,11 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("主页")
                 }
+            PanelView()
+                .tabItem {
+                    Image(systemName: "square.stack.3d.up")
+                    Text("面板")
+                }
             SettingView()
                 .tabItem {
                     Image(systemName: "gearshape.fill")

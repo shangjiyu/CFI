@@ -19,6 +19,7 @@
 		D964786927A0E793003A6648 /* ClashConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964786827A0E793003A6648 /* ClashConfigListView.swift */; };
 		D964786B27A12718003A6648 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964786A27A12718003A6648 /* ManagedObjectFetchView.swift */; };
 		D964787527A266FB003A6648 /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964787427A266FB003A6648 /* VPNManager.swift */; };
+		D96C3E4C27E82C6C00AD0DAA /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C3E4B27E82C6C00AD0DAA /* PanelView.swift */; };
 		D9823B6D27CCD81C0043A9FB /* PacketTunnelProvider+Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9823B6C27CCD81C0043A9FB /* PacketTunnelProvider+Clash.swift */; };
 		D9A3992727CF6BA70047E47D /* ClashConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3992627CF6BA70047E47D /* ClashConfigView.swift */; };
 		D9A3992927CF6E800047E47D /* VPNStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3992827CF6E800047E47D /* VPNStateView.swift */; };
@@ -120,6 +121,7 @@
 		D964786827A0E793003A6648 /* ClashConfigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashConfigListView.swift; sourceTree = "<group>"; };
 		D964786A27A12718003A6648 /* ManagedObjectFetchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectFetchView.swift; sourceTree = "<group>"; };
 		D964787427A266FB003A6648 /* VPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
+		D96C3E4B27E82C6C00AD0DAA /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
 		D9823B6227CCD06F0043A9FB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D9823B6627CCD25D0043A9FB /* UserDefaults+AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppGroup.swift"; sourceTree = "<group>"; };
 		D9823B6A27CCD7AF0043A9FB /* ClashTunnelMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashTunnelMode.swift; sourceTree = "<group>"; };
@@ -209,6 +211,14 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		D96C3E4A27E82C4200AD0DAA /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				D96C3E4B27E82C6C00AD0DAA /* PanelView.swift */,
+			);
+			path = Panel;
+			sourceTree = "<group>";
+		};
 		D9ACEEF22797F45F0004E32D = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +256,7 @@
 				D9A3992C27D07E4A0047E47D /* ModalPresentationLink.swift */,
 				70A9E33B279ED48E00E6E8AF /* DocumentPickerView.swift */,
 				D964786427A0E43D003A6648 /* Home */,
+				D96C3E4A27E82C4200AD0DAA /* Panel */,
 				D964786727A0E76E003A6648 /* List */,
 				D9D9ED5127D76311006CDF61 /* Setting */,
 				D9BBA6AA27980B52002420FA /* Country.mmdb */,
@@ -472,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96C3E4C27E82C6C00AD0DAA /* PanelView.swift in Sources */,
 				D955EE5327A513D6003C072A /* NSManagedObjectContext+File.swift in Sources */,
 				D9D9ED4E27D7152F006CDF61 /* ClashLogView.swift in Sources */,
 				D9A3992F27D094050047E47D /* ClashConfigImportButton.swift in Sources */,
