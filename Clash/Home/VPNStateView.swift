@@ -1,9 +1,12 @@
 import SwiftUI
 import NetworkExtension
+import CommonKit
 
 struct VPNStateView: View {
     
     @EnvironmentObject private var controller: VPNController
+    
+    @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
     
     @State private var isVPNOn = false
         
@@ -27,6 +30,12 @@ struct VPNStateView: View {
         }
         .onChange(of: controller.connectionStatus, perform: updateToggle(_:))
         .onAppear { self.updateToggle(controller.connectionStatus) }
+        .onChange(of: uuidString) { newValue in
+            guard newValue.isEmpty else {
+                return
+            }
+            self.controller.stopVPN()
+        }
     }
     
     private func updateToggle(_ status: NEVPNStatus) {
