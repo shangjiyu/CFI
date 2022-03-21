@@ -53,6 +53,14 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
         throw error
     }
     
+    func patchSelectGroup() {
+        guard let id = UserDefaults.shared.string(forKey: Constant.currentConfigUUID), !id.isEmpty,
+              let selection = UserDefaults.shared.dictionary(forKey: id) as? [String: String], !selection.isEmpty else {
+            return
+        }
+        selection.forEach { ClashPatchSelectGroup($0.0, $0.1) }
+    }
+    
     func writePacket(_ packet: Data?) {
         guard let packet = packet else {
             return

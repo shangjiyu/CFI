@@ -7,6 +7,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     override func startTunnel(options: [String : NSObject]? = nil) async throws {
         try self.setupClash()
         try self.setCurrentConfig()
+        self.patchSelectGroup()
         let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "240.240.240.240")
         settings.mtu = 1500
         settings.ipv4Settings = {
@@ -64,11 +65,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         case .setLogLevel:
             ClashSetLogLevel(UserDefaults.shared.string(forKey: Constant.logLevel))
         case .patchSelectGroup:
-            guard let id = UserDefaults.shared.string(forKey: Constant.currentConfigUUID), !id.isEmpty,
-                  let selection = UserDefaults.shared.dictionary(forKey: id) as? [String: String], !selection.isEmpty else {
-                break
-            }
-            selection.forEach { ClashPatchSelectGroup($0.0, $0.1) }
+            self.patchSelectGroup()
         }
         return nil
     }
