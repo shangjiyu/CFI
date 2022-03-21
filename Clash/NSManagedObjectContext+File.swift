@@ -22,6 +22,8 @@ extension NSManagedObjectContext {
         configuration.name = name
         configuration.link = targetURL
         configuration.date = Date()
+        configuration.selection = NSMutableDictionary()
+        
         try self.save()
     }
     
