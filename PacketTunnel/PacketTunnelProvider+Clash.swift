@@ -55,10 +55,14 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
     
     func patchSelectGroup() {
         guard let id = UserDefaults.shared.string(forKey: Constant.currentConfigUUID), !id.isEmpty,
-              let selection = UserDefaults.shared.dictionary(forKey: id) as? [String: String], !selection.isEmpty else {
+              let mapping = UserDefaults.shared.dictionary(forKey: id) as? [String: String], !mapping.isEmpty else {
             return
         }
-        selection.forEach { ClashPatchSelectGroup($0.0, $0.1) }
+        do {
+            ClashPatchSelectGroup(try JSONEncoder().encode(mapping))
+        } catch {
+            debugPrint(error.localizedDescription)
+        }
     }
     
     func writePacket(_ packet: Data?) {
