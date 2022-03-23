@@ -52,9 +52,9 @@ import NetworkExtension
         manager.protocolConfiguration = {
             let configuration = NETunnelProviderProtocol()
 #if os(macOS)
-            configuration.providerBundleIdentifier = "com.Arror.AppleClash.PacketTunnel-macOS"
+            configuration.providerBundleIdentifier = "com.Arror.Clash.PacketTunnel-macOS"
 #else
-            configuration.providerBundleIdentifier = "com.Arror.AppleClash.PacketTunnel-iOS"
+            configuration.providerBundleIdentifier = "com.Arror.Clash.PacketTunnel-iOS"
 #endif
             configuration.serverAddress = "Clash"
             configuration.includeAllNetworks = true

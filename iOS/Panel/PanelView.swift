@@ -25,9 +25,8 @@ struct PanelView: View {
             ProxyInfoView()
                 .environmentObject(ProxyInfoModel(id: reval.uuid?.uuidString ?? "temp"))
         } else {
-            Form {
-                Text("未选择配置")
-            }
+            Text("未选择配置")
+                .foregroundColor(.secondary)
         }
     }
 }
