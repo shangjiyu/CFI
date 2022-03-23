@@ -1,0 +1,1117 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D99E3A9527EB0B5600464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9427EB0B5600464266 /* Yams */; };
+		D99E3A9727EB0B6400464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9627EB0B6400464266 /* Yams */; };
+		D99E3A9D27EB0CFE00464266 /* ClashKit in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9C27EB0CFE00464266 /* ClashKit */; };
+		D99E3A9F27EB0D0D00464266 /* ClashKit in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9E27EB0D0D00464266 /* ClashKit */; };
+		D99E3AB127EB0D9000464266 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Constant.swift */; };
+		D99E3AB227EB0D9000464266 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Constant.swift */; };
+		D99E3AB327EB0D9000464266 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Constant.swift */; };
+		D99E3AB427EB0D9000464266 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Constant.swift */; };
+		D99E3AB527EB0D9000464266 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA527EB0D8F00464266 /* Clash.swift */; };
+		D99E3AB627EB0D9000464266 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA527EB0D8F00464266 /* Clash.swift */; };
+		D99E3AB727EB0D9000464266 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA527EB0D8F00464266 /* Clash.swift */; };
+		D99E3AB827EB0D9000464266 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA527EB0D8F00464266 /* Clash.swift */; };
+		D99E3AC127EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
+		D99E3AC227EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
+		D99E3AC327EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
+		D99E3AC427EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
+		D99E3AC927EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */; };
+		D99E3ACA27EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */; };
+		D99E3ACC27EB0F3600464266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ACB27EB0F3600464266 /* AppDelegate.swift */; };
+		D99E3ACE27EB0F5B00464266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */; };
+		D99E3AE527EB10B900464266 /* ClashConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD027EB10B800464266 /* ClashConfigListView.swift */; };
+		D99E3AE627EB10B900464266 /* ClashConfigImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* ClashConfigImportView.swift */; };
+		D99E3AE727EB10B900464266 /* ClashConfigImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ClashConfigImportButton.swift */; };
+		D99E3AE827EB10B900464266 /* VPNConnecteDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD427EB10B900464266 /* VPNConnecteDurationView.swift */; };
+		D99E3AE927EB10B900464266 /* InstallVPNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD527EB10B900464266 /* InstallVPNView.swift */; };
+		D99E3AEA27EB10B900464266 /* ClashHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD627EB10B900464266 /* ClashHomeView.swift */; };
+		D99E3AEB27EB10B900464266 /* ClashConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD727EB10B900464266 /* ClashConfigView.swift */; };
+		D99E3AEC27EB10B900464266 /* ClashTunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD827EB10B900464266 /* ClashTunnelModeView.swift */; };
+		D99E3AED27EB10BA00464266 /* ClashTrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD927EB10B900464266 /* ClashTrafficView.swift */; };
+		D99E3AEE27EB10BA00464266 /* VPNStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ADA27EB10B900464266 /* VPNStateView.swift */; };
+		D99E3AEF27EB10BA00464266 /* ClashLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ADC27EB10B900464266 /* ClashLogView.swift */; };
+		D99E3AF027EB10BA00464266 /* UninstallVPNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ADD27EB10B900464266 /* UninstallVPNView.swift */; };
+		D99E3AF127EB10BA00464266 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ADE27EB10B900464266 /* SettingView.swift */; };
+		D99E3AF227EB10BA00464266 /* ProxyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE027EB10B900464266 /* ProxyInfoModel.swift */; };
+		D99E3AF327EB10BA00464266 /* ProxyGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE127EB10B900464266 /* ProxyGroupView.swift */; };
+		D99E3AF427EB10BA00464266 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE227EB10B900464266 /* PanelView.swift */; };
+		D99E3AF527EB10BA00464266 /* ProxyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE327EB10B900464266 /* ProxyInfoView.swift */; };
+		D99E3AF627EB10BA00464266 /* ProxyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE427EB10B900464266 /* ProxyListView.swift */; };
+		D99E3AF827EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
+		D99E3AF927EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
+		D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AFB27EB10E700464266 /* CoreDataStack.swift */; };
+		D99E3AFF27EB10E700464266 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AFB27EB10E700464266 /* CoreDataStack.swift */; };
+		D99E3B0027EB10E700464266 /* Clash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AFC27EB10E700464266 /* Clash.xcdatamodeld */; };
+		D99E3B0127EB10E700464266 /* Clash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AFC27EB10E700464266 /* Clash.xcdatamodeld */; };
+		D99E3B0827EB110C00464266 /* ModalPresentationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0227EB110A00464266 /* ModalPresentationLink.swift */; };
+		D99E3B0927EB110C00464266 /* NSManagedObjectContext+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0327EB110B00464266 /* NSManagedObjectContext+File.swift */; };
+		D99E3B0A27EB110C00464266 /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0427EB110B00464266 /* VPNManager.swift */; };
+		D99E3B0B27EB110C00464266 /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0527EB110B00464266 /* DocumentPickerView.swift */; };
+		D99E3B0C27EB110C00464266 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */; };
+		D99E3B0D27EB110C00464266 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0727EB110C00464266 /* ContentView.swift */; };
+		D99E3B0F27EB117F00464266 /* ClashTrafficFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */; };
+		D99E3B1027EB11A200464266 /* ClashTrafficFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */; };
+		D99E3B1127EB11A500464266 /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0427EB110B00464266 /* VPNManager.swift */; };
+		D9B1B4F527EAF72F007EE597 /* ClashApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1B4E527EAF72B007EE597 /* ClashApp.swift */; };
+		D9B1B4F627EAF72F007EE597 /* ClashApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1B4E527EAF72B007EE597 /* ClashApp.swift */; };
+		D9B1B4F827EAF72F007EE597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1B4E627EAF72B007EE597 /* ContentView.swift */; };
+		D9B1B4F927EAF72F007EE597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9B1B4E727EAF72F007EE597 /* Assets.xcassets */; };
+		D9B1B4FA27EAF72F007EE597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9B1B4E727EAF72F007EE597 /* Assets.xcassets */; };
+		D9B1B53327EAFC87007EE597 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1B50C27EAFBE0007EE597 /* NetworkExtension.framework */; };
+		D9B1B53B27EAFC87007EE597 /* PacketTunnel-iOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D9B1B53227EAFC87007EE597 /* PacketTunnel-iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D9B1B54427EAFC9D007EE597 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1B50C27EAFBE0007EE597 /* NetworkExtension.framework */; };
+		D9B1B54C27EAFC9D007EE597 /* PacketTunnel-macOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D9B1B54327EAFC9D007EE597 /* PacketTunnel-macOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D9B1B55127EAFEC7007EE597 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1B50C27EAFBE0007EE597 /* NetworkExtension.framework */; };
+		D9B1B55327EAFEDB007EE597 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1B55227EAFEDB007EE597 /* NetworkExtension.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D9B1B53927EAFC87007EE597 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9B1B4E027EAF72B007EE597 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9B1B53127EAFC87007EE597;
+			remoteInfo = "PacketTunnel-iOS";
+		};
+		D9B1B54A27EAFC9D007EE597 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9B1B4E027EAF72B007EE597 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9B1B54227EAFC9D007EE597;
+			remoteInfo = "PacketTunnel-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D9B1B51927EAFBE0007EE597 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D9B1B53B27EAFC87007EE597 /* PacketTunnel-iOS.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B52D27EAFC43007EE597 /* Embed System Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed System Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B55027EAFC9D007EE597 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D9B1B54C27EAFC9D007EE597 /* PacketTunnel-macOS.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D99E3AA427EB0D8F00464266 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		D99E3AA527EB0D8F00464266 /* Clash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clash.swift; sourceTree = "<group>"; };
+		D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppGroup.swift"; sourceTree = "<group>"; };
+		D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		D99E3ACB27EB0F3600464266 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D99E3AD027EB10B800464266 /* ClashConfigListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigListView.swift; sourceTree = "<group>"; };
+		D99E3AD127EB10B800464266 /* ClashConfigImportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigImportView.swift; sourceTree = "<group>"; };
+		D99E3AD227EB10B800464266 /* ClashConfigImportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigImportButton.swift; sourceTree = "<group>"; };
+		D99E3AD427EB10B900464266 /* VPNConnecteDurationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNConnecteDurationView.swift; sourceTree = "<group>"; };
+		D99E3AD527EB10B900464266 /* InstallVPNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallVPNView.swift; sourceTree = "<group>"; };
+		D99E3AD627EB10B900464266 /* ClashHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashHomeView.swift; sourceTree = "<group>"; };
+		D99E3AD727EB10B900464266 /* ClashConfigView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigView.swift; sourceTree = "<group>"; };
+		D99E3AD827EB10B900464266 /* ClashTunnelModeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashTunnelModeView.swift; sourceTree = "<group>"; };
+		D99E3AD927EB10B900464266 /* ClashTrafficView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashTrafficView.swift; sourceTree = "<group>"; };
+		D99E3ADA27EB10B900464266 /* VPNStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNStateView.swift; sourceTree = "<group>"; };
+		D99E3ADC27EB10B900464266 /* ClashLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashLogView.swift; sourceTree = "<group>"; };
+		D99E3ADD27EB10B900464266 /* UninstallVPNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UninstallVPNView.swift; sourceTree = "<group>"; };
+		D99E3ADE27EB10B900464266 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		D99E3AE027EB10B900464266 /* ProxyInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyInfoModel.swift; sourceTree = "<group>"; };
+		D99E3AE127EB10B900464266 /* ProxyGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyGroupView.swift; sourceTree = "<group>"; };
+		D99E3AE227EB10B900464266 /* PanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		D99E3AE327EB10B900464266 /* ProxyInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyInfoView.swift; sourceTree = "<group>"; };
+		D99E3AE427EB10B900464266 /* ProxyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyListView.swift; sourceTree = "<group>"; };
+		D99E3AF727EB10CA00464266 /* Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Country.mmdb; sourceTree = "<group>"; };
+		D99E3AFB27EB10E700464266 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D99E3AFD27EB10E700464266 /* Clash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clash.xcdatamodel; sourceTree = "<group>"; };
+		D99E3B0227EB110A00464266 /* ModalPresentationLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresentationLink.swift; sourceTree = "<group>"; };
+		D99E3B0327EB110B00464266 /* NSManagedObjectContext+File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+File.swift"; sourceTree = "<group>"; };
+		D99E3B0427EB110B00464266 /* VPNManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
+		D99E3B0527EB110B00464266 /* DocumentPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
+		D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectFetchView.swift; sourceTree = "<group>"; };
+		D99E3B0727EB110C00464266 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashTrafficFormatter.swift; sourceTree = "<group>"; };
+		D9B1B4E527EAF72B007EE597 /* ClashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashApp.swift; sourceTree = "<group>"; };
+		D9B1B4E627EAF72B007EE597 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D9B1B4E727EAF72F007EE597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D9B1B4EC27EAF72F007EE597 /* Clash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B1B4F227EAF72F007EE597 /* AppleClash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleClash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B1B4F427EAF72F007EE597 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		D9B1B50427EAF8DF007EE597 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
+		D9B1B50C27EAFBE0007EE597 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		D9B1B53227EAFC87007EE597 /* PacketTunnel-iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PacketTunnel-iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B1B53727EAFC87007EE597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9B1B53827EAFC87007EE597 /* PacketTunnel_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel_iOS.entitlements; sourceTree = "<group>"; };
+		D9B1B54327EAFC9D007EE597 /* PacketTunnel-macOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PacketTunnel-macOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B1B54827EAFC9D007EE597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9B1B54927EAFC9D007EE597 /* PacketTunnel_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel_macOS.entitlements; sourceTree = "<group>"; };
+		D9B1B55227EAFEDB007EE597 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
+		D9B1B55427EB0021007EE597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9B1B55627EB003C007EE597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9B1B4E927EAF72F007EE597 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B1B55327EAFEDB007EE597 /* NetworkExtension.framework in Frameworks */,
+				D99E3A9527EB0B5600464266 /* Yams in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B4EF27EAF72F007EE597 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B1B55127EAFEC7007EE597 /* NetworkExtension.framework in Frameworks */,
+				D99E3A9727EB0B6400464266 /* Yams in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B52F27EAFC87007EE597 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B1B53327EAFC87007EE597 /* NetworkExtension.framework in Frameworks */,
+				D99E3A9D27EB0CFE00464266 /* ClashKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B54027EAFC9D007EE597 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B1B54427EAFC9D007EE597 /* NetworkExtension.framework in Frameworks */,
+				D99E3A9F27EB0D0D00464266 /* ClashKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D99E3AA027EB0D2E00464266 /* PacketTunnel */ = {
+			isa = PBXGroup;
+			children = (
+				D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */,
+			);
+			path = PacketTunnel;
+			sourceTree = "<group>";
+		};
+		D99E3AA127EB0D5600464266 /* Clash */ = {
+			isa = PBXGroup;
+			children = (
+				D99E3AA427EB0D8F00464266 /* Constant.swift */,
+				D99E3AA527EB0D8F00464266 /* Clash.swift */,
+				D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */,
+			);
+			path = Clash;
+			sourceTree = "<group>";
+		};
+		D99E3ACF27EB10B800464266 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				D99E3AD027EB10B800464266 /* ClashConfigListView.swift */,
+				D99E3AD127EB10B800464266 /* ClashConfigImportView.swift */,
+				D99E3AD227EB10B800464266 /* ClashConfigImportButton.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		D99E3AD327EB10B900464266 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D99E3AD427EB10B900464266 /* VPNConnecteDurationView.swift */,
+				D99E3AD527EB10B900464266 /* InstallVPNView.swift */,
+				D99E3AD627EB10B900464266 /* ClashHomeView.swift */,
+				D99E3AD727EB10B900464266 /* ClashConfigView.swift */,
+				D99E3AD827EB10B900464266 /* ClashTunnelModeView.swift */,
+				D99E3AD927EB10B900464266 /* ClashTrafficView.swift */,
+				D99E3ADA27EB10B900464266 /* VPNStateView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D99E3ADB27EB10B900464266 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D99E3ADC27EB10B900464266 /* ClashLogView.swift */,
+				D99E3ADD27EB10B900464266 /* UninstallVPNView.swift */,
+				D99E3ADE27EB10B900464266 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		D99E3ADF27EB10B900464266 /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				D99E3AE027EB10B900464266 /* ProxyInfoModel.swift */,
+				D99E3AE127EB10B900464266 /* ProxyGroupView.swift */,
+				D99E3AE227EB10B900464266 /* PanelView.swift */,
+				D99E3AE327EB10B900464266 /* ProxyInfoView.swift */,
+				D99E3AE427EB10B900464266 /* ProxyListView.swift */,
+			);
+			path = Panel;
+			sourceTree = "<group>";
+		};
+		D99E3AFA27EB10E700464266 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D99E3AFB27EB10E700464266 /* CoreDataStack.swift */,
+				D99E3AFC27EB10E700464266 /* Clash.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D9B1B4DF27EAF72B007EE597 = {
+			isa = PBXGroup;
+			children = (
+				D9B1B4E427EAF72B007EE597 /* Shared */,
+				D9B1B50327EAF8B2007EE597 /* iOS */,
+				D9B1B4F327EAF72F007EE597 /* macOS */,
+				D99E3AA127EB0D5600464266 /* Clash */,
+				D99E3AA027EB0D2E00464266 /* PacketTunnel */,
+				D9B1B53427EAFC87007EE597 /* PacketTunnel-iOS */,
+				D9B1B54527EAFC9D007EE597 /* PacketTunnel-macOS */,
+				D9B1B50B27EAFBE0007EE597 /* Frameworks */,
+				D9B1B4ED27EAF72F007EE597 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D9B1B4E427EAF72B007EE597 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D9B1B4E527EAF72B007EE597 /* ClashApp.swift */,
+				D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */,
+				D99E3B0427EB110B00464266 /* VPNManager.swift */,
+				D99E3AFA27EB10E700464266 /* CoreData */,
+				D99E3AF727EB10CA00464266 /* Country.mmdb */,
+				D9B1B4E727EAF72F007EE597 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D9B1B4ED27EAF72F007EE597 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9B1B4EC27EAF72F007EE597 /* Clash.app */,
+				D9B1B4F227EAF72F007EE597 /* AppleClash.app */,
+				D9B1B53227EAFC87007EE597 /* PacketTunnel-iOS.appex */,
+				D9B1B54327EAFC9D007EE597 /* PacketTunnel-macOS.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9B1B4F327EAF72F007EE597 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */,
+				D9B1B4E627EAF72B007EE597 /* ContentView.swift */,
+				D9B1B4F427EAF72F007EE597 /* macOS.entitlements */,
+				D9B1B55627EB003C007EE597 /* Info.plist */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		D9B1B50327EAF8B2007EE597 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D99E3ACB27EB0F3600464266 /* AppDelegate.swift */,
+				D99E3B0727EB110C00464266 /* ContentView.swift */,
+				D99E3B0527EB110B00464266 /* DocumentPickerView.swift */,
+				D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */,
+				D99E3B0227EB110A00464266 /* ModalPresentationLink.swift */,
+				D99E3B0327EB110B00464266 /* NSManagedObjectContext+File.swift */,
+				D99E3AD327EB10B900464266 /* Home */,
+				D99E3ACF27EB10B800464266 /* List */,
+				D99E3ADF27EB10B900464266 /* Panel */,
+				D99E3ADB27EB10B900464266 /* Setting */,
+				D9B1B50427EAF8DF007EE597 /* iOS.entitlements */,
+				D9B1B55427EB0021007EE597 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D9B1B50B27EAFBE0007EE597 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9B1B55227EAFEDB007EE597 /* NetworkExtension.framework */,
+				D9B1B50C27EAFBE0007EE597 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9B1B53427EAFC87007EE597 /* PacketTunnel-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D9B1B53727EAFC87007EE597 /* Info.plist */,
+				D9B1B53827EAFC87007EE597 /* PacketTunnel_iOS.entitlements */,
+			);
+			path = "PacketTunnel-iOS";
+			sourceTree = "<group>";
+		};
+		D9B1B54527EAFC9D007EE597 /* PacketTunnel-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				D9B1B54827EAFC9D007EE597 /* Info.plist */,
+				D9B1B54927EAFC9D007EE597 /* PacketTunnel_macOS.entitlements */,
+			);
+			path = "PacketTunnel-macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9B1B4EB27EAF72F007EE597 /* AppleClash (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9B1B4FD27EAF72F007EE597 /* Build configuration list for PBXNativeTarget "AppleClash (iOS)" */;
+			buildPhases = (
+				D9B1B4E827EAF72F007EE597 /* Sources */,
+				D9B1B4E927EAF72F007EE597 /* Frameworks */,
+				D9B1B4EA27EAF72F007EE597 /* Resources */,
+				D9B1B51927EAFBE0007EE597 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9B1B53A27EAFC87007EE597 /* PBXTargetDependency */,
+			);
+			name = "AppleClash (iOS)";
+			packageProductDependencies = (
+				D99E3A9427EB0B5600464266 /* Yams */,
+			);
+			productName = "AppleClash (iOS)";
+			productReference = D9B1B4EC27EAF72F007EE597 /* Clash.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D9B1B4F127EAF72F007EE597 /* AppleClash (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9B1B50027EAF72F007EE597 /* Build configuration list for PBXNativeTarget "AppleClash (macOS)" */;
+			buildPhases = (
+				D9B1B4EE27EAF72F007EE597 /* Sources */,
+				D9B1B4EF27EAF72F007EE597 /* Frameworks */,
+				D9B1B4F027EAF72F007EE597 /* Resources */,
+				D9B1B52D27EAFC43007EE597 /* Embed System Extensions */,
+				D9B1B55027EAFC9D007EE597 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9B1B54B27EAFC9D007EE597 /* PBXTargetDependency */,
+			);
+			name = "AppleClash (macOS)";
+			packageProductDependencies = (
+				D99E3A9627EB0B6400464266 /* Yams */,
+			);
+			productName = "AppleClash (macOS)";
+			productReference = D9B1B4F227EAF72F007EE597 /* AppleClash.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D9B1B53127EAFC87007EE597 /* PacketTunnel-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9B1B53C27EAFC87007EE597 /* Build configuration list for PBXNativeTarget "PacketTunnel-iOS" */;
+			buildPhases = (
+				D9B1B52E27EAFC87007EE597 /* Sources */,
+				D9B1B52F27EAFC87007EE597 /* Frameworks */,
+				D9B1B53027EAFC87007EE597 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PacketTunnel-iOS";
+			packageProductDependencies = (
+				D99E3A9C27EB0CFE00464266 /* ClashKit */,
+			);
+			productName = "PacketTunnel-iOS";
+			productReference = D9B1B53227EAFC87007EE597 /* PacketTunnel-iOS.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D9B1B54227EAFC9D007EE597 /* PacketTunnel-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9B1B54D27EAFC9D007EE597 /* Build configuration list for PBXNativeTarget "PacketTunnel-macOS" */;
+			buildPhases = (
+				D9B1B53F27EAFC9D007EE597 /* Sources */,
+				D9B1B54027EAFC9D007EE597 /* Frameworks */,
+				D9B1B54127EAFC9D007EE597 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PacketTunnel-macOS";
+			packageProductDependencies = (
+				D99E3A9E27EB0D0D00464266 /* ClashKit */,
+			);
+			productName = "PacketTunnel-macOS";
+			productReference = D9B1B54327EAFC9D007EE597 /* PacketTunnel-macOS.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9B1B4E027EAF72B007EE597 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					D9B1B4EB27EAF72F007EE597 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					D9B1B4F127EAF72F007EE597 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					D9B1B53127EAFC87007EE597 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					D9B1B54227EAFC9D007EE597 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = D9B1B4E327EAF72B007EE597 /* Build configuration list for PBXProject "AppleClash" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D9B1B4DF27EAF72B007EE597;
+			packageReferences = (
+				D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */,
+				D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */,
+			);
+			productRefGroup = D9B1B4ED27EAF72F007EE597 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9B1B4EB27EAF72F007EE597 /* AppleClash (iOS) */,
+				D9B1B4F127EAF72F007EE597 /* AppleClash (macOS) */,
+				D9B1B53127EAFC87007EE597 /* PacketTunnel-iOS */,
+				D9B1B54227EAFC9D007EE597 /* PacketTunnel-macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9B1B4EA27EAF72F007EE597 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99E3AF827EB10CA00464266 /* Country.mmdb in Resources */,
+				D9B1B4F927EAF72F007EE597 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B4F027EAF72F007EE597 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99E3AF927EB10CA00464266 /* Country.mmdb in Resources */,
+				D9B1B4FA27EAF72F007EE597 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B53027EAFC87007EE597 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B54127EAFC9D007EE597 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9B1B4E827EAF72F007EE597 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99E3AF427EB10BA00464266 /* PanelView.swift in Sources */,
+				D99E3AF627EB10BA00464266 /* ProxyListView.swift in Sources */,
+				D99E3B0A27EB110C00464266 /* VPNManager.swift in Sources */,
+				D99E3AE727EB10B900464266 /* ClashConfigImportButton.swift in Sources */,
+				D99E3AE527EB10B900464266 /* ClashConfigListView.swift in Sources */,
+				D99E3AE627EB10B900464266 /* ClashConfigImportView.swift in Sources */,
+				D99E3AF127EB10BA00464266 /* SettingView.swift in Sources */,
+				D99E3AF527EB10BA00464266 /* ProxyInfoView.swift in Sources */,
+				D99E3AE927EB10B900464266 /* InstallVPNView.swift in Sources */,
+				D99E3AF327EB10BA00464266 /* ProxyGroupView.swift in Sources */,
+				D99E3B0827EB110C00464266 /* ModalPresentationLink.swift in Sources */,
+				D99E3B0D27EB110C00464266 /* ContentView.swift in Sources */,
+				D99E3AEB27EB10B900464266 /* ClashConfigView.swift in Sources */,
+				D99E3AEF27EB10BA00464266 /* ClashLogView.swift in Sources */,
+				D99E3AF027EB10BA00464266 /* UninstallVPNView.swift in Sources */,
+				D99E3B0027EB10E700464266 /* Clash.xcdatamodeld in Sources */,
+				D99E3AF227EB10BA00464266 /* ProxyInfoModel.swift in Sources */,
+				D99E3AEC27EB10B900464266 /* ClashTunnelModeView.swift in Sources */,
+				D99E3AEA27EB10B900464266 /* ClashHomeView.swift in Sources */,
+				D99E3B0927EB110C00464266 /* NSManagedObjectContext+File.swift in Sources */,
+				D99E3B0F27EB117F00464266 /* ClashTrafficFormatter.swift in Sources */,
+				D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */,
+				D99E3ACC27EB0F3600464266 /* AppDelegate.swift in Sources */,
+				D99E3AB527EB0D9000464266 /* Clash.swift in Sources */,
+				D99E3AB127EB0D9000464266 /* Constant.swift in Sources */,
+				D99E3AEE27EB10BA00464266 /* VPNStateView.swift in Sources */,
+				D99E3AC127EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
+				D9B1B4F527EAF72F007EE597 /* ClashApp.swift in Sources */,
+				D99E3B0C27EB110C00464266 /* ManagedObjectFetchView.swift in Sources */,
+				D99E3AED27EB10BA00464266 /* ClashTrafficView.swift in Sources */,
+				D99E3AE827EB10B900464266 /* VPNConnecteDurationView.swift in Sources */,
+				D99E3B0B27EB110C00464266 /* DocumentPickerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B4EE27EAF72F007EE597 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99E3AFF27EB10E700464266 /* CoreDataStack.swift in Sources */,
+				D99E3ACE27EB0F5B00464266 /* AppDelegate.swift in Sources */,
+				D99E3B1127EB11A500464266 /* VPNManager.swift in Sources */,
+				D9B1B4F827EAF72F007EE597 /* ContentView.swift in Sources */,
+				D99E3AB627EB0D9000464266 /* Clash.swift in Sources */,
+				D99E3AB227EB0D9000464266 /* Constant.swift in Sources */,
+				D99E3B1027EB11A200464266 /* ClashTrafficFormatter.swift in Sources */,
+				D99E3B0127EB10E700464266 /* Clash.xcdatamodeld in Sources */,
+				D99E3AC227EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
+				D9B1B4F627EAF72F007EE597 /* ClashApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B52E27EAFC87007EE597 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99E3AB727EB0D9000464266 /* Clash.swift in Sources */,
+				D99E3AC327EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
+				D99E3AC927EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */,
+				D99E3AB327EB0D9000464266 /* Constant.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B53F27EAFC9D007EE597 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99E3AB827EB0D9000464266 /* Clash.swift in Sources */,
+				D99E3AC427EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
+				D99E3ACA27EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */,
+				D99E3AB427EB0D9000464266 /* Constant.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D9B1B53A27EAFC87007EE597 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9B1B53127EAFC87007EE597 /* PacketTunnel-iOS */;
+			targetProxy = D9B1B53927EAFC87007EE597 /* PBXContainerItemProxy */;
+		};
+		D9B1B54B27EAFC9D007EE597 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9B1B54227EAFC9D007EE597 /* PacketTunnel-macOS */;
+			targetProxy = D9B1B54A27EAFC9D007EE597 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D9B1B4FB27EAF72F007EE597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D9B1B4FC27EAF72F007EE597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		D9B1B4FE27EAF72F007EE597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A8XWAF2UFT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Arror.AppleClash;
+				PRODUCT_NAME = Clash;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9B1B4FF27EAF72F007EE597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A8XWAF2UFT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Arror.AppleClash;
+				PRODUCT_NAME = Clash;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D9B1B50127EAF72F007EE597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A8XWAF2UFT;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Arror.AppleClash;
+				PRODUCT_NAME = AppleClash;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D9B1B50227EAF72F007EE597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A8XWAF2UFT;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Arror.AppleClash;
+				PRODUCT_NAME = AppleClash;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D9B1B53D27EAFC87007EE597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "PacketTunnel-iOS/PacketTunnel_iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A8XWAF2UFT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PacketTunnel-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "PacketTunnel-iOS";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Arror.AppleClash.PacketTunnel-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9B1B53E27EAFC87007EE597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "PacketTunnel-iOS/PacketTunnel_iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A8XWAF2UFT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PacketTunnel-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "PacketTunnel-iOS";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Arror.AppleClash.PacketTunnel-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D9B1B54E27EAFC9D007EE597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "PacketTunnel-macOS/PacketTunnel_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A8XWAF2UFT;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PacketTunnel-macOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "PacketTunnel-macOS";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Arror.AppleClash.PacketTunnel-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D9B1B54F27EAFC9D007EE597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "PacketTunnel-macOS/PacketTunnel_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A8XWAF2UFT;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PacketTunnel-macOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "PacketTunnel-macOS";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Arror.AppleClash.PacketTunnel-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9B1B4E327EAF72B007EE597 /* Build configuration list for PBXProject "AppleClash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9B1B4FB27EAF72F007EE597 /* Debug */,
+				D9B1B4FC27EAF72F007EE597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9B1B4FD27EAF72F007EE597 /* Build configuration list for PBXNativeTarget "AppleClash (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9B1B4FE27EAF72F007EE597 /* Debug */,
+				D9B1B4FF27EAF72F007EE597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9B1B50027EAF72F007EE597 /* Build configuration list for PBXNativeTarget "AppleClash (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9B1B50127EAF72F007EE597 /* Debug */,
+				D9B1B50227EAF72F007EE597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9B1B53C27EAFC87007EE597 /* Build configuration list for PBXNativeTarget "PacketTunnel-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9B1B53D27EAFC87007EE597 /* Debug */,
+				D9B1B53E27EAFC87007EE597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9B1B54D27EAFC9D007EE597 /* Build configuration list for PBXNativeTarget "PacketTunnel-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9B1B54E27EAFC9D007EE597 /* Debug */,
+				D9B1B54F27EAFC9D007EE597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/Yams.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+		D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Clash-for-Apple/ClashKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.16;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D99E3A9427EB0B5600464266 /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
+		};
+		D99E3A9627EB0B6400464266 /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
+		};
+		D99E3A9C27EB0CFE00464266 /* ClashKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */;
+			productName = ClashKit;
+		};
+		D99E3A9E27EB0D0D00464266 /* ClashKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */;
+			productName = ClashKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		D99E3AFC27EB10E700464266 /* Clash.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D99E3AFD27EB10E700464266 /* Clash.xcdatamodel */,
+			);
+			currentVersion = D99E3AFD27EB10E700464266 /* Clash.xcdatamodel */;
+			path = Clash.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D9B1B4E027EAF72B007EE597 /* Project object */;
+}
