@@ -502,11 +502,10 @@
 			};
 			buildConfigurationList = D9B1B4E327EAF72B007EE597 /* Build configuration list for PBXProject "Clash" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
+				"zh-Hans",
 			);
 			mainGroup = D9B1B4DF27EAF72B007EE597;
 			packageReferences = (
