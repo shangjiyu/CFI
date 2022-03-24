@@ -15,19 +15,26 @@ import NetworkExtension
             .receive(on: DispatchQueue.main)
             .sink { [unowned self] in self.handleVPNConfigurationChangedNotification($0) }
             .store(in: &self.cancellables)
+        Task(priority: .high) {
+            await self.loadController()
+        }
     }
     
     private func handleVPNConfigurationChangedNotification(_ notification: Notification) {
         Task(priority: .high) {
-            if let manager = try? await self.loadCurrentTunnelProviderManager() {
-                if let controller = self.controller, controller.isEqually(manager: manager) {
-                    // Nothing
-                } else {
-                    self.controller = VPNController(providerManager: manager)
-                }
+            await self.loadController()
+        }
+    }
+    
+    private func loadController() async {
+        if let manager = try? await self.loadCurrentTunnelProviderManager() {
+            if let controller = self.controller, controller.isEqually(manager: manager) {
+                // Nothing
             } else {
-                self.controller = nil
+                self.controller = VPNController(providerManager: manager)
             }
+        } else {
+            self.controller = nil
         }
     }
     
