@@ -9,6 +9,10 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
     
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        .portrait
+    }
+    
     private func copyCountryDB() {
         let dbFileName = "Country"
         let dbFileExtension = "mmdb"
