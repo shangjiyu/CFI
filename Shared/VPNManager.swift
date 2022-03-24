@@ -1,4 +1,3 @@
-import UIKit
 import Combine
 import NetworkExtension
 
@@ -12,27 +11,23 @@ import NetworkExtension
     
     private init() {
         NotificationCenter.default
-            .publisher(for: UIApplication.willEnterForegroundNotification, object: nil)
+            .publisher(for: Notification.Name.NEVPNConfigurationChange, object: nil)
             .receive(on: DispatchQueue.main)
-            .sink { [unowned self] in self.handleWillEnterForegroundNotification($0) }
+            .sink { [unowned self] in self.handleVPNConfigurationChangedNotification($0) }
             .store(in: &self.cancellables)
     }
     
-    private func handleWillEnterForegroundNotification(_ notification: Notification) {
+    private func handleVPNConfigurationChangedNotification(_ notification: Notification) {
         Task(priority: .high) {
-            await self.refreshController()
-        }
-    }
-    
-    public func refreshController() async {
-        if let manager = try? await self.loadCurrentTunnelProviderManager() {
-            if let controller = self.controller, controller.isEqually(manager: manager) {
-                // Nothing
+            if let manager = try? await self.loadCurrentTunnelProviderManager() {
+                if let controller = self.controller, controller.isEqually(manager: manager) {
+                    // Nothing
+                } else {
+                    self.controller = VPNController(providerManager: manager)
+                }
             } else {
-                self.controller = VPNController(providerManager: manager)
+                self.controller = nil
             }
-        } else {
-            self.controller = nil
         }
     }
     

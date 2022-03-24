@@ -23,7 +23,6 @@ struct UninstallVPNView: View {
                     }
                     do {
                         try await controller.uninstallVPNConfiguration()
-                        await manager.refreshController()
                     } catch {
                         debugPrint(error.localizedDescription)
                     }
