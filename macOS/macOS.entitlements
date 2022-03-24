@@ -8,7 +8,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>$(TeamIdentifierPrefix).com.Arror.Clash</string>
+		<string>$(TeamIdentifierPrefix)com.Arror.Clash</string>
 	</array>
 </dict>
 </plist>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
+		D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D99E3A9527EB0B5600464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9427EB0B5600464266 /* Yams */; };
 		D99E3A9727EB0B6400464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9627EB0B6400464266 /* Yams */; };
 		D99E3A9D27EB0CFE00464266 /* ClashKit in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9C27EB0CFE00464266 /* ClashKit */; };
@@ -126,6 +128,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEOIPDatabaseManager.swift; sourceTree = "<group>"; };
 		D99E3AA427EB0D8F00464266 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D99E3AA527EB0D8F00464266 /* Clash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clash.swift; sourceTree = "<group>"; };
 		D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppGroup.swift"; sourceTree = "<group>"; };
@@ -313,6 +316,7 @@
 				D9B1B4E527EAF72B007EE597 /* ClashApp.swift */,
 				D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */,
 				D99E3B0427EB110B00464266 /* VPNManager.swift */,
+				D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */,
 				D99E3AFA27EB10E700464266 /* CoreData */,
 				D99E3AF727EB10CA00464266 /* Country.mmdb */,
 				D9B1B4E727EAF72F007EE597 /* Assets.xcassets */,
@@ -564,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
 				D99E3AF427EB10BA00464266 /* PanelView.swift in Sources */,
 				D99E3AF627EB10BA00464266 /* ProxyListView.swift in Sources */,
 				D99E3B0A27EB110C00464266 /* VPNManager.swift in Sources */,
@@ -603,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
 				D99E3AFF27EB10E700464266 /* CoreDataStack.swift in Sources */,
 				D99E3ACE27EB0F5B00464266 /* AppDelegate.swift in Sources */,
 				D99E3B1127EB11A500464266 /* VPNManager.swift in Sources */,

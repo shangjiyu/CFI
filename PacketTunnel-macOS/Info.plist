@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CLASH_APP_GROUP</key>
-	<string>$(TeamIdentifierPrefix).com.Arror.Clash</string>
+	<string>$(TeamIdentifierPrefix)com.Arror.Clash</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPointIdentifier</key>
