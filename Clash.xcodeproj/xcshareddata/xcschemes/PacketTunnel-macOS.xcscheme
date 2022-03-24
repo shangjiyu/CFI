@@ -18,7 +18,7 @@
                BlueprintIdentifier = "D9B1B54227EAFC9D007EE597"
                BuildableName = "PacketTunnel-macOS.appex"
                BlueprintName = "PacketTunnel-macOS"
-               ReferencedContainer = "container:AppleClash.xcodeproj">
+               ReferencedContainer = "container:Clash.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,9 +30,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D9B1B4F127EAF72F007EE597"
-               BuildableName = "AppleClash.app"
-               BlueprintName = "AppleClash (macOS)"
-               ReferencedContainer = "container:AppleClash.xcodeproj">
+               BuildableName = "Clash.app"
+               BlueprintName = "Clash (macOS)"
+               ReferencedContainer = "container:Clash.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D9B1B4F127EAF72F007EE597"
-            BuildableName = "AppleClash.app"
-            BlueprintName = "AppleClash (macOS)"
-            ReferencedContainer = "container:AppleClash.xcodeproj">
+            BuildableName = "Clash.app"
+            BlueprintName = "Clash (macOS)"
+            ReferencedContainer = "container:Clash.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D9B1B4F127EAF72F007EE597"
-            BuildableName = "AppleClash.app"
-            BlueprintName = "AppleClash (macOS)"
-            ReferencedContainer = "container:AppleClash.xcodeproj">
+            BuildableName = "Clash.app"
+            BlueprintName = "Clash (macOS)"
+            ReferencedContainer = "container:Clash.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

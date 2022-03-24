@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9B1B4EB27EAF72F007EE597"
+               BlueprintIdentifier = "D9B1B4F127EAF72F007EE597"
                BuildableName = "Clash.app"
-               BlueprintName = "AppleClash (iOS)"
-               ReferencedContainer = "container:AppleClash.xcodeproj">
+               BlueprintName = "Clash (macOS)"
+               ReferencedContainer = "container:Clash.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,10 +44,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9B1B4EB27EAF72F007EE597"
+            BlueprintIdentifier = "D9B1B4F127EAF72F007EE597"
             BuildableName = "Clash.app"
-            BlueprintName = "AppleClash (iOS)"
-            ReferencedContainer = "container:AppleClash.xcodeproj">
+            BlueprintName = "Clash (macOS)"
+            ReferencedContainer = "container:Clash.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9B1B4EB27EAF72F007EE597"
+            BlueprintIdentifier = "D9B1B4F127EAF72F007EE597"
             BuildableName = "Clash.app"
-            BlueprintName = "AppleClash (iOS)"
-            ReferencedContainer = "container:AppleClash.xcodeproj">
+            BlueprintName = "Clash (macOS)"
+            ReferencedContainer = "container:Clash.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

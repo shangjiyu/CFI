@@ -164,7 +164,7 @@
 		D9B1B4E627EAF72B007EE597 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D9B1B4E727EAF72F007EE597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9B1B4EC27EAF72F007EE597 /* Clash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clash.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9B1B4F227EAF72F007EE597 /* AppleClash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleClash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B1B4F227EAF72F007EE597 /* Clash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B1B4F427EAF72F007EE597 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		D9B1B50427EAF8DF007EE597 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		D9B1B50C27EAFBE0007EE597 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -324,7 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				D9B1B4EC27EAF72F007EE597 /* Clash.app */,
-				D9B1B4F227EAF72F007EE597 /* AppleClash.app */,
+				D9B1B4F227EAF72F007EE597 /* Clash.app */,
 				D9B1B53227EAFC87007EE597 /* PacketTunnel-iOS.appex */,
 				D9B1B54327EAFC9D007EE597 /* PacketTunnel-macOS.appex */,
 			);
@@ -391,9 +391,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D9B1B4EB27EAF72F007EE597 /* AppleClash (iOS) */ = {
+		D9B1B4EB27EAF72F007EE597 /* Clash (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D9B1B4FD27EAF72F007EE597 /* Build configuration list for PBXNativeTarget "AppleClash (iOS)" */;
+			buildConfigurationList = D9B1B4FD27EAF72F007EE597 /* Build configuration list for PBXNativeTarget "Clash (iOS)" */;
 			buildPhases = (
 				D9B1B4E827EAF72F007EE597 /* Sources */,
 				D9B1B4E927EAF72F007EE597 /* Frameworks */,
@@ -405,7 +405,7 @@
 			dependencies = (
 				D9B1B53A27EAFC87007EE597 /* PBXTargetDependency */,
 			);
-			name = "AppleClash (iOS)";
+			name = "Clash (iOS)";
 			packageProductDependencies = (
 				D99E3A9427EB0B5600464266 /* Yams */,
 			);
@@ -413,9 +413,9 @@
 			productReference = D9B1B4EC27EAF72F007EE597 /* Clash.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D9B1B4F127EAF72F007EE597 /* AppleClash (macOS) */ = {
+		D9B1B4F127EAF72F007EE597 /* Clash (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D9B1B50027EAF72F007EE597 /* Build configuration list for PBXNativeTarget "AppleClash (macOS)" */;
+			buildConfigurationList = D9B1B50027EAF72F007EE597 /* Build configuration list for PBXNativeTarget "Clash (macOS)" */;
 			buildPhases = (
 				D9B1B4EE27EAF72F007EE597 /* Sources */,
 				D9B1B4EF27EAF72F007EE597 /* Frameworks */,
@@ -428,12 +428,12 @@
 			dependencies = (
 				D9B1B54B27EAFC9D007EE597 /* PBXTargetDependency */,
 			);
-			name = "AppleClash (macOS)";
+			name = "Clash (macOS)";
 			packageProductDependencies = (
 				D99E3A9627EB0B6400464266 /* Yams */,
 			);
 			productName = "AppleClash (macOS)";
-			productReference = D9B1B4F227EAF72F007EE597 /* AppleClash.app */;
+			productReference = D9B1B4F227EAF72F007EE597 /* Clash.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D9B1B53127EAFC87007EE597 /* PacketTunnel-iOS */ = {
@@ -500,7 +500,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D9B1B4E327EAF72B007EE597 /* Build configuration list for PBXProject "AppleClash" */;
+			buildConfigurationList = D9B1B4E327EAF72B007EE597 /* Build configuration list for PBXProject "Clash" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -517,8 +517,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D9B1B4EB27EAF72F007EE597 /* AppleClash (iOS) */,
-				D9B1B4F127EAF72F007EE597 /* AppleClash (macOS) */,
+				D9B1B4EB27EAF72F007EE597 /* Clash (iOS) */,
+				D9B1B4F127EAF72F007EE597 /* Clash (macOS) */,
 				D9B1B53127EAFC87007EE597 /* PacketTunnel-iOS */,
 				D9B1B54227EAFC9D007EE597 /* PacketTunnel-macOS */,
 			);
@@ -860,7 +860,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Arror.Clash;
-				PRODUCT_NAME = AppleClash;
+				PRODUCT_NAME = Clash;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -890,7 +890,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Arror.Clash;
-				PRODUCT_NAME = AppleClash;
+				PRODUCT_NAME = Clash;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1011,7 +1011,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D9B1B4E327EAF72B007EE597 /* Build configuration list for PBXProject "AppleClash" */ = {
+		D9B1B4E327EAF72B007EE597 /* Build configuration list for PBXProject "Clash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D9B1B4FB27EAF72F007EE597 /* Debug */,
@@ -1020,7 +1020,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9B1B4FD27EAF72F007EE597 /* Build configuration list for PBXNativeTarget "AppleClash (iOS)" */ = {
+		D9B1B4FD27EAF72F007EE597 /* Build configuration list for PBXNativeTarget "Clash (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D9B1B4FE27EAF72F007EE597 /* Debug */,
@@ -1029,7 +1029,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9B1B50027EAF72F007EE597 /* Build configuration list for PBXNativeTarget "AppleClash (macOS)" */ = {
+		D9B1B50027EAF72F007EE597 /* Build configuration list for PBXNativeTarget "Clash (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D9B1B50127EAF72F007EE597 /* Debug */,
