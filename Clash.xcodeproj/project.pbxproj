@@ -22,6 +22,8 @@
 		D92703A527ED71CA00E61944 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92703A427ED71CA00E61944 /* DetailView.swift */; };
 		D92703A727ED71F300E61944 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92703A627ED71F300E61944 /* Page.swift */; };
 		D92703A927ED722000E61944 /* ClashHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92703A827ED722000E61944 /* ClashHomeView.swift */; };
+		D942D01B27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */; };
+		D942D01C27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */; };
 		D98A943027ED8FCA00832812 /* ClashConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A942F27ED8FCA00832812 /* ClashConfigListView.swift */; };
 		D99E3A9527EB0B5600464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9427EB0B5600464266 /* Yams */; };
 		D99E3A9727EB0B6400464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9627EB0B6400464266 /* Yams */; };
@@ -147,6 +149,7 @@
 		D92703A427ED71CA00E61944 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		D92703A627ED71F300E61944 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		D92703A827ED722000E61944 /* ClashHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashHomeView.swift; sourceTree = "<group>"; };
+		D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PacketTunnelProvider+ClashKit.swift"; sourceTree = "<group>"; };
 		D98A942F27ED8FCA00832812 /* ClashConfigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashConfigListView.swift; sourceTree = "<group>"; };
 		D99E3AA427EB0D8F00464266 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D99E3AA527EB0D8F00464266 /* Clash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clash.swift; sourceTree = "<group>"; };
@@ -275,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */,
+				D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */,
 			);
 			path = PacketTunnel;
 			sourceTree = "<group>";
@@ -682,6 +686,7 @@
 			files = (
 				D99E3AB727EB0D9000464266 /* Clash.swift in Sources */,
 				D99E3AC327EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
+				D942D01B27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift in Sources */,
 				D99E3AC927EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */,
 				D99E3AB327EB0D9000464266 /* Constant.swift in Sources */,
 			);
@@ -693,6 +698,7 @@
 			files = (
 				D99E3AB827EB0D9000464266 /* Clash.swift in Sources */,
 				D99E3AC427EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
+				D942D01C27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift in Sources */,
 				D99E3ACA27EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */,
 				D99E3AB427EB0D9000464266 /* Constant.swift in Sources */,
 			);
