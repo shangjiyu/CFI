@@ -9,6 +9,14 @@ import NetworkExtension
     
     public static let shared = VPNManager()
     
+    private let providerBundleIdentifier: String = {
+#if os(macOS)
+        return "com.Arror.Clash.PacketTunnel-macOS"
+#else
+        return "com.Arror.Clash.PacketTunnel-iOS"
+#endif
+    }()
+    
     private init() {
         NotificationCenter.default
             .publisher(for: Notification.Name.NEVPNConfigurationChange, object: nil)
@@ -40,10 +48,20 @@ import NetworkExtension
     
     private func loadCurrentTunnelProviderManager() async throws -> NETunnelProviderManager? {
         let managers = try await NETunnelProviderManager.loadAllFromPreferences()
-        if let manager = managers.first(where: { $0.localizedDescription == "Clash" }) {
-            try await manager.loadFromPreferences()
-            return manager
-        } else {
+        let first = managers.first { manager in
+            guard let configuration = manager.protocolConfiguration as? NETunnelProviderProtocol else {
+                return false
+            }
+            return configuration.providerBundleIdentifier == self.providerBundleIdentifier
+        }
+        do {
+            guard let first = first else {
+                return nil
+            }
+            try await first.loadFromPreferences()
+            return first
+        } catch {
+            debugPrint(error.localizedDescription)
             return nil
         }
     }
@@ -53,11 +71,7 @@ import NetworkExtension
         manager.localizedDescription = "Clash"
         manager.protocolConfiguration = {
             let configuration = NETunnelProviderProtocol()
-#if os(macOS)
-            configuration.providerBundleIdentifier = "com.Arror.Clash.PacketTunnel-macOS"
-#else
-            configuration.providerBundleIdentifier = "com.Arror.Clash.PacketTunnel-iOS"
-#endif
+            configuration.providerBundleIdentifier = providerBundleIdentifier
             configuration.serverAddress = "Clash"
             configuration.includeAllNetworks = true
             configuration.excludeLocalNetworks = true
