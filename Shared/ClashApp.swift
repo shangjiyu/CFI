@@ -16,5 +16,11 @@ struct ClashApp: App {
                 .environment(\.trafficFormatter, ClashTrafficFormatterKey.defaultValue)
                 .environment(\.managedObjectContext, CoreDataStack.shared.container.viewContext)
         }
+#if os(macOS)
+        .commands {
+            CommandGroup(replacing: .newItem) {}
+            CommandGroup(replacing: .systemServices) {}
+        }
+#endif
     }
 }
