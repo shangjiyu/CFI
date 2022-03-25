@@ -9,7 +9,7 @@ struct DetailView: View {
         case .home:
             ClashHomeView()
         case .config:
-            Text("Hello, config!")
+            ClashConfigListView()
         case .panel:
             Text("Hello, panel!")
         case .log:
