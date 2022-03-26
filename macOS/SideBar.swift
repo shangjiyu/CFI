@@ -1,23 +1,37 @@
 import SwiftUI
 
 struct SideBar: View {
-        
-    @AppStorage("Page", store: .shared) private var page: Page = .home
     
-    private var selection: Binding<Page?> {
-        Binding {
-            page
-        } set: { new in
-            page = new ?? .home
-        }
-    }
+    @EnvironmentObject var manager: VPNManager
     
     var body: some View {
-        List(selection: selection) {
-            ForEach(Page.allCases) { component in
-                Label(component.title, systemImage: component.image)
-                    .padding(.vertical, 6)
+        VStack(spacing: 16) {
+            VStack(spacing: 16) {
+                ClashConfigView()
+                if let controller = manager.controller {
+                    VPNStateView()
+                        .toggleStyle(.switch)
+                        .environmentObject(controller)
+                    VPNConnecteDurationView()
+                        .environmentObject(controller)
+                } else {
+                    InstallVPNView()
+                        .toggleStyle(.switch)
+                }
+            }
+            
+            Divider()
+                        
+            ClashTunnelModeView()
+            
+            Spacer()
+            
+            VStack(spacing: 8) {
+                ClashTrafficUpView()
+                Divider()
+                ClashTrafficDownView()
             }
         }
+        .padding()
     }
 }

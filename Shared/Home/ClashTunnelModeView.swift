@@ -22,7 +22,7 @@ struct ClashTunnelModeView: View {
     
     private func buildPicker() -> some View {
 #if os(macOS)
-        VStack(spacing: 0) {
+        VStack(spacing: 16) {
             ForEach(ClashTunnelMode.allCases) { mode in
                 HStack {
                     buildContent(mode: mode)
@@ -34,11 +34,7 @@ struct ClashTunnelModeView: View {
                     }
                 }
                 .contentShape(Rectangle())
-                .frame(height: 50)
                 .onTapGesture { tunnelMode = mode }
-                if mode != .direct {
-                    Divider()
-                }
             }
         }
 #else
@@ -61,9 +57,11 @@ struct ClashTunnelModeView: View {
                 .foregroundColor(Color.accentColor)
             VStack(alignment: .leading, spacing: 4) {
                 Text(mode.title)
+#if !os(macOS)
                 Text(mode.detail)
                     .font(Font.body)
                     .foregroundColor(Color.secondary)
+#endif
             }
         }
     }
