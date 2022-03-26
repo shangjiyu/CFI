@@ -11,7 +11,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         guard let button = statusItem.button else {
             return
         }
-        button.title = "Clash"
+        button.image = NSImage(named: "logo")
         let item = NSMenuItem()
         item.view = {
             let contentView = ContentView()
