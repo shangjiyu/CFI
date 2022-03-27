@@ -95,9 +95,9 @@ struct ConfigListView: View {
             UTType(filenameExtension: "yml")
         ].compactMap { $0 }
         guard panel.runModal() == .OK, let url = panel.url else {
-            return isProcessing = true
+            return isProcessing = false
         }
-        isProcessing = true
+        isProcessing = false
         Task(priority: .high) {
             do {
                 try await context.importClashConfig(name: url.deletingPathExtension().lastPathComponent, url: url)
