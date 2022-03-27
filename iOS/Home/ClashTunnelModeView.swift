@@ -21,23 +21,6 @@ struct ClashTunnelModeView: View {
     }
     
     private func buildPicker() -> some View {
-#if os(macOS)
-        VStack(spacing: 16) {
-            ForEach(ClashTunnelMode.allCases) { mode in
-                HStack {
-                    buildContent(mode: mode)
-                    Spacer()
-                    if tunnelMode == mode {
-                        Text(Image(systemName: "checkmark"))
-                            .fontWeight(.medium)
-                            .foregroundColor(Color.accentColor)
-                    }
-                }
-                .contentShape(Rectangle())
-                .onTapGesture { tunnelMode = mode }
-            }
-        }
-#else
         Picker(selection: $tunnelMode) {
             ForEach(ClashTunnelMode.allCases) { mode in
                 buildContent(mode: mode)
@@ -47,7 +30,6 @@ struct ClashTunnelModeView: View {
             
         }
         .pickerStyle(InlinePickerStyle())
-#endif
     }
     
     private func buildContent(mode: ClashTunnelMode) -> some View {
@@ -57,11 +39,9 @@ struct ClashTunnelModeView: View {
                 .foregroundColor(Color.accentColor)
             VStack(alignment: .leading, spacing: 4) {
                 Text(mode.title)
-#if !os(macOS)
                 Text(mode.detail)
                     .font(Font.body)
                     .foregroundColor(Color.secondary)
-#endif
             }
         }
     }

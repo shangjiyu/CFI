@@ -49,3 +49,29 @@ struct TunnelModeView: View {
         )
     }
 }
+
+extension ClashTunnelMode {
+    
+    var imageName: String {
+        switch self {
+        case .global:
+            return "globe"
+        case .rule:
+            return "arrow.triangle.branch"
+        case .direct:
+            return "arrow.forward"
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .global:
+            return "全局"
+        case .rule:
+            return "规则"
+        case .direct:
+            return "直连"
+        }
+    }
+}
+
