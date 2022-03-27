@@ -20,6 +20,7 @@
 		D998B60A27F00F8F004625FF /* TrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60927F00F8F004625FF /* TrafficView.swift */; };
 		D998B60C27F01A4F004625FF /* InstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60B27F01A4F004625FF /* InstallView.swift */; };
 		D998B60E27F01A70004625FF /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60D27F01A70004625FF /* StateView.swift */; };
+		D998B61027F01F28004625FF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60F27F01F28004625FF /* SettingsView.swift */; };
 		D99E3A9527EB0B5600464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9427EB0B5600464266 /* Yams */; };
 		D99E3A9727EB0B6400464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9627EB0B6400464266 /* Yams */; };
 		D99E3A9D27EB0CFE00464266 /* ClashKit in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9C27EB0CFE00464266 /* ClashKit */; };
@@ -147,6 +148,7 @@
 		D998B60927F00F8F004625FF /* TrafficView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficView.swift; sourceTree = "<group>"; };
 		D998B60B27F01A4F004625FF /* InstallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallView.swift; sourceTree = "<group>"; };
 		D998B60D27F01A70004625FF /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
+		D998B60F27F01F28004625FF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D99E3AA427EB0D8F00464266 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D99E3AA527EB0D8F00464266 /* Clash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clash.swift; sourceTree = "<group>"; };
 		D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppGroup.swift"; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				D998B60727F00F69004625FF /* TunnelModeView.swift */,
 				D998B60927F00F8F004625FF /* TrafficView.swift */,
 				D998B60B27F01A4F004625FF /* InstallView.swift */,
+				D998B60F27F01F28004625FF /* SettingsView.swift */,
 				D9B1B4F427EAF72F007EE597 /* macOS.entitlements */,
 				D9B1B55627EB003C007EE597 /* Info.plist */,
 			);
@@ -625,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D998B61027F01F28004625FF /* SettingsView.swift in Sources */,
 				D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
 				D998B60C27F01A4F004625FF /* InstallView.swift in Sources */,
 				D99E3AFF27EB10E700464266 /* CoreDataStack.swift in Sources */,

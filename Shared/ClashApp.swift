@@ -19,5 +19,12 @@ struct ClashApp: App {
 #if os(macOS)
         .windowStyle(.hiddenTitleBar)
 #endif
+        
+#if os(macOS)
+        Settings {
+            SettingsView()
+                .environmentObject(VPNManager.shared)
+        }
+#endif
     }
 }
