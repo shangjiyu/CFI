@@ -1,8 +1,20 @@
-Clash
-  该项目直接依赖以下开源项目实现
-  clash (https://github.com/Dreamacro/clash)
-  go-tun2socks (https://github.com/eycorsican/go-tun2socks)
+### Clash
+  #### 该项目直接依赖以下开源项目实现
+  1. clash (https://github.com/Dreamacro/clash)
+  2. go-tun2socks (https://github.com/eycorsican/go-tun2socks)
 
-环境要求
-  iOS 15.0及以上
-  macOS 12.0及以上（暂未实现）
+### Requirement
+  1. iOS 15.0及以上
+  2. macOS 12.0及以上
+
+### Snapshot
+  macOS
+<img width="1157" alt="clash_on_mac" src="https://user-images.githubusercontent.com/11971659/160274753-7ac75646-a4eb-46dd-a3f4-e43c548c6b31.png">
+
+  iOS
+|        |       |       |
+|  ----  | ----  | ----  |
+|![clash_on_ios_home](https://user-images.githubusercontent.com/11971659/160274824-db81412a-d184-40af-aa03-949b14d37f77.PNG)|![clash_on_ios_panel](https://user-images.githubusercontent.com/11971659/160274826-68d2af6a-f502-4366-a497-eec0c3b95e10.PNG)|![clash_on_ios_settings](https://user-images.githubusercontent.com/11971659/160274828-fb3743fb-c64e-4391-9828-c5a82e45c577.PNG)|
+  
+  
+  
