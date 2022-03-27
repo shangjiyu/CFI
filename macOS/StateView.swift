@@ -7,10 +7,28 @@ struct StateView: View {
     
     @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
     
+    private var predicate: NSPredicate {
+        NSPredicate(format: "%K == %@", "uuid", (UUID(uuidString: self.uuidString) ?? UUID()).uuidString)
+    }
+    
     @State private var isVPNOn = false
     
     var body: some View {
         VStack {
+            ManagedObjectFetchView(predicate: predicate) { (result: FetchedResults<ClashConfig>) in
+                ModalPresentationLink {
+                    ConfigListView()
+                        .frame(width: 320, height: 480)
+                } label: {
+                    HStack {
+                        Text("配置")
+                        Spacer()
+                        Text(result.first.flatMap({ $0.name ?? "-" }) ?? "未选择")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                    }
+                }
+            }
             HStack {
                 Text("状态")
                 Spacer()

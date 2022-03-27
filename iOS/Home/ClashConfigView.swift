@@ -10,16 +10,11 @@ struct ClashConfigView: View {
     
     var body: some View {
         ManagedObjectFetchView(predicate: predicate) { (result: FetchedResults<ClashConfig>) in
-            #if os(macOS)
-            label(result: result)
-                .contentShape(Rectangle())
-            #else
             ModalPresentationLink {
                 ClashConfigListView()
             } label: {
                 label(result: result)
             }
-            #endif
         }
     }
     

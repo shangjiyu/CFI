@@ -6,6 +6,7 @@ struct ConfigListView: View {
     @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
         
     @Environment(\.dismiss) private var dismiss
+    
     @Environment(\.managedObjectContext) private var context
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \ClashConfig.date, ascending: false)],
@@ -16,19 +17,29 @@ struct ConfigListView: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            HStack {
+                Button("关闭") {
+                    dismiss()
+                }
+                .foregroundColor(Color.accentColor)
+                Spacer()
+                Text("配置管理")
+                Spacer()
+                Button("导入", action: onImportAction)
+                    .foregroundColor(Color.accentColor)
+            }
+            .disabled(isProcessing)
+            .buttonStyle(.plain)
+            .padding()
+            
             Divider()
+            
             List(configs) { config in
                 HStack {
                     VStack {
                         Text(config.name ?? "-")
                     }
                     Spacer()
-                    Button {
-                        onDeleteAction(config: config)
-                    } label: {
-                        Image(systemName: "xmark.circle.fill")
-                    }
-                    .buttonStyle(.plain)
                 }
                 .foregroundColor(.white)
                 .padding()
@@ -37,27 +48,12 @@ struct ConfigListView: View {
                         .fill(config.uuid.flatMap({ $0.uuidString }) == uuidString ? Color.accentColor : Color.gray.opacity(0.5))
                 )
                 .onTapGesture { onTapGesture(config: config) }
-            }
-            Divider()
-            Button {
-                onImportConfigFileAction()
-            } label: {
-                HStack {
-                    Spacer()
-                    Text("添加 Clash 配置")
-                    Spacer()
+                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                    Button.init("删除", role: .destructive) {
+                        onDeleteAction(config: config)
+                    }
                 }
-                .font(.body)
-                .foregroundColor(Color.white)
-                .padding(.vertical, 8)
-                .background(
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.accentColor)
-                )
             }
-            .buttonStyle(.plain)
-            .padding()
-            .disabled(isProcessing)
         }
         .toolbar {
             ToolbarItem(placement: .navigation) {
@@ -66,25 +62,11 @@ struct ConfigListView: View {
         }
     }
     
-    private func onTapGesture(config: ClashConfig) {
-        withAnimation {
-            uuidString = config.uuid?.uuidString ?? ""
-        }
+    private func onCloseAction() {
+        dismiss()
     }
     
-    private func onDeleteAction(config: ClashConfig) {
-        do {
-            if config.uuid.flatMap({ $0.uuidString }) == uuidString {
-                uuidString = ""
-            }
-            UserDefaults.shared.set(nil, forKey: config.uuid?.uuidString ?? "temp")
-            try context.deleteClashConfig(config)
-        } catch {
-            debugPrint(error.localizedDescription)
-        }
-    }
-    
-    private func onImportConfigFileAction() {
+    private func onImportAction() {
         isProcessing = true
         let panel = NSOpenPanel()
         panel.canChooseFiles = true
@@ -104,6 +86,25 @@ struct ConfigListView: View {
             } catch {
                 debugPrint(error.localizedDescription)
             }
+        }
+    }
+    
+    private func onTapGesture(config: ClashConfig) {
+        withAnimation {
+            uuidString = config.uuid?.uuidString ?? ""
+            onCloseAction()
+        }
+    }
+    
+    private func onDeleteAction(config: ClashConfig) {
+        do {
+            if config.uuid.flatMap({ $0.uuidString }) == uuidString {
+                uuidString = ""
+            }
+            UserDefaults.shared.set(nil, forKey: config.uuid?.uuidString ?? "temp")
+            try context.deleteClashConfig(config)
+        } catch {
+            debugPrint(error.localizedDescription)
         }
     }
 }
