@@ -11,12 +11,13 @@ struct ClashApp: App {
     
     var body: some Scene {
         WindowGroup {
-//#if !os(macOS)
             ContentView()
                 .environmentObject(VPNManager.shared)
                 .environment(\.trafficFormatter, ClashTrafficFormatterKey.defaultValue)
                 .environment(\.managedObjectContext, CoreDataStack.shared.container.viewContext)
-//#endif
         }
+#if os(macOS)
+        .windowStyle(.hiddenTitleBar)
+#endif
     }
 }

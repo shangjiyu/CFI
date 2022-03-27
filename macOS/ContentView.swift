@@ -1,8 +1,13 @@
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct ContentView: View {
     
     var body: some View {
-        SideBar()
+        NavigationView {
+            SideBar()
+            ConfigListView()
+            Text("Hallo")
+        }
     }
 }
