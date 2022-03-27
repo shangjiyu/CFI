@@ -12,6 +12,8 @@ struct ConfigListView: View {
         animation: .default
     ) private var configs: FetchedResults<ClashConfig>
     
+    @State private var isProcessing = false
+    
     var body: some View {
         VStack(spacing: 0) {
             Divider()
@@ -42,7 +44,7 @@ struct ConfigListView: View {
             } label: {
                 HStack {
                     Spacer()
-                    Text("添加")
+                    Text("添加 Clash 配置")
                     Spacer()
                 }
                 .font(.body)
@@ -55,10 +57,11 @@ struct ConfigListView: View {
             }
             .buttonStyle(.plain)
             .padding()
+            .disabled(isProcessing)
         }
         .toolbar {
             ToolbarItem(placement: .navigation) {
-                Text("配置")
+                Text("Clash 配置")
             }
         }
     }
@@ -82,6 +85,7 @@ struct ConfigListView: View {
     }
     
     private func onImportConfigFileAction() {
+        isProcessing = true
         let panel = NSOpenPanel()
         panel.canChooseFiles = true
         panel.canChooseDirectories = false
@@ -91,8 +95,9 @@ struct ConfigListView: View {
             UTType(filenameExtension: "yml")
         ].compactMap { $0 }
         guard panel.runModal() == .OK, let url = panel.url else {
-            return
+            return isProcessing = true
         }
+        isProcessing = true
         Task(priority: .high) {
             do {
                 try await context.importClashConfig(name: url.deletingPathExtension().lastPathComponent, url: url)

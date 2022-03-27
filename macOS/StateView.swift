@@ -1,32 +1,44 @@
 import SwiftUI
 import NetworkExtension
 
-struct VPNStateView: View {
+struct StateView: View {
     
     @EnvironmentObject private var controller: VPNController
     
     @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
     
     @State private var isVPNOn = false
-        
+    
     var body: some View {
-        HStack {
-            Image(systemName: "app.connected.to.app.below.fill")
-                .font(.title2)
-                .foregroundColor(Color.accentColor)
-            Text("状态")
-            Spacer()
-            Text(self.controller.connectionStatus.displayString)
-                .foregroundColor(.secondary)
-            Toggle("状态", isOn: .constant(isVPNOn))
-                .labelsHidden()
-                .allowsHitTesting(false)
-                .overlay {
-                    Text("VPN")
-                        .foregroundColor(.clear)
-                        .onTapGesture(perform: toggleVPN)
+        VStack {
+            HStack {
+                Text("状态")
+                Spacer()
+                Text(self.controller.connectionStatus.displayString)
+                Toggle("状态", isOn: .constant(isVPNOn))
+                    .toggleStyle(.switch)
+                    .labelsHidden()
+                    .allowsHitTesting(false)
+                    .overlay {
+                        Text("VPN")
+                            .foregroundColor(.clear)
+                            .onTapGesture(perform: toggleVPN)
+                    }
+            }
+            TimelineView(.periodic(from: Date(), by: 1.0)) { context in
+                HStack {
+                    Text("连接时间")
+                    Spacer()
+                    Text(durationFormatString(current: context.date))
                 }
+            }
         }
+        .foregroundColor(Color.white)
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.purple)
+        )
         .onChange(of: controller.connectionStatus, perform: updateToggle(_:))
         .onAppear { self.updateToggle(controller.connectionStatus) }
         .onChange(of: uuidString) { newValue in
@@ -71,26 +83,15 @@ struct VPNStateView: View {
             }
         }
     }
-}
-
-extension NEVPNStatus {
     
-    var displayString: String {
-        switch self {
-        case .invalid:
-            return "不可用"
-        case .connecting:
-            return "正在连接..."
-        case .connected:
-            return "已连接"
-        case .reasserting:
-            return "正在重新连接..."
-        case .disconnecting:
-            return "正在断开连接..."
-        case .disconnected:
-            return "未连接"
-        @unknown default:
-            return "未知"
+    private func durationFormatString(current: Date) -> String {
+        guard let date = controller.connectedDate else {
+            return "--:--:--"
         }
+        let duration = Int64(abs(date.distance(to: current)))
+        let hs = duration / 3600
+        let ms = duration % 3600 / 60
+        let ss = duration % 60
+        return String(format: "%02d:%02d:%02d", hs, ms, ss)
     }
 }
