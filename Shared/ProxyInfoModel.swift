@@ -37,7 +37,7 @@ class ProxyGroupModel: ObservableObject {
     }
 }
 
-@MainActor class ProxyInfoModel: ObservableObject {
+class ProxyInfoModel: ObservableObject {
     
     let proxies: [RawProxy]
     let proxyGroupModels: [ProxyGroupModel]
@@ -70,7 +70,7 @@ class ProxyGroupModel: ObservableObject {
         self.mapping[group]
     }
     
-    func setSelected(proxy: String, group: String) {
+    @MainActor func setSelected(proxy: String, group: String) {
         self.mapping[group] = proxy
         UserDefaults.shared.setValue(self.mapping, forKey: self.storeKey)
         guard let controller = VPNManager.shared.controller else {

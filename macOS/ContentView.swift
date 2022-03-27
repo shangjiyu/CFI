@@ -7,7 +7,7 @@ struct ContentView: View {
         NavigationView {
             SideBar()
             ConfigListView()
-            Text("Hallo")
+            PanelView()
         }
     }
 }
