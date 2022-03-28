@@ -9,7 +9,7 @@
 
 ### Snapshot
   macOS
-<img width="1157" alt="clash_on_mac" src="https://user-images.githubusercontent.com/11971659/160274753-7ac75646-a4eb-46dd-a3f4-e43c548c6b31.png">
+  <img width="966" alt="clash_on_mac" src="https://user-images.githubusercontent.com/11971659/160367070-2b84e77e-cf0f-43b4-b76c-8fc31e62993b.png">
 
   iOS
 |        |       |       |
