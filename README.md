@@ -1,5 +1,5 @@
 ### Clash
-  #### 该项目直接依赖以下开源项目实现
+  #### 该项目依赖以下开源项目实现
   1. clash (https://github.com/Dreamacro/clash)
   2. go-tun2socks (https://github.com/eycorsican/go-tun2socks)
 
