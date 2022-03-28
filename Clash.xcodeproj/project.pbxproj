@@ -16,7 +16,7 @@
 		D942D01C27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */; };
 		D98884EE27F0C0EC00CBB3DB /* ProxyGroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */; };
 		D98884F027F0C10C00CBB3DB /* ProxyGroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884EF27F0C10C00CBB3DB /* ProxyGroupDetailView.swift */; };
-		D98884F227F0C12B00CBB3DB /* ProxyGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884F127F0C12B00CBB3DB /* ProxyGroupVM.swift */; };
+		D98884F227F0C12B00CBB3DB /* ProxyGroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */; };
 		D998B60427F00F23004625FF /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBar.swift */; };
 		D998B60627F00F43004625FF /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60527F00F43004625FF /* ConfigListView.swift */; };
 		D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
@@ -148,7 +148,7 @@
 		D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PacketTunnelProvider+ClashKit.swift"; sourceTree = "<group>"; };
 		D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupListView.swift; sourceTree = "<group>"; };
 		D98884EF27F0C10C00CBB3DB /* ProxyGroupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupDetailView.swift; sourceTree = "<group>"; };
-		D98884F127F0C12B00CBB3DB /* ProxyGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupVM.swift; sourceTree = "<group>"; };
+		D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupListViewModel.swift; sourceTree = "<group>"; };
 		D998B60327F00F23004625FF /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
 		D998B60527F00F43004625FF /* ConfigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigListView.swift; sourceTree = "<group>"; };
 		D998B60727F00F69004625FF /* TunnelModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelModeView.swift; sourceTree = "<group>"; };
@@ -371,7 +371,7 @@
 				D998B60B27F01A4F004625FF /* InstallView.swift */,
 				D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */,
 				D98884EF27F0C10C00CBB3DB /* ProxyGroupDetailView.swift */,
-				D98884F127F0C12B00CBB3DB /* ProxyGroupVM.swift */,
+				D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */,
 				D998B60F27F01F28004625FF /* SettingsView.swift */,
 				D9B1B4F427EAF72F007EE597 /* macOS.entitlements */,
 				D9B1B55627EB003C007EE597 /* Info.plist */,
@@ -638,7 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98884F227F0C12B00CBB3DB /* ProxyGroupVM.swift in Sources */,
+				D98884F227F0C12B00CBB3DB /* ProxyGroupListViewModel.swift in Sources */,
 				D998B61027F01F28004625FF /* SettingsView.swift in Sources */,
 				D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
 				D998B60C27F01A4F004625FF /* InstallView.swift in Sources */,

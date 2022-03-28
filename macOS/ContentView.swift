@@ -5,21 +5,21 @@ struct ContentView: View {
     
     @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
         
-    @StateObject var groupVM = ProxyGroupVM()
+    @StateObject var viewModel = ProxyGroupListViewModel()
     
     var body: some View {
         NavigationView {
             SideBar()
             ProxyGroupListView()
-                .environmentObject(groupVM)
+                .environmentObject(viewModel)
             ProxyGroupDetailView()
-                .environmentObject(groupVM)
+                .environmentObject(viewModel)
         }
         .onChange(of: uuidString) { newValue in
-            groupVM.update(uuidString: newValue)
+            viewModel.update(uuidString: newValue)
         }
         .onAppear {
-            groupVM.update(uuidString: uuidString)
+            viewModel.update(uuidString: uuidString)
         }
     }
 }

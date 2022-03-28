@@ -2,14 +2,14 @@ import SwiftUI
 
 struct ProxyGroupDetailView: View {
     
-    @EnvironmentObject var groupVM: ProxyGroupVM
+    @EnvironmentObject var viewModel: ProxyGroupListViewModel
     
     private let colums: [GridItem] = [GridItem(.adaptive(minimum: 120))]
     
     var body: some View {
         ScrollView {
             LazyVGrid(columns: self.colums) {
-                if let model = groupVM.groupModel {
+                if let model = viewModel.selectedGroupViewModel {
                     ForEach(model.group.proxies, id: \.self) { proxy in
                         HStack(spacing: 0) {
                             Text(proxy)
@@ -20,14 +20,13 @@ struct ProxyGroupDetailView: View {
                         .padding(8)
                         .background(
                             RoundedRectangle(cornerRadius: 8)
-                                .fill((model.selection == proxy && model.isSelectEnable) ? Color.accentColor : Color.gray.opacity(0.5))
+                                .fill((model.selectedProxy == proxy && model.isSelectable) ? Color.accentColor : Color.gray.opacity(0.5))
                         )
                         .onTapGesture {
-                            guard model.isSelectEnable else {
+                            guard model.isSelectable else {
                                 return
                             }
-                            model.selection = proxy
-                            groupVM.setSelected(proxy: proxy, group: model.group.name)
+                            viewModel.setSelected(proxy: proxy, groupViewModel: model)
                         }
                     }
                 }
