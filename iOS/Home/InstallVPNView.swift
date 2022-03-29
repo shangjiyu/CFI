@@ -6,10 +6,7 @@ struct InstallVPNView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "app.connected.to.app.below.fill")
-                .font(.title2)
-                .foregroundColor(Color.accentColor)
-            Text("状态")
+            Label("状态", systemImage: "app.connected.to.app.below.fill")
             Spacer()
             Toggle("状态", isOn: .constant(false))
                 .labelsHidden()

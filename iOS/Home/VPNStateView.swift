@@ -11,10 +11,7 @@ struct VPNStateView: View {
         
     var body: some View {
         HStack {
-            Image(systemName: "app.connected.to.app.below.fill")
-                .font(.title2)
-                .foregroundColor(Color.accentColor)
-            Text("状态")
+            Label("状态", systemImage: "app.connected.to.app.below.fill")
             Spacer()
             Text(self.controller.connectionStatus.displayString)
                 .foregroundColor(.secondary)

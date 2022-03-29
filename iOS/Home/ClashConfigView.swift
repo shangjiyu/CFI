@@ -20,10 +20,7 @@ struct ClashConfigView: View {
     
     private func label(result: FetchedResults<ClashConfig>) -> some View {
         HStack {
-            Image(systemName: "square.text.square")
-                .font(.title2)
-                .foregroundColor(Color.accentColor)
-            Text("配置")
+            Label("配置", systemImage: "square.text.square")
             Spacer()
             Text(result.first.flatMap({ $0.name ?? "-" }) ?? "未选择")
                 .fontWeight(.bold)

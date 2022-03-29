@@ -30,10 +30,7 @@ struct ClashLogView: View {
             }
         } label: {
             HStack {
-                Image(systemName: "doc.text")
-                    .font(.title2)
-                    .foregroundColor(Color.accentColor)
-                Text("日志等级")
+                Label("日志等级", systemImage: "doc.text")
                 Spacer()
                 Text(logLevel.displayName)
                     .fontWeight(.bold)

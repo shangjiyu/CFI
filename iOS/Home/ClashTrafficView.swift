@@ -53,10 +53,7 @@ private struct ClashTrafficView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: self.traffic.imageName)
-                .font(.title2)
-                .foregroundColor(Color.accentColor)
-            Text(self.traffic.title)
+            Label(self.traffic.title, systemImage: self.traffic.imageName)
             Spacer()
             Text(formatter.string(from: NSNumber(value: self.binding.wrappedValue)) ?? "-")
                 .fontWeight(.bold)

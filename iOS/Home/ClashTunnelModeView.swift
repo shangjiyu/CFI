@@ -23,27 +23,12 @@ struct ClashTunnelModeView: View {
     private func buildPicker() -> some View {
         Picker(selection: $tunnelMode) {
             ForEach(ClashTunnelMode.allCases) { mode in
-                buildContent(mode: mode)
-                    .padding(.vertical, 6)
+                Label(mode.title, systemImage: mode.imageName)
             }
         } label: {
             
         }
         .pickerStyle(InlinePickerStyle())
-    }
-    
-    private func buildContent(mode: ClashTunnelMode) -> some View {
-        HStack {
-            Image(systemName: mode.imageName)
-                .font(.title2)
-                .foregroundColor(Color.accentColor)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(mode.title)
-                Text(mode.detail)
-                    .font(Font.body)
-                    .foregroundColor(Color.secondary)
-            }
-        }
     }
 }
 
