@@ -3,6 +3,8 @@ import SwiftUI
 struct PanelView: View {
     
     @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
+        
+    @StateObject var viewModel = ProxyGroupListViewModel()
     
     var body: some View {
         NavigationView {
@@ -18,8 +20,14 @@ struct PanelView: View {
             Text("未选择配置")
                 .foregroundColor(.secondary)
         } else {
-            ProxyInfoView()
-                .environmentObject(ProxyInfoModel(id: uuidString))
+            ProxyGroupListView()
+                .onChange(of: uuidString) { newValue in
+                    viewModel.update(uuidString: newValue)
+                }
+                .onAppear {
+                    viewModel.update(uuidString: uuidString)
+                }
+                .environmentObject(viewModel)
         }
     }
 }

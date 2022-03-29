@@ -24,7 +24,6 @@
 		D998B60C27F01A4F004625FF /* InstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60B27F01A4F004625FF /* InstallView.swift */; };
 		D998B60E27F01A70004625FF /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60D27F01A70004625FF /* StateView.swift */; };
 		D998B61027F01F28004625FF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60F27F01F28004625FF /* SettingsView.swift */; };
-		D998B61127F03A7D004625FF /* ProxyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE027EB10B900464266 /* ProxyInfoModel.swift */; };
 		D99E3A9527EB0B5600464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9427EB0B5600464266 /* Yams */; };
 		D99E3A9727EB0B6400464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9627EB0B6400464266 /* Yams */; };
 		D99E3A9D27EB0CFE00464266 /* ClashKit in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9C27EB0CFE00464266 /* ClashKit */; };
@@ -58,11 +57,9 @@
 		D99E3AEF27EB10BA00464266 /* ClashLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ADC27EB10B900464266 /* ClashLogView.swift */; };
 		D99E3AF027EB10BA00464266 /* UninstallVPNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ADD27EB10B900464266 /* UninstallVPNView.swift */; };
 		D99E3AF127EB10BA00464266 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ADE27EB10B900464266 /* SettingView.swift */; };
-		D99E3AF227EB10BA00464266 /* ProxyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE027EB10B900464266 /* ProxyInfoModel.swift */; };
-		D99E3AF327EB10BA00464266 /* ProxyGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE127EB10B900464266 /* ProxyGroupView.swift */; };
+		D99E3AF327EB10BA00464266 /* ProxyGroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE127EB10B900464266 /* ProxyGroupDetailView.swift */; };
 		D99E3AF427EB10BA00464266 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE227EB10B900464266 /* PanelView.swift */; };
-		D99E3AF527EB10BA00464266 /* ProxyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE327EB10B900464266 /* ProxyInfoView.swift */; };
-		D99E3AF627EB10BA00464266 /* ProxyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE427EB10B900464266 /* ProxyListView.swift */; };
+		D99E3AF527EB10BA00464266 /* ProxyGroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE327EB10B900464266 /* ProxyGroupListView.swift */; };
 		D99E3AF827EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
 		D99E3AF927EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
 		D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AFB27EB10E700464266 /* CoreDataStack.swift */; };
@@ -89,6 +86,7 @@
 		D9B1B54C27EAFC9D007EE597 /* PacketTunnel-macOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D9B1B54327EAFC9D007EE597 /* PacketTunnel-macOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D9B1B55127EAFEC7007EE597 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1B50C27EAFBE0007EE597 /* NetworkExtension.framework */; };
 		D9B1B55327EAFEDB007EE597 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1B55227EAFEDB007EE597 /* NetworkExtension.framework */; };
+		D9CE81F927F2F6AC00E70A13 /* ProxyGroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,11 +173,9 @@
 		D99E3ADC27EB10B900464266 /* ClashLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashLogView.swift; sourceTree = "<group>"; };
 		D99E3ADD27EB10B900464266 /* UninstallVPNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UninstallVPNView.swift; sourceTree = "<group>"; };
 		D99E3ADE27EB10B900464266 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		D99E3AE027EB10B900464266 /* ProxyInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyInfoModel.swift; sourceTree = "<group>"; };
-		D99E3AE127EB10B900464266 /* ProxyGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyGroupView.swift; sourceTree = "<group>"; };
+		D99E3AE127EB10B900464266 /* ProxyGroupDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyGroupDetailView.swift; sourceTree = "<group>"; };
 		D99E3AE227EB10B900464266 /* PanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
-		D99E3AE327EB10B900464266 /* ProxyInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyInfoView.swift; sourceTree = "<group>"; };
-		D99E3AE427EB10B900464266 /* ProxyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyListView.swift; sourceTree = "<group>"; };
+		D99E3AE327EB10B900464266 /* ProxyGroupListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyGroupListView.swift; sourceTree = "<group>"; };
 		D99E3AF727EB10CA00464266 /* Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Country.mmdb; sourceTree = "<group>"; };
 		D99E3AFB27EB10E700464266 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D99E3AFD27EB10E700464266 /* Clash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clash.xcdatamodel; sourceTree = "<group>"; };
@@ -305,10 +301,9 @@
 		D99E3ADF27EB10B900464266 /* Panel */ = {
 			isa = PBXGroup;
 			children = (
-				D99E3AE127EB10B900464266 /* ProxyGroupView.swift */,
 				D99E3AE227EB10B900464266 /* PanelView.swift */,
-				D99E3AE327EB10B900464266 /* ProxyInfoView.swift */,
-				D99E3AE427EB10B900464266 /* ProxyListView.swift */,
+				D99E3AE327EB10B900464266 /* ProxyGroupListView.swift */,
+				D99E3AE127EB10B900464266 /* ProxyGroupDetailView.swift */,
 			);
 			path = Panel;
 			sourceTree = "<group>";
@@ -339,7 +334,7 @@
 				D99E3B0227EB110A00464266 /* ModalPresentationLink.swift */,
 				D99E3B0327EB110B00464266 /* NSManagedObjectContext+File.swift */,
 				D99E3AFB27EB10E700464266 /* CoreDataStack.swift */,
-				D99E3AE027EB10B900464266 /* ProxyInfoModel.swift */,
+				D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */,
 				D99E3AF727EB10CA00464266 /* Country.mmdb */,
 				D9B1B4E727EAF72F007EE597 /* Assets.xcassets */,
 				D99E3AFC27EB10E700464266 /* Clash.xcdatamodeld */,
@@ -371,7 +366,6 @@
 				D998B60B27F01A4F004625FF /* InstallView.swift */,
 				D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */,
 				D98884EF27F0C10C00CBB3DB /* ProxyGroupDetailView.swift */,
-				D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */,
 				D998B60F27F01F28004625FF /* SettingsView.swift */,
 				D9B1B4F427EAF72F007EE597 /* macOS.entitlements */,
 				D9B1B55627EB003C007EE597 /* Info.plist */,
@@ -600,22 +594,21 @@
 			files = (
 				D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
 				D99E3AF427EB10BA00464266 /* PanelView.swift in Sources */,
-				D99E3AF627EB10BA00464266 /* ProxyListView.swift in Sources */,
 				D99E3B0A27EB110C00464266 /* VPNManager.swift in Sources */,
+				D9CE81F927F2F6AC00E70A13 /* ProxyGroupListViewModel.swift in Sources */,
 				D99E3AE727EB10B900464266 /* ClashConfigImportButton.swift in Sources */,
 				D99E3AE527EB10B900464266 /* ClashConfigListView.swift in Sources */,
 				D99E3AE627EB10B900464266 /* ClashConfigImportView.swift in Sources */,
 				D99E3AF127EB10BA00464266 /* SettingView.swift in Sources */,
-				D99E3AF527EB10BA00464266 /* ProxyInfoView.swift in Sources */,
+				D99E3AF527EB10BA00464266 /* ProxyGroupListView.swift in Sources */,
 				D99E3AE927EB10B900464266 /* InstallVPNView.swift in Sources */,
-				D99E3AF327EB10BA00464266 /* ProxyGroupView.swift in Sources */,
+				D99E3AF327EB10BA00464266 /* ProxyGroupDetailView.swift in Sources */,
 				D99E3B0827EB110C00464266 /* ModalPresentationLink.swift in Sources */,
 				D99E3B0D27EB110C00464266 /* ContentView.swift in Sources */,
 				D99E3AEB27EB10B900464266 /* ClashConfigView.swift in Sources */,
 				D99E3AEF27EB10BA00464266 /* ClashLogView.swift in Sources */,
 				D99E3AF027EB10BA00464266 /* UninstallVPNView.swift in Sources */,
 				D99E3B0027EB10E700464266 /* Clash.xcdatamodeld in Sources */,
-				D99E3AF227EB10BA00464266 /* ProxyInfoModel.swift in Sources */,
 				D99E3AEC27EB10B900464266 /* ClashTunnelModeView.swift in Sources */,
 				D99E3AEA27EB10B900464266 /* ClashHomeView.swift in Sources */,
 				D99E3B0927EB110C00464266 /* NSManagedObjectContext+File.swift in Sources */,
@@ -646,7 +639,6 @@
 				D99E3AFF27EB10E700464266 /* CoreDataStack.swift in Sources */,
 				D99E3ACE27EB0F5B00464266 /* AppDelegate.swift in Sources */,
 				D99E3B1127EB11A500464266 /* VPNManager.swift in Sources */,
-				D998B61127F03A7D004625FF /* ProxyInfoModel.swift in Sources */,
 				D9B1B4F827EAF72F007EE597 /* ContentView.swift in Sources */,
 				D99E3AB627EB0D9000464266 /* Clash.swift in Sources */,
 				D98884F027F0C10C00CBB3DB /* ProxyGroupDetailView.swift in Sources */,
