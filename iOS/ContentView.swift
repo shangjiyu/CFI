@@ -11,7 +11,7 @@ struct ContentView: View {
             PanelView()
                 .tabItem {
                     Image(systemName: "square.stack.3d.up")
-                    Text("面板")
+                    Text("策略组")
                 }
             SettingView()
                 .tabItem {

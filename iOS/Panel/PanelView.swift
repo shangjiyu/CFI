@@ -4,29 +4,22 @@ struct PanelView: View {
     
     @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
     
-    private var predicate: NSPredicate {
-        NSPredicate(format: "%K == %@", "uuid", (UUID(uuidString: self.uuidString) ?? UUID()).uuidString)
-    }
-    
     var body: some View {
         NavigationView {
-            ManagedObjectFetchView(sortDescriptors: [], predicate: predicate, animation: .default) { (result: FetchedResults<ClashConfig>) in
-                buildBody(result: result)
-            }
-            .navigationBarTitle("面板")
-            .navigationBarTitleDisplayMode(.inline)
+            _body
+                .navigationBarTitle("策略组")
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
     
-    @MainActor
     @ViewBuilder
-    private func buildBody(result: FetchedResults<ClashConfig>) -> some View {
-        if let reval = result.first {
-            ProxyInfoView()
-                .environmentObject(ProxyInfoModel(id: reval.uuid?.uuidString ?? "temp"))
-        } else {
+    private var _body: some View {
+        if uuidString.isEmpty {
             Text("未选择配置")
                 .foregroundColor(.secondary)
+        } else {
+            ProxyInfoView()
+                .environmentObject(ProxyInfoModel(id: uuidString))
         }
     }
 }
