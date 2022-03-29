@@ -37,7 +37,7 @@ struct ClashConfigImportButton: View {
             }
             Button("取消", role: .cancel, action: {})
         } message: {
-            Text("从网络下载或者文件App导入配置文件, 配置文件暂不支持Rule Provider")
+            Text("从网络下载或者文件App导入配置文件")
         }
         .sheet(item: $importItem, onDismiss: nil) {
             ClashConfigImportView(importItem: $0)
