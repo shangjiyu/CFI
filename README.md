@@ -1,13 +1,14 @@
 ### Clash for Apple
-  #### Dependency
+
+#### Dependency
   1. clash (https://github.com/Dreamacro/clash)
   2. go-tun2socks (https://github.com/eycorsican/go-tun2socks)
 
-### Requirement
+#### Requirement
   1. iOS 15.0+
   2. macOS 12.0+
 
-### Snapshot
+#### Snapshot
   macOS
   <img width="966" alt="clash_on_mac" src="https://user-images.githubusercontent.com/11971659/160367070-2b84e77e-cf0f-43b4-b76c-8fc31e62993b.png">
 
