@@ -147,7 +147,7 @@ import NetworkExtension
         try await self.providerManager.removeFromPreferences()
     }
     
-    public func execute(command: ClashCommand) async throws {
+    public func execute(command: Clash.Command) async throws {
         try await self.providerManager.sendProviderMessage(data: Data(repeating: command.rawValue, count: 1))
     }
 }

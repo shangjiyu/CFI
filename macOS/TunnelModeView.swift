@@ -3,11 +3,11 @@ import SwiftUI
 struct TunnelModeView: View {
     
     @EnvironmentObject private var manager: VPNManager
-    @AppStorage(Constant.tunnelMode, store: .shared) private var tunnelMode: ClashTunnelMode = .rule
+    @AppStorage(Clash.tunnelMode, store: .shared) private var tunnelMode: Clash.TunnelMode = .rule
     
     var body: some View {
         HStack {
-            ForEach(ClashTunnelMode.allCases) { mode in
+            ForEach(Clash.TunnelMode.allCases) { mode in
                 buildElementView(mode: mode)
                     .onTapGesture {
                         withAnimation {
@@ -29,7 +29,7 @@ struct TunnelModeView: View {
     }
     
     @ViewBuilder
-    private func buildElementView(mode: ClashTunnelMode) -> some View {
+    private func buildElementView(mode: Clash.TunnelMode) -> some View {
         HStack(spacing: 0) {
             Spacer(minLength: 0)
             VStack {
@@ -49,29 +49,3 @@ struct TunnelModeView: View {
         )
     }
 }
-
-extension ClashTunnelMode {
-    
-    var imageName: String {
-        switch self {
-        case .global:
-            return "globe"
-        case .rule:
-            return "arrow.triangle.branch"
-        case .direct:
-            return "arrow.forward"
-        }
-    }
-    
-    var title: String {
-        switch self {
-        case .global:
-            return "全局"
-        case .rule:
-            return "规则"
-        case .direct:
-            return "直连"
-        }
-    }
-}
-

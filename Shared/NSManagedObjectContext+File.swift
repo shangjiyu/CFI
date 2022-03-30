@@ -12,7 +12,7 @@ extension NSManagedObjectContext {
             content = String(data: data, encoding: .utf8) ?? ""
         }
         let uuid = UUID()
-        let directoryURL = Constant.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)")
+        let directoryURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)")
         try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
         let targetURL = directoryURL.appendingPathComponent("config.yaml")
         FileManager.default.createFile(atPath: targetURL.path, contents: content.data(using: .utf8), attributes: nil)
@@ -31,6 +31,6 @@ extension NSManagedObjectContext {
         guard let uuid = config.uuid else {
             return
         }
-        try FileManager.default.removeItem(at: Constant.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)"))
+        try FileManager.default.removeItem(at: Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)"))
     }
 }

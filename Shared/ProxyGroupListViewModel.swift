@@ -62,7 +62,7 @@ class ProxyGroupListViewModel: ObservableObject {
         do {
             raw = try YAMLDecoder().decode(
                 from: try Data(
-                    contentsOf: Constant.homeDirectoryURL.appendingPathComponent("\(uuidString)/config.yaml")
+                    contentsOf: Clash.homeDirectoryURL.appendingPathComponent("\(uuidString)/config.yaml")
                 )
             )
         } catch {

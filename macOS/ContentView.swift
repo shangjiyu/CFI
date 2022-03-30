@@ -3,7 +3,7 @@ import UniformTypeIdentifiers
 
 struct ContentView: View {
     
-    @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
+    @AppStorage(Clash.currentConfigUUID, store: .shared) private var uuidString: String = ""
         
     @StateObject var viewModel = ProxyGroupListViewModel()
     

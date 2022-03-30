@@ -3,7 +3,7 @@ import UniformTypeIdentifiers
 
 struct ConfigListView: View {
     
-    @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
+    @AppStorage(Clash.currentConfigUUID, store: .shared) private var uuidString: String = ""
         
     @Environment(\.dismiss) private var dismiss
     

@@ -1,6 +1,6 @@
 import SwiftUI
 
-private extension ClashTraffic {
+private extension Clash.Traffic {
     
     var title: String {
         switch self {
@@ -23,7 +23,7 @@ private extension ClashTraffic {
 
 struct ClashTrafficUpView: View {
     
-    @AppStorage(ClashTraffic.up.rawValue, store: .shared) private var up: Double = 0
+    @AppStorage(Clash.Traffic.up.rawValue, store: .shared) private var up: Double = 0
     
     var body: some View {
         ClashTrafficView(traffic: .up, binding: $up)
@@ -32,7 +32,7 @@ struct ClashTrafficUpView: View {
 
 struct ClashTrafficDownView: View {
     
-    @AppStorage(ClashTraffic.down.rawValue, store: .shared) private var down: Double = 0
+    @AppStorage(Clash.Traffic.down.rawValue, store: .shared) private var down: Double = 0
     
     var body: some View {
         ClashTrafficView(traffic: .down, binding: $down)
@@ -43,10 +43,10 @@ private struct ClashTrafficView: View {
     
     @Environment(\.trafficFormatter) private var formatter: NumberFormatter
     
-    let traffic: ClashTraffic
+    let traffic: Clash.Traffic
     let binding: Binding<Double>
     
-    init(traffic: ClashTraffic, binding: Binding<Double>) {
+    init(traffic: Clash.Traffic, binding: Binding<Double>) {
         self.traffic = traffic
         self.binding = binding
     }

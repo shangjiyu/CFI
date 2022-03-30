@@ -10,11 +10,11 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
     func setupClash() throws {
         let config = """
         mixed-port: 8080
-        mode: \(UserDefaults.shared.string(forKey: Constant.tunnelMode) ?? ClashTunnelMode.rule.rawValue)
-        log-level: \(UserDefaults.shared.string(forKey: Constant.logLevel) ?? ClashLogLevel.silent.rawValue)
+        mode: \(UserDefaults.shared.string(forKey: Clash.tunnelMode) ?? Clash.TunnelMode.rule.rawValue)
+        log-level: \(UserDefaults.shared.string(forKey: Clash.logLevel) ?? Clash.LogLevel.silent.rawValue)
         """
         var error: NSError? = nil
-        ClashSetup(self, Constant.homeDirectoryURL.path, config, &error)
+        ClashSetup(self, Clash.homeDirectoryURL.path, config, &error)
         if let error = error {
             throw error
         }
@@ -24,7 +24,7 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
     
     func setCurrentConfig() throws {
         var error: NSError? = nil
-        ClashSetConfig(UserDefaults.shared.string(forKey: Constant.currentConfigUUID), &error)
+        ClashSetConfig(UserDefaults.shared.string(forKey: Clash.currentConfigUUID), &error)
         guard let error = error else {
             return
         }
@@ -32,7 +32,7 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
     }
     
     func patchSelectGroup() {
-        guard let id = UserDefaults.shared.string(forKey: Constant.currentConfigUUID), !id.isEmpty,
+        guard let id = UserDefaults.shared.string(forKey: Clash.currentConfigUUID), !id.isEmpty,
               let mapping = UserDefaults.shared.dictionary(forKey: id) as? [String: String], !mapping.isEmpty else {
             return
         }
@@ -51,12 +51,12 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
     }
     
     func receiveTraffic(_ up: Int64, down: Int64) {
-        UserDefaults.shared.set(Double(up), forKey: ClashTraffic.up.rawValue)
-        UserDefaults.shared.set(Double(down), forKey: ClashTraffic.down.rawValue)
+        UserDefaults.shared.set(Double(up), forKey: Clash.Traffic.up.rawValue)
+        UserDefaults.shared.set(Double(down), forKey: Clash.Traffic.down.rawValue)
     }
     
     func log(_ level: String?, payload: String?) {
-        guard let level = level.flatMap(ClashLogLevel.init(rawValue:)),
+        guard let level = level.flatMap(Clash.LogLevel.init(rawValue:)),
               let payload = payload, !payload.isEmpty else {
             return
         }

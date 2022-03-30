@@ -5,7 +5,7 @@ struct StateView: View {
     
     @EnvironmentObject private var controller: VPNController
     
-    @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
+    @AppStorage(Clash.currentConfigUUID, store: .shared) private var uuidString: String = ""
     
     private var predicate: NSPredicate {
         NSPredicate(format: "%K == %@", "uuid", (UUID(uuidString: self.uuidString) ?? UUID()).uuidString)

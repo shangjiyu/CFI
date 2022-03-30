@@ -1,32 +1,31 @@
 import Foundation
 
-public enum ClashCommand: UInt8 {
-    case setCurrentConfig
-    case setTunnelMode
-    case setLogLevel
-    case setSelectGroup
-}
-
-public enum ClashLogLevel: String, Identifiable, CaseIterable {
-        
-    public var id: Self { self }
+public enum Clash {
     
-    case silent, info, debug, warning, error
-}
-
-public enum ClashTraffic: String {
-    case up     = "ClashTrafficUP"
-    case down   = "ClashTrafficDOWN"
-}
-
-public enum ClashTunnelMode: String, Hashable, Identifiable, CaseIterable {
+    public static let appGroup: String = Bundle.main.infoDictionary?["CLASH_APP_GROUP"] as! String
     
-    public var id: Self { self }
+    public static let tunnelMode: String = "ClashTunnelMode"
     
-    case global, rule, direct
+    public static let logLevel: String = "ClashLogLevel"
+    
+    public static let currentConfigUUID: String = "CurrentConfigUUID"
+    
+    public static let homeDirectoryURL: URL = {
+        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Clash.appGroup) else {
+            fatalError("无法加载共享文件路径")
+        }
+        let url = containerURL.appendingPathComponent("Library/Application Support/Clash")
+        guard FileManager.default.fileExists(atPath: url.path) == false else {
+            return url
+        }
+        do {
+            try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        return url
+    }()
 }
-
-public enum Clash {}
 
 extension Clash {
     

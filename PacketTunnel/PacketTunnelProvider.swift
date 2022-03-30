@@ -50,20 +50,20 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     }
     
     override func handleAppMessage(_ messageData: Data) async -> Data? {
-        guard let command = messageData.first.flatMap(ClashCommand.init(rawValue:)) else {
+        guard let command = messageData.first.flatMap(Clash.Command.init(rawValue:)) else {
             return nil
         }
         switch command {
-        case .setCurrentConfig:
+        case .setConfig:
             do {
                 try self.setCurrentConfig()
             } catch {
                 return error.localizedDescription.data(using: .utf8)
             }
         case .setTunnelMode:
-            ClashSetTunnelMode(UserDefaults.shared.string(forKey: Constant.tunnelMode))
+            ClashSetTunnelMode(UserDefaults.shared.string(forKey: Clash.tunnelMode))
         case .setLogLevel:
-            ClashSetLogLevel(UserDefaults.shared.string(forKey: Constant.logLevel))
+            ClashSetLogLevel(UserDefaults.shared.string(forKey: Clash.logLevel))
         case .setSelectGroup:
             self.patchSelectGroup()
         }

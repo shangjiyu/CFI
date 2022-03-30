@@ -3,7 +3,7 @@ import CoreData
 private class ClashPersistentContainer: NSPersistentContainer {
     
     override class func defaultDirectoryURL() -> URL {
-        Constant.homeDirectoryURL.appendingPathComponent("CoreData", isDirectory: true)
+        Clash.homeDirectoryURL.appendingPathComponent("CoreData", isDirectory: true)
     }
 }
 

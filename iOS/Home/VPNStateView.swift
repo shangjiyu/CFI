@@ -5,7 +5,7 @@ struct VPNStateView: View {
     
     @EnvironmentObject private var controller: VPNController
     
-    @AppStorage(Constant.currentConfigUUID, store: .shared) private var uuidString: String = ""
+    @AppStorage(Clash.currentConfigUUID, store: .shared) private var uuidString: String = ""
     
     @State private var isVPNOn = false
         

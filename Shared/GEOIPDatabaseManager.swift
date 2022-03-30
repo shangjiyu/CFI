@@ -5,7 +5,7 @@ public final class GEOIPDatabaseManager {
     public static func copyGEOIPDatabase() {
         let dbFileName = "Country"
         let dbFileExtension = "mmdb"
-        let dbURL = Constant.homeDirectoryURL.appendingPathComponent("\(dbFileName).\(dbFileExtension)")
+        let dbURL = Clash.homeDirectoryURL.appendingPathComponent("\(dbFileName).\(dbFileExtension)")
         guard !FileManager.default.fileExists(atPath: dbURL.path) else {
             return
         }
