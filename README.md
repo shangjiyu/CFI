@@ -1,11 +1,11 @@
-### Clash
-  #### 该项目依赖以下开源项目实现
+### Clash for Apple
+  #### Dependency
   1. clash (https://github.com/Dreamacro/clash)
   2. go-tun2socks (https://github.com/eycorsican/go-tun2socks)
 
 ### Requirement
-  1. iOS 15.0及以上
-  2. macOS 12.0及以上
+  1. iOS 15.0+
+  2. macOS 12.0+
 
 ### Snapshot
   macOS
