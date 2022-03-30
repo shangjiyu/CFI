@@ -89,7 +89,7 @@ class ProxyGroupListViewModel: ObservableObject {
                 return
             }
             do {
-                try await controller.execute(command: .patchSelectGroup)
+                try await controller.execute(command: .setSelectGroup)
             } catch {
                 debugPrint(error.localizedDescription)
             }

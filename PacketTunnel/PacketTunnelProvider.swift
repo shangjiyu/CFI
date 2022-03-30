@@ -64,7 +64,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             ClashSetTunnelMode(UserDefaults.shared.string(forKey: Constant.tunnelMode))
         case .setLogLevel:
             ClashSetLogLevel(UserDefaults.shared.string(forKey: Constant.logLevel))
-        case .patchSelectGroup:
+        case .setSelectGroup:
             self.patchSelectGroup()
         }
         return nil

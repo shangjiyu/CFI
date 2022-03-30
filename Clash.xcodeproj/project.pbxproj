@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		702C1BB527F3F5F100DF9A98 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Constant.swift */; };
+		702C1BB627F3F5F100DF9A98 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Constant.swift */; };
+		702C1BB727F3F5F400DF9A98 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA527EB0D8F00464266 /* Clash.swift */; };
+		702C1BB827F3F5F400DF9A98 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA527EB0D8F00464266 /* Clash.swift */; };
+		702C1BB927F3F5F700DF9A98 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
+		702C1BBA27F3F5F800DF9A98 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
+		702C1BBC27F3F65200DF9A98 /* NEVPNStatus+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C1BBB27F3F65200DF9A98 /* NEVPNStatus+Extension.swift */; };
+		702C1BBD27F3F65200DF9A98 /* NEVPNStatus+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C1BBB27F3F65200DF9A98 /* NEVPNStatus+Extension.swift */; };
 		D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927039927ED540500E61944 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */; };
@@ -30,16 +38,10 @@
 		D99E3A9F27EB0D0D00464266 /* ClashKit in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9E27EB0D0D00464266 /* ClashKit */; };
 		D99E3AB127EB0D9000464266 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Constant.swift */; };
 		D99E3AB227EB0D9000464266 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Constant.swift */; };
-		D99E3AB327EB0D9000464266 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Constant.swift */; };
-		D99E3AB427EB0D9000464266 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Constant.swift */; };
 		D99E3AB527EB0D9000464266 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA527EB0D8F00464266 /* Clash.swift */; };
 		D99E3AB627EB0D9000464266 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA527EB0D8F00464266 /* Clash.swift */; };
-		D99E3AB727EB0D9000464266 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA527EB0D8F00464266 /* Clash.swift */; };
-		D99E3AB827EB0D9000464266 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA527EB0D8F00464266 /* Clash.swift */; };
 		D99E3AC127EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
 		D99E3AC227EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
-		D99E3AC327EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
-		D99E3AC427EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
 		D99E3AC927EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */; };
 		D99E3ACA27EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */; };
 		D99E3ACC27EB0F3600464266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ACB27EB0F3600464266 /* AppDelegate.swift */; };
@@ -142,6 +144,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		702C1BBB27F3F65200DF9A98 /* NEVPNStatus+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NEVPNStatus+Extension.swift"; sourceTree = "<group>"; };
 		D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEOIPDatabaseManager.swift; sourceTree = "<group>"; };
 		D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PacketTunnelProvider+ClashKit.swift"; sourceTree = "<group>"; };
 		D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupListView.swift; sourceTree = "<group>"; };
@@ -254,16 +257,6 @@
 			path = PacketTunnel;
 			sourceTree = "<group>";
 		};
-		D99E3AA127EB0D5600464266 /* Clash */ = {
-			isa = PBXGroup;
-			children = (
-				D99E3AA427EB0D8F00464266 /* Constant.swift */,
-				D99E3AA527EB0D8F00464266 /* Clash.swift */,
-				D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */,
-			);
-			path = Clash;
-			sourceTree = "<group>";
-		};
 		D99E3ACF27EB10B800464266 /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,7 +307,6 @@
 				D9B1B4E427EAF72B007EE597 /* Shared */,
 				D9B1B50327EAF8B2007EE597 /* iOS */,
 				D9B1B4F327EAF72F007EE597 /* macOS */,
-				D99E3AA127EB0D5600464266 /* Clash */,
 				D99E3AA027EB0D2E00464266 /* PacketTunnel */,
 				D9B1B53427EAFC87007EE597 /* PacketTunnel-iOS */,
 				D9B1B54527EAFC9D007EE597 /* PacketTunnel-macOS */,
@@ -335,6 +327,10 @@
 				D99E3B0327EB110B00464266 /* NSManagedObjectContext+File.swift */,
 				D99E3AFB27EB10E700464266 /* CoreDataStack.swift */,
 				D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */,
+				702C1BBB27F3F65200DF9A98 /* NEVPNStatus+Extension.swift */,
+				D99E3AA427EB0D8F00464266 /* Constant.swift */,
+				D99E3AA527EB0D8F00464266 /* Clash.swift */,
+				D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */,
 				D99E3AF727EB10CA00464266 /* Country.mmdb */,
 				D9B1B4E727EAF72F007EE597 /* Assets.xcassets */,
 				D99E3AFC27EB10E700464266 /* Clash.xcdatamodeld */,
@@ -612,6 +608,7 @@
 				D99E3B0027EB10E700464266 /* Clash.xcdatamodeld in Sources */,
 				D99E3AEC27EB10B900464266 /* ClashTunnelModeView.swift in Sources */,
 				D99E3AEA27EB10B900464266 /* ClashHomeView.swift in Sources */,
+				702C1BBC27F3F65200DF9A98 /* NEVPNStatus+Extension.swift in Sources */,
 				D99E3B0927EB110C00464266 /* NSManagedObjectContext+File.swift in Sources */,
 				D99E3B0F27EB117F00464266 /* ClashTrafficFormatter.swift in Sources */,
 				D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */,
@@ -642,6 +639,7 @@
 				D99E3B1127EB11A500464266 /* VPNManager.swift in Sources */,
 				D9B1B4F827EAF72F007EE597 /* ContentView.swift in Sources */,
 				D99E3AB627EB0D9000464266 /* Clash.swift in Sources */,
+				702C1BBD27F3F65200DF9A98 /* NEVPNStatus+Extension.swift in Sources */,
 				D98884F027F0C10C00CBB3DB /* ProxyGroupDetailView.swift in Sources */,
 				D99E3AB227EB0D9000464266 /* Constant.swift in Sources */,
 				D927039B27ED542200E61944 /* NSManagedObjectContext+File.swift in Sources */,
@@ -663,11 +661,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D99E3AB727EB0D9000464266 /* Clash.swift in Sources */,
-				D99E3AC327EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
 				D942D01B27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift in Sources */,
+				702C1BB727F3F5F400DF9A98 /* Clash.swift in Sources */,
 				D99E3AC927EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */,
-				D99E3AB327EB0D9000464266 /* Constant.swift in Sources */,
+				702C1BB527F3F5F100DF9A98 /* Constant.swift in Sources */,
+				702C1BB927F3F5F700DF9A98 /* UserDefaults+AppGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,11 +673,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D99E3AB827EB0D9000464266 /* Clash.swift in Sources */,
-				D99E3AC427EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
 				D942D01C27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift in Sources */,
+				702C1BB827F3F5F400DF9A98 /* Clash.swift in Sources */,
 				D99E3ACA27EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */,
-				D99E3AB427EB0D9000464266 /* Constant.swift in Sources */,
+				702C1BB627F3F5F100DF9A98 /* Constant.swift in Sources */,
+				702C1BBA27F3F5F800DF9A98 /* UserDefaults+AppGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
