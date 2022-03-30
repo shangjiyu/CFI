@@ -1,26 +1,5 @@
 import SwiftUI
 
-private extension Clash.Traffic {
-    
-    var title: String {
-        switch self {
-        case .up:
-            return "上行速率"
-        case .down:
-            return "下行速率"
-        }
-    }
-    
-    var imageName: String {
-        switch self {
-        case .up:
-            return "arrow.up"
-        case .down:
-            return "arrow.down"
-        }
-    }
-}
-
 struct ClashTrafficUpView: View {
     
     @AppStorage(Clash.Traffic.up.rawValue, store: .shared) private var up: Double = 0
