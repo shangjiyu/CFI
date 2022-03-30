@@ -10,6 +10,10 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        .portrait
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .portrait
+        } else {
+            return .all
+        }
     }
 }
