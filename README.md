@@ -15,7 +15,4 @@
   iOS
 |        |       |       |
 |  ----  | ----  | ----  |
-|![clash_on_ios_home](https://user-images.githubusercontent.com/11971659/160274824-db81412a-d184-40af-aa03-949b14d37f77.PNG)|![clash_on_ios_panel](https://user-images.githubusercontent.com/11971659/160274826-68d2af6a-f502-4366-a497-eec0c3b95e10.PNG)|![clash_on_ios_settings](https://user-images.githubusercontent.com/11971659/160274828-fb3743fb-c64e-4391-9828-c5a82e45c577.PNG)|
-  
-  
-  
+|![clash_ios_home](https://user-images.githubusercontent.com/11971659/160740221-274cf1df-3f66-4ecd-bd4c-3e1ae74b8a16.PNG)|![clash_ios_panel](https://user-images.githubusercontent.com/11971659/160740231-5c3c08ef-d6c2-4e67-a8eb-1a1f845a1efd.PNG)|![clash_ios_settings](https://user-images.githubusercontent.com/11971659/160740237-90c51012-b327-4df0-a384-f6d605572780.PNG)|
