@@ -22,16 +22,16 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
         ClashSetTrafficReceiver(self)
     }
     
-    func setCurrentConfig() throws {
+    func setConfig() throws {
         var error: NSError? = nil
         ClashSetConfig(UserDefaults.shared.string(forKey: Clash.currentConfigUUID), &error)
-        guard let error = error else {
-            return
+        if let error = error {
+            throw error
         }
-        throw error
+        self.setSelectGroup()
     }
     
-    func patchSelectGroup() {
+    func setSelectGroup() {
         guard let id = UserDefaults.shared.string(forKey: Clash.currentConfigUUID), !id.isEmpty,
               let mapping = UserDefaults.shared.dictionary(forKey: id) as? [String: String], !mapping.isEmpty else {
             return
