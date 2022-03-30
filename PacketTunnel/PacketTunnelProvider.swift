@@ -26,11 +26,11 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             return settings
         }()
         settings.dnsSettings = {
-            let settings = NEDNSSettings(servers: ["8.8.8.8"])
+            let settings = NEDNSSettings(servers: ["114.114.114.114", "8.8.8.8"])
             return settings
         }()
         try await self.setTunnelNetworkSettings(settings)
-        DispatchQueue.main.async(execute: self.readPackets)
+        DispatchQueue.main.async { self.readPackets() }
     }
     
     private func readPackets() {
