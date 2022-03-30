@@ -55,11 +55,6 @@ struct ConfigListView: View {
                 }
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .navigation) {
-                Text("Clash 配置")
-            }
-        }
     }
     
     private func onCloseAction() {
