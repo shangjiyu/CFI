@@ -16,7 +16,7 @@ struct SettingsView: View {
             .pickerStyle(.radioGroup)
         }
         .padding()
-        .frame(width: 300, alignment: .center)
+        .frame(width: 480, alignment: .center)
         .task(id: logLevel) {
             guard let controller = self.manager.controller else {
                 return

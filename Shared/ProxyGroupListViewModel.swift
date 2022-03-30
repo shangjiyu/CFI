@@ -74,7 +74,7 @@ class ProxyGroupListViewModel: ObservableObject {
         }
         self.mapping = temp
 #if os(macOS)
-        self.selectedGroupViewModel = nil
+        self.selectedGroupViewModel = self.groupViewModels.first
 #endif
     }
     
