@@ -15,6 +15,7 @@ struct ClashApp: App {
                 .environmentObject(VPNManager.shared)
                 .environment(\.trafficFormatter, ClashTrafficFormatterKey.defaultValue)
                 .environment(\.managedObjectContext, CoreDataStack.shared.container.viewContext)
+                .environment(\.horizontalSizeClass, .compact)
         }
 #if os(macOS)
         .windowStyle(.hiddenTitleBar)

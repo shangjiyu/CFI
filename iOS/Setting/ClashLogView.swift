@@ -18,6 +18,7 @@ struct ClashLogView: View {
                 .labelsHidden()
             }
             .navigationBarTitle("日志等级")
+            .navigationBarTitleDisplayMode(.inline)
             .task(id: logLevel) {
                 guard let controller = self.manager.controller else {
                     return

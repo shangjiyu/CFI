@@ -41,6 +41,7 @@ struct ClashConfigImportButton: View {
         }
         .sheet(item: $importItem, onDismiss: nil) {
             ClashConfigImportView(importItem: $0)
+                .environment(\.horizontalSizeClass, .compact)
         }
         .sheet(isPresented: $isDocumentPickerViewPresented) {
             DispatchQueue.main.async {

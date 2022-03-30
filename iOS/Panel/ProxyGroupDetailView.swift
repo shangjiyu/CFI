@@ -39,5 +39,6 @@ struct ProxyGroupDetailView: View {
             }
         }
         .navigationTitle(viewModel.group.name)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
