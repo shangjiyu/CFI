@@ -21,6 +21,10 @@ struct ClashApp: App {
         }
 #if os(macOS)
         .windowStyle(.hiddenTitleBar)
+        .commands {
+            CommandGroup(replacing: .newItem) {}
+            CommandGroup(replacing: .systemServices) {}
+        }
 #endif
         
 #if os(macOS)
