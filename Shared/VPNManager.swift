@@ -10,10 +10,11 @@ import NetworkExtension
     public static let shared = VPNManager()
     
     private let providerBundleIdentifier: String = {
+        let identifier = Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String
 #if os(macOS)
-        return "com.Arror.Clash.PacketTunnel-macOS"
+        return "\(identifier).PacketTunnel-macOS"
 #else
-        return "com.Arror.Clash.PacketTunnel-iOS"
+        return "\(identifier).PacketTunnel-iOS"
 #endif
     }()
     
@@ -71,7 +72,7 @@ import NetworkExtension
         manager.localizedDescription = "Clash"
         manager.protocolConfiguration = {
             let configuration = NETunnelProviderProtocol()
-            configuration.providerBundleIdentifier = providerBundleIdentifier
+            configuration.providerBundleIdentifier = self.providerBundleIdentifier
             configuration.serverAddress = "Clash"
             configuration.includeAllNetworks = true
             configuration.excludeLocalNetworks = true
