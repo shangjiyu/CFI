@@ -1,8 +1,9 @@
+import Foundation
 import os
 import ClashKit
 
 fileprivate extension Logger {
-    static let tunnel = Logger(subsystem: "com.Arror.Clash.PacketTunnel", category: "Clash")
+    static let tunnel = Logger(subsystem: Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String, category: "Clash")
 }
 
 extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverProtocol, ClashRealTimeLoggerProtocol {
