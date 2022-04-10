@@ -13,7 +13,12 @@ extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashRealTimeLogge
             fatalError("Invalid tunnel file descriptor.")
         }
         var error: NSError? = nil
-        ClashSetupTun2Socks(fd, false, 0, 0, &error)
+        #if os(macOS)
+        ClashSetupTun2Socks(fd, true, 0, 0, &error)
+        #else
+        let size = 8 * 1024 * 16
+        ClashSetupTun2Socks(fd, false, size, size, &error)
+        #endif
         if let error = error {
             throw error
         }
