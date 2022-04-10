@@ -74,7 +74,6 @@ import NetworkExtension
             let configuration = NETunnelProviderProtocol()
             configuration.providerBundleIdentifier = self.providerBundleIdentifier
             configuration.serverAddress = "Clash"
-            configuration.includeAllNetworks = true
             configuration.excludeLocalNetworks = true
             return configuration
         }()
