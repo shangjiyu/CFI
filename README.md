@@ -2,7 +2,7 @@
 
 #### Dependency
   1. clash (https://github.com/Dreamacro/clash)
-  2. go-tun2socks (https://github.com/eycorsican/go-tun2socks)
+  2. tun2socks (https://github.com/xjasonlyu/tun2socks)
 
 #### Requirement
   1. iOS 15.0+
