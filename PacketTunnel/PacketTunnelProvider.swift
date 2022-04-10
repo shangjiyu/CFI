@@ -7,10 +7,10 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     override func startTunnel(options: [String : NSObject]? = nil) async throws {
         try self.setupClash()
         try self.setConfig()
-        let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "240.240.240.240")
+        let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "254.1.1.1")
         settings.mtu = 1500
         settings.ipv4Settings = {
-            let settings = NEIPv4Settings(addresses: ["240.0.0.1"], subnetMasks: ["255.255.255.0"])
+            let settings = NEIPv4Settings(addresses: ["198.18.0.1"], subnetMasks: ["255.255.255.0"])
             settings.includedRoutes = [NEIPv4Route.default()]
             return settings
         }()
@@ -29,14 +29,6 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             return settings
         }()
         try await self.setTunnelNetworkSettings(settings)
-        DispatchQueue.main.async { self.readPackets() }
-    }
-    
-    private func readPackets() {
-        self.packetFlow.readPackets { packets, _ in
-            packets.forEach(ClashReadPacket(_:))
-            self.readPackets()
-        }
     }
     
     override func stopTunnel(with reason: NEProviderStopReason) async {
