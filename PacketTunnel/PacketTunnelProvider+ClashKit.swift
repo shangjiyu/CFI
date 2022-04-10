@@ -1,7 +1,6 @@
 import Foundation
 import os
 import ClashKit
-import C
 
 fileprivate extension Logger {
     static let tunnel = Logger(subsystem: Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String, category: "Clash")
