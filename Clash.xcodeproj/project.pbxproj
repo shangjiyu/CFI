@@ -13,6 +13,11 @@
 		702C1BBA27F3F5F800DF9A98 /* UserDefaults+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */; };
 		702C1BBC27F3F65200DF9A98 /* Clash+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C1BBB27F3F65200DF9A98 /* Clash+Extension.swift */; };
 		702C1BBD27F3F65200DF9A98 /* Clash+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C1BBB27F3F65200DF9A98 /* Clash+Extension.swift */; };
+		70C357FC28028C4F00F0D8EA /* C.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C357FB28028C4F00F0D8EA /* C.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70C3580528028C6700F0D8EA /* C.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C357F928028C4F00F0D8EA /* C.framework */; };
+		70C3580628028C6700F0D8EA /* C.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70C357F928028C4F00F0D8EA /* C.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		70C3580A28028C7300F0D8EA /* C.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C357F928028C4F00F0D8EA /* C.framework */; };
+		70C3580B28028C7300F0D8EA /* C.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70C357F928028C4F00F0D8EA /* C.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927039927ED540500E61944 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */; };
@@ -88,6 +93,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		70C3580728028C6700F0D8EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9B1B4E027EAF72B007EE597 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70C357F828028C4F00F0D8EA;
+			remoteInfo = C;
+		};
+		70C3580C28028C7300F0D8EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9B1B4E027EAF72B007EE597 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70C357F828028C4F00F0D8EA;
+			remoteInfo = C;
+		};
 		D9B1B53927EAFC87007EE597 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D9B1B4E027EAF72B007EE597 /* Project object */;
@@ -105,6 +124,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		70C3580928028C6700F0D8EA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				70C3580628028C6700F0D8EA /* C.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70C3580E28028C7300F0D8EA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				70C3580B28028C7300F0D8EA /* C.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9B1B51927EAFBE0007EE597 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,6 +182,8 @@
 
 /* Begin PBXFileReference section */
 		702C1BBB27F3F65200DF9A98 /* Clash+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Clash+Extension.swift"; sourceTree = "<group>"; };
+		70C357F928028C4F00F0D8EA /* C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70C357FB28028C4F00F0D8EA /* C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C.h; sourceTree = "<group>"; };
 		D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEOIPDatabaseManager.swift; sourceTree = "<group>"; };
 		D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PacketTunnelProvider+ClashKit.swift"; sourceTree = "<group>"; };
 		D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupListView.swift; sourceTree = "<group>"; };
@@ -204,6 +247,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		70C357F628028C4F00F0D8EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9B1B4E927EAF72F007EE597 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +278,7 @@
 			files = (
 				D9B1B53327EAFC87007EE597 /* NetworkExtension.framework in Frameworks */,
 				D99E3A9D27EB0CFE00464266 /* ClashKit in Frameworks */,
+				70C3580528028C6700F0D8EA /* C.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,12 +288,21 @@
 			files = (
 				D9B1B54427EAFC9D007EE597 /* NetworkExtension.framework in Frameworks */,
 				D99E3A9F27EB0D0D00464266 /* ClashKit in Frameworks */,
+				70C3580A28028C7300F0D8EA /* C.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70C357FA28028C4F00F0D8EA /* C */ = {
+			isa = PBXGroup;
+			children = (
+				70C357FB28028C4F00F0D8EA /* C.h */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
 		D99E3AA027EB0D2E00464266 /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +365,7 @@
 				D99E3AA027EB0D2E00464266 /* PacketTunnel */,
 				D9B1B53427EAFC87007EE597 /* PacketTunnel-iOS */,
 				D9B1B54527EAFC9D007EE597 /* PacketTunnel-macOS */,
+				70C357FA28028C4F00F0D8EA /* C */,
 				D9B1B50B27EAFBE0007EE597 /* Frameworks */,
 				D9B1B4ED27EAF72F007EE597 /* Products */,
 			);
@@ -339,6 +400,7 @@
 				D9B1B4F227EAF72F007EE597 /* Clash.app */,
 				D9B1B53227EAFC87007EE597 /* PacketTunnel-iOS.appex */,
 				D9B1B54327EAFC9D007EE597 /* PacketTunnel-macOS.appex */,
+				70C357F928028C4F00F0D8EA /* C.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -408,7 +470,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		70C357F428028C4F00F0D8EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70C357FC28028C4F00F0D8EA /* C.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		70C357F828028C4F00F0D8EA /* C */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70C3580428028C4F00F0D8EA /* Build configuration list for PBXNativeTarget "C" */;
+			buildPhases = (
+				70C357F428028C4F00F0D8EA /* Headers */,
+				70C357F528028C4F00F0D8EA /* Sources */,
+				70C357F628028C4F00F0D8EA /* Frameworks */,
+				70C357F728028C4F00F0D8EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = C;
+			productName = C;
+			productReference = 70C357F928028C4F00F0D8EA /* C.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D9B1B4EB27EAF72F007EE597 /* Clash (iOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9B1B4FD27EAF72F007EE597 /* Build configuration list for PBXNativeTarget "Clash (iOS)" */;
@@ -461,10 +552,12 @@
 				D9B1B52E27EAFC87007EE597 /* Sources */,
 				D9B1B52F27EAFC87007EE597 /* Frameworks */,
 				D9B1B53027EAFC87007EE597 /* Resources */,
+				70C3580928028C6700F0D8EA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				70C3580828028C6700F0D8EA /* PBXTargetDependency */,
 			);
 			name = "PacketTunnel-iOS";
 			packageProductDependencies = (
@@ -481,10 +574,12 @@
 				D9B1B53F27EAFC9D007EE597 /* Sources */,
 				D9B1B54027EAFC9D007EE597 /* Frameworks */,
 				D9B1B54127EAFC9D007EE597 /* Resources */,
+				70C3580E28028C7300F0D8EA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				70C3580D28028C7300F0D8EA /* PBXTargetDependency */,
 			);
 			name = "PacketTunnel-macOS";
 			packageProductDependencies = (
@@ -504,6 +599,9 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					70C357F828028C4F00F0D8EA = {
+						CreatedOnToolsVersion = 13.3;
+					};
 					D9B1B4EB27EAF72F007EE597 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -539,11 +637,19 @@
 				D9B1B4F127EAF72F007EE597 /* Clash (macOS) */,
 				D9B1B53127EAFC87007EE597 /* PacketTunnel-iOS */,
 				D9B1B54227EAFC9D007EE597 /* PacketTunnel-macOS */,
+				70C357F828028C4F00F0D8EA /* C */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		70C357F728028C4F00F0D8EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9B1B4EA27EAF72F007EE597 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -579,6 +685,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		70C357F528028C4F00F0D8EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9B1B4E827EAF72F007EE597 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -674,6 +787,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		70C3580828028C6700F0D8EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70C357F828028C4F00F0D8EA /* C */;
+			targetProxy = 70C3580728028C6700F0D8EA /* PBXContainerItemProxy */;
+		};
+		70C3580D28028C7300F0D8EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70C357F828028C4F00F0D8EA /* C */;
+			targetProxy = 70C3580C28028C7300F0D8EA /* PBXContainerItemProxy */;
+		};
 		D9B1B53A27EAFC87007EE597 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D9B1B53127EAFC87007EE597 /* PacketTunnel-iOS */;
@@ -687,6 +810,73 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		70C3580228028C4F00F0D8EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = A8XWAF2UFT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Arror.C;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		70C3580328028C4F00F0D8EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = A8XWAF2UFT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Arror.C;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		D9B1B4FB27EAF72F007EE597 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1051,6 +1241,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		70C3580428028C4F00F0D8EA /* Build configuration list for PBXNativeTarget "C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70C3580228028C4F00F0D8EA /* Debug */,
+				70C3580328028C4F00F0D8EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D9B1B4E327EAF72B007EE597 /* Build configuration list for PBXProject "Clash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
