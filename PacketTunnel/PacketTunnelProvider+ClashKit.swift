@@ -6,19 +6,19 @@ fileprivate extension Logger {
     static let tunnel = Logger(subsystem: Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String, category: "Clash")
 }
 
-extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashRealTimeLoggerProtocol {
+extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerProtocol {
     
     func setupClash() throws {
         guard let fd = self.tunnelFileDescriptor else {
             fatalError("Invalid tunnel file descriptor.")
         }
         var error: NSError? = nil
-        #if os(macOS)
-        ClashSetupTun2Socks(fd, true, 0, 0, &error)
-        #else
+#if os(macOS)
+        ClashStartTun2Socks(fd, true, 0, 0, &error)
+#else
         let size = 8 * 1024 * 16
-        ClashSetupTun2Socks(fd, false, size, size, &error)
-        #endif
+        ClashStartTun2Socks(fd, false, size, size, &error)
+#endif
         if let error = error {
             throw error
         }
@@ -31,7 +31,7 @@ extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashRealTimeLogge
         if let error = error {
             throw error
         }
-        ClashSetRealTimeLogger(self)
+        ClashSetNativeLogger(self)
         ClashSetTrafficReceiver(self)
     }
     
