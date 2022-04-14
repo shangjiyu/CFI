@@ -6,28 +6,16 @@ fileprivate extension Logger {
     static let tunnel = Logger(subsystem: Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String, category: "Clash")
 }
 
-extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerProtocol {
+extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverProtocol, ClashNativeLoggerProtocol {
     
     func setupClash() throws {
-        guard let fd = self.tunnelFileDescriptor else {
-            fatalError("Invalid tunnel file descriptor.")
-        }
-        var error: NSError? = nil
-#if os(macOS)
-        ClashStartTun2Socks(fd, true, 0, 0, &error)
-#else
-        let size = 8 * 1024 * 16
-        ClashStartTun2Socks(fd, false, size, size, &error)
-#endif
-        if let error = error {
-            throw error
-        }
         let config = """
         mixed-port: 8080
         mode: \(UserDefaults.shared.string(forKey: Clash.tunnelMode) ?? Clash.TunnelMode.rule.rawValue)
         log-level: \(UserDefaults.shared.string(forKey: Clash.logLevel) ?? Clash.LogLevel.silent.rawValue)
         """
-        ClashSetup(Clash.homeDirectoryURL.path, config, &error)
+        var error: NSError? = nil
+        ClashSetup(self, Clash.homeDirectoryURL.path, config, &error)
         if let error = error {
             throw error
         }
@@ -56,6 +44,20 @@ extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerP
         }
     }
     
+    func readPackets() {
+        self.packetFlow.readPackets { packets, _ in
+            packets.forEach(ClashReadPacket(_:))
+            self.readPackets()
+        }
+    }
+    
+    func writePacket(_ packet: Data?) {
+        guard let packet = packet else {
+            return
+        }
+        self.packetFlow.writePackets([packet], withProtocols: [AF_INET as NSNumber])
+    }
+    
     func receiveTraffic(_ up: Int64, down: Int64) {
         UserDefaults.shared.set(Double(up), forKey: Clash.Traffic.up.rawValue)
         UserDefaults.shared.set(Double(down), forKey: Clash.Traffic.down.rawValue)
@@ -75,14 +77,6 @@ extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerP
             Logger.tunnel.warning("\(payload, privacy: .public)")
         case .error:
             Logger.tunnel.critical("\(payload, privacy: .public)")
-        }
-    }
-    
-    private var tunnelFileDescriptor: Int32? {
-        var buf = Array<CChar>(repeating: 0, count: Int(IFNAMSIZ))
-        return (1...1024).first {
-            var len = socklen_t(buf.count)
-            return getsockopt($0, 2, 2, &buf, &len) == 0 && String(cString: buf).hasPrefix("utun")
         }
     }
 }

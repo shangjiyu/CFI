@@ -29,6 +29,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             return settings
         }()
         try await self.setTunnelNetworkSettings(settings)
+        DispatchQueue.main.async { self.readPackets() }
     }
     
     override func stopTunnel(with reason: NEProviderStopReason) async {
