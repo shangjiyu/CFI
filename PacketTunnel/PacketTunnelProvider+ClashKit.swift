@@ -6,7 +6,7 @@ fileprivate extension Logger {
     static let tunnel = Logger(subsystem: Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String, category: "Clash")
 }
 
-extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverProtocol, ClashNativeLoggerProtocol {
+extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerProtocol {
     
     func setupClash() throws {
         let config = """
@@ -15,12 +15,44 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
         log-level: \(UserDefaults.shared.string(forKey: Clash.logLevel) ?? Clash.LogLevel.silent.rawValue)
         """
         var error: NSError? = nil
-        ClashSetup(self, Clash.homeDirectoryURL.path, config, &error)
+        ClashSetup(Clash.homeDirectoryURL.path, config, &error)
         if let error = error {
             throw error
         }
         ClashSetNativeLogger(self)
         ClashSetTrafficReceiver(self)
+//        DispatchQueue.global(qos: .userInteractive).async {
+//            guard let fd = self.tunnelFileDescriptor else {
+//                return
+//            }
+//            let json = """
+//            {
+//                "log": {
+//                    "level": "trace"
+//                },
+//                "inbounds": [
+//                    {
+//                        "protocol": "tun",
+//                        "settings": {
+//                            "fd": \(fd)
+//                        },
+//                        "tag": "tun"
+//                    }
+//                ],
+//                "outbounds": [
+//                    {
+//                        "protocol": "socks",
+//                        "settings": {
+//                            "address": "127.0.0.1",
+//                            "port": 8080
+//                        },
+//                        "tag": "clash"
+//                    }
+//                ]
+//            }
+//            """
+//            startTun2Socks(json.cString(using: .utf8))
+//        }
     }
     
     func setConfig() throws {
@@ -44,20 +76,6 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
         }
     }
     
-    func readPackets() {
-        self.packetFlow.readPackets { packets, _ in
-            packets.forEach(ClashReadPacket(_:))
-            self.readPackets()
-        }
-    }
-    
-    func writePacket(_ packet: Data?) {
-        guard let packet = packet else {
-            return
-        }
-        self.packetFlow.writePackets([packet], withProtocols: [AF_INET as NSNumber])
-    }
-    
     func receiveTraffic(_ up: Int64, down: Int64) {
         UserDefaults.shared.set(Double(up), forKey: Clash.Traffic.up.rawValue)
         UserDefaults.shared.set(Double(down), forKey: Clash.Traffic.down.rawValue)
@@ -77,6 +95,14 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
             Logger.tunnel.warning("\(payload, privacy: .public)")
         case .error:
             Logger.tunnel.critical("\(payload, privacy: .public)")
+        }
+    }
+    
+    private var tunnelFileDescriptor: Int32? {
+        var buf = Array<CChar>(repeating: 0, count: Int(IFNAMSIZ))
+        return (1...1024).first {
+            var len = socklen_t(buf.count)
+            return getsockopt($0, 2, 2, &buf, &len) == 0 && String(cString: buf).hasPrefix("utun")
         }
     }
 }
