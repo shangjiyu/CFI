@@ -2,7 +2,7 @@
 
 #### Dependency
   1. clash (https://github.com/Dreamacro/clash)
-  2. tun2socks (https://github.com/xjasonlyu/tun2socks)
+  2. leaf (https://github.com/eycorsican/leaf)
 
 #### Requirement
   1. iOS 15.0+

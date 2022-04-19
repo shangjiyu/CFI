@@ -1,6 +1,7 @@
 import Foundation
 import os
 import ClashKit
+import T2SKit
 
 fileprivate extension Logger {
     static let tunnel = Logger(subsystem: Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String, category: "Clash")
@@ -21,38 +22,38 @@ extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerP
         }
         ClashSetNativeLogger(self)
         ClashSetTrafficReceiver(self)
-//        DispatchQueue.global(qos: .userInteractive).async {
-//            guard let fd = self.tunnelFileDescriptor else {
-//                return
-//            }
-//            let json = """
-//            {
-//                "log": {
-//                    "level": "trace"
-//                },
-//                "inbounds": [
-//                    {
-//                        "protocol": "tun",
-//                        "settings": {
-//                            "fd": \(fd)
-//                        },
-//                        "tag": "tun"
-//                    }
-//                ],
-//                "outbounds": [
-//                    {
-//                        "protocol": "socks",
-//                        "settings": {
-//                            "address": "127.0.0.1",
-//                            "port": 8080
-//                        },
-//                        "tag": "clash"
-//                    }
-//                ]
-//            }
-//            """
-//            startTun2Socks(json.cString(using: .utf8))
-//        }
+        DispatchQueue.global().async {
+            guard let fd = self.tunnelFileDescriptor else {
+                return
+            }
+            let config = """
+            {
+                "log": {
+                    "level": "trace"
+                },
+                "inbounds": [
+                    {
+                        "protocol": "tun",
+                        "settings": {
+                            "fd": \(fd)
+                        },
+                        "tag": "tun"
+                    }
+                ],
+                "outbounds": [
+                    {
+                        "protocol": "socks",
+                        "settings": {
+                            "address": "127.0.0.1",
+                            "port": 8080
+                        },
+                        "tag": "clash"
+                    }
+                ]
+            }
+            """
+            _ = Tun2Socks.start(config: config)
+        }
     }
     
     func setConfig() throws {
