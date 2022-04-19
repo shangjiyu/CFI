@@ -1,6 +1,7 @@
 import Foundation
 import NetworkExtension
 import ClashKit
+import T2SKit
 
 class PacketTunnelProvider: NEPacketTunnelProvider {
         
@@ -29,6 +30,38 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             return settings
         }()
         try await self.setTunnelNetworkSettings(settings)
+        DispatchQueue.global().async {
+            guard let fd = self.tunnelFileDescriptor else {
+                return
+            }
+            let config = """
+            {
+                "log": {
+                    "level": "trace"
+                },
+                "inbounds": [
+                    {
+                        "protocol": "tun",
+                        "settings": {
+                            "fd": \(fd)
+                        },
+                        "tag": "tun"
+                    }
+                ],
+                "outbounds": [
+                    {
+                        "protocol": "socks",
+                        "settings": {
+                            "address": "127.0.0.1",
+                            "port": 8080
+                        },
+                        "tag": "clash"
+                    }
+                ]
+            }
+            """
+            _ = Tun2Socks.start(config: config)
+        }
     }
     
     override func stopTunnel(with reason: NEProviderStopReason) async {
@@ -59,5 +92,13 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             self.setSelectGroup()
         }
         return nil
+    }
+    
+    private var tunnelFileDescriptor: Int32? {
+        var buf = Array<CChar>(repeating: 0, count: Int(IFNAMSIZ))
+        return (1...1024).first {
+            var len = socklen_t(buf.count)
+            return getsockopt($0, 2, 2, &buf, &len) == 0 && String(cString: buf).hasPrefix("utun")
+        }
     }
 }

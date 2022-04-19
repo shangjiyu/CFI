@@ -84,6 +84,8 @@
 		D9B1B54C27EAFC9D007EE597 /* PacketTunnel-macOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D9B1B54327EAFC9D007EE597 /* PacketTunnel-macOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D9B1B55127EAFEC7007EE597 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1B50C27EAFBE0007EE597 /* NetworkExtension.framework */; };
 		D9B1B55327EAFEDB007EE597 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1B55227EAFEDB007EE597 /* NetworkExtension.framework */; };
+		D9C3E959280EBEA200D6CFF9 /* T2SKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9C3E958280EBEA200D6CFF9 /* T2SKit */; };
+		D9C3E95B280EBEA800D6CFF9 /* T2SKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9C3E95A280EBEA800D6CFF9 /* T2SKit */; };
 		D9CE81F927F2F6AC00E70A13 /* ProxyGroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -247,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B1B53327EAFC87007EE597 /* NetworkExtension.framework in Frameworks */,
+				D9C3E959280EBEA200D6CFF9 /* T2SKit in Frameworks */,
 				D99E3A9D27EB0CFE00464266 /* ClashKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B1B54427EAFC9D007EE597 /* NetworkExtension.framework in Frameworks */,
+				D9C3E95B280EBEA800D6CFF9 /* T2SKit in Frameworks */,
 				D99E3A9F27EB0D0D00464266 /* ClashKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +494,7 @@
 			name = "PacketTunnel-iOS";
 			packageProductDependencies = (
 				D99E3A9C27EB0CFE00464266 /* ClashKit */,
+				D9C3E958280EBEA200D6CFF9 /* T2SKit */,
 			);
 			productName = "PacketTunnel-iOS";
 			productReference = D9B1B53227EAFC87007EE597 /* PacketTunnel-iOS.appex */;
@@ -511,6 +516,7 @@
 			name = "PacketTunnel-macOS";
 			packageProductDependencies = (
 				D99E3A9E27EB0D0D00464266 /* ClashKit */,
+				D9C3E95A280EBEA800D6CFF9 /* T2SKit */,
 			);
 			productName = "PacketTunnel-macOS";
 			productReference = D9B1B54327EAFC9D007EE597 /* PacketTunnel-macOS.appex */;
@@ -552,6 +558,7 @@
 			packageReferences = (
 				D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */,
 				D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */,
+				D9C3E955280EBE8800D6CFF9 /* XCRemoteSwiftPackageReference "T2SKit" */,
 			);
 			productRefGroup = D9B1B4ED27EAF72F007EE597 /* Products */;
 			projectDirPath = "";
@@ -1134,7 +1141,15 @@
 			repositoryURL = "https://github.com/Clash-for-Apple/ClashKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.6.5;
+				version = 1.8.0;
+			};
+		};
+		D9C3E955280EBE8800D6CFF9 /* XCRemoteSwiftPackageReference "T2SKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppleClash/T2SKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1159,6 +1174,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */;
 			productName = ClashKit;
+		};
+		D9C3E958280EBEA200D6CFF9 /* T2SKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D9C3E955280EBE8800D6CFF9 /* XCRemoteSwiftPackageReference "T2SKit" */;
+			productName = T2SKit;
+		};
+		D9C3E95A280EBEA800D6CFF9 /* T2SKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D9C3E955280EBE8800D6CFF9 /* XCRemoteSwiftPackageReference "T2SKit" */;
+			productName = T2SKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 
