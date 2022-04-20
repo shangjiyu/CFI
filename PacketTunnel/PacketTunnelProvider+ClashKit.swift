@@ -26,33 +26,7 @@ extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerP
             guard let fd = self.tunnelFileDescriptor else {
                 return
             }
-            let config = """
-            {
-                "log": {
-                    "level": "trace"
-                },
-                "inbounds": [
-                    {
-                        "protocol": "tun",
-                        "settings": {
-                            "fd": \(fd)
-                        },
-                        "tag": "tun"
-                    }
-                ],
-                "outbounds": [
-                    {
-                        "protocol": "socks",
-                        "settings": {
-                            "address": "127.0.0.1",
-                            "port": 8080
-                        },
-                        "tag": "clash"
-                    }
-                ]
-            }
-            """
-            _ = Tun2Socks.start(config: config)
+            Tun2Socks.start(fd: fd, host: "127.0.0.1", port: 8080)
         }
     }
     

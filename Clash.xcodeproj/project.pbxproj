@@ -1149,7 +1149,7 @@
 			repositoryURL = "https://github.com/AppleClash/T2SKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.0;
+				version = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
