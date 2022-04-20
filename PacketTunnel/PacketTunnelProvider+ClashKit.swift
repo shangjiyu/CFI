@@ -22,7 +22,7 @@ extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerP
         }
         ClashSetNativeLogger(self)
         ClashSetTrafficReceiver(self)
-        DispatchQueue.global().async {
+        DispatchQueue.global(qos: .userInteractive).async {
             guard let fd = self.tunnelFileDescriptor else {
                 return
             }
