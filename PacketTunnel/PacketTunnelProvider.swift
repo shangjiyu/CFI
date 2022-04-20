@@ -14,6 +14,16 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             settings.includedRoutes = [NEIPv4Route.default()]
             return settings
         }()
+        settings.proxySettings = {
+            let settings = NEProxySettings()
+            settings.matchDomains = [""]
+            settings.excludeSimpleHostnames = true
+            settings.httpEnabled = true
+            settings.httpServer = NEProxyServer(address: "127.0.0.1", port: 8080)
+            settings.httpsEnabled = true
+            settings.httpsServer = NEProxyServer(address: "127.0.0.1", port: 8080)
+            return settings
+        }()
         settings.dnsSettings = {
             let settings = NEDNSSettings(servers: ["114.114.114.114", "8.8.8.8"])
             return settings
