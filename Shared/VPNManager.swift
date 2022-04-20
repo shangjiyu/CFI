@@ -11,11 +11,7 @@ import NetworkExtension
     
     private let providerBundleIdentifier: String = {
         let identifier = Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String
-#if os(macOS)
-        return "\(identifier).PacketTunnel-macOS"
-#else
-        return "\(identifier).PacketTunnel-iOS"
-#endif
+        return "\(identifier).PacketTunnel"
     }()
     
     private init() {
