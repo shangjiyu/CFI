@@ -52,7 +52,7 @@ struct ProxyGroupDetailView: View {
             Task {
                 for name in self.viewModel.group.proxies {
                     do {
-                        let data = try await controller.providerManager.sendProviderMessage(data: name.data(using: .utf8)!)
+                        let data = try await controller.execute(command: .fetchProxyDelay(name, "http://www.gstatic.com/generate_204", 3000))
                         if let data = data {
                             print(String(data: data, encoding: .utf8)!)
                         }
