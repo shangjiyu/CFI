@@ -82,7 +82,7 @@ import NetworkExtension
 @MainActor public final class VPNController: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
-    private let providerManager: NETunnelProviderManager
+    let providerManager: NETunnelProviderManager
     
     public var connectedDate: Date? {
         self.providerManager.connection.connectedDate
@@ -148,8 +148,7 @@ import NetworkExtension
     }
 }
 
-
-fileprivate extension NETunnelProviderManager {
+extension NETunnelProviderManager {
     
     @discardableResult
     func sendProviderMessage(data: Data) async throws -> Data? {

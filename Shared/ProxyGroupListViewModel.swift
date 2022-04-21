@@ -39,6 +39,10 @@ class ProxyGroupViewModel: ObservableObject {
     var isSelectable: Bool {
         self.group.type.uppercased() == "SELECT"
     }
+    
+    var isURLTestGroup: Bool {
+        self.group.type.uppercased() == "URL-TEST"
+    }
 }
 
 class ProxyGroupListViewModel: ObservableObject {

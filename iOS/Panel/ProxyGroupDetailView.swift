@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ProxyGroupDetailView: View {
     
+    @EnvironmentObject private var manager: VPNManager
+    
     @EnvironmentObject private var listViewModel: ProxyGroupListViewModel
     @EnvironmentObject private var viewModel: ProxyGroupViewModel
         
@@ -40,5 +42,26 @@ struct ProxyGroupDetailView: View {
         }
         .navigationTitle(viewModel.group.name)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            guard viewModel.isURLTestGroup else {
+                return
+            }
+            guard let controller = manager.controller else {
+                return
+            }
+            Task {
+                for name in self.viewModel.group.proxies {
+                    do {
+                        let data = try await controller.providerManager.sendProviderMessage(data: name.data(using: .utf8)!)
+                        if let data = data {
+                            print(String(data: data, encoding: .utf8)!)
+                        }
+                    } catch {
+                        NSLog(error.localizedDescription)
+                    }
+                    print("--------------")
+                }
+            }
+        }
     }
 }
