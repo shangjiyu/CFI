@@ -86,6 +86,9 @@
 		D9B1B55327EAFEDB007EE597 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1B55227EAFEDB007EE597 /* NetworkExtension.framework */; };
 		D9C3E959280EBEA200D6CFF9 /* T2SKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9C3E958280EBEA200D6CFF9 /* T2SKit */; };
 		D9C3E95B280EBEA800D6CFF9 /* T2SKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9C3E95A280EBEA800D6CFF9 /* T2SKit */; };
+		D9C7A0632812B7C80035DDE5 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7A0622812B7C80035DDE5 /* SafariView.swift */; };
+		D9C7A0642812B82E0035DDE5 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7A0622812B7C80035DDE5 /* SafariView.swift */; };
+		D9C7A0662812B8510035DDE5 /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7A0652812B8510035DDE5 /* TranslationView.swift */; };
 		D9CE81F927F2F6AC00E70A13 /* ProxyGroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -223,6 +226,8 @@
 		D9B1B55227EAFEDB007EE597 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
 		D9B1B55427EB0021007EE597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9B1B55627EB003C007EE597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9C7A0622812B7C80035DDE5 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		D9C7A0652812B8510035DDE5 /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +310,7 @@
 			children = (
 				D99E3ADC27EB10B900464266 /* ClashLogView.swift */,
 				D99E3ADD27EB10B900464266 /* UninstallVPNView.swift */,
+				D9C7A0652812B8510035DDE5 /* TranslationView.swift */,
 				D99E3ADE27EB10B900464266 /* SettingView.swift */,
 			);
 			path = Setting;
@@ -349,6 +355,7 @@
 				702C1BBB27F3F65200DF9A98 /* Clash+Extension.swift */,
 				D99E3AA427EB0D8F00464266 /* Clash.swift */,
 				D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */,
+				D9C7A0622812B7C80035DDE5 /* SafariView.swift */,
 				D99E3AF727EB10CA00464266 /* Country.mmdb */,
 				D9B1B4E727EAF72F007EE597 /* Assets.xcassets */,
 				D99E3AFC27EB10E700464266 /* Clash.xcdatamodeld */,
@@ -613,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
+				D9C7A0632812B7C80035DDE5 /* SafariView.swift in Sources */,
 				D99E3AF427EB10BA00464266 /* PanelView.swift in Sources */,
 				D99E3B0A27EB110C00464266 /* VPNManager.swift in Sources */,
 				D9CE81F927F2F6AC00E70A13 /* ProxyGroupListViewModel.swift in Sources */,
@@ -627,6 +635,7 @@
 				D99E3B0D27EB110C00464266 /* ContentView.swift in Sources */,
 				D99E3AEB27EB10B900464266 /* ClashConfigView.swift in Sources */,
 				D99E3AEF27EB10BA00464266 /* ClashLogView.swift in Sources */,
+				D9C7A0662812B8510035DDE5 /* TranslationView.swift in Sources */,
 				D99E3AF027EB10BA00464266 /* UninstallVPNView.swift in Sources */,
 				D99E3B0027EB10E700464266 /* Clash.xcdatamodeld in Sources */,
 				D99E3AEC27EB10B900464266 /* ClashTunnelModeView.swift in Sources */,
@@ -670,6 +679,7 @@
 				D927039A27ED541800E61944 /* ModalPresentationLink.swift in Sources */,
 				D998B60427F00F23004625FF /* SideBar.swift in Sources */,
 				D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */,
+				D9C7A0642812B82E0035DDE5 /* SafariView.swift in Sources */,
 				D998B60E27F01A70004625FF /* StateView.swift in Sources */,
 				D99E3B0127EB10E700464266 /* Clash.xcdatamodeld in Sources */,
 				D99E3AC227EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,

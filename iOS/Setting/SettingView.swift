@@ -11,6 +11,9 @@ struct SettingView: View {
                     ClashLogView()
                 }
                 Section {
+                    TranslationView()
+                }
+                Section {
                     UninstallVPNView()
                         .disabled(manager.controller == nil)
                 }
