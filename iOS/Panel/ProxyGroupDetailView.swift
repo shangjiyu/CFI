@@ -24,7 +24,15 @@ struct ProxyGroupDetailView: View {
             Section("包含") {
                 Picker(viewModel.group.name, selection: viewModel.isSelectable ? $viewModel.selectedProxy : .constant("")) {
                     ForEach(viewModel.group.proxies, id: \.self) { proxy in
-                        Text(proxy)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(proxy)
+                            if let delay = viewModel.delayMapping[proxy] {
+                                Text(delay == 0 ? "超时" : "延迟: \(delay)毫秒")
+                                    .foregroundColor(delay == 0 ? Color.red : Color.secondary)
+                                    .font(.subheadline)
+                            }
+                        }
+                        .padding(.vertical, 8.0)
                     }
                 }
                 .onChange(of: viewModel.selectedProxy) { newValue in
@@ -37,6 +45,9 @@ struct ProxyGroupDetailView: View {
                 .pickerStyle(InlinePickerStyle())
                 .disabled(!viewModel.isSelectable)
             }
+        }
+        .task {
+            await viewModel.loadProvider()
         }
         .navigationTitle(viewModel.group.name)
         .navigationBarTitleDisplayMode(.inline)

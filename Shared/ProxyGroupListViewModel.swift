@@ -21,6 +21,25 @@ struct RawConfig: Decodable {
     }
 }
 
+struct Provider: Decodable {
+    
+    struct DelayHistory: Decodable {
+        let time: String
+        let delay: UInt16
+    }
+    
+    struct Proxy: Decodable {
+        let name: String
+        let type: String
+        let history: [DelayHistory]
+    }
+    
+    let name: String
+    let type: String
+    let vehicleType: String
+    let proxies: [Proxy]
+}
+
 class ProxyGroupViewModel: ObservableObject {
     
 #if os(macOS)
@@ -28,6 +47,8 @@ class ProxyGroupViewModel: ObservableObject {
 #else
     @Published var selectedProxy: String
 #endif
+    
+    @Published var delayMapping: [String: UInt16] = [:]
     
     let group: RawProxyGroup
     
@@ -38,6 +59,30 @@ class ProxyGroupViewModel: ObservableObject {
     
     var isSelectable: Bool {
         self.group.type.uppercased() == "SELECT"
+    }
+    
+    func loadProvider() async {
+        repeat {
+            do {
+                guard let controller = await VPNManager.shared.controller else {
+                    break
+                }
+                guard let data = try await controller.execute(command: .provider(group.name)) else {
+                    break
+                }
+                let provider = try JSONDecoder().decode(Provider.self, from: data)
+                self.delayMapping = provider.proxies.reduce(into: [String: UInt16]()) { r, n in
+                    guard let last = n.history.last else {
+                        return
+                    }
+                    r[n.name] = last.delay
+                }
+                return
+            } catch {
+                break
+            }
+        } while false
+        self.delayMapping = [:]
     }
 }
 
