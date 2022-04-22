@@ -41,24 +41,26 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     }
     
     override func handleAppMessage(_ messageData: Data) async -> Data? {
-        guard let command = messageData.first.flatMap(Clash.Command.init(rawValue:)) else {
-            return nil
-        }
-        switch command {
-        case .setConfig:
-            do {
+        do {
+            let command = try JSONDecoder().decode(Clash.Command.self, from: messageData)
+            switch command {
+            case .setConfig:
                 try self.setConfig()
-            } catch {
-                return error.localizedDescription.data(using: .utf8)
+            case .setTunnelMode:
+                ClashSetTunnelMode(UserDefaults.shared.string(forKey: Clash.tunnelMode))
+            case .setLogLevel:
+                ClashSetLogLevel(UserDefaults.shared.string(forKey: Clash.logLevel))
+            case .setSelectGroup:
+                self.setSelectGroup()
+            case .healthCheck:
+                ClashHealthCheck()
+            case .provider(let name):
+                return ClashProvider(name)
             }
-        case .setTunnelMode:
-            ClashSetTunnelMode(UserDefaults.shared.string(forKey: Clash.tunnelMode))
-        case .setLogLevel:
-            ClashSetLogLevel(UserDefaults.shared.string(forKey: Clash.logLevel))
-        case .setSelectGroup:
-            self.setSelectGroup()
+            return nil
+        } catch {
+            return error.localizedDescription.data(using: .utf8)
         }
-        return nil
     }
     
     private var tunnelFileDescriptor: Int32? {
