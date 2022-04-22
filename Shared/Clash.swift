@@ -29,12 +29,11 @@ public enum Clash {
 
 extension Clash {
     
-    public enum Command: Codable {
+    public enum Command: UInt8 {
         case setConfig
         case setTunnelMode
         case setLogLevel
         case setSelectGroup
-        case fetchProxyDelay(String, String, Int64)
     }
     
     public enum LogLevel: String, Identifiable, CaseIterable {

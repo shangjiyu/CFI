@@ -41,28 +41,34 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     }
     
     override func handleAppMessage(_ messageData: Data) async -> Data? {
-        do {
-            let command = try JSONDecoder().decode(Clash.Command.self, from: messageData)
-            switch command {
-            case .setConfig:
-                try self.setConfig()
-                return nil
-            case .setTunnelMode:
-                ClashSetTunnelMode(UserDefaults.shared.string(forKey: Clash.tunnelMode))
-                return nil
-            case .setLogLevel:
-                ClashSetLogLevel(UserDefaults.shared.string(forKey: Clash.logLevel))
-                return nil
-            case .setSelectGroup:
-                self.setSelectGroup()
-                return nil
-            case .fetchProxyDelay(let name, let url, let timeout):
-                let res = await URLTest.fetchProxyDelay(name: name, url: url, timeout: timeout)
-                return "\(res)".data(using: .utf8)
-            }
-        } catch {
-            return error.localizedDescription.data(using: .utf8)
+        guard let name = String(data: messageData, encoding: .utf8) else {
+            return nil
         }
+        do {
+            let res = try await URLTest.fetchProxyDelay(name: name, url: "http://www.gstatic.com/generate_204", timeout: 1000)
+            return "\(res)".data(using: .utf8)
+        } catch {
+            return "超时".data(using: .utf8)
+        }
+        
+//        guard let command = messageData.first.flatMap(Clash.Command.init(rawValue:)) else {
+//            return nil
+//        }
+//        switch command {
+//        case .setConfig:
+//            do {
+//                try self.setConfig()
+//            } catch {
+//                return error.localizedDescription.data(using: .utf8)
+//            }
+//        case .setTunnelMode:
+//            ClashSetTunnelMode(UserDefaults.shared.string(forKey: Clash.tunnelMode))
+//        case .setLogLevel:
+//            ClashSetLogLevel(UserDefaults.shared.string(forKey: Clash.logLevel))
+//        case .setSelectGroup:
+//            self.setSelectGroup()
+//        }
+//        return nil
     }
     
     private var tunnelFileDescriptor: Int32? {
@@ -77,19 +83,33 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
 enum URLTest {
     
-    private static func fetchProxyDelay(name: String, url: String, timeout: Int64, completion: @escaping (Int64) -> Void) {
+    private static func fetchProxyDelay(name: String, url: String, timeout: Int64, completion: @escaping (Swift.Result<Int64, Error>) -> Void) {
         DispatchQueue.global().async {
             let delay = ClashURLTest(name, url, timeout)
             DispatchQueue.main.async {
-                completion(delay)
+                switch delay {
+                case 0:
+                    completion(.failure(NSError(domain: "Clash.URLTest", code: 1000, userInfo: [NSLocalizedDescriptionKey: "代理不存在"])))
+                case -1:
+                    completion(.failure(NSError(domain: "Clash.URLTest", code: 1001, userInfo: [NSLocalizedDescriptionKey: "超时"])))
+                case -2:
+                    completion(.failure(NSError(domain: "Clash.URLTest", code: 1002, userInfo: [NSLocalizedDescriptionKey: "发生位置错误"])))
+                default:
+                    completion(.success(delay))
+                }
             }
         }
     }
     
-    public static func fetchProxyDelay(name: String, url: String, timeout: Int64) async -> Int64 {
-        return await withCheckedContinuation { continuation in
-            self.fetchProxyDelay(name: name, url: url, timeout: timeout) { delay in
-                continuation.resume(returning: delay)
+    public static func fetchProxyDelay(name: String, url: String, timeout: Int64) async throws -> Int64 {
+        return try await withCheckedThrowingContinuation { continuation in
+            self.fetchProxyDelay(name: name, url: url, timeout: timeout) { result in
+                switch result {
+                case .success(let delay):
+                    continuation.resume(with: .success(delay))
+                case .failure(let error):
+                    continuation.resume(with: .failure(error))
+                }
             }
         }
     }
