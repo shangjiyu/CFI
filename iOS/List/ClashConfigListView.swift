@@ -44,9 +44,9 @@ struct ClashConfigListView: View {
     
     private func onCellTapGesture(config: ClashConfig) {
         let new = config.uuid?.uuidString ?? ""
-        let shouldUpdateConfig = new != uuidString
+        let shouldUpdateConfig = !(new == uuidString || new.isEmpty)
         uuidString = new
-        if shouldUpdateConfig, let controller = manager.controller {
+        if let controller = manager.controller, shouldUpdateConfig {
             Task(priority: .high) {
                 do {
                     try await controller.execute(command: .setConfig)
