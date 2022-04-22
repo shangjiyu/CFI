@@ -2,8 +2,10 @@ import SwiftUI
 
 struct ClashConfigListView: View {
     
+    @EnvironmentObject var manager: VPNManager
+    
     @AppStorage(Clash.currentConfigUUID, store: .shared) private var uuidString: String = ""
-        
+    
     @Environment(\.dismiss) private var dismiss
     @Environment(\.managedObjectContext) private var context
     @FetchRequest(
@@ -41,7 +43,18 @@ struct ClashConfigListView: View {
     }
     
     private func onCellTapGesture(config: ClashConfig) {
-        uuidString = config.uuid?.uuidString ?? ""
+        let new = config.uuid?.uuidString ?? ""
+        let shouldUpdateConfig = new != uuidString
+        uuidString = new
+        if shouldUpdateConfig, let controller = manager.controller {
+            Task(priority: .high) {
+                do {
+                    try await controller.execute(command: .setConfig)
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
         dismiss()
     }
     
