@@ -1,5 +1,10 @@
 import SwiftUI
 
+private struct ExportItem: Identifiable {
+    let id: UUID
+    let items: [Any]
+}
+
 struct ClashConfigListView: View {
     
     @EnvironmentObject var manager: VPNManager
@@ -12,6 +17,8 @@ struct ClashConfigListView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \ClashConfig.date, ascending: false)],
         animation: .default
     ) private var configs: FetchedResults<ClashConfig>
+    
+    @State private var exportItems: [Any]?
         
     var body: some View {
         NavigationView {
@@ -31,7 +38,11 @@ struct ClashConfigListView: View {
                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                     Button("删除", role: .destructive) { onCellDeleteAction(config: config) }
                 }
+                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                    Button("导出", role: nil) { onCellShareAction(config: config) }
+                }
             }
+            .activitySheet(items: $exportItems)
             .navigationBarTitle("配置管理")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -68,5 +79,13 @@ struct ClashConfigListView: View {
         } catch {
             debugPrint(error.localizedDescription)
         }
+    }
+    
+    private func onCellShareAction(config: ClashConfig) {
+        guard let uuid = config.uuid else {
+            return
+        }
+        let fileURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)/config.yaml")
+        self.exportItems = [fileURL]
     }
 }
