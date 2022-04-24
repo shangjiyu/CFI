@@ -145,7 +145,10 @@ import NetworkExtension
     
     @discardableResult
     public func execute(command: Clash.Command) async throws -> Data? {
-        try await self.providerManager.sendProviderMessage(data: try JSONEncoder().encode(command))
+        guard self.connectionStatus != .invalid || self.connectionStatus != .disconnected else {
+            return nil
+        }
+        return try await self.providerManager.sendProviderMessage(data: try JSONEncoder().encode(command))
     }
 }
 

@@ -46,10 +46,19 @@ struct ProxyGroupDetailView: View {
                 .disabled(!viewModel.isSelectable)
             }
         }
-        .task {
-            await viewModel.loadProvider()
+        .onAppear {
+            loadProvider()
+        }
+        .onReceive(Timer.publish(every: 1.0, on: .current, in: .common).autoconnect()) { _ in
+            loadProvider()
         }
         .navigationTitle(viewModel.group.name)
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    private func loadProvider() {
+        Task(priority: .medium) {
+            await viewModel.loadProvider()
+        }
     }
 }
