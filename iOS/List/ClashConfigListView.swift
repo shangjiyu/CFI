@@ -37,8 +37,6 @@ struct ClashConfigListView: View {
                 .onTapGesture { onCellTapGesture(config: config) }
                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                     Button("删除", role: .destructive) { onCellDeleteAction(config: config) }
-                }
-                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                     Button("导出", role: nil) { onCellShareAction(config: config) }
                 }
             }
@@ -82,10 +80,12 @@ struct ClashConfigListView: View {
     }
     
     private func onCellShareAction(config: ClashConfig) {
-        guard let uuid = config.uuid else {
-            return
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            guard let uuid = config.uuid else {
+                return
+            }
+            let fileURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)/config.yaml")
+            self.exportItems = [fileURL]
         }
-        let fileURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)/config.yaml")
-        self.exportItems = [fileURL]
     }
 }
