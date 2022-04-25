@@ -12,8 +12,6 @@ struct ContentView: View {
             SideBar()
             ProxyGroupListView()
                 .environmentObject(viewModel)
-            ProxyGroupDetailView()
-                .environmentObject(viewModel)
         }
         .onChange(of: uuidString) { newValue in
             viewModel.update(uuidString: newValue)

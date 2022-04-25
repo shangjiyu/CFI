@@ -4,32 +4,39 @@ struct ProxyGroupListView: View {
     
     @EnvironmentObject var viewModel: ProxyGroupListViewModel
     
-    @State private var selection: String = ""
+    private let colums: [GridItem] = [
+        GridItem(.flexible(), spacing: 10, alignment: .center),
+        GridItem(.flexible(), spacing: 10, alignment: .center),
+        GridItem(.flexible(), spacing: 10, alignment: .center),
+        GridItem(.flexible(), spacing: 10, alignment: .center)
+    ]
         
     var body: some View {
+
         VStack(spacing: 0) {
             Divider()
             List(viewModel.groupViewModels, id: \.self.group.name) { model in
-                HStack {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(model.group.name)
-                        Text("\(model.group.proxies.count)代理 - \(model.group.type.uppercased())")
-                            .font(Font.subheadline)
+                DisclosureGroup {
+                    LazyVGrid(columns: colums) {
+                        ForEach(model.group.proxies, id: \.self) { proxy in
+                            HStack {
+                                Text(proxy)
+                                Spacer()
+                            }
+                            .padding()
+                            .background(.red)
+                        }
                     }
-                    Spacer()
-                    Text(model.isSelectable ? model.selectedProxy : "")
+                } label: {
+                    HStack {
+                        Text(model.group.name)
+                        Spacer()
+                        Text(model.isSelectable ? model.selectedProxy : "")
+                    }
+                    .padding(.vertical, 8.0)
                 }
-                .padding()
-                .foregroundColor(.white)
-                .background(
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(viewModel.selectedGroupViewModel?.group.name == model.group.name ? Color.red.opacity(0.8) : Color.gray.opacity(0.5))
-                )
-                .padding(.vertical, 4)
-                .contentShape(Rectangle())
-                .onTapGesture { viewModel.selectedGroupViewModel = model }
             }
-            .listStyle(SidebarListStyle())
+            .listStyle(.sidebar)
         }
         .toolbar {
             ToolbarItem(placement: .navigation) {
