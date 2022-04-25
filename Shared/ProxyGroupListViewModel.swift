@@ -89,6 +89,7 @@ class ProxyGroupViewModel: ObservableObject {
 class ProxyGroupListViewModel: ObservableObject {
     
     @Published private var mapping: [String: String] = [:]
+    @Published var globalGroupViewModels: [ProxyGroupViewModel] = []
     @Published var groupViewModels: [ProxyGroupViewModel] = []
 #if os(macOS)
     @Published var selectedGroupViewModel: ProxyGroupViewModel?
@@ -118,6 +119,19 @@ class ProxyGroupListViewModel: ObservableObject {
         self.groupViewModels = raw.groups.map { group in
             ProxyGroupViewModel(group: group, selectedProxy: temp[group.name] ?? group.proxies.first ?? "")
         }
+        self.globalGroupViewModels = {
+            var proxies: [String] = []
+            proxies.append("DIRECT")
+            proxies.append("REJECT")
+            proxies.append(contentsOf: raw.proxies.map({ $0.name }))
+            proxies.append(contentsOf: self.groupViewModels.map({ $0.group.name }))
+            let group = RawProxyGroup(name: "GLOBAL", type: "select", proxies: proxies)
+            let viewModel = ProxyGroupViewModel(
+                group: group,
+                selectedProxy: temp[group.name] ?? group.proxies.first ?? ""
+            )
+            return [viewModel]
+        }()
         self.mapping = temp
 #if os(macOS)
         self.selectedGroupViewModel = self.groupViewModels.first
