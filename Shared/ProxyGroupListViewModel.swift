@@ -99,10 +99,11 @@ class ProxyGroupListViewModel: ObservableObject {
     init() {}
     
     func update(uuidString: String) {
-        guard uuidString != storeKey else {
+        let key = "\(uuidString)-PatchGroup"
+        guard key != storeKey else {
             return
         }
-        self.storeKey = uuidString
+        self.storeKey = key
         let raw: RawConfig
         do {
             raw = try YAMLDecoder().decode(
@@ -113,7 +114,7 @@ class ProxyGroupListViewModel: ObservableObject {
         } catch {
             raw = RawConfig(proxies: [], groups: [])
         }
-        let temp = UserDefaults.shared.dictionary(forKey: uuidString) as? [String: String] ?? [:]
+        let temp = UserDefaults.shared.dictionary(forKey: self.storeKey) as? [String: String] ?? [:]
         self.groupViewModels = raw.groups.map { group in
             ProxyGroupViewModel(group: group, selectedProxy: temp[group.name] ?? group.proxies.first ?? "")
         }

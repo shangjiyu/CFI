@@ -41,7 +41,7 @@ extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerP
     
     func setSelectGroup() {
         guard let id = UserDefaults.shared.string(forKey: Clash.currentConfigUUID), !id.isEmpty,
-              let mapping = UserDefaults.shared.dictionary(forKey: "\(id)-SelectGroup") as? [String: String], !mapping.isEmpty else {
+              let mapping = UserDefaults.shared.dictionary(forKey: "\(id)-PatchGroup") as? [String: String], !mapping.isEmpty else {
             return
         }
         do {
