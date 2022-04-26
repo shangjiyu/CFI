@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             SideBar()
-                .frame(width: 240)
+                .frame(minWidth: 250)
                 .toolbar {
                     ToolbarItem {
                         Button {
@@ -20,7 +20,7 @@ struct ContentView: View {
                             Image(systemName: "sidebar.left")
                         }
                     }
-                    ToolbarItem {
+                    ToolbarItem(placement: .status) {
                         if let controller = manager.controller {
                             StateView()
                                 .environmentObject(controller)

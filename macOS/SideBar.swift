@@ -1,18 +1,17 @@
 import SwiftUI
 
 struct SideBar: View {
-    
-    @EnvironmentObject private var manager: VPNManager
-    
+        
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
+            Divider()
             TunnelModeView()
-                .padding()
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+            Divider()
+            Spacer()
+                .frame(height: 8)
             ConfigListView()
-//            Divider()
-//            TrafficView()
-//                .padding(.horizontal, 16)
-//                .padding(.bottom, 8)
         }
     }
 }
