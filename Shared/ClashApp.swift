@@ -22,7 +22,12 @@ struct ClashApp: App {
 #if os(macOS)
         .windowStyle(.hiddenTitleBar)
         .commands {
-            CommandGroup(replacing: .newItem) {}
+            CommandGroup(replacing: .newItem) {
+                Button("导入") {
+                    NotificationCenter.default.post(name: NSNotification.Name("ImportFile"), object: nil)
+                }
+                .keyboardShortcut("I", modifiers: [.command])
+            }
             CommandGroup(replacing: .systemServices) {}
         }
 #endif

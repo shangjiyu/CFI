@@ -36,10 +36,5 @@ struct ProxyGroupListView: View {
             }
             .listStyle(.sidebar)
         }
-        .toolbar {
-            ToolbarItem(placement: .navigation) {
-                Text("策略组")
-            }
-        }
     }
 }

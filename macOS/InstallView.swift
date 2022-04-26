@@ -6,20 +6,10 @@ struct InstallView: View {
     
     var body: some View {
         Button(action: install) {
-            HStack {
-                Spacer()
-                Text("添加VPN配置")
-                Spacer()
-            }
-            .font(.body)
-            .foregroundColor(Color.white)
-            .padding(.vertical, 30)
-            .background(
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.purple)
-            )
+            Text("连接")
+                .fontWeight(.bold)
+                .foregroundColor(.accentColor)
         }
-        .buttonStyle(.plain)
     }
     
     private func install() {

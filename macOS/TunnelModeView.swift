@@ -6,16 +6,13 @@ struct TunnelModeView: View {
     @AppStorage(Clash.tunnelMode, store: .shared) private var tunnelMode: Clash.TunnelMode = .rule
     
     var body: some View {
-        HStack {
-            ForEach(Clash.TunnelMode.allCases) { mode in
-                buildElementView(mode: mode)
-                    .onTapGesture {
-                        withAnimation {
-                            tunnelMode = mode
-                        }
-                    }
+        Picker("代理模式", selection: $tunnelMode) {
+            ForEach(Clash.TunnelMode.allCases) {
+                Text($0.title)
             }
         }
+        .labelsHidden()
+        .pickerStyle(.segmented)
         .task(id: tunnelMode) {
             guard let controller = self.manager.controller else {
                 return
@@ -26,26 +23,5 @@ struct TunnelModeView: View {
                 debugPrint(error)
             }
         }
-    }
-    
-    @ViewBuilder
-    private func buildElementView(mode: Clash.TunnelMode) -> some View {
-        HStack(spacing: 0) {
-            Spacer(minLength: 0)
-            VStack {
-                Image(systemName: mode.imageName)
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                Text(mode.title)
-            }
-            .frame(width: 44)
-            Spacer(minLength: 0)
-        }
-        .foregroundColor(.white)
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 8)
-                .fill(tunnelMode == mode ? Color.accentColor : Color.gray.opacity(0.5))
-        )
     }
 }

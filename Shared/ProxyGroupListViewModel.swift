@@ -44,9 +44,6 @@ class ProxyGroupViewModel: ObservableObject {
     
     @Published var selectedProxy: String
     @Published var delayMapping: [String: UInt16] = [:]
-#if os(macOS)
-    @Published var isExpanded: Bool = false
-#endif
     
     let group: RawProxyGroup
     
@@ -89,9 +86,6 @@ class ProxyGroupListViewModel: ObservableObject {
     @Published private var mapping: [String: String] = [:]
     @Published var globalGroupViewModels: [ProxyGroupViewModel] = []
     @Published var groupViewModels: [ProxyGroupViewModel] = []
-#if os(macOS)
-    @Published var selectedGroupViewModel: ProxyGroupViewModel?
-#endif
     
     private var storeKey: String = ""
     
@@ -131,9 +125,6 @@ class ProxyGroupListViewModel: ObservableObject {
             return [viewModel]
         }()
         self.mapping = temp
-#if os(macOS)
-        self.selectedGroupViewModel = self.groupViewModels.first
-#endif
     }
     
     func setSelected(proxy: String, groupViewModel: ProxyGroupViewModel) {
