@@ -4,17 +4,13 @@ import UniformTypeIdentifiers
 struct ConfigListView: View {
     
     @AppStorage(Clash.currentConfigUUID, store: .shared) private var uuidString: String = ""
-        
-    @Environment(\.dismiss) private var dismiss
     
     @Environment(\.managedObjectContext) private var context
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \ClashConfig.date, ascending: false)],
         animation: .default
     ) private var configs: FetchedResults<ClashConfig>
-    
-    @State private var isProcessing = false
-        
+            
     private var selection: Binding<UUID?> {
         Binding {
             UUID(uuidString: self.uuidString)
@@ -49,7 +45,6 @@ struct ConfigListView: View {
     }
     
     private func onImportAction() {
-        isProcessing = true
         let panel = NSOpenPanel()
         panel.canChooseFiles = true
         panel.canChooseDirectories = false
@@ -59,9 +54,8 @@ struct ConfigListView: View {
             UTType(filenameExtension: "yml")
         ].compactMap { $0 }
         guard panel.runModal() == .OK, let url = panel.url else {
-            return isProcessing = false
+            return
         }
-        isProcessing = false
         Task(priority: .high) {
             do {
                 try await context.importClashConfig(name: url.deletingPathExtension().lastPathComponent, url: url)
