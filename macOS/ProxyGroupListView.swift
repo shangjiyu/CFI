@@ -4,34 +4,32 @@ struct ProxyGroupListView: View {
     
     @EnvironmentObject var viewModel: ProxyGroupListViewModel
     
-    private let colums: [GridItem] = [
-        GridItem(.flexible(), spacing: 10, alignment: .center),
-        GridItem(.flexible(), spacing: 10, alignment: .center),
-        GridItem(.flexible(), spacing: 10, alignment: .center),
-        GridItem(.flexible(), spacing: 10, alignment: .center)
-    ]
-        
     var body: some View {
-
         VStack(spacing: 0) {
             Divider()
             List(viewModel.groupViewModels, id: \.self.group.name) { model in
                 DisclosureGroup {
-                    LazyVGrid(columns: colums) {
-                        ForEach(model.group.proxies, id: \.self) { proxy in
-                            HStack {
-                                Text(proxy)
-                                Spacer()
+                    ForEach(model.group.proxies, id: \.self) { proxy in
+                        HStack(spacing: 0) {
+                            Text(proxy)
+                                .foregroundColor(model.isSelectable && model.selectedProxy == proxy ? .accentColor : .primary)
+                        }
+                        .padding(.vertical, 4)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            guard model.isSelectable else {
+                                return
                             }
-                            .padding()
-                            .background(.red)
+                            viewModel.setSelected(proxy: proxy, groupViewModel: model)
                         }
                     }
                 } label: {
                     HStack {
                         Text(model.group.name)
+                            .fontWeight(.bold)
                         Spacer()
                         Text(model.isSelectable ? model.selectedProxy : "")
+                            .foregroundColor(.secondary)
                     }
                     .padding(.vertical, 8.0)
                 }

@@ -42,13 +42,11 @@ struct Provider: Decodable {
 
 class ProxyGroupViewModel: ObservableObject {
     
-#if os(macOS)
-    @Published fileprivate(set) var selectedProxy: String
-#else
     @Published var selectedProxy: String
-#endif
-    
     @Published var delayMapping: [String: UInt16] = [:]
+#if os(macOS)
+    @Published var isExpanded: Bool = false
+#endif
     
     let group: RawProxyGroup
     
