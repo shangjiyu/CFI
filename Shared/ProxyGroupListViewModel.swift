@@ -62,7 +62,7 @@ class ProxyGroupViewModel: ObservableObject {
                 guard let controller = await VPNManager.shared.controller else {
                     break
                 }
-                guard let data = try await controller.execute(command: .provider(group.name)) else {
+                guard let data = try await controller.execute(command: .provider(group.name == "GLOBAL" ? "default" : group.name)) else {
                     break
                 }
                 let provider = try JSONDecoder().decode(Provider.self, from: data)
@@ -128,9 +128,6 @@ class ProxyGroupListViewModel: ObservableObject {
     }
     
     func setSelected(proxy: String, groupViewModel: ProxyGroupViewModel) {
-#if os(macOS)
-        groupViewModel.selectedProxy = proxy
-#endif
         self.mapping[groupViewModel.group.name] = proxy
         UserDefaults.shared.setValue(self.mapping, forKey: self.storeKey)
         Task(priority: .high) {

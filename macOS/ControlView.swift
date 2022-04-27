@@ -1,7 +1,7 @@
 import SwiftUI
 import NetworkExtension
 
-struct StateView: View {
+struct ControlView: View {
     
     @EnvironmentObject private var controller: VPNController
     
@@ -13,6 +13,7 @@ struct StateView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.accentColor)
         }
+        .padding(.vertical, 8)
         .buttonStyle(.plain)
         .onChange(of: uuidString) { newValue in
             guard newValue.isEmpty else {

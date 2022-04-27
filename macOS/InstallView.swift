@@ -6,10 +6,12 @@ struct InstallView: View {
     
     var body: some View {
         Button(action: install) {
-            Text("连接")
+            Text("添加VPN配置")
                 .fontWeight(.bold)
                 .foregroundColor(.accentColor)
         }
+        .padding(.vertical, 8)
+        .buttonStyle(.plain)
     }
     
     private func install() {

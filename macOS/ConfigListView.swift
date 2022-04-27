@@ -4,7 +4,7 @@ import UniformTypeIdentifiers
 struct ConfigListView: View {
     
     @AppStorage(Clash.currentConfigUUID, store: .shared) private var uuidString: String = ""
-    
+    @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) private var context
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \ClashConfig.date, ascending: false)],
@@ -20,20 +20,36 @@ struct ConfigListView: View {
     }
     
     var body: some View {
-        List(configs, id: \.self.uuid!, selection: selection) { config in
-            Text(config.name ?? "-")
-                .onTapGesture { onTapGesture(config: config) }
-                .contextMenu {
-                    Button("删除", role: .destructive) {
-                        onDeleteAction(config: config)
-                    }
-                    Button("导出", role: .destructive) {
-                        onExportAction(config: config)
-                    }
+        VStack(spacing: 0) {
+            HStack {
+                Button { dismiss() } label: {
+                    Text("关闭")
                 }
-        }
-        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("ImportFile"), object: nil)) { _ in
-            self.onImportAction()
+                Spacer()
+                Button(action: onImportAction) {
+                    Text("导入")
+                        .fontWeight(.bold)
+                }
+            }
+            .foregroundColor(.accentColor)
+            .buttonStyle(.plain)
+            .padding()
+            
+            Divider()
+            
+            List(configs, id: \.self.uuid!, selection: selection) { config in
+                Text(config.name ?? "-")
+                    .padding(.vertical, 4)
+                    .contextMenu {
+                        Button("删除", role: .destructive) {
+                            onDeleteAction(config: config)
+                        }
+                        Button("导出", role: .destructive) {
+                            onExportAction(config: config)
+                        }
+                    }
+            }
+            .frame(width: 320, height: 320)
         }
     }
     
@@ -86,13 +102,6 @@ struct ConfigListView: View {
         } catch {
             debugPrint(error.localizedDescription)
         }
-    }
-    
-    private func onTapGesture(config: ClashConfig) {
-        guard let uuid = config.uuid else {
-            return
-        }
-        uuidString = uuid.uuidString
     }
     
     private func onDeleteAction(config: ClashConfig) {

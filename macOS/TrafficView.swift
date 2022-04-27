@@ -8,7 +8,7 @@ struct TrafficView: View {
     @AppStorage(Clash.Traffic.down.rawValue, store: .shared) private var down: Double = 0
         
     var body: some View {
-        VStack(spacing: 8) {
+        HStack(spacing: 32) {
             buildElementView(traffic: .up)
             buildElementView(traffic: .down)
         }
@@ -16,7 +16,7 @@ struct TrafficView: View {
     
     private func buildElementView(traffic: Clash.Traffic) -> some View {
         HStack {
-            Text(traffic.title)
+            Image(systemName: traffic.imageName)
             Spacer()
             Text(formatter.string(from: NSNumber(value: traffic == .up ? up : down)) ?? "-")
         }
