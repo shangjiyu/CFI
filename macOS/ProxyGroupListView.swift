@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ProxyGroupListView: View {
     
+    @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject var viewModel: ProxyGroupListViewModel
     
     private let columns = Array(
@@ -35,7 +36,10 @@ struct ProxyGroupListView: View {
                             Spacer()
                         }
                         .padding(8)
-                        .background(RoundedRectangle(cornerRadius: 6).fill(Color.white))
+                        .background(
+                            RoundedRectangle(cornerRadius: 6)
+                                .fill(colorScheme == .dark ? Color.black.opacity(0.3) : Color.white.opacity(0.7))
+                        )
                     }
                 }
             }
