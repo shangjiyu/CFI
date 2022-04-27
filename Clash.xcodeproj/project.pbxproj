@@ -19,7 +19,6 @@
 		D90289D728192C4F00FEB376 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D628192C4F00FEB376 /* StatusView.swift */; };
 		D90289D92819310300FEB376 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D82819310300FEB376 /* HomeView.swift */; };
 		D90289DB28194A7A00FEB376 /* ProxyGroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289DA28194A7A00FEB376 /* ProxyGroupDetailView.swift */; };
-		D90289DD28194E1300FEB376 /* Patch.m in Sources */ = {isa = PBXBuildFile; fileRef = D90289DC28194E1300FEB376 /* Patch.m */; };
 		D90289DF28194F8A00FEB376 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289DE28194F8A00FEB376 /* PanelView.swift */; };
 		D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
@@ -178,7 +177,6 @@
 		D90289D628192C4F00FEB376 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		D90289D82819310300FEB376 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D90289DA28194A7A00FEB376 /* ProxyGroupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupDetailView.swift; sourceTree = "<group>"; };
-		D90289DC28194E1300FEB376 /* Patch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patch.m; sourceTree = "<group>"; };
 		D90289DE28194F8A00FEB376 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
 		D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEOIPDatabaseManager.swift; sourceTree = "<group>"; };
 		D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PacketTunnelProvider+ClashKit.swift"; sourceTree = "<group>"; };
@@ -389,7 +387,6 @@
 		D9B1B4F327EAF72F007EE597 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				D90289DC28194E1300FEB376 /* Patch.m */,
 				D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */,
 				D90289D0281905C600FEB376 /* Tab.swift */,
 				D9B1B4E627EAF72B007EE597 /* ContentView.swift */,
@@ -686,7 +683,6 @@
 				D90289D728192C4F00FEB376 /* StatusView.swift in Sources */,
 				D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
 				D90289D1281905C700FEB376 /* Tab.swift in Sources */,
-				D90289DD28194E1300FEB376 /* Patch.m in Sources */,
 				D998B60C27F01A4F004625FF /* InstallView.swift in Sources */,
 				D98884EE27F0C0EC00CBB3DB /* ProxyGroupListView.swift in Sources */,
 				D99E3AFF27EB10E700464266 /* CoreDataStack.swift in Sources */,
