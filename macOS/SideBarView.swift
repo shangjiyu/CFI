@@ -14,6 +14,8 @@ struct SideBarView: View {
             
     var body: some View {
         VStack {
+            Image("logo")
+                .padding()
             List(Tab.allCases, selection: selection) { tab in
                 Label(tab.title, systemImage: tab.systemImageName)
                     .padding(.vertical, 4)
