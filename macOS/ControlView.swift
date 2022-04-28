@@ -16,10 +16,17 @@ struct ControlView: View {
         .padding(.vertical, 8)
         .buttonStyle(.plain)
         .onChange(of: uuidString) { newValue in
-            guard newValue.isEmpty else {
-                return
+            if newValue.isEmpty {
+                self.controller.stopVPN()
+            } else {
+                Task(priority: .high) {
+                    do {
+                        try await controller.execute(command: .setConfig)
+                    } catch {
+                        debugPrint(error.localizedDescription)
+                    }
+                }
             }
-            self.controller.stopVPN()
         }
     }
     
