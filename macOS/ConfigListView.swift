@@ -49,6 +49,7 @@ struct ConfigListView: View {
                         }
                     }
             }
+            .listStyle(.sidebar)
             .frame(width: 320, height: 320)
         }
     }

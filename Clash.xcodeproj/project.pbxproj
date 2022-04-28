@@ -20,6 +20,7 @@
 		D90289D92819310300FEB376 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D82819310300FEB376 /* HomeView.swift */; };
 		D90289DB28194A7A00FEB376 /* ProxyGroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289DA28194A7A00FEB376 /* ProxyGroupDetailView.swift */; };
 		D90289DF28194F8A00FEB376 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289DE28194F8A00FEB376 /* PanelView.swift */; };
+		D90289E2281A280200FEB376 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = D90289E1281A280200FEB376 /* Introspect */; };
 		D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927039927ED540500E61944 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */; };
@@ -256,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B1B55127EAFEC7007EE597 /* NetworkExtension.framework in Frameworks */,
+				D90289E2281A280200FEB376 /* Introspect in Frameworks */,
 				D99E3A9727EB0B6400464266 /* Yams in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +499,7 @@
 			name = "Clash (macOS)";
 			packageProductDependencies = (
 				D99E3A9627EB0B6400464266 /* Yams */,
+				D90289E1281A280200FEB376 /* Introspect */,
 			);
 			productName = "AppleClash (macOS)";
 			productReference = D9B1B4F227EAF72F007EE597 /* Clash.app */;
@@ -583,6 +586,7 @@
 				D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */,
 				D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */,
 				D9C3E955280EBE8800D6CFF9 /* XCRemoteSwiftPackageReference "T2SKit" */,
+				D90289E0281A280200FEB376 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = D9B1B4ED27EAF72F007EE597 /* Products */;
 			projectDirPath = "";
@@ -1160,6 +1164,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D90289E0281A280200FEB376 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.1.4;
+			};
+		};
 		D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jpsim/Yams.git";
@@ -1187,6 +1199,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D90289E1281A280200FEB376 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D90289E0281A280200FEB376 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
 		D99E3A9427EB0B5600464266 /* Yams */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */;

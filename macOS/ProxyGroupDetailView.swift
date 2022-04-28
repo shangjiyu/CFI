@@ -40,6 +40,7 @@ struct ProxyGroupDetailView: View {
                 }
                 .padding(.vertical, 8.0)
             }
+            .listStyle(.sidebar)
             .onChange(of: viewModel.selectedProxy) { newValue in
                 guard viewModel.isSelectable else {
                     return

@@ -1,4 +1,5 @@
 import SwiftUI
+import Introspect
 
 struct ContentView: View {
     
@@ -7,7 +8,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             SideBarView(binding: $currentTab)
-                .background(InspectorView())
+                .background(SplitViewControllerInspector())
             switch currentTab {
             case .home:
                 HomeView()
@@ -18,10 +19,18 @@ struct ContentView: View {
             }
         }
         .frame(height: 540)
+        .introspect(selector: { $0 }) { view in
+            guard let window = view.window else {
+                return
+            }
+            var mask = window.styleMask
+            mask.remove(.resizable)
+            window.styleMask = mask
+        }
     }
 }
 
-struct InspectorView: NSViewControllerRepresentable {
+struct SplitViewControllerInspector: NSViewControllerRepresentable {
     
     private class ViewController: NSViewController {
         
@@ -31,20 +40,6 @@ struct InspectorView: NSViewControllerRepresentable {
         
         override func viewWillAppear() {
             super.viewWillAppear()
-            self.fixWindowStyleMask()
-            self.fixSplitViewController()
-        }
-        
-        private func fixWindowStyleMask() {
-            guard let window = self.view.window else {
-                return
-            }
-            var mask = window.styleMask
-            mask.remove(.resizable)
-            window.styleMask = mask
-        }
-        
-        private func fixSplitViewController() {
             guard let vc = self.findSplitViewController() else {
                 return
             }
