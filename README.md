@@ -10,6 +10,7 @@
 
 #### Snapshot
   macOS
+  
   <img width="600" alt="mac_home" src="https://user-images.githubusercontent.com/11971659/165678631-3bfd3b5e-14fa-481e-a13a-62433c787951.png">
   <img width="600" alt="mac_panel" src="https://user-images.githubusercontent.com/11971659/165678669-e2e5ffe4-6570-4530-9cb7-5b69de6a3ac3.png">
   <img width="600" alt="mac_setting" src="https://user-images.githubusercontent.com/11971659/165678688-61535a37-ea02-4ec1-9ecd-a980defc2160.png">
