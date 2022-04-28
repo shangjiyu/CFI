@@ -41,12 +41,17 @@ struct ConfigListView: View {
                 Text(config.name ?? "-")
                     .padding(.vertical, 4)
                     .contextMenu {
-                        Button("删除", role: .destructive) {
-                            onDeleteAction(config: config)
-                        }
-                        Button("导出", role: .destructive) {
+                        Button("导出配置", role: nil) {
                             onExportAction(config: config)
                         }
+                        Divider()
+                        Button {
+                            onDeleteAction(config: config)
+                        } label: {
+                            Text("删除配置")
+                                .foregroundColor(.red)
+                        }
+
                     }
             }
             .listStyle(.sidebar)
