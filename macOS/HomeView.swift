@@ -43,9 +43,18 @@ struct ConfigSwitchView: View {
     }
     
     private func label(result: FetchedResults<ClashConfig>) -> some View {
-        Text(result.first.flatMap({ $0.name ?? "-" }) ?? "选择配置")
-            .fontWeight(.bold)
-            .foregroundColor(.accentColor)
-            .padding(.vertical, 4)
+        HStack {
+            TextField("配置: ", text: .constant(result.first.flatMap({ $0.name ?? "-" }) ?? "未选择"), prompt: nil)
+                .textFieldStyle(.plain)
+                .allowsHitTesting(false)
+                .focusable(false)
+            ModalPresentationLink {
+                ConfigListView()
+            } label: {
+                Text("切换")
+                    .fontWeight(.bold)
+                    .foregroundColor(.accentColor)
+            }
+        }
     }
 }
