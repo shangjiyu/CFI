@@ -296,6 +296,7 @@
 				D998B60727F00F69004625FF /* TunnelModeView.swift */,
 				D998B60D27F01A70004625FF /* ControlView.swift */,
 				D998B60B27F01A4F004625FF /* InstallView.swift */,
+				D998B60527F00F43004625FF /* ConfigListView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -325,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				D90289DE28194F8A00FEB376 /* PanelView.swift */,
-				D998B60527F00F43004625FF /* ConfigListView.swift */,
 				D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */,
 				D90289DA28194A7A00FEB376 /* ProxyGroupDetailView.swift */,
 			);
