@@ -10,7 +10,7 @@ struct InstallView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.accentColor)
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, 12)
         .buttonStyle(.plain)
     }
     

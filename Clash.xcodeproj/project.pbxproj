@@ -20,7 +20,8 @@
 		D90289D92819310300FEB376 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D82819310300FEB376 /* HomeView.swift */; };
 		D90289DB28194A7A00FEB376 /* ProxyGroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289DA28194A7A00FEB376 /* ProxyGroupDetailView.swift */; };
 		D90289DF28194F8A00FEB376 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289DE28194F8A00FEB376 /* PanelView.swift */; };
-		D90289E2281A280200FEB376 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = D90289E1281A280200FEB376 /* Introspect */; };
+		D90289E4281A4F2300FEB376 /* SplitViewControllerInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */; };
+		D90289E6281A4F6C00FEB376 /* ConfigSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */; };
 		D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927039927ED540500E61944 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */; };
@@ -179,6 +180,8 @@
 		D90289D82819310300FEB376 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D90289DA28194A7A00FEB376 /* ProxyGroupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupDetailView.swift; sourceTree = "<group>"; };
 		D90289DE28194F8A00FEB376 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewControllerInspector.swift; sourceTree = "<group>"; };
+		D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSwitchView.swift; sourceTree = "<group>"; };
 		D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEOIPDatabaseManager.swift; sourceTree = "<group>"; };
 		D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PacketTunnelProvider+ClashKit.swift"; sourceTree = "<group>"; };
 		D944F5652815281F00DF0BBE /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -257,7 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B1B55127EAFEC7007EE597 /* NetworkExtension.framework in Frameworks */,
-				D90289E2281A280200FEB376 /* Introspect in Frameworks */,
 				D99E3A9727EB0B6400464266 /* Yams in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +287,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D90289E7281A50C600FEB376 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D90289E8281A50D600FEB376 /* SideBar */,
+				D90289D82819310300FEB376 /* HomeView.swift */,
+				D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */,
+				D998B60727F00F69004625FF /* TunnelModeView.swift */,
+				D998B60D27F01A70004625FF /* ControlView.swift */,
+				D998B60B27F01A4F004625FF /* InstallView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D90289E8281A50D600FEB376 /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				D90289D0281905C600FEB376 /* Tab.swift */,
+				D998B60327F00F23004625FF /* SideBarView.swift */,
+				D90289D628192C4F00FEB376 /* StatusView.swift */,
+				D998B60927F00F8F004625FF /* TrafficView.swift */,
+				D90289D228192BD600FEB376 /* ConnectionStatusView.swift */,
+				D90289D428192BF800FEB376 /* ConnectionDurationView.swift */,
+			);
+			path = SideBar;
+			sourceTree = "<group>";
+		};
+		D90289E9281A518900FEB376 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D998B60F27F01F28004625FF /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		D90289EA281A519300FEB376 /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				D90289DE28194F8A00FEB376 /* PanelView.swift */,
+				D998B60527F00F43004625FF /* ConfigListView.swift */,
+				D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */,
+				D90289DA28194A7A00FEB376 /* ProxyGroupDetailView.swift */,
+			);
+			path = Panel;
+			sourceTree = "<group>";
+		};
 		D99E3AA027EB0D2E00464266 /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,22 +437,11 @@
 			isa = PBXGroup;
 			children = (
 				D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */,
-				D90289D0281905C600FEB376 /* Tab.swift */,
 				D9B1B4E627EAF72B007EE597 /* ContentView.swift */,
-				D998B60327F00F23004625FF /* SideBarView.swift */,
-				D90289DE28194F8A00FEB376 /* PanelView.swift */,
-				D90289D82819310300FEB376 /* HomeView.swift */,
-				D90289D228192BD600FEB376 /* ConnectionStatusView.swift */,
-				D90289D428192BF800FEB376 /* ConnectionDurationView.swift */,
-				D90289D628192C4F00FEB376 /* StatusView.swift */,
-				D998B60D27F01A70004625FF /* ControlView.swift */,
-				D998B60527F00F43004625FF /* ConfigListView.swift */,
-				D998B60727F00F69004625FF /* TunnelModeView.swift */,
-				D998B60927F00F8F004625FF /* TrafficView.swift */,
-				D998B60B27F01A4F004625FF /* InstallView.swift */,
-				D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */,
-				D90289DA28194A7A00FEB376 /* ProxyGroupDetailView.swift */,
-				D998B60F27F01F28004625FF /* SettingView.swift */,
+				D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */,
+				D90289E7281A50C600FEB376 /* Home */,
+				D90289EA281A519300FEB376 /* Panel */,
+				D90289E9281A518900FEB376 /* Setting */,
 				D9B1B4F427EAF72F007EE597 /* macOS.entitlements */,
 				D9B1B55627EB003C007EE597 /* Info.plist */,
 			);
@@ -499,7 +535,6 @@
 			name = "Clash (macOS)";
 			packageProductDependencies = (
 				D99E3A9627EB0B6400464266 /* Yams */,
-				D90289E1281A280200FEB376 /* Introspect */,
 			);
 			productName = "AppleClash (macOS)";
 			productReference = D9B1B4F227EAF72F007EE597 /* Clash.app */;
@@ -586,7 +621,6 @@
 				D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */,
 				D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */,
 				D9C3E955280EBE8800D6CFF9 /* XCRemoteSwiftPackageReference "T2SKit" */,
-				D90289E0281A280200FEB376 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = D9B1B4ED27EAF72F007EE597 /* Products */;
 			projectDirPath = "";
@@ -687,6 +721,7 @@
 				D90289D728192C4F00FEB376 /* StatusView.swift in Sources */,
 				D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
 				D90289D1281905C700FEB376 /* Tab.swift in Sources */,
+				D90289E4281A4F2300FEB376 /* SplitViewControllerInspector.swift in Sources */,
 				D998B60C27F01A4F004625FF /* InstallView.swift in Sources */,
 				D98884EE27F0C0EC00CBB3DB /* ProxyGroupListView.swift in Sources */,
 				D99E3AFF27EB10E700464266 /* CoreDataStack.swift in Sources */,
@@ -700,6 +735,7 @@
 				D927039B27ED542200E61944 /* NSManagedObjectContext+File.swift in Sources */,
 				D998B60627F00F43004625FF /* ConfigListView.swift in Sources */,
 				D99E3B1027EB11A200464266 /* ClashTrafficFormatter.swift in Sources */,
+				D90289E6281A4F6C00FEB376 /* ConfigSwitchView.swift in Sources */,
 				D90289DF28194F8A00FEB376 /* PanelView.swift in Sources */,
 				D927039927ED540500E61944 /* ManagedObjectFetchView.swift in Sources */,
 				D927039A27ED541800E61944 /* ModalPresentationLink.swift in Sources */,
@@ -1164,14 +1200,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D90289E0281A280200FEB376 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
-			requirement = {
-				kind = exactVersion;
-				version = 0.1.4;
-			};
-		};
 		D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jpsim/Yams.git";
@@ -1199,11 +1227,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D90289E1281A280200FEB376 /* Introspect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D90289E0281A280200FEB376 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = Introspect;
-		};
 		D99E3A9427EB0B5600464266 /* Yams */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */;
