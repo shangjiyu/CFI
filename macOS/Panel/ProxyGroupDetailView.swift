@@ -47,8 +47,8 @@ struct ProxyGroupDetailView: View {
                 }
                 listViewModel.setSelected(proxy: newValue, groupViewModel: viewModel)
             }
-            .frame(width: 320, height: 320)
         }
+        .frame(width: 320, height: 480)
         .onAppear {
             loadProvider()
         }

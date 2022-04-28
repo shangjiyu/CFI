@@ -50,3 +50,12 @@ struct SplitViewControllerInspector: NSViewControllerRepresentable {
     
     func updateNSViewController(_ nsViewController: NSViewController, context: Context) {}
 }
+
+extension NSTableView {
+    
+    open override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        self.backgroundColor = .clear
+        self.enclosingScrollView?.drawsBackground = false
+    }
+}

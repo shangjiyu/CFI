@@ -55,8 +55,8 @@ struct ConfigListView: View {
                     }
             }
             .listStyle(.sidebar)
-            .frame(width: 320, height: 320)
         }
+        .frame(width: 320, height: 480)
     }
     
     private func isSelected(_ config: ClashConfig) -> Bool {
