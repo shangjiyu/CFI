@@ -7,12 +7,15 @@ struct SettingView: View {
     @EnvironmentObject private var manager: VPNManager
     
     @AppStorage(Clash.logLevel, store: .shared) private var logLevel: Clash.LogLevel = .silent
+    @AppStorage(Clash.theme) private var theme: Theme = .system
     
     @State private var isAlertPresented: Bool = false
     
     var body: some View {
         Form {
             buildLevelPicker()
+            Divider()
+            buildThemePicker()
             Divider()
             buildTranslationButton()
             Divider()
@@ -41,6 +44,17 @@ struct SettingView: View {
                 debugPrint(error)
             }
         }
+    }
+    
+    @ViewBuilder
+    private func buildThemePicker() -> some View {
+        Picker("主题: ", selection: $theme) {
+            ForEach(Theme.allCases) { level in
+                Text(level.description)
+                    .padding(.vertical, 4)
+            }
+        }
+        .pickerStyle(.radioGroup)
     }
     
     @ViewBuilder

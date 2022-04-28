@@ -22,6 +22,7 @@
 		D90289DF28194F8A00FEB376 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289DE28194F8A00FEB376 /* PanelView.swift */; };
 		D90289E4281A4F2300FEB376 /* SplitViewControllerInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */; };
 		D90289E6281A4F6C00FEB376 /* ConfigSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */; };
+		D90289EC281A91E700FEB376 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289EB281A91E700FEB376 /* Theme.swift */; };
 		D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927039927ED540500E61944 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */; };
@@ -182,6 +183,7 @@
 		D90289DE28194F8A00FEB376 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
 		D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewControllerInspector.swift; sourceTree = "<group>"; };
 		D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSwitchView.swift; sourceTree = "<group>"; };
+		D90289EB281A91E700FEB376 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEOIPDatabaseManager.swift; sourceTree = "<group>"; };
 		D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PacketTunnelProvider+ClashKit.swift"; sourceTree = "<group>"; };
 		D944F5652815281F00DF0BBE /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				D998B60F27F01F28004625FF /* SettingView.swift */,
+				D90289EB281A91E700FEB376 /* Theme.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				D9B1B4F827EAF72F007EE597 /* ContentView.swift in Sources */,
 				D90289D528192BF800FEB376 /* ConnectionDurationView.swift in Sources */,
 				702C1BBD27F3F65200DF9A98 /* Clash+Extension.swift in Sources */,
+				D90289EC281A91E700FEB376 /* Theme.swift in Sources */,
 				D99E3AB227EB0D9000464266 /* Clash.swift in Sources */,
 				D90289DB28194A7A00FEB376 /* ProxyGroupDetailView.swift in Sources */,
 				D927039B27ED542200E61944 /* NSManagedObjectContext+File.swift in Sources */,

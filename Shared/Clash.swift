@@ -8,6 +8,8 @@ public enum Clash {
     
     public static let logLevel: String = "ClashLogLevel"
     
+    public static let theme: String = "ClashTheme"
+    
     public static let currentConfigUUID: String = "CurrentConfigUUID"
     
     public static let homeDirectoryURL: URL = {
