@@ -32,11 +32,9 @@ struct ProxyGroupDetailView: View {
                 HStack {
                     Text(proxy)
                     Spacer()
-                    if let delay = viewModel.delayMapping[proxy] {
-                        Text(delay == 0 ? "超时" : "延迟: \(delay)毫秒")
-                            .foregroundColor(delay == 0 ? Color.red : Color.secondary)
-                            .font(.subheadline)
-                    }
+                    Text(viewModel.delayMapping[proxy]?.displayString ?? "")
+                        .foregroundColor(viewModel.delayMapping[proxy]?.displayColor ?? .clear)
+                        .font(.subheadline)
                 }
                 .padding(.vertical, 8.0)
             }

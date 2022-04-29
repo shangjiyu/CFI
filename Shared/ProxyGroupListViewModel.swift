@@ -1,5 +1,6 @@
 import Foundation
 import Yams
+import SwiftUI
 
 struct RawProxy: Decodable {
     let name: String
@@ -40,10 +41,54 @@ struct Provider: Decodable {
     let proxies: [Proxy]
 }
 
+enum Delay {
+    
+    case timeout
+    case high(UInt16)
+    case medium(UInt16)
+    case low(UInt16)
+    
+    init(value: UInt16) {
+        if value == 0 {
+            self = .timeout
+        } else if value <= 200 {
+            self = .low(value)
+        } else if value <= 600 {
+            self = .medium(value)
+        } else {
+            self = .high(value)
+        }
+    }
+    
+    var displayString: String {
+        switch self {
+        case .timeout:
+            return "超时"
+        case .high(let v):
+            return "\(v)ms"
+        case .medium(let v):
+            return "\(v)ms"
+        case .low(let v):
+            return "\(v)ms"
+        }
+    }
+    
+    var displayColor: Color {
+        switch self {
+        case .timeout, .high:
+            return .red
+        case .medium:
+            return .yellow
+        case .low:
+            return .green
+        }
+    }
+}
+
 class ProxyGroupViewModel: ObservableObject {
     
     @Published var selectedProxy: String
-    @Published var delayMapping: [String: UInt16] = [:]
+    @Published var delayMapping: [String: Delay] = [:]
     
     let group: RawProxyGroup
     
@@ -67,11 +112,11 @@ class ProxyGroupViewModel: ObservableObject {
                 }
                 let provider = try JSONDecoder().decode(Provider.self, from: data)
                 await MainActor.run {
-                    self.delayMapping = provider.proxies.reduce(into: [String: UInt16]()) { r, n in
+                    self.delayMapping = provider.proxies.reduce(into: [String: Delay]()) { r, n in
                         guard let last = n.history.last else {
                             return
                         }
-                        r[n.name] = last.delay
+                        r[n.name] = Delay(value: last.delay)
                     }
                 }
                 return
