@@ -4,7 +4,6 @@ struct ConfigSwitchView: View {
     
     @AppStorage(Clash.currentConfigUUID, store: .shared) private var uuidString: String = ""
     
-    @Environment(\.managedObjectContext) private var context
     @FetchRequest(
         sortDescriptors: [],
         animation: nil

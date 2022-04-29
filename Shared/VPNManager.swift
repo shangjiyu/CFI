@@ -1,7 +1,7 @@
 import Combine
 import NetworkExtension
 
-@MainActor public final class VPNManager: ObservableObject {
+public final class VPNManager: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
         
@@ -36,10 +36,14 @@ import NetworkExtension
             if let controller = self.controller, controller.isEqually(manager: manager) {
                 // Nothing
             } else {
-                self.controller = VPNController(providerManager: manager)
+                await MainActor.run {
+                    self.controller = VPNController(providerManager: manager)
+                }
             }
         } else {
-            self.controller = nil
+            await MainActor.run {
+                self.controller = nil
+            }
         }
     }
     
@@ -79,7 +83,7 @@ import NetworkExtension
     }
 }
 
-@MainActor public final class VPNController: ObservableObject {
+public final class VPNController: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
     private let providerManager: NETunnelProviderManager

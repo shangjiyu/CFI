@@ -59,25 +59,29 @@ class ProxyGroupViewModel: ObservableObject {
     func loadProvider() async {
         repeat {
             do {
-                guard let controller = await VPNManager.shared.controller else {
+                guard let controller = VPNManager.shared.controller else {
                     break
                 }
                 guard let data = try await controller.execute(command: .provider(group.name == "GLOBAL" ? "default" : group.name)) else {
                     break
                 }
                 let provider = try JSONDecoder().decode(Provider.self, from: data)
-                self.delayMapping = provider.proxies.reduce(into: [String: UInt16]()) { r, n in
-                    guard let last = n.history.last else {
-                        return
+                await MainActor.run {
+                    self.delayMapping = provider.proxies.reduce(into: [String: UInt16]()) { r, n in
+                        guard let last = n.history.last else {
+                            return
+                        }
+                        r[n.name] = last.delay
                     }
-                    r[n.name] = last.delay
                 }
                 return
             } catch {
                 break
             }
         } while false
-        self.delayMapping = [:]
+        await MainActor.run {
+            self.delayMapping = [:]
+        }
     }
 }
 
@@ -131,7 +135,7 @@ class ProxyGroupListViewModel: ObservableObject {
         self.mapping[groupViewModel.group.name] = proxy
         UserDefaults.shared.setValue(self.mapping, forKey: self.storeKey)
         Task(priority: .high) {
-            guard let controller = await VPNManager.shared.controller else {
+            guard let controller = VPNManager.shared.controller else {
                 return
             }
             do {

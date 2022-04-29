@@ -3,13 +3,16 @@ import SwiftUI
 struct ProxyGroupListView: View {
     
     @EnvironmentObject private var viewModel: ProxyGroupListViewModel
+    @AppStorage(Clash.tunnelMode, store: .shared) private var tunnelMode: Clash.TunnelMode = .rule
     
     var body: some View {
         Form {
-            Section("全局策略组") {
-                ForEach(viewModel.globalGroupViewModels, id: \.group.name, content: buildCell(model:))
+            if tunnelMode == .global {
+                Section {
+                    ForEach(viewModel.globalGroupViewModels, id: \.group.name, content: buildCell(model:))
+                }
             }
-            Section("策略组") {
+            Section {
                 ForEach(viewModel.groupViewModels, id: \.group.name, content: buildCell(model:))
             }
         }
