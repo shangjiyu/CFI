@@ -10,11 +10,7 @@ struct ConfigSwitchView: View {
     
     var body: some View {
         ManagedObjectFetchView(predicate: predicate) { (result: FetchedResults<ClashConfig>) in
-            ModalPresentationLink {
-                ConfigListView()
-            } label: {
-                label(result: result)
-            }
+            label(result: result)
         }
     }
     

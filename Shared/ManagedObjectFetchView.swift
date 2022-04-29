@@ -13,7 +13,7 @@ public struct ManagedObjectFetchView<Object: NSManagedObject, Content: View>: Vi
         animation: Animation? = nil,
         content: @escaping (FetchedResults<Object>) -> Content
     ) {
-        _results = FetchRequest(entity: Object.entity(), sortDescriptors: sortDescriptors, predicate: predicate, animation: animation)
+        self._results = FetchRequest(entity: Object.entity(), sortDescriptors: sortDescriptors, predicate: predicate, animation: animation)
         self.content = content
     }
     

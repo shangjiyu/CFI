@@ -7,9 +7,9 @@ struct StatusView: View {
     var body: some View {
         VStack(spacing: 16) {
             if let controller = manager.controller {
-                ConnectionStatusView()
-                    .environmentObject(controller)
                 ConnectionDurationView()
+                    .environmentObject(controller)
+                ConnectionStatusView()
                     .environmentObject(controller)
             }
             TrafficView()
