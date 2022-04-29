@@ -75,7 +75,9 @@ enum Delay {
     
     var displayColor: Color {
         switch self {
-        case .timeout, .high:
+        case .timeout:
+            return .secondary
+        case .high:
             return .red
         case .medium:
             return .yellow
