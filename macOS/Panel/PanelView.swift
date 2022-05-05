@@ -75,11 +75,39 @@ struct MergedProxyData: Decodable {
 class ProxyViewModel: ObservableObject {
     
     let name: String
+    let type: String
     @Published var histories: [DelayHistory]
     
-    init(name: String, histories: [DelayHistory]) {
+    init(name: String, type: String, histories: [DelayHistory]) {
         self.name = name
+        self.type = type
         self.histories = histories
+    }
+    
+    var delay: String {
+        guard let last = histories.first else {
+            return ""
+        }
+        if last.delay == 0 {
+            return "超时"
+        } else {
+            return "\(last.delay)ms"
+        }
+    }
+    
+    var delayTextColor: Color {
+        guard let last = histories.first else {
+            return .clear
+        }
+        if last.delay == 0 {
+            return .secondary
+        } else if last.delay <= 300 {
+            return .green
+        } else if last.delay <= 600 {
+            return .yellow
+        } else {
+            return .red
+        }
     }
 }
 
@@ -95,6 +123,25 @@ class ProviderViewModel: ObservableObject {
         self.type = type
         self.selected = selected
         self.proxies = proxies
+    }
+    
+    func select(controller: VPNController, proxy: ProxyViewModel) {
+        guard let uuid = UserDefaults.shared.string(forKey: Clash.currentConfigUUID) else {
+            return
+        }
+        let key = "\(uuid)-PatchGroup"
+        guard var mapping = UserDefaults.shared.value(forKey: key) as? [String: String] else {
+            return
+        }
+        mapping[self.name] = proxy.name
+        UserDefaults.shared.set(mapping, forKey: key)
+        Task(priority: .high) {
+            do {
+                try await controller.execute(command: .setSelectGroup)
+            } catch {
+                debugPrint(error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -132,7 +179,7 @@ class ProviderListViewModel: ObservableObject {
         }
         
         let pVMs = model.proxies.reduce(into: [String: ProxyViewModel]()) { result, pair in
-            result[pair.key] = ProxyViewModel(name: pair.value.name, histories: pair.value.history)
+            result[pair.key] = ProxyViewModel(name: pair.value.name, type: pair.value.type, histories: pair.value.history)
         }
         
         let oVMs: [ProviderViewModel] = orderedProviders.map { reval in
@@ -251,26 +298,115 @@ struct ProviderListView: View {
     private func buildGride(models: [ProviderViewModel]) -> some View {
         LazyVGrid(columns: columns) {
             ForEach(models, id: \.name) { model in
-                GroupBox {
-                    HStack(spacing: 0) {
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text(model.name)
-                                .fontWeight(.medium)
-                            Text(model.type.uppercased())
-                                .font(.system(size: 8))
-                                .fontWeight(.bold)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 4)
-                                .background(Capsule().stroke(lineWidth: 1.0))
-                                .foregroundColor(.accentColor)
-                            Text(model.selected)
-                        }
-                        .lineLimit(1)
-                        Spacer()
-                    }
-                    .padding(8)
+                ModalPresentationLink {
+                    ProxyListView()
+                } label: {
+                    ProviderView()
                 }
+                .environmentObject(model)
             }
+        }
+    }
+}
+
+struct ProviderView: View {
+    
+    @EnvironmentObject private var viewModel: ProviderViewModel
+    
+    var body: some View {
+        GroupBox {
+            HStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text(viewModel.name)
+                        .fontWeight(.medium)
+                    Text(viewModel.type.uppercased())
+                        .font(.system(size: 8))
+                        .fontWeight(.bold)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(Capsule().stroke(lineWidth: 1.0))
+                        .foregroundColor(.accentColor)
+                    Text(viewModel.selected)
+                }
+                .lineLimit(1)
+                Spacer()
+            }
+            .padding(8)
+        }
+    }
+}
+
+struct ProxyListView: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var controller: VPNController
+    @EnvironmentObject private var viewModel: ProviderViewModel
+    
+    private let columns = Array(
+        repeating: GridItem(.flexible(), spacing: 10),
+        count: 3
+    )
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            HStack {
+                Button { dismiss() } label: {
+                    Text("关闭")
+                }
+                Spacer()
+            }
+            .foregroundColor(.accentColor)
+            .buttonStyle(.plain)
+            .padding()
+            
+            ScrollView(.vertical, showsIndicators: true) {
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.proxies, id: \.name) { model in
+                        _ProxyView(selected: $viewModel.selected)
+                            .environmentObject(model)
+                            .onTapGesture {
+                                viewModel.select(controller: controller, proxy: model)
+                            }
+                    }
+                }
+                .padding()
+            }
+        }
+        .frame(width: 540, height: 480)
+    }
+}
+
+struct _ProxyView: View {
+    
+    @EnvironmentObject private var viewModel: ProxyViewModel
+    
+    @Binding var selected: String
+    
+    var body: some View {
+        GroupBox {
+            HStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Text(viewModel.type.uppercased())
+                            .font(.system(size: 8))
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(RoundedRectangle(cornerRadius: 4).stroke(.tint))
+                        Spacer()
+                        Circle()
+                            .frame(width: 10, height: 10)
+                            .foregroundColor(selected == viewModel.name ? .green : .clear)
+                    }
+                    Text(viewModel.name)
+                        .foregroundColor(.secondary)
+                    Text(viewModel.delay)
+                        .font(.subheadline)
+                        .foregroundColor(viewModel.delayTextColor)
+                }
+                .lineLimit(1)
+                Spacer()
+            }
+            .padding(8)
         }
     }
 }
