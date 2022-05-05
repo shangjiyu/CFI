@@ -52,8 +52,10 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 ClashSetLogLevel(UserDefaults.shared.string(forKey: Clash.logLevel))
             case .setSelectGroup:
                 self.setSelectGroup()
-            case .proxies:
-                return ClashProxies()
+            case .healthCheck:
+                ClashHealthCheck()
+            case .provider(let name):
+                return ClashProvider(name)
             }
             return nil
         } catch {
