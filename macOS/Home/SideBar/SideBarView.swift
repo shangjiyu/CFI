@@ -2,6 +2,8 @@ import SwiftUI
 
 struct SideBarView: View {
     
+    @EnvironmentObject private var manager: VPNManager
+    
     let binding: Binding<Tab>
         
     private var selection: Binding<Tab?> {
@@ -20,9 +22,12 @@ struct SideBarView: View {
                 Label(tab.title, systemImage: tab.systemImageName)
                     .padding(.vertical, 4)
             }
-            StatusView()
-                .padding(.horizontal, 16)
-                .padding(.bottom, 16)
+            if let controller = manager.controller {
+                StatusView()
+                    .environmentObject(controller)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 16)
+            }
         }
     }
 }
