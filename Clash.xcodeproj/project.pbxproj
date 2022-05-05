@@ -32,6 +32,13 @@
 		D942D01C27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */; };
 		D944F5662815282800DF0BBE /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D944F5652815281F00DF0BBE /* ActivityView.swift */; };
 		D9864986282369460092E86E /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60F27F01F28004625FF /* SettingView.swift */; };
+		D9864989282379810092E86E /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9864987282379810092E86E /* ThemeView.swift */; };
+		D986498B28237A870092E86E /* DestructiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986498A28237A870092E86E /* DestructiveView.swift */; };
+		D986498C28237A870092E86E /* DestructiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986498A28237A870092E86E /* DestructiveView.swift */; };
+		D986498E28237B260092E86E /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986498D28237B260092E86E /* TranslationView.swift */; };
+		D986498F28237B260092E86E /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986498D28237B260092E86E /* TranslationView.swift */; };
+		D986499128237BA00092E86E /* LogLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986499028237BA00092E86E /* LogLevelView.swift */; };
+		D986499228237BA00092E86E /* LogLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986499028237BA00092E86E /* LogLevelView.swift */; };
 		D98884EE27F0C0EC00CBB3DB /* ProxyGroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */; };
 		D98884F227F0C12B00CBB3DB /* ProxyGroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
@@ -184,6 +191,10 @@
 		D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEOIPDatabaseManager.swift; sourceTree = "<group>"; };
 		D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PacketTunnelProvider+ClashKit.swift"; sourceTree = "<group>"; };
 		D944F5652815281F00DF0BBE /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		D9864987282379810092E86E /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		D986498A28237A870092E86E /* DestructiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructiveView.swift; sourceTree = "<group>"; };
+		D986498D28237B260092E86E /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
+		D986499028237BA00092E86E /* LogLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevelView.swift; sourceTree = "<group>"; };
 		D98884ED27F0C0E800CBB3DB /* ProxyGroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupListView.swift; sourceTree = "<group>"; };
 		D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupListViewModel.swift; sourceTree = "<group>"; };
 		D998B60327F00F23004625FF /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
@@ -313,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				D90289EB281A91E700FEB376 /* Theme.swift */,
+				D9864987282379810092E86E /* ThemeView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -331,6 +343,9 @@
 			isa = PBXGroup;
 			children = (
 				D998B60F27F01F28004625FF /* SettingView.swift */,
+				D986499028237BA00092E86E /* LogLevelView.swift */,
+				D986498D28237B260092E86E /* TranslationView.swift */,
+				D986498A28237A870092E86E /* DestructiveView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -684,6 +699,7 @@
 				D99E3AEC27EB10B900464266 /* ClashTunnelModeView.swift in Sources */,
 				D99E3AEA27EB10B900464266 /* ClashHomeView.swift in Sources */,
 				702C1BBC27F3F65200DF9A98 /* Clash+Extension.swift in Sources */,
+				D986499128237BA00092E86E /* LogLevelView.swift in Sources */,
 				D99E3B0927EB110C00464266 /* NSManagedObjectContext+File.swift in Sources */,
 				D99E3B0F27EB117F00464266 /* ClashTrafficFormatter.swift in Sources */,
 				D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */,
@@ -695,6 +711,8 @@
 				D99E3B0C27EB110C00464266 /* ManagedObjectFetchView.swift in Sources */,
 				D9864986282369460092E86E /* SettingView.swift in Sources */,
 				D99E3AED27EB10BA00464266 /* ClashTrafficView.swift in Sources */,
+				D986498B28237A870092E86E /* DestructiveView.swift in Sources */,
+				D986498E28237B260092E86E /* TranslationView.swift in Sources */,
 				D99E3AE827EB10B900464266 /* VPNConnecteDurationView.swift in Sources */,
 				D99E3B0B27EB110C00464266 /* DocumentPickerView.swift in Sources */,
 			);
@@ -720,10 +738,12 @@
 				D90289D528192BF800FEB376 /* ConnectionDurationView.swift in Sources */,
 				702C1BBD27F3F65200DF9A98 /* Clash+Extension.swift in Sources */,
 				D90289EC281A91E700FEB376 /* Theme.swift in Sources */,
+				D986499228237BA00092E86E /* LogLevelView.swift in Sources */,
 				D99E3AB227EB0D9000464266 /* Clash.swift in Sources */,
 				D90289DB28194A7A00FEB376 /* ProxyGroupDetailView.swift in Sources */,
 				D927039B27ED542200E61944 /* NSManagedObjectContext+File.swift in Sources */,
 				D998B60627F00F43004625FF /* ConfigListView.swift in Sources */,
+				D986498C28237A870092E86E /* DestructiveView.swift in Sources */,
 				D99E3B1027EB11A200464266 /* ClashTrafficFormatter.swift in Sources */,
 				D90289E6281A4F6C00FEB376 /* ConfigSwitchView.swift in Sources */,
 				D90289DF28194F8A00FEB376 /* PanelView.swift in Sources */,
@@ -731,7 +751,9 @@
 				D927039A27ED541800E61944 /* ModalPresentationLink.swift in Sources */,
 				D998B60427F00F23004625FF /* SideBarView.swift in Sources */,
 				D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */,
+				D9864989282379810092E86E /* ThemeView.swift in Sources */,
 				D998B60E27F01A70004625FF /* ControlView.swift in Sources */,
+				D986498F28237B260092E86E /* TranslationView.swift in Sources */,
 				D99E3B0127EB10E700464266 /* Clash.xcdatamodeld in Sources */,
 				D99E3AC227EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
 				D998B60A27F00F8F004625FF /* TrafficView.swift in Sources */,
