@@ -16,12 +16,12 @@ struct ProxyGroupListView: View {
         ScrollView(.vertical, showsIndicators: false) {
             if tunnelMode == .global {
                 Section {
-                    buildGride(models: viewModel.globalGroupViewModels)
+                    buildGride(models: viewModel.global)
                         .padding()
                 }
             }
             Section {
-                buildGride(models: viewModel.groupViewModels)
+                buildGride(models: viewModel.others)
                     .padding()
             }
         }
@@ -47,7 +47,7 @@ struct ProxyGroupListView: View {
                                     .padding(.vertical, 4)
                                     .background(Capsule().stroke(lineWidth: 1.0))
                                     .foregroundColor(.accentColor)
-                                Text(model.isSelectable ? model.selectedProxy : "")
+                                Text(model.selectedProxy)
                             }
                             .lineLimit(1)
                             Spacer()
