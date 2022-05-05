@@ -53,9 +53,11 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             case .setSelectGroup:
                 self.setSelectGroup()
             case .healthCheck:
-                ClashHealthCheck()
-            case .provider(let name):
-                return ClashProvider(name)
+                return ClashProxies()
+            case .providers:
+                return ClashProviders()
+            case .mergedProxyData:
+                return ClashMergedProxyData()
             }
             return nil
         } catch {

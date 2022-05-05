@@ -104,31 +104,46 @@ class ProxyGroupViewModel: ObservableObject {
     }
     
     func loadProvider() async {
-        repeat {
-            do {
-                guard let controller = VPNManager.shared.controller else {
-                    break
-                }
-                guard let data = try await controller.execute(command: .provider(group.name == "GLOBAL" ? "default" : group.name)) else {
-                    break
-                }
-                let provider = try JSONDecoder().decode(Provider.self, from: data)
-                await MainActor.run {
-                    self.delayMapping = provider.proxies.reduce(into: [String: Delay]()) { r, n in
-                        guard let last = n.history.last else {
-                            return
-                        }
-                        r[n.name] = Delay(value: last.delay)
-                    }
-                }
+        do {
+            guard let controller = VPNManager.shared.controller else {
                 return
-            } catch {
-                break
             }
-        } while false
-        await MainActor.run {
-            self.delayMapping = [:]
+            guard let data = try await controller.execute(command: .providers) else {
+                return
+            }
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            print(String(data: try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted), encoding: .utf8) ?? "NULL")
+        } catch {
+            debugPrint(error)
         }
+        
+        
+        
+//        repeat {
+//            do {
+//                guard let controller = VPNManager.shared.controller else {
+//                    break
+//                }
+//                guard let data = try await controller.execute(command: .provider(group.name == "GLOBAL" ? "default" : group.name)) else {
+//                    break
+//                }
+//                let provider = try JSONDecoder().decode(Provider.self, from: data)
+//                await MainActor.run {
+//                    self.delayMapping = provider.proxies.reduce(into: [String: Delay]()) { r, n in
+//                        guard let last = n.history.last else {
+//                            return
+//                        }
+//                        r[n.name] = Delay(value: last.delay)
+//                    }
+//                }
+//                return
+//            } catch {
+//                break
+//            }
+//        } while false
+//        await MainActor.run {
+//            self.delayMapping = [:]
+//        }
     }
 }
 

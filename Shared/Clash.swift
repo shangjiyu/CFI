@@ -37,7 +37,8 @@ extension Clash {
         case setLogLevel
         case setSelectGroup
         case healthCheck
-        case provider(String)
+        case providers
+        case mergedProxyData
     }
     
     public enum LogLevel: String, Identifiable, CaseIterable {
