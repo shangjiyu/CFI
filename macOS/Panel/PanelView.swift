@@ -199,7 +199,10 @@ class ProviderListViewModel: ObservableObject {
     }
     
     private func patchViewModels(patch: [String: MergedProxyData.Proxy]) {
-        (self.globalProviderViewModels + self.othersProviderViewModels).forEach { vm in
+        self.globalProviderViewModels.forEach { vm in
+            vm.selected = patch[vm.name]?.now ?? ""
+        }
+        self.othersProviderViewModels.forEach { vm in
             vm.selected = patch[vm.name]?.now ?? ""
         }
         self.proxyViewModels.forEach { pair in
