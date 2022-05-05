@@ -104,18 +104,6 @@ class ProxyGroupViewModel: ObservableObject {
     }
     
     func loadProvider() async {
-        do {
-            guard let controller = VPNManager.shared.controller else {
-                return
-            }
-            guard let data = try await controller.execute(command: .providers) else {
-                return
-            }
-            let json = try JSONSerialization.jsonObject(with: data, options: [])
-            print(String(data: try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted), encoding: .utf8) ?? "NULL")
-        } catch {
-            debugPrint(error)
-        }
         
         
         

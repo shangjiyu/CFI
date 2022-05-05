@@ -37,7 +37,7 @@ extension Clash {
         case setLogLevel
         case setSelectGroup
         case healthCheck
-        case providers
+        case proxies
         case mergedProxyData
     }
     

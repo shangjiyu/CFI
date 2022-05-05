@@ -54,8 +54,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 self.setSelectGroup()
             case .healthCheck:
                 return ClashProxies()
-            case .providers:
-                return ClashProviders()
+            case .proxies:
+                return ClashProxies()
             case .mergedProxyData:
                 return ClashMergedProxyData()
             }

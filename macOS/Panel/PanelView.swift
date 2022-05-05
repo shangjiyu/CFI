@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 struct PanelView: View {
     
@@ -99,20 +100,26 @@ class ProviderViewModel: ObservableObject {
 
 class ProviderListViewModel: ObservableObject {
     
+    private static let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: NSCalendar.Identifier.ISO8601.rawValue)
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SZ"
+        return formatter
+    }()
+    
     private var proxyViewModels: [String: ProxyViewModel] = [:]
     
     @Published var globalProviderViewModels: [ProviderViewModel] = []
     @Published var othersProviderViewModels: [ProviderViewModel] = []
+    
+    private var cancellables: Set<AnyCancellable> = []
     
     func fetchProxyData(controller: VPNController) async throws {
         guard let data = try await controller.execute(command: .mergedProxyData) else {
             return
         }
         let decoder = JSONDecoder()
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: NSCalendar.Identifier.ISO8601.rawValue)
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SZ"
-        decoder.dateDecodingStrategy = .formatted(formatter)
+        decoder.dateDecodingStrategy = .formatted(ProviderListViewModel.formatter)
         let model = try decoder.decode(MergedProxyData.self, from: data)
         guard let global = model.proxies["GLOBAL"], let proxies = global.all, !proxies.isEmpty else {
             return
@@ -152,6 +159,53 @@ class ProviderListViewModel: ObservableObject {
             self.othersProviderViewModels = oVMs
         }
     }
+    
+    func beginUpdating(controller: VPNController) {
+        self.cancellables = []
+        Timer.publish(every: 1.0, on: .current, in: .common)
+            .autoconnect()
+            .flatMap { _ in
+                Future<Optional<Data>, Never> { promise in
+                    Task {
+                        do {
+                            promise(.success(try await controller.execute(command: .proxies)))
+                        } catch {
+                            promise(.success(nil))
+                        }
+                    }
+                }
+            }
+            .compactMap { $0 }
+            .removeDuplicates()
+            .map { (data) -> Optional<[String: MergedProxyData.Proxy]> in
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .formatted(ProviderListViewModel.formatter)
+                do {
+                    return try decoder.decode([String: MergedProxyData.Proxy].self, from: data)
+                } catch {
+                    debugPrint(error.localizedDescription)
+                    return nil
+                }
+            }
+            .compactMap { $0 }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] patch in
+                guard let self = self else {
+                    return
+                }
+                self.patchViewModels(patch: patch)
+            }
+            .store(in: &self.cancellables)
+    }
+    
+    private func patchViewModels(patch: [String: MergedProxyData.Proxy]) {
+        (self.globalProviderViewModels + self.othersProviderViewModels).forEach { vm in
+            vm.selected = patch[vm.name]?.now ?? ""
+        }
+        self.proxyViewModels.forEach { pair in
+            pair.value.histories = patch[pair.key]?.history ?? []
+        }
+    }
 }
 
 
@@ -184,6 +238,7 @@ struct ProviderListView: View {
         .task {
             do {
                 try await viewModel.fetchProxyData(controller: controller)
+                viewModel.beginUpdating(controller: controller)
             } catch {
                 debugPrint(error.localizedDescription)
             }
