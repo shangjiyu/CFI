@@ -14,7 +14,7 @@ struct PanelView: View {
             PlaceholderView(placeholder: "未选择配置")
         } else {
             if let controller = manager.controller {
-                ProxyView()
+                ProviderListContainerView()
                     .environmentObject(controller)
             } else {
                 PlaceholderView(placeholder: "VPN未连接")
@@ -23,7 +23,7 @@ struct PanelView: View {
     }
 }
 
-struct ProxyView: View {
+struct ProviderListContainerView: View {
     
     @EnvironmentObject private var controller: VPNController
     
@@ -118,6 +118,10 @@ class ProviderViewModel: ObservableObject {
     let proxies: [ProxyViewModel]
     @Published var selected: String
     
+    var isSelectEnable: Bool {
+        self.type.uppercased() == "SELECTOR"
+    }
+    
     init(name: String, type: String, selected: String, proxies: [ProxyViewModel]) {
         self.name = name
         self.type = type
@@ -126,15 +130,17 @@ class ProviderViewModel: ObservableObject {
     }
     
     func select(controller: VPNController, proxy: ProxyViewModel) {
+        guard self.isSelectEnable else {
+            return
+        }
         guard let uuid = UserDefaults.shared.string(forKey: Clash.currentConfigUUID) else {
             return
         }
         let key = "\(uuid)-PatchGroup"
-        guard var mapping = UserDefaults.shared.value(forKey: key) as? [String: String] else {
-            return
-        }
+        var mapping = UserDefaults.shared.value(forKey: key) as? [String: String] ?? [:]
         mapping[self.name] = proxy.name
         UserDefaults.shared.set(mapping, forKey: key)
+        self.selected = proxy.name
         Task(priority: .high) {
             do {
                 try await controller.execute(command: .setSelectGroup)
@@ -207,7 +213,7 @@ class ProviderListViewModel: ObservableObject {
         }
     }
     
-    func beginUpdating(controller: VPNController) {
+    func update(with controller: VPNController) {
         self.cancellables = []
         Timer.publish(every: 1.0, on: .current, in: .common)
             .autoconnect()
@@ -288,7 +294,7 @@ struct ProviderListView: View {
         .task {
             do {
                 try await viewModel.fetchProxyData(controller: controller)
-                viewModel.beginUpdating(controller: controller)
+                viewModel.update(with: controller)
             } catch {
                 debugPrint(error.localizedDescription)
             }
@@ -362,7 +368,7 @@ struct ProxyListView: View {
             ScrollView(.vertical, showsIndicators: true) {
                 LazyVGrid(columns: columns) {
                     ForEach(viewModel.proxies, id: \.name) { model in
-                        _ProxyView(selected: $viewModel.selected)
+                        ProxyView(selected: $viewModel.selected)
                             .environmentObject(model)
                             .onTapGesture {
                                 viewModel.select(controller: controller, proxy: model)
@@ -376,7 +382,7 @@ struct ProxyListView: View {
     }
 }
 
-struct _ProxyView: View {
+struct ProxyView: View {
     
     @EnvironmentObject private var viewModel: ProxyViewModel
     
