@@ -19,7 +19,6 @@ struct ContentView: View {
                     Text("设置")
                 }
         }
-        
     }
 }
 
