@@ -14,7 +14,7 @@ class ProxyViewModel: ObservableObject {
     }
     
     var delay: String {
-        guard let last = histories.first else {
+        guard let last = histories.last else {
             return ""
         }
         if last.delay == 0 {
@@ -25,7 +25,7 @@ class ProxyViewModel: ObservableObject {
     }
     
     var delayTextColor: Color {
-        guard let last = histories.first else {
+        guard let last = histories.last else {
             return .clear
         }
         if last.delay == 0 {

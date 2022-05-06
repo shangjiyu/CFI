@@ -12,6 +12,11 @@ class ProviderViewModel: ObservableObject {
         self.type.uppercased() == "SELECTOR"
     }
     
+    var isURLTestEnable: Bool {
+        let reval = self.type.uppercased()
+        return reval == "URLTEST" || reval == "LOADBALANCE" || reval == "FALLBACK"
+    }
+    
     init(name: String, type: String, selected: String, proxies: [ProxyViewModel]) {
         self.name = name
         self.type = type
