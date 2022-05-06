@@ -375,13 +375,6 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		D90289EA281A519300FEB376 /* Panel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Panel;
-			sourceTree = "<group>";
-		};
 		D90CBF7D2824D8F800482684 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,7 +488,6 @@
 				D9B1B4E627EAF72B007EE597 /* ContentView.swift */,
 				D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */,
 				D90289E7281A50C600FEB376 /* Home */,
-				D90289EA281A519300FEB376 /* Panel */,
 				D90289E9281A518900FEB376 /* Setting */,
 				D9B1B4F427EAF72F007EE597 /* macOS.entitlements */,
 				D9B1B55627EB003C007EE597 /* Info.plist */,
