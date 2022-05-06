@@ -14,34 +14,10 @@ struct ControlView: View {
             .padding(.vertical, 8)
             .toggleStyle(.switch)
             .allowsHitTesting(allowsHitTesting)
-            .onAppear {
-                self.isOn = {
-                    switch self.controller.connectionStatus {
-                    case .connecting, .connected, .reasserting:
-                        return true
-                    case .disconnecting, .disconnected, .invalid:
-                        return false
-                    @unknown default:
-                        return false
-                    }
-                }()
-            }
-            .onChange(of: isOn) { newValue in
-                toggleVPN(isOn: newValue)
-            }
-            .onChange(of: uuidString) { newValue in
-                if newValue.isEmpty {
-                    self.controller.stopVPN()
-                } else {
-                    Task(priority: .high) {
-                        do {
-                            try await controller.execute(command: .setConfig)
-                        } catch {
-                            debugPrint(error.localizedDescription)
-                        }
-                    }
-                }
-            }
+            .onAppear { self.onVPNStatusChanged(status: self.controller.connectionStatus) }
+            .onChange(of: isOn, perform: onToggleAction(isOn:))
+            .onChange(of: uuidString, perform: onClashConfigChanged(uuidString:))
+            .onChange(of: controller.connectionStatus, perform: onVPNStatusChanged(status:))
     }
     
     private var allowsHitTesting: Bool {
@@ -55,12 +31,41 @@ struct ControlView: View {
         }
     }
     
-    private func toggleVPN(isOn: Bool) {
+    private func onToggleAction(isOn: Bool) {
         Task(priority: .high) {
             do {
                 isOn ? try await self.controller.startVPN() : self.controller.stopVPN()
             } catch {
                 debugPrint(error)
+            }
+        }
+    }
+    
+    private func onVPNStatusChanged(status: NEVPNStatus) {
+        withAnimation {
+            switch status {
+            case .connected:
+                self.isOn = true
+            case .invalid, .disconnected:
+                self.isOn = false
+            case .connecting, .disconnecting, .reasserting:
+                return
+            @unknown default:
+                return
+            }
+        }
+    }
+    
+    private func onClashConfigChanged(uuidString: String) {
+        if uuidString.isEmpty {
+            self.controller.stopVPN()
+        } else {
+            Task(priority: .high) {
+                do {
+                    try await controller.execute(command: .setConfig)
+                } catch {
+                    debugPrint(error.localizedDescription)
+                }
             }
         }
     }
