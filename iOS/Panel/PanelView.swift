@@ -81,14 +81,12 @@ struct ProviderListView: View {
     
     private func buildCell(models: [ProviderViewModel]) -> some View {
         ForEach(models, id: \.name) { model in
-            NavigationLink {
+            ModalPresentationLink {
                 ProxyListView()
-                    .environmentObject(model)
-                    .environmentObject(controller)
             } label: {
                 ProviderView()
-                    .environmentObject(model)
             }
+            .environmentObject(model)
         }
     }
 }
@@ -121,38 +119,40 @@ struct ProxyListView: View {
     @EnvironmentObject private var viewModel: ProviderViewModel
     
     var body: some View {
-        Form {
-            Section {
-                HStack {
-                    Text("名称")
-                    Spacer()
-                    Text(viewModel.name)
-                        .foregroundColor(.secondary)
-                }
-                HStack {
-                    Text("类型")
-                    Spacer()
-                    Text(viewModel.type.uppercased())
-                        .foregroundColor(.secondary)
-                }
-            }
-            Section("包含") {
-                Picker(viewModel.name, selection: $viewModel.selected) {
-                    ForEach(viewModel.proxies, id: \.name) { model in
-                        ProxyView(selected: $viewModel.selected)
-                            .environmentObject(model)
+        NavigationView {
+            Form {
+                Section {
+                    HStack {
+                        Text("名称")
+                        Spacer()
+                        Text(viewModel.name)
+                            .foregroundColor(.secondary)
+                    }
+                    HStack {
+                        Text("类型")
+                        Spacer()
+                        Text(viewModel.type.uppercased())
+                            .foregroundColor(.secondary)
                     }
                 }
-                .onChange(of: viewModel.selected) { newValue in
-                    viewModel.select(controller: controller, proxy: newValue)
+                Section("包含") {
+                    Picker(viewModel.name, selection: $viewModel.selected) {
+                        ForEach(viewModel.proxies, id: \.name) { model in
+                            ProxyView(selected: $viewModel.selected)
+                                .environmentObject(model)
+                        }
+                    }
+                    .onChange(of: viewModel.selected) { newValue in
+                        viewModel.select(controller: controller, proxy: newValue)
+                    }
+                    .labelsHidden()
+                    .pickerStyle(InlinePickerStyle())
+                    .disabled(!viewModel.isSelectEnable)
                 }
-                .labelsHidden()
-                .pickerStyle(InlinePickerStyle())
-                .disabled(!viewModel.isSelectEnable)
             }
+            .navigationTitle(viewModel.name)
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle(viewModel.name)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
