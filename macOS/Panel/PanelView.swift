@@ -6,8 +6,6 @@ struct PanelView: View {
     @EnvironmentObject private var manager: VPNManager
     
     @AppStorage(Clash.currentConfigUUID, store: .shared) private var uuidString: String = ""
-        
-    @StateObject var viewModel = ProxyGroupListViewModel()
     
     var body: some View {
         if uuidString.isEmpty {

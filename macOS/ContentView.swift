@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @StateObject private var providerListViewModel = ProviderListViewModel()
+    
     @AppStorage("TAB_MACOS") private var currentTab: Tab = .home
     
     var body: some View {
@@ -13,6 +15,7 @@ struct ContentView: View {
                 HomeView()
             case .panel:
                 PanelView()
+                    .environmentObject(providerListViewModel)
             case .setting:
                 SettingView()
             }

@@ -14,9 +14,7 @@ class ProviderListViewModel: ObservableObject {
     
     @Published var globalProviderViewModels: [ProviderViewModel] = []
     @Published var othersProviderViewModels: [ProviderViewModel] = []
-    
-    private var cancellables: Set<AnyCancellable> = []
-    
+        
     func fetchProxyData(controller: VPNController) async throws {
         guard let data = try await controller.execute(command: .mergedProxyData) else {
             return
@@ -63,53 +61,25 @@ class ProviderListViewModel: ObservableObject {
         }
     }
     
-    func update(with controller: VPNController) {
-        self.cancellables = []
-        Timer.publish(every: 1.0, on: .current, in: .common)
-            .autoconnect()
-            .flatMap { _ in
-                Future<Optional<Data>, Never> { promise in
-                    Task {
-                        do {
-                            promise(.success(try await controller.execute(command: .proxies)))
-                        } catch {
-                            promise(.success(nil))
-                        }
-                    }
-                }
-            }
-            .compactMap { $0 }
-            .removeDuplicates()
-            .map { (data) -> Optional<[String: MergedProxyData.Proxy]> in
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .formatted(ProviderListViewModel.formatter)
-                do {
-                    return try decoder.decode([String: MergedProxyData.Proxy].self, from: data)
-                } catch {
-                    debugPrint(error.localizedDescription)
-                    return nil
-                }
-            }
-            .compactMap { $0 }
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] patch in
-                guard let self = self else {
-                    return
-                }
-                self.patchViewModels(patch: patch)
-            }
-            .store(in: &self.cancellables)
+    func patchProxyData(controller: VPNController) async throws {
+        guard let data = try await controller.execute(command: .proxies) else {
+            return
+        }
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(ProviderListViewModel.formatter)
+        let patch = try decoder.decode([String: MergedProxyData.Proxy].self, from: data)
+        await MainActor.run { self.patch(data: patch) }
     }
     
-    private func patchViewModels(patch: [String: MergedProxyData.Proxy]) {
+    private func patch(data: [String: MergedProxyData.Proxy]) {
         self.globalProviderViewModels.forEach { vm in
-            vm.selected = patch[vm.name]?.now ?? ""
+            vm.selected = data[vm.name]?.now ?? ""
         }
         self.othersProviderViewModels.forEach { vm in
-            vm.selected = patch[vm.name]?.now ?? ""
+            vm.selected = data[vm.name]?.now ?? ""
         }
         self.proxyViewModels.forEach { pair in
-            pair.value.histories = patch[pair.key]?.history ?? []
+            pair.value.histories = data[pair.key]?.history ?? []
         }
     }
 }

@@ -3,10 +3,9 @@ import SwiftUI
 struct ProviderListView: View {
     
     @EnvironmentObject private var controller: VPNController
+    @EnvironmentObject private var viewModel: ProviderListViewModel
     
     @AppStorage(Clash.tunnelMode, store: .shared) private var tunnelMode: Clash.TunnelMode = .rule
-    
-    @StateObject private var viewModel = ProviderListViewModel()
     
     private let columns = Array(
         repeating: GridItem(.flexible(), spacing: 10),
@@ -29,9 +28,18 @@ struct ProviderListView: View {
         .task {
             do {
                 try await viewModel.fetchProxyData(controller: controller)
-                viewModel.update(with: controller)
+                try await viewModel.patchProxyData(controller: controller)
             } catch {
                 debugPrint(error.localizedDescription)
+            }
+        }
+        .onReceive(Timer.publish(every: 1.0, on: .current, in: .common).autoconnect()) { _ in
+            Task {
+                do {
+                    try await viewModel.patchProxyData(controller: controller)
+                } catch {
+                    debugPrint(error.localizedDescription)
+                }
             }
         }
     }
