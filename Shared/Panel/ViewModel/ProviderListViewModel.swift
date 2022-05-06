@@ -62,24 +62,24 @@ class ProviderListViewModel: ObservableObject {
     }
     
     func patchProxyData(controller: VPNController) async throws {
-        guard let data = try await controller.execute(command: .proxies) else {
+        guard let data = try await controller.execute(command: .patchData) else {
             return
         }
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(ProviderListViewModel.formatter)
-        let patch = try decoder.decode([String: MergedProxyData.Proxy].self, from: data)
+        let patch = try decoder.decode([String: PatchData].self, from: data)
         await MainActor.run { self.patch(data: patch) }
     }
     
-    private func patch(data: [String: MergedProxyData.Proxy]) {
+    private func patch(data: [String: PatchData]) {
         self.globalProviderViewModels.forEach { vm in
-            vm.selected = data[vm.name]?.now ?? ""
+            vm.selected = data[vm.name]?.current ?? ""
         }
         self.othersProviderViewModels.forEach { vm in
-            vm.selected = data[vm.name]?.now ?? ""
+            vm.selected = data[vm.name]?.current ?? ""
         }
         self.proxyViewModels.forEach { pair in
-            pair.value.histories = data[pair.key]?.history ?? []
+            pair.value.histories = data[pair.key]?.histories ?? []
         }
     }
 }

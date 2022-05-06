@@ -45,6 +45,8 @@
 		D90CBF822824DCAD00482684 /* ProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBA7222824139500050521 /* ProviderView.swift */; };
 		D90CBF832824DD2600482684 /* ProxyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBA7202824137900050521 /* ProxyListView.swift */; };
 		D90CBF842824DD8E00482684 /* ProxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBA71E2824135A00050521 /* ProxyView.swift */; };
+		D90CBF862824FFE500482684 /* PatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CBF852824FFE500482684 /* PatchData.swift */; };
+		D90CBF872824FFE500482684 /* PatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CBF852824FFE500482684 /* PatchData.swift */; };
 		D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927039927ED540500E61944 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */; };
@@ -212,6 +214,7 @@
 		D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewControllerInspector.swift; sourceTree = "<group>"; };
 		D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSwitchView.swift; sourceTree = "<group>"; };
 		D90289EB281A91E700FEB376 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		D90CBF852824FFE500482684 /* PatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchData.swift; sourceTree = "<group>"; };
 		D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEOIPDatabaseManager.swift; sourceTree = "<group>"; };
 		D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PacketTunnelProvider+ClashKit.swift"; sourceTree = "<group>"; };
 		D944F5652815281F00DF0BBE /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -325,6 +328,7 @@
 			children = (
 				70BBA70E2824128100050521 /* DelayHistory.swift */,
 				70BBA7112824129600050521 /* MergedProxyData.swift */,
+				D90CBF852824FFE500482684 /* PatchData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -742,6 +746,7 @@
 				D99E3B0F27EB117F00464266 /* ClashTrafficFormatter.swift in Sources */,
 				D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */,
 				D99E3ACC27EB0F3600464266 /* AppDelegate.swift in Sources */,
+				D90CBF862824FFE500482684 /* PatchData.swift in Sources */,
 				D99E3AB127EB0D9000464266 /* Clash.swift in Sources */,
 				D99E3AEE27EB10BA00464266 /* VPNStateView.swift in Sources */,
 				D99E3AC127EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
@@ -769,6 +774,7 @@
 				D998B61027F01F28004625FF /* SettingView.swift in Sources */,
 				D90289D728192C4F00FEB376 /* StatusView.swift in Sources */,
 				D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
+				D90CBF872824FFE500482684 /* PatchData.swift in Sources */,
 				D90289D1281905C700FEB376 /* Tab.swift in Sources */,
 				70BBA71F2824135A00050521 /* ProxyView.swift in Sources */,
 				D90289E4281A4F2300FEB376 /* SplitViewControllerInspector.swift in Sources */,
@@ -1268,7 +1274,7 @@
 			repositoryURL = "https://github.com/AppleClash/ClashKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 2.3.0;
+				version = 2.6.0;
 			};
 		};
 		D9C3E955280EBE8800D6CFF9 /* XCRemoteSwiftPackageReference "T2SKit" */ = {
