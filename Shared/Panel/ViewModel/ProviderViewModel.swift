@@ -6,6 +6,7 @@ class ProviderViewModel: ObservableObject {
     let type: String
     let proxies: [ProxyViewModel]
     @Published var selected: String
+    @Published var isHealthCheckProcessing = false
     
     var isSelectEnable: Bool {
         self.type.uppercased() == "SELECTOR"
@@ -37,5 +38,15 @@ class ProviderViewModel: ObservableObject {
                 debugPrint(error.localizedDescription)
             }
         }
+    }
+    
+    func healthCheck(controller: VPNController) async {
+        await MainActor.run { self.isHealthCheckProcessing = true }
+        do {
+            try await controller.execute(command: .healthCheck(self.name))
+        } catch {
+            debugPrint(error.localizedDescription)
+        }
+        await MainActor.run { self.isHealthCheckProcessing = false }
     }
 }

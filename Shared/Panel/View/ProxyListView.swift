@@ -19,6 +19,7 @@ struct ProxyListView: View {
                     Text("关闭")
                 }
                 Spacer()
+                buildHealthCheckView()
             }
             .foregroundColor(.accentColor)
             .buttonStyle(.plain)
@@ -72,7 +73,26 @@ struct ProxyListView: View {
             }
             .navigationTitle(viewModel.name)
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    self.buildHealthCheckView()
+                }
+            }
         }
 #endif
+    }
+    
+    @ViewBuilder
+    private func buildHealthCheckView() -> some View {
+        Button(action: healthCheck) {
+            Text("测速")
+        }
+        .disabled(viewModel.isHealthCheckProcessing)
+    }
+    
+    private func healthCheck() {
+        Task {
+            await self.viewModel.healthCheck(controller: self.controller)
+        }
     }
 }
