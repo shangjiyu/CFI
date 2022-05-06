@@ -7,6 +7,7 @@ struct ProxyView: View {
     @Binding var selected: String
     
     var body: some View {
+#if os(macOS)
         GroupBox {
             HStack(spacing: 0) {
                 VStack(alignment: .leading, spacing: 8) {
@@ -32,5 +33,14 @@ struct ProxyView: View {
             }
             .padding(8)
         }
+#else
+        HStack(spacing: 12) {
+            Text(viewModel.name)
+            Text(viewModel.delay)
+                .font(.subheadline)
+                .foregroundColor(viewModel.delayTextColor)
+        }
+        .padding(.vertical, 8.0)
+#endif
     }
 }

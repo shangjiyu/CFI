@@ -38,6 +38,13 @@
 		D90289E4281A4F2300FEB376 /* SplitViewControllerInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */; };
 		D90289E6281A4F6C00FEB376 /* ConfigSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */; };
 		D90289EC281A91E700FEB376 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289EB281A91E700FEB376 /* Theme.swift */; };
+		D90CBF7E2824D96000482684 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBA728282413FD00050521 /* PlaceholderView.swift */; };
+		D90CBF7F2824D97500482684 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289DE28194F8A00FEB376 /* PanelView.swift */; };
+		D90CBF802824DA0700482684 /* ProviderListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBA726282413E300050521 /* ProviderListContainerView.swift */; };
+		D90CBF812824DA2500482684 /* ProviderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBA724282413BC00050521 /* ProviderListView.swift */; };
+		D90CBF822824DCAD00482684 /* ProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBA7222824139500050521 /* ProviderView.swift */; };
+		D90CBF832824DD2600482684 /* ProxyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBA7202824137900050521 /* ProxyListView.swift */; };
+		D90CBF842824DD8E00482684 /* ProxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBA71E2824135A00050521 /* ProxyView.swift */; };
 		D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */; };
 		D927039927ED540500E61944 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */; };
@@ -54,7 +61,6 @@
 		D986498F28237B260092E86E /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986498D28237B260092E86E /* TranslationView.swift */; };
 		D986499128237BA00092E86E /* LogLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986499028237BA00092E86E /* LogLevelView.swift */; };
 		D986499228237BA00092E86E /* LogLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986499028237BA00092E86E /* LogLevelView.swift */; };
-		D98884F227F0C12B00CBB3DB /* ProxyGroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
 		D998B60627F00F43004625FF /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60527F00F43004625FF /* ConfigListView.swift */; };
 		D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
@@ -62,8 +68,6 @@
 		D998B60C27F01A4F004625FF /* InstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60B27F01A4F004625FF /* InstallView.swift */; };
 		D998B60E27F01A70004625FF /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60D27F01A70004625FF /* ControlView.swift */; };
 		D998B61027F01F28004625FF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60F27F01F28004625FF /* SettingView.swift */; };
-		D99E3A9527EB0B5600464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9427EB0B5600464266 /* Yams */; };
-		D99E3A9727EB0B6400464266 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9627EB0B6400464266 /* Yams */; };
 		D99E3A9D27EB0CFE00464266 /* ClashKit in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9C27EB0CFE00464266 /* ClashKit */; };
 		D99E3A9F27EB0D0D00464266 /* ClashKit in Frameworks */ = {isa = PBXBuildFile; productRef = D99E3A9E27EB0D0D00464266 /* ClashKit */; };
 		D99E3AB127EB0D9000464266 /* Clash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AA427EB0D8F00464266 /* Clash.swift */; };
@@ -84,9 +88,6 @@
 		D99E3AEC27EB10B900464266 /* ClashTunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD827EB10B900464266 /* ClashTunnelModeView.swift */; };
 		D99E3AED27EB10BA00464266 /* ClashTrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD927EB10B900464266 /* ClashTrafficView.swift */; };
 		D99E3AEE27EB10BA00464266 /* VPNStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ADA27EB10B900464266 /* VPNStateView.swift */; };
-		D99E3AF327EB10BA00464266 /* ProxyGroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE127EB10B900464266 /* ProxyGroupDetailView.swift */; };
-		D99E3AF427EB10BA00464266 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE227EB10B900464266 /* PanelView.swift */; };
-		D99E3AF527EB10BA00464266 /* ProxyGroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AE327EB10B900464266 /* ProxyGroupListView.swift */; };
 		D99E3AF827EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
 		D99E3AF927EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
 		D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AFB27EB10E700464266 /* CoreDataStack.swift */; };
@@ -115,7 +116,6 @@
 		D9B1B55327EAFEDB007EE597 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1B55227EAFEDB007EE597 /* NetworkExtension.framework */; };
 		D9C3E959280EBEA200D6CFF9 /* T2SKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9C3E958280EBEA200D6CFF9 /* T2SKit */; };
 		D9C3E95B280EBEA800D6CFF9 /* T2SKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9C3E95A280EBEA800D6CFF9 /* T2SKit */; };
-		D9CE81F927F2F6AC00E70A13 /* ProxyGroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,7 +219,6 @@
 		D986498A28237A870092E86E /* DestructiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructiveView.swift; sourceTree = "<group>"; };
 		D986498D28237B260092E86E /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
 		D986499028237BA00092E86E /* LogLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevelView.swift; sourceTree = "<group>"; };
-		D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGroupListViewModel.swift; sourceTree = "<group>"; };
 		D998B60327F00F23004625FF /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		D998B60527F00F43004625FF /* ConfigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigListView.swift; sourceTree = "<group>"; };
 		D998B60727F00F69004625FF /* TunnelModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelModeView.swift; sourceTree = "<group>"; };
@@ -242,9 +241,6 @@
 		D99E3AD827EB10B900464266 /* ClashTunnelModeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashTunnelModeView.swift; sourceTree = "<group>"; };
 		D99E3AD927EB10B900464266 /* ClashTrafficView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashTrafficView.swift; sourceTree = "<group>"; };
 		D99E3ADA27EB10B900464266 /* VPNStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNStateView.swift; sourceTree = "<group>"; };
-		D99E3AE127EB10B900464266 /* ProxyGroupDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyGroupDetailView.swift; sourceTree = "<group>"; };
-		D99E3AE227EB10B900464266 /* PanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
-		D99E3AE327EB10B900464266 /* ProxyGroupListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyGroupListView.swift; sourceTree = "<group>"; };
 		D99E3AF727EB10CA00464266 /* Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Country.mmdb; sourceTree = "<group>"; };
 		D99E3AFB27EB10E700464266 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D99E3AFD27EB10E700464266 /* Clash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clash.xcdatamodel; sourceTree = "<group>"; };
@@ -280,7 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B1B55327EAFEDB007EE597 /* NetworkExtension.framework in Frameworks */,
-				D99E3A9527EB0B5600464266 /* Yams in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B1B55127EAFEC7007EE597 /* NetworkExtension.framework in Frameworks */,
-				D99E3A9727EB0B6400464266 /* Yams in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +313,7 @@
 		70BBA70C2824126800050521 /* Panel */ = {
 			isa = PBXGroup;
 			children = (
+				D90CBF7D2824D8F800482684 /* View */,
 				70BBA714282412A900050521 /* ViewModel */,
 				70BBA70D2824127000050521 /* Model */,
 			);
@@ -383,6 +378,13 @@
 		D90289EA281A519300FEB376 /* Panel */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Panel;
+			sourceTree = "<group>";
+		};
+		D90CBF7D2824D8F800482684 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				D90289DE28194F8A00FEB376 /* PanelView.swift */,
 				70BBA726282413E300050521 /* ProviderListContainerView.swift */,
 				70BBA724282413BC00050521 /* ProviderListView.swift */,
@@ -391,7 +393,7 @@
 				70BBA71E2824135A00050521 /* ProxyView.swift */,
 				70BBA728282413FD00050521 /* PlaceholderView.swift */,
 			);
-			path = Panel;
+			path = View;
 			sourceTree = "<group>";
 		};
 		D9864985282369350092E86E /* Setting */ = {
@@ -438,16 +440,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		D99E3ADF27EB10B900464266 /* Panel */ = {
-			isa = PBXGroup;
-			children = (
-				D99E3AE227EB10B900464266 /* PanelView.swift */,
-				D99E3AE327EB10B900464266 /* ProxyGroupListView.swift */,
-				D99E3AE127EB10B900464266 /* ProxyGroupDetailView.swift */,
-			);
-			path = Panel;
-			sourceTree = "<group>";
-		};
 		D9B1B4DF27EAF72B007EE597 = {
 			isa = PBXGroup;
 			children = (
@@ -473,7 +465,6 @@
 				D99E3B0227EB110A00464266 /* ModalPresentationLink.swift */,
 				D99E3B0327EB110B00464266 /* NSManagedObjectContext+File.swift */,
 				D99E3AFB27EB10E700464266 /* CoreDataStack.swift */,
-				D98884F127F0C12B00CBB3DB /* ProxyGroupListViewModel.swift */,
 				702C1BBB27F3F65200DF9A98 /* Clash+Extension.swift */,
 				D99E3AA427EB0D8F00464266 /* Clash.swift */,
 				D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */,
@@ -521,7 +512,6 @@
 				D944F5652815281F00DF0BBE /* ActivityView.swift */,
 				D99E3AD327EB10B900464266 /* Home */,
 				D99E3ACF27EB10B800464266 /* List */,
-				D99E3ADF27EB10B900464266 /* Panel */,
 				D9B1B50427EAF8DF007EE597 /* iOS.entitlements */,
 				D9B1B55427EB0021007EE597 /* Info.plist */,
 			);
@@ -574,7 +564,6 @@
 			);
 			name = "Clash (iOS)";
 			packageProductDependencies = (
-				D99E3A9427EB0B5600464266 /* Yams */,
 			);
 			productName = "AppleClash (iOS)";
 			productReference = D9B1B4EC27EAF72F007EE597 /* Clash.app */;
@@ -597,7 +586,6 @@
 			);
 			name = "Clash (macOS)";
 			packageProductDependencies = (
-				D99E3A9627EB0B6400464266 /* Yams */,
 			);
 			productName = "AppleClash (macOS)";
 			productReference = D9B1B4F227EAF72F007EE597 /* Clash.app */;
@@ -681,7 +669,6 @@
 			);
 			mainGroup = D9B1B4DF27EAF72B007EE597;
 			packageReferences = (
-				D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */,
 				D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */,
 				D9C3E955280EBE8800D6CFF9 /* XCRemoteSwiftPackageReference "T2SKit" */,
 			);
@@ -738,19 +725,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D927037F27EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
-				D99E3AF427EB10BA00464266 /* PanelView.swift in Sources */,
 				D99E3B0A27EB110C00464266 /* VPNManager.swift in Sources */,
-				D9CE81F927F2F6AC00E70A13 /* ProxyGroupListViewModel.swift in Sources */,
+				D90CBF832824DD2600482684 /* ProxyListView.swift in Sources */,
+				D90CBF802824DA0700482684 /* ProviderListContainerView.swift in Sources */,
 				D99E3AE727EB10B900464266 /* ClashConfigImportButton.swift in Sources */,
 				D99E3AE527EB10B900464266 /* ClashConfigListView.swift in Sources */,
 				D99E3AE627EB10B900464266 /* ClashConfigImportView.swift in Sources */,
-				D99E3AF527EB10BA00464266 /* ProxyGroupListView.swift in Sources */,
 				70BBA7122824129600050521 /* MergedProxyData.swift in Sources */,
 				70BBA71C282412E700050521 /* ProviderListViewModel.swift in Sources */,
 				D944F5662815282800DF0BBE /* ActivityView.swift in Sources */,
 				D99E3AE927EB10B900464266 /* InstallVPNView.swift in Sources */,
-				D99E3AF327EB10BA00464266 /* ProxyGroupDetailView.swift in Sources */,
 				D99E3B0827EB110C00464266 /* ModalPresentationLink.swift in Sources */,
+				D90CBF822824DCAD00482684 /* ProviderView.swift in Sources */,
 				D99E3B0D27EB110C00464266 /* ContentView.swift in Sources */,
 				70BBA70F2824128100050521 /* DelayHistory.swift in Sources */,
 				D99E3AEB27EB10B900464266 /* ClashConfigView.swift in Sources */,
@@ -769,13 +755,17 @@
 				D99E3AC127EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
 				70BBA719282412D400050521 /* ProviderViewModel.swift in Sources */,
 				D9B1B4F527EAF72F007EE597 /* ClashApp.swift in Sources */,
+				D90CBF7F2824D97500482684 /* PanelView.swift in Sources */,
 				D99E3B0C27EB110C00464266 /* ManagedObjectFetchView.swift in Sources */,
+				D90CBF842824DD8E00482684 /* ProxyView.swift in Sources */,
 				D9864986282369460092E86E /* SettingView.swift in Sources */,
 				D99E3AED27EB10BA00464266 /* ClashTrafficView.swift in Sources */,
 				D986498B28237A870092E86E /* DestructiveView.swift in Sources */,
 				D986498E28237B260092E86E /* TranslationView.swift in Sources */,
 				D99E3AE827EB10B900464266 /* VPNConnecteDurationView.swift in Sources */,
+				D90CBF7E2824D96000482684 /* PlaceholderView.swift in Sources */,
 				D99E3B0B27EB110C00464266 /* DocumentPickerView.swift in Sources */,
+				D90CBF812824DA2500482684 /* ProviderListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,7 +773,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98884F227F0C12B00CBB3DB /* ProxyGroupListViewModel.swift in Sources */,
 				D90289D92819310300FEB376 /* HomeView.swift in Sources */,
 				D998B61027F01F28004625FF /* SettingView.swift in Sources */,
 				D90289D728192C4F00FEB376 /* StatusView.swift in Sources */,
@@ -1282,14 +1271,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jpsim/Yams.git";
-			requirement = {
-				kind = exactVersion;
-				version = 5.0.0;
-			};
-		};
 		D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppleClash/ClashKit.git";
@@ -1309,16 +1290,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D99E3A9427EB0B5600464266 /* Yams */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */;
-			productName = Yams;
-		};
-		D99E3A9627EB0B6400464266 /* Yams */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D99E3A9327EB0B5600464266 /* XCRemoteSwiftPackageReference "Yams" */;
-			productName = Yams;
-		};
 		D99E3A9C27EB0CFE00464266 /* ClashKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D99E3A9B27EB0CFE00464266 /* XCRemoteSwiftPackageReference "ClashKit" */;

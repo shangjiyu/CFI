@@ -5,6 +5,7 @@ struct ProviderView: View {
     @EnvironmentObject private var viewModel: ProviderViewModel
     
     var body: some View {
+#if os(macOS)
         GroupBox {
             HStack(spacing: 0) {
                 VStack(alignment: .leading, spacing: 12) {
@@ -24,5 +25,20 @@ struct ProviderView: View {
             }
             .padding(8)
         }
+#else
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(viewModel.name)
+                Text("\(viewModel.proxies.count)代理 - \(viewModel.type.uppercased())")
+                    .font(Font.subheadline)
+                    .foregroundColor(Color.secondary)
+            }
+            Spacer()
+            Text(viewModel.selected)
+                .foregroundColor(Color.secondary)
+        }
+        .lineLimit(1)
+        .padding(.vertical, 4)
+#endif
     }
 }
