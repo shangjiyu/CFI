@@ -29,7 +29,7 @@ struct ProxyListView: View {
                         ProxyView(selected: $viewModel.selected)
                             .environmentObject(model)
                             .onTapGesture {
-                                viewModel.select(controller: controller, proxy: model)
+                                viewModel.select(controller: controller, proxy: model.name)
                             }
                     }
                 }

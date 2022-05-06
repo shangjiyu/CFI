@@ -386,8 +386,8 @@
 				D90289DE28194F8A00FEB376 /* PanelView.swift */,
 				70BBA726282413E300050521 /* ProviderListContainerView.swift */,
 				70BBA724282413BC00050521 /* ProviderListView.swift */,
-				70BBA7202824137900050521 /* ProxyListView.swift */,
 				70BBA7222824139500050521 /* ProviderView.swift */,
+				70BBA7202824137900050521 /* ProxyListView.swift */,
 				70BBA71E2824135A00050521 /* ProxyView.swift */,
 				70BBA728282413FD00050521 /* PlaceholderView.swift */,
 			);

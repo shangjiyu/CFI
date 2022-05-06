@@ -18,7 +18,7 @@ class ProviderViewModel: ObservableObject {
         self.proxies = proxies
     }
     
-    func select(controller: VPNController, proxy: ProxyViewModel) {
+    func select(controller: VPNController, proxy: String) {
         guard self.isSelectEnable else {
             return
         }
@@ -27,9 +27,9 @@ class ProviderViewModel: ObservableObject {
         }
         let key = "\(uuid)-PatchGroup"
         var mapping = UserDefaults.shared.value(forKey: key) as? [String: String] ?? [:]
-        mapping[self.name] = proxy.name
+        mapping[self.name] = proxy
         UserDefaults.shared.set(mapping, forKey: key)
-        self.selected = proxy.name
+        self.selected = proxy
         Task(priority: .high) {
             do {
                 try await controller.execute(command: .setSelectGroup)
