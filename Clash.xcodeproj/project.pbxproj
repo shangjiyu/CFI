@@ -407,6 +407,15 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		D98FBA01282655C000EFBE8F /* UIKitViews */ = {
+			isa = PBXGroup;
+			children = (
+				D944F5652815281F00DF0BBE /* ActivityView.swift */,
+				D99E3B0527EB110B00464266 /* DocumentPickerView.swift */,
+			);
+			path = UIKitViews;
+			sourceTree = "<group>";
+		};
 		D99E3AA027EB0D2E00464266 /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,8 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				D99E3ACB27EB0F3600464266 /* AppDelegate.swift */,
-				D99E3B0527EB110B00464266 /* DocumentPickerView.swift */,
-				D944F5652815281F00DF0BBE /* ActivityView.swift */,
+				D98FBA01282655C000EFBE8F /* UIKitViews */,
 				D99E3AD327EB10B900464266 /* Home */,
 				D99E3ACF27EB10B800464266 /* List */,
 				D9B1B50427EAF8DF007EE597 /* iOS.entitlements */,
