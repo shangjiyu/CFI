@@ -19,19 +19,25 @@ class ProxyViewModel: ObservableObject {
     }
     
     var delay: String {
-        guard let last = histories.last else {
+        guard self.isURLTestEnable else {
             return ""
+        }
+        guard let last = histories.last else {
+            return "延迟: -"
         }
         if last.delay == 0 {
             return "超时"
         } else {
-            return "\(last.delay)ms"
+            return "延迟: \(last.delay)ms"
         }
     }
     
     var delayTextColor: Color {
-        guard let last = histories.last else {
+        guard self.isURLTestEnable else {
             return .clear
+        }
+        guard let last = histories.last else {
+            return .secondary
         }
         if last.delay == 0 {
             return .secondary

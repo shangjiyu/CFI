@@ -35,11 +35,13 @@ struct ProxyView: View {
             .padding(8)
         }
 #else
-        HStack(spacing: 12) {
+        VStack(alignment: .leading, spacing: 4) {
             Text(viewModel.name)
-            Text(viewModel.delay)
-                .font(.subheadline)
-                .foregroundColor(viewModel.delayTextColor)
+            if viewModel.isURLTestEnable {
+                Text(viewModel.delay)
+                    .font(.subheadline)
+                    .foregroundColor(viewModel.delayTextColor)
+            }
         }
         .padding(.vertical, 8.0)
 #endif

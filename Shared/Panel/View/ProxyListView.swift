@@ -86,7 +86,16 @@ struct ProxyListView: View {
     private func buildHealthCheckView() -> some View {
         if viewModel.isHealthCheckEnable {
             Button(action: healthCheck) {
+#if os(macOS)
                 Text("测速")
+                    .fontWeight(.medium)
+#else
+                if viewModel.isHealthCheckProcessing {
+                    ProgressView()
+                } else {
+                    Image(systemName: "speedometer")
+                }
+#endif
             }
             .disabled(viewModel.isHealthCheckProcessing)
         } else {
