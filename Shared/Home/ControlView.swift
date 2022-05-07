@@ -10,14 +10,30 @@ struct ControlView: View {
     @State private var isOn: Bool = false
         
     var body: some View {
-        Toggle("状态: ", isOn: $isOn)
-            .padding(.vertical, 8)
+        buildBody()
             .toggleStyle(.switch)
             .allowsHitTesting(allowsHitTesting)
             .onAppear { self.onVPNStatusChanged(status: self.controller.connectionStatus) }
             .onChange(of: isOn, perform: onToggleAction(isOn:))
             .onChange(of: uuidString, perform: onClashConfigChanged(uuidString:))
             .onChange(of: controller.connectionStatus, perform: onVPNStatusChanged(status:))
+    }
+    
+    @ViewBuilder
+    private func buildBody() -> some View {
+#if os(macOS)
+        Toggle("状态: ", isOn: $isOn)
+            .padding(.vertical, 8)
+#else
+        HStack {
+            Label("状态", systemImage: "app.connected.to.app.below.fill")
+            Spacer()
+            Text(self.controller.connectionStatus.displayString)
+                .foregroundColor(.secondary)
+            Toggle("状态", isOn: $isOn)
+                .labelsHidden()
+        }
+#endif
     }
     
     private var allowsHitTesting: Bool {
