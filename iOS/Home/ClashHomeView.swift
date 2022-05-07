@@ -22,8 +22,7 @@ struct ClashHomeView: View {
                     ClashTunnelModeView()
                 }
                 Section {
-                    ClashTrafficUpView()
-                    ClashTrafficDownView()
+                    TrafficView()
                 }
             }
             .navigationBarTitle("主页")
