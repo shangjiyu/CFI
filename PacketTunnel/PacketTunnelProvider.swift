@@ -56,8 +56,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 return ClashMergedProxyData()
             case .patchData:
                 return ClashPatchData()
-            case .healthCheck(let name):
-                ClashHealthCheck(name)
+            case .healthCheck(let name, let url, let timeout):
+                ClashHealthCheck(name, url.absoluteString, timeout)
             }
             return nil
         } catch {

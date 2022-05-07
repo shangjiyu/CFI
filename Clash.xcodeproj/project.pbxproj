@@ -63,6 +63,8 @@
 		D986498F28237B260092E86E /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986498D28237B260092E86E /* TranslationView.swift */; };
 		D986499128237BA00092E86E /* LogLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986499028237BA00092E86E /* LogLevelView.swift */; };
 		D986499228237BA00092E86E /* LogLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986499028237BA00092E86E /* LogLevelView.swift */; };
+		D98FB9F9282615FF00EFBE8F /* AdapterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FB9F8282615FF00EFBE8F /* AdapterType.swift */; };
+		D98FB9FA282615FF00EFBE8F /* AdapterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FB9F8282615FF00EFBE8F /* AdapterType.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
 		D998B60627F00F43004625FF /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60527F00F43004625FF /* ConfigListView.swift */; };
 		D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
@@ -222,6 +224,7 @@
 		D986498A28237A870092E86E /* DestructiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructiveView.swift; sourceTree = "<group>"; };
 		D986498D28237B260092E86E /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
 		D986499028237BA00092E86E /* LogLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevelView.swift; sourceTree = "<group>"; };
+		D98FB9F8282615FF00EFBE8F /* AdapterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterType.swift; sourceTree = "<group>"; };
 		D998B60327F00F23004625FF /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		D998B60527F00F43004625FF /* ConfigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigListView.swift; sourceTree = "<group>"; };
 		D998B60727F00F69004625FF /* TunnelModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelModeView.swift; sourceTree = "<group>"; };
@@ -329,6 +332,7 @@
 				70BBA70E2824128100050521 /* DelayHistory.swift */,
 				70BBA7112824129600050521 /* MergedProxyData.swift */,
 				D90CBF852824FFE500482684 /* PatchData.swift */,
+				D98FB9F8282615FF00EFBE8F /* AdapterType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -751,6 +755,7 @@
 				D99E3AEE27EB10BA00464266 /* VPNStateView.swift in Sources */,
 				D99E3AC127EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
 				70BBA719282412D400050521 /* ProviderViewModel.swift in Sources */,
+				D98FB9F9282615FF00EFBE8F /* AdapterType.swift in Sources */,
 				D9B1B4F527EAF72F007EE597 /* ClashApp.swift in Sources */,
 				D90CBF7F2824D97500482684 /* PanelView.swift in Sources */,
 				D99E3B0C27EB110C00464266 /* ManagedObjectFetchView.swift in Sources */,
@@ -783,6 +788,7 @@
 				D99E3ACE27EB0F5B00464266 /* AppDelegate.swift in Sources */,
 				D99E3B1127EB11A500464266 /* VPNManager.swift in Sources */,
 				D9B1B4F827EAF72F007EE597 /* ContentView.swift in Sources */,
+				D98FB9FA282615FF00EFBE8F /* AdapterType.swift in Sources */,
 				70BBA729282413FD00050521 /* PlaceholderView.swift in Sources */,
 				70BBA717282412B500050521 /* ProxyViewModel.swift in Sources */,
 				D90289D528192BF800FEB376 /* ConnectionDurationView.swift in Sources */,
@@ -1274,7 +1280,7 @@
 			repositoryURL = "https://github.com/AppleClash/ClashKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 2.6.0;
+				version = 2.10.0;
 			};
 		};
 		D9C3E955280EBE8800D6CFF9 /* XCRemoteSwiftPackageReference "T2SKit" */ = {

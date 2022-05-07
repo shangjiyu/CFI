@@ -3,25 +3,20 @@ import Foundation
 class ProviderViewModel: ObservableObject {
     
     let name: String
-    let type: String
+    let type: AdapterType
     let proxies: [ProxyViewModel]
+    let isHealthCheckEnable: Bool
     @Published var selected: String
     @Published var isHealthCheckProcessing = false
     
-    var isSelectEnable: Bool {
-        self.type.uppercased() == "SELECTOR"
-    }
-    
-    var isHealthCheckEnable: Bool {
-        let reval = self.type.uppercased()
-        return reval == "URLTEST" || reval == "LOADBALANCE" || reval == "FALLBACK"
-    }
+    var isSelectEnable: Bool { self.type == .selector }
     
     init(name: String, type: String, selected: String, proxies: [ProxyViewModel]) {
         self.name = name
-        self.type = type
+        self.type = AdapterType(type: type)
         self.selected = selected
         self.proxies = proxies
+        self.isHealthCheckEnable = proxies.contains(where: { $0.isURLTestEnable })
     }
     
     func select(controller: VPNController, proxy: String) {
@@ -46,9 +41,12 @@ class ProviderViewModel: ObservableObject {
     }
     
     func healthCheck(controller: VPNController) async {
+        guard let url = URL(string: "http://cp.cloudflare.com/generate_204") else {
+            return
+        }
         await MainActor.run { self.isHealthCheckProcessing = true }
         do {
-            try await controller.execute(command: .healthCheck(self.name))
+            try await controller.execute(command: .healthCheck(self.name, url, 5))
         } catch {
             debugPrint(error.localizedDescription)
         }

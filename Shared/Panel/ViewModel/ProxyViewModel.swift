@@ -4,13 +4,18 @@ import SwiftUI
 class ProxyViewModel: ObservableObject {
     
     let name: String
-    let type: String
+    let type: AdapterType
+    let isURLTestEnable: Bool
     @Published var histories: [DelayHistory]
     
+    private static let types: Set<AdapterType> = [.shadowsocks, .shadowsocksR, .snell, .socks5, .http, .vmess, .trojan]
+    
     init(name: String, type: String, histories: [DelayHistory]) {
+        let reval = AdapterType(type: type)
         self.name = name
-        self.type = type
+        self.type = reval
         self.histories = histories
+        self.isURLTestEnable = ProxyViewModel.types.contains(reval)
     }
     
     var delay: String {

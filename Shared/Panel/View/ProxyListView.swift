@@ -52,7 +52,7 @@ struct ProxyListView: View {
                     HStack {
                         Text("类型")
                         Spacer()
-                        Text(viewModel.type.uppercased())
+                        Text(viewModel.type.rawValue.uppercased())
                             .foregroundColor(.secondary)
                     }
                 }
@@ -86,7 +86,7 @@ struct ProxyListView: View {
     private func buildHealthCheckView() -> some View {
         if viewModel.isHealthCheckEnable {
             Button(action: healthCheck) {
-                Text("健康检查")
+                Text("测速")
             }
             .disabled(viewModel.isHealthCheckProcessing)
         } else {

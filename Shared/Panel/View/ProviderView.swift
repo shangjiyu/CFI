@@ -11,7 +11,7 @@ struct ProviderView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text(viewModel.name)
                         .fontWeight(.medium)
-                    Text(viewModel.type.uppercased())
+                    Text(viewModel.type.rawValue.uppercased())
                         .font(.system(size: 8))
                         .fontWeight(.bold)
                         .padding(.horizontal, 8)
@@ -29,7 +29,7 @@ struct ProviderView: View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(viewModel.name)
-                Text("\(viewModel.proxies.count)代理 - \(viewModel.type.uppercased())")
+                Text("\(viewModel.proxies.count)代理 - \(viewModel.type.rawValue.uppercased())")
                     .font(Font.subheadline)
                     .foregroundColor(Color.secondary)
             }
