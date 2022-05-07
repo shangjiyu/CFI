@@ -72,6 +72,7 @@
 		D98FBA0628266F7E00EFBE8F /* InstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60B27F01A4F004625FF /* InstallView.swift */; };
 		D98FBA07282671B600EFBE8F /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60D27F01A70004625FF /* ControlView.swift */; };
 		D98FBA08282673AB00EFBE8F /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D228192BD600FEB376 /* ConnectionStatusView.swift */; };
+		D98FBA09282675BA00EFBE8F /* ConfigSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
 		D998B60627F00F43004625FF /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60527F00F43004625FF /* ConfigListView.swift */; };
 		D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
@@ -93,7 +94,6 @@
 		D99E3AE627EB10B900464266 /* ClashConfigImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* ClashConfigImportView.swift */; };
 		D99E3AE727EB10B900464266 /* ClashConfigImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ClashConfigImportButton.swift */; };
 		D99E3AEA27EB10B900464266 /* ClashHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD627EB10B900464266 /* ClashHomeView.swift */; };
-		D99E3AEB27EB10B900464266 /* ClashConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD727EB10B900464266 /* ClashConfigView.swift */; };
 		D99E3AF827EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
 		D99E3AF927EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
 		D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AFB27EB10E700464266 /* CoreDataStack.swift */; };
@@ -242,7 +242,6 @@
 		D99E3AD127EB10B800464266 /* ClashConfigImportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigImportView.swift; sourceTree = "<group>"; };
 		D99E3AD227EB10B800464266 /* ClashConfigImportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigImportButton.swift; sourceTree = "<group>"; };
 		D99E3AD627EB10B900464266 /* ClashHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashHomeView.swift; sourceTree = "<group>"; };
-		D99E3AD727EB10B900464266 /* ClashConfigView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigView.swift; sourceTree = "<group>"; };
 		D99E3AF727EB10CA00464266 /* Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Country.mmdb; sourceTree = "<group>"; };
 		D99E3AFB27EB10E700464266 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D99E3AFD27EB10E700464266 /* Clash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clash.xcdatamodel; sourceTree = "<group>"; };
@@ -345,9 +344,7 @@
 		D90289E7281A50C600FEB376 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				D90289E8281A50D600FEB376 /* SideBar */,
 				D90289D82819310300FEB376 /* HomeView.swift */,
-				D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */,
 				D998B60527F00F43004625FF /* ConfigListView.swift */,
 			);
 			path = Home;
@@ -409,6 +406,7 @@
 		D98FBA0228265A7800EFBE8F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */,
 				D90289D428192BF800FEB376 /* ConnectionDurationView.swift */,
 				D998B60927F00F8F004625FF /* TrafficView.swift */,
 				D998B60727F00F69004625FF /* TunnelModeView.swift */,
@@ -442,7 +440,6 @@
 			isa = PBXGroup;
 			children = (
 				D99E3AD627EB10B900464266 /* ClashHomeView.swift */,
-				D99E3AD727EB10B900464266 /* ClashConfigView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -502,6 +499,7 @@
 			children = (
 				D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */,
 				D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */,
+				D90289E8281A50D600FEB376 /* SideBar */,
 				D90289E7281A50C600FEB376 /* Home */,
 				D90289E9281A518900FEB376 /* Setting */,
 				D9B1B4F427EAF72F007EE597 /* macOS.entitlements */,
@@ -737,13 +735,13 @@
 				D99E3AE727EB10B900464266 /* ClashConfigImportButton.swift in Sources */,
 				D99E3AE527EB10B900464266 /* ClashConfigListView.swift in Sources */,
 				D99E3AE627EB10B900464266 /* ClashConfigImportView.swift in Sources */,
+				D98FBA09282675BA00EFBE8F /* ConfigSwitchView.swift in Sources */,
 				70BBA7122824129600050521 /* MergedProxyData.swift in Sources */,
 				70BBA71C282412E700050521 /* ProviderListViewModel.swift in Sources */,
 				D944F5662815282800DF0BBE /* ActivityView.swift in Sources */,
 				D99E3B0827EB110C00464266 /* ModalPresentationLink.swift in Sources */,
 				D90CBF822824DCAD00482684 /* ProviderView.swift in Sources */,
 				70BBA70F2824128100050521 /* DelayHistory.swift in Sources */,
-				D99E3AEB27EB10B900464266 /* ClashConfigView.swift in Sources */,
 				D99E3B0027EB10E700464266 /* Clash.xcdatamodeld in Sources */,
 				D99E3AEA27EB10B900464266 /* ClashHomeView.swift in Sources */,
 				70BBA716282412B500050521 /* ProxyViewModel.swift in Sources */,

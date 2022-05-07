@@ -8,7 +8,7 @@ struct ClashHomeView: View {
         NavigationView {
             Form {
                 Section {
-                    ClashConfigView()
+                    ConfigSwitchView()
                     if let controller = self.manager.controller {
                         ControlView()
                             .environmentObject(controller)

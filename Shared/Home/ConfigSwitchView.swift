@@ -9,9 +9,14 @@ struct ConfigSwitchView: View {
         animation: nil
     ) private var configs: FetchedResults<ClashConfig>
     
+    private var title: String {
+        configs.first(where: { $0.uuid?.uuidString == uuidString }).flatMap({ $0.name ?? "-" }) ?? "未选择"
+    }
+    
     var body: some View {
+#if os(macOS)
         HStack {
-            TextField("配置: ", text: .constant(configs.first(where: { $0.uuid?.uuidString == uuidString }).flatMap({ $0.name ?? "-" }) ?? "未选择"), prompt: nil)
+            TextField("配置: ", text: .constant(title), prompt: nil)
                 .textFieldStyle(.plain)
                 .allowsHitTesting(false)
                 .focusable(false)
@@ -23,5 +28,18 @@ struct ConfigSwitchView: View {
                     .foregroundColor(.accentColor)
             }
         }
+#else
+        ModalPresentationLink {
+            ClashConfigListView()
+        } label: {
+            HStack {
+                Label("配置", systemImage: "square.text.square")
+                Spacer()
+                Text(title)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.accentColor)
+            }
+        }
+#endif
     }
 }
