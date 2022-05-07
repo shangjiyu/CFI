@@ -71,6 +71,7 @@
 		D98FBA0528266B4000EFBE8F /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
 		D98FBA0628266F7E00EFBE8F /* InstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60B27F01A4F004625FF /* InstallView.swift */; };
 		D98FBA07282671B600EFBE8F /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60D27F01A70004625FF /* ControlView.swift */; };
+		D98FBA08282673AB00EFBE8F /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D228192BD600FEB376 /* ConnectionStatusView.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
 		D998B60627F00F43004625FF /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60527F00F43004625FF /* ConfigListView.swift */; };
 		D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
@@ -358,7 +359,6 @@
 				D90289D0281905C600FEB376 /* Tab.swift */,
 				D998B60327F00F23004625FF /* SideBarView.swift */,
 				D90289D628192C4F00FEB376 /* StatusView.swift */,
-				D90289D228192BD600FEB376 /* ConnectionStatusView.swift */,
 			);
 			path = SideBar;
 			sourceTree = "<group>";
@@ -414,6 +414,7 @@
 				D998B60727F00F69004625FF /* TunnelModeView.swift */,
 				D998B60B27F01A4F004625FF /* InstallView.swift */,
 				D998B60D27F01A70004625FF /* ControlView.swift */,
+				D90289D228192BD600FEB376 /* ConnectionStatusView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -747,6 +748,7 @@
 				D99E3AEA27EB10B900464266 /* ClashHomeView.swift in Sources */,
 				70BBA716282412B500050521 /* ProxyViewModel.swift in Sources */,
 				702C1BBC27F3F65200DF9A98 /* Clash+Extension.swift in Sources */,
+				D98FBA08282673AB00EFBE8F /* ConnectionStatusView.swift in Sources */,
 				D98FBA0528266B4000EFBE8F /* TunnelModeView.swift in Sources */,
 				D986499128237BA00092E86E /* LogLevelView.swift in Sources */,
 				D99E3B0927EB110C00464266 /* NSManagedObjectContext+File.swift in Sources */,

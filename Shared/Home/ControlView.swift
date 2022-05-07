@@ -28,7 +28,7 @@ struct ControlView: View {
         HStack {
             Label("状态", systemImage: "app.connected.to.app.below.fill")
             Spacer()
-            Text(self.controller.connectionStatus.displayString)
+            ConnectionStatusView()
                 .foregroundColor(.secondary)
             Toggle("状态", isOn: $isOn)
                 .labelsHidden()
