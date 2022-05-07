@@ -8,16 +8,16 @@ struct TunnelModeView: View {
     var body: some View {
         Picker("代理模式: ", selection: $tunnelMode) {
             ForEach(Clash.TunnelMode.allCases) { mode in
-                VStack(alignment: .leading, spacing: 4) {
 #if os(macOS)
+                VStack(alignment: .leading, spacing: 4) {
                     Text(mode.title)
                     Text(mode.detail)
                         .foregroundColor(.secondary)
-#else
-                    Label(mode.title, systemImage: mode.imageName)
-#endif
                 }
                 .padding(.vertical, 4)
+#else
+                Label(mode.title, systemImage: mode.imageName)
+#endif
             }
         }
 #if os(macOS)
