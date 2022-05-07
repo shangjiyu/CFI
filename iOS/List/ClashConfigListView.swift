@@ -35,9 +35,22 @@ struct ClashConfigListView: View {
                 .lineLimit(1)
                 .contentShape(Rectangle())
                 .onTapGesture { onCellTapGesture(config: config) }
-                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                    Button("删除", role: .destructive) { onCellDeleteAction(config: config) }
-                    Button("导出", role: nil) { onCellShareAction(config: config) }
+                .contextMenu {
+                    Button(role: nil) {
+                        
+                    } label: {
+                        Label("重命名", systemImage: "pencil")
+                    }
+                    Button(role: nil) {
+                        onCellShareAction(config: config)
+                    } label: {
+                        Label("导出", systemImage: "square.and.arrow.up")
+                    }
+                    Button(role: .destructive) {
+                        onCellDeleteAction(config: config)
+                    } label: {
+                        Label("删除", systemImage: "trash")
+                    }
                 }
             }
             .activitySheet(items: $exportItems)
@@ -80,12 +93,10 @@ struct ClashConfigListView: View {
     }
     
     private func onCellShareAction(config: ClashConfig) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            guard let uuid = config.uuid else {
-                return
-            }
-            let fileURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)/config.yaml")
-            self.exportItems = [fileURL]
+        guard let uuid = config.uuid else {
+            return
         }
+        let fileURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)/config.yaml")
+        self.exportItems = [fileURL]
     }
 }
