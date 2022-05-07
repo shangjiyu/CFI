@@ -12,7 +12,7 @@ class ProviderViewModel: ObservableObject {
         self.type.uppercased() == "SELECTOR"
     }
     
-    var isURLTestEnable: Bool {
+    var isHealthCheckEnable: Bool {
         let reval = self.type.uppercased()
         return reval == "URLTEST" || reval == "LOADBALANCE" || reval == "FALLBACK"
     }

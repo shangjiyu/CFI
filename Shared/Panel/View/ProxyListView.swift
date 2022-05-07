@@ -84,9 +84,9 @@ struct ProxyListView: View {
     
     @ViewBuilder
     private func buildHealthCheckView() -> some View {
-        if viewModel.isURLTestEnable {
+        if viewModel.isHealthCheckEnable {
             Button(action: healthCheck) {
-                Text("测速")
+                Text("健康检查")
             }
             .disabled(viewModel.isHealthCheckProcessing)
         } else {
