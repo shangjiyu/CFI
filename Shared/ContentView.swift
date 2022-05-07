@@ -25,7 +25,7 @@ struct ContentView: View {
         .frame(height: 540)
 #else
         TabView {
-            ClashHomeView()
+            HomeView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("主页")
