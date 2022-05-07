@@ -66,6 +66,7 @@
 		D98FB9F9282615FF00EFBE8F /* AdapterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FB9F8282615FF00EFBE8F /* AdapterType.swift */; };
 		D98FB9FA282615FF00EFBE8F /* AdapterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FB9F8282615FF00EFBE8F /* AdapterType.swift */; };
 		D98FBA002826523700EFBE8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1B4E627EAF72B007EE597 /* ContentView.swift */; };
+		D98FBA0328265A8D00EFBE8F /* ConnectionDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D428192BF800FEB376 /* ConnectionDurationView.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
 		D998B60627F00F43004625FF /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60527F00F43004625FF /* ConfigListView.swift */; };
 		D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
@@ -86,7 +87,6 @@
 		D99E3AE527EB10B900464266 /* ClashConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD027EB10B800464266 /* ClashConfigListView.swift */; };
 		D99E3AE627EB10B900464266 /* ClashConfigImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* ClashConfigImportView.swift */; };
 		D99E3AE727EB10B900464266 /* ClashConfigImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ClashConfigImportButton.swift */; };
-		D99E3AE827EB10B900464266 /* VPNConnecteDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD427EB10B900464266 /* VPNConnecteDurationView.swift */; };
 		D99E3AE927EB10B900464266 /* InstallVPNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD527EB10B900464266 /* InstallVPNView.swift */; };
 		D99E3AEA27EB10B900464266 /* ClashHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD627EB10B900464266 /* ClashHomeView.swift */; };
 		D99E3AEB27EB10B900464266 /* ClashConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD727EB10B900464266 /* ClashConfigView.swift */; };
@@ -240,7 +240,6 @@
 		D99E3AD027EB10B800464266 /* ClashConfigListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigListView.swift; sourceTree = "<group>"; };
 		D99E3AD127EB10B800464266 /* ClashConfigImportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigImportView.swift; sourceTree = "<group>"; };
 		D99E3AD227EB10B800464266 /* ClashConfigImportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigImportButton.swift; sourceTree = "<group>"; };
-		D99E3AD427EB10B900464266 /* VPNConnecteDurationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNConnecteDurationView.swift; sourceTree = "<group>"; };
 		D99E3AD527EB10B900464266 /* InstallVPNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallVPNView.swift; sourceTree = "<group>"; };
 		D99E3AD627EB10B900464266 /* ClashHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashHomeView.swift; sourceTree = "<group>"; };
 		D99E3AD727EB10B900464266 /* ClashConfigView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigView.swift; sourceTree = "<group>"; };
@@ -368,7 +367,6 @@
 				D90289D628192C4F00FEB376 /* StatusView.swift */,
 				D998B60927F00F8F004625FF /* TrafficView.swift */,
 				D90289D228192BD600FEB376 /* ConnectionStatusView.swift */,
-				D90289D428192BF800FEB376 /* ConnectionDurationView.swift */,
 			);
 			path = SideBar;
 			sourceTree = "<group>";
@@ -416,6 +414,14 @@
 			path = UIKitViews;
 			sourceTree = "<group>";
 		};
+		D98FBA0228265A7800EFBE8F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D90289D428192BF800FEB376 /* ConnectionDurationView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		D99E3AA027EB0D2E00464266 /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,7 +447,6 @@
 				D99E3AD627EB10B900464266 /* ClashHomeView.swift */,
 				D99E3AD727EB10B900464266 /* ClashConfigView.swift */,
 				D99E3ADA27EB10B900464266 /* VPNStateView.swift */,
-				D99E3AD427EB10B900464266 /* VPNConnecteDurationView.swift */,
 				D99E3AD527EB10B900464266 /* InstallVPNView.swift */,
 				D99E3AD827EB10B900464266 /* ClashTunnelModeView.swift */,
 				D99E3AD927EB10B900464266 /* ClashTrafficView.swift */,
@@ -478,6 +483,7 @@
 				702C1BBB27F3F65200DF9A98 /* Clash+Extension.swift */,
 				D99E3AA427EB0D8F00464266 /* Clash.swift */,
 				D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */,
+				D98FBA0228265A7800EFBE8F /* Home */,
 				70BBA70C2824126800050521 /* Panel */,
 				D9864985282369350092E86E /* Setting */,
 				D99E3AF727EB10CA00464266 /* Country.mmdb */,
@@ -769,10 +775,10 @@
 				D99E3AED27EB10BA00464266 /* ClashTrafficView.swift in Sources */,
 				D986498B28237A870092E86E /* DestructiveView.swift in Sources */,
 				D986498E28237B260092E86E /* TranslationView.swift in Sources */,
-				D99E3AE827EB10B900464266 /* VPNConnecteDurationView.swift in Sources */,
 				D98FBA002826523700EFBE8F /* ContentView.swift in Sources */,
 				D90CBF7E2824D96000482684 /* PlaceholderView.swift in Sources */,
 				D99E3B0B27EB110C00464266 /* DocumentPickerView.swift in Sources */,
+				D98FBA0328265A8D00EFBE8F /* ConnectionDurationView.swift in Sources */,
 				D90CBF812824DA2500482684 /* ProviderListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

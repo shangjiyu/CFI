@@ -12,7 +12,7 @@ struct ClashHomeView: View {
                     if let controller = self.manager.controller {
                         VPNStateView()
                             .environmentObject(controller)
-                        VPNConnecteDurationView()
+                        ConnectionDurationView()
                             .environmentObject(controller)
                     } else {
                         InstallVPNView()
