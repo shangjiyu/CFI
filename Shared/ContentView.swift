@@ -4,7 +4,26 @@ struct ContentView: View {
     
     @StateObject private var providerListViewModel = ProviderListViewModel()
     
+#if os(macOS)
+    @AppStorage("TAB_MACOS") private var currentTab: Tab = .home
+#endif
+    
     var body: some View {
+#if os(macOS)
+        NavigationView {
+            SideBarView(binding: $currentTab)
+            switch currentTab {
+            case .home:
+                HomeView()
+            case .panel:
+                PanelView()
+                    .environmentObject(providerListViewModel)
+            case .setting:
+                SettingView()
+            }
+        }
+        .frame(height: 540)
+#else
         TabView {
             ClashHomeView()
                 .tabItem {
@@ -23,5 +42,6 @@ struct ContentView: View {
                     Text("设置")
                 }
         }
+#endif
     }
 }

@@ -65,6 +65,7 @@
 		D986499228237BA00092E86E /* LogLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986499028237BA00092E86E /* LogLevelView.swift */; };
 		D98FB9F9282615FF00EFBE8F /* AdapterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FB9F8282615FF00EFBE8F /* AdapterType.swift */; };
 		D98FB9FA282615FF00EFBE8F /* AdapterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FB9F8282615FF00EFBE8F /* AdapterType.swift */; };
+		D98FBA002826523700EFBE8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1B4E627EAF72B007EE597 /* ContentView.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
 		D998B60627F00F43004625FF /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60527F00F43004625FF /* ConfigListView.swift */; };
 		D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
@@ -103,7 +104,6 @@
 		D99E3B0A27EB110C00464266 /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0427EB110B00464266 /* VPNManager.swift */; };
 		D99E3B0B27EB110C00464266 /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0527EB110B00464266 /* DocumentPickerView.swift */; };
 		D99E3B0C27EB110C00464266 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */; };
-		D99E3B0D27EB110C00464266 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0727EB110C00464266 /* ContentView.swift */; };
 		D99E3B0F27EB117F00464266 /* ClashTrafficFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */; };
 		D99E3B1027EB11A200464266 /* ClashTrafficFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */; };
 		D99E3B1127EB11A500464266 /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0427EB110B00464266 /* VPNManager.swift */; };
@@ -255,7 +255,6 @@
 		D99E3B0427EB110B00464266 /* VPNManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
 		D99E3B0527EB110B00464266 /* DocumentPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
 		D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectFetchView.swift; sourceTree = "<group>"; };
-		D99E3B0727EB110C00464266 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashTrafficFormatter.swift; sourceTree = "<group>"; };
 		D9B1B4E527EAF72B007EE597 /* ClashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashApp.swift; sourceTree = "<group>"; };
 		D9B1B4E627EAF72B007EE597 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -459,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				D9B1B4E527EAF72B007EE597 /* ClashApp.swift */,
+				D9B1B4E627EAF72B007EE597 /* ContentView.swift */,
 				D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */,
 				D99E3B0427EB110B00464266 /* VPNManager.swift */,
 				D927037E27EC5CEA00E61944 /* GEOIPDatabaseManager.swift */,
@@ -493,7 +493,6 @@
 			isa = PBXGroup;
 			children = (
 				D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */,
-				D9B1B4E627EAF72B007EE597 /* ContentView.swift */,
 				D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */,
 				D90289E7281A50C600FEB376 /* Home */,
 				D90289E9281A518900FEB376 /* Setting */,
@@ -507,7 +506,6 @@
 			isa = PBXGroup;
 			children = (
 				D99E3ACB27EB0F3600464266 /* AppDelegate.swift */,
-				D99E3B0727EB110C00464266 /* ContentView.swift */,
 				D99E3B0527EB110B00464266 /* DocumentPickerView.swift */,
 				D944F5652815281F00DF0BBE /* ActivityView.swift */,
 				D99E3AD327EB10B900464266 /* Home */,
@@ -737,7 +735,6 @@
 				D99E3AE927EB10B900464266 /* InstallVPNView.swift in Sources */,
 				D99E3B0827EB110C00464266 /* ModalPresentationLink.swift in Sources */,
 				D90CBF822824DCAD00482684 /* ProviderView.swift in Sources */,
-				D99E3B0D27EB110C00464266 /* ContentView.swift in Sources */,
 				70BBA70F2824128100050521 /* DelayHistory.swift in Sources */,
 				D99E3AEB27EB10B900464266 /* ClashConfigView.swift in Sources */,
 				D99E3B0027EB10E700464266 /* Clash.xcdatamodeld in Sources */,
@@ -765,6 +762,7 @@
 				D986498B28237A870092E86E /* DestructiveView.swift in Sources */,
 				D986498E28237B260092E86E /* TranslationView.swift in Sources */,
 				D99E3AE827EB10B900464266 /* VPNConnecteDurationView.swift in Sources */,
+				D98FBA002826523700EFBE8F /* ContentView.swift in Sources */,
 				D90CBF7E2824D96000482684 /* PlaceholderView.swift in Sources */,
 				D99E3B0B27EB110C00464266 /* DocumentPickerView.swift in Sources */,
 				D90CBF812824DA2500482684 /* ProviderListView.swift in Sources */,

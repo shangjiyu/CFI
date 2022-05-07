@@ -29,5 +29,6 @@ struct SideBarView: View {
                     .padding(.bottom, 16)
             }
         }
+        .background(SplitViewControllerInspector())
     }
 }
