@@ -1,13 +1,12 @@
 import AppKit
-import SwiftUI
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
-    
-    @AppStorage(Clash.theme) private var theme: Theme = .system
-            
+                
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSWindow.allowsAutomaticWindowTabbing = false
-        theme.applyAppearance()
+        Theme(rawValue: UserDefaults.standard.integer(forKey: Clash.theme)).flatMap {
+            $0.applyAppearance()
+        }
         GEOIPDatabaseManager.copyGEOIPDatabase()
     }
     
