@@ -1,19 +1,5 @@
 import SwiftUI
 
-extension Clash.TunnelMode {
-    
-    var summary: String {
-        switch self {
-        case .global:
-            return "流量全部经过指定的全局代理"
-        case .rule:
-            return "流量按规则分流"
-        case .direct:
-            return "流量不会经过任何代理"
-        }
-    }
-}
-
 struct TunnelModeView: View {
     
     @EnvironmentObject private var manager: VPNManager
@@ -21,16 +7,25 @@ struct TunnelModeView: View {
     
     var body: some View {
         Picker("代理模式: ", selection: $tunnelMode) {
-            ForEach(Clash.TunnelMode.allCases) { model in
+            ForEach(Clash.TunnelMode.allCases) { mode in
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(model.title)
-                    Text(model.summary)
+#if os(macOS)
+                    Text(mode.title)
+                    Text(mode.detail)
                         .foregroundColor(.secondary)
+#else
+                    Label(mode.title, systemImage: mode.imageName)
+#endif
                 }
                 .padding(.vertical, 4)
             }
         }
+#if os(macOS)
         .pickerStyle(.radioGroup)
+#else
+        .pickerStyle(.inline)
+        .labelsHidden()
+#endif
         .task(id: tunnelMode) {
             guard let controller = self.manager.controller else {
                 return

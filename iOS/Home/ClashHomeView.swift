@@ -19,7 +19,7 @@ struct ClashHomeView: View {
                     }
                 }
                 Section {
-                    ClashTunnelModeView()
+                    TunnelModeView()
                 }
                 Section {
                     TrafficView()
