@@ -11,15 +11,20 @@ struct ImportButton: View {
         Button {
             isConfirmationDialogPresented = true
         } label: {
+#if os(macOS)
+            Text("导入")
+                .fontWeight(.medium)
+#else
             Image(systemName: "plus")
+#endif
         }
         .confirmationDialog(Text("添加配置"), isPresented: $isConfirmationDialogPresented, titleVisibility: .visible) {
-            Button(role: nil) {
+            Button {
                 downloadRemoteFile.toggle()
             } label: {
                 Text("下载配置文件")
             }
-            Button(role: nil) {
+            Button {
                 importLocalFile.toggle()
             } label: {
                 Text("导入本地配置文件")

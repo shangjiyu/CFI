@@ -81,8 +81,16 @@
 		D98FBA1828290BC300EFBE8F /* UTType+YAML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */; };
 		D98FBA1928290BC300EFBE8F /* UTType+YAML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */; };
 		D98FBA1B28290C0B00EFBE8F /* FileDownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1A28290C0B00EFBE8F /* FileDownloadViewModel.swift */; };
+		D98FBA1D28290DC900EFBE8F /* ExportItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1528290B8300EFBE8F /* ExportItem.swift */; };
+		D98FBA1E28290DCD00EFBE8F /* ConfigListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1228290B4300EFBE8F /* ConfigListViewModel.swift */; };
+		D98FBA1F28290DD000EFBE8F /* FileDownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1A28290C0B00EFBE8F /* FileDownloadViewModel.swift */; };
+		D98FBA2028290DD300EFBE8F /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1028290B1600EFBE8F /* ConfigListView.swift */; };
+		D98FBA2128290DD600EFBE8F /* ImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ImportButton.swift */; };
+		D98FBA2228290DD900EFBE8F /* ConfigRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA0C28290AD100EFBE8F /* ConfigRenameView.swift */; };
+		D98FBA2328290DDC00EFBE8F /* FileDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* FileDownloadView.swift */; };
+		D98FBA25282920AD00EFBE8F /* YAMLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA24282920AD00EFBE8F /* YAMLFile.swift */; };
+		D98FBA26282920AD00EFBE8F /* YAMLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA24282920AD00EFBE8F /* YAMLFile.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
-		D998B60627F00F43004625FF /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60527F00F43004625FF /* ConfigListView.swift */; };
 		D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
 		D998B60A27F00F8F004625FF /* TrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60927F00F8F004625FF /* TrafficView.swift */; };
 		D998B60C27F01A4F004625FF /* InstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60B27F01A4F004625FF /* InstallView.swift */; };
@@ -237,8 +245,8 @@
 		D98FBA1528290B8300EFBE8F /* ExportItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportItem.swift; sourceTree = "<group>"; };
 		D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+YAML.swift"; sourceTree = "<group>"; };
 		D98FBA1A28290C0B00EFBE8F /* FileDownloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadViewModel.swift; sourceTree = "<group>"; };
+		D98FBA24282920AD00EFBE8F /* YAMLFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAMLFile.swift; sourceTree = "<group>"; };
 		D998B60327F00F23004625FF /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
-		D998B60527F00F43004625FF /* ConfigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigListView.swift; sourceTree = "<group>"; };
 		D998B60727F00F69004625FF /* TunnelModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelModeView.swift; sourceTree = "<group>"; };
 		D998B60927F00F8F004625FF /* TrafficView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficView.swift; sourceTree = "<group>"; };
 		D998B60B27F01A4F004625FF /* InstallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallView.swift; sourceTree = "<group>"; };
@@ -349,14 +357,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		D90289E7281A50C600FEB376 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				D998B60527F00F43004625FF /* ConfigListView.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		D90289E8281A50D600FEB376 /* SideBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				D98FBA1528290B8300EFBE8F /* ExportItem.swift */,
+				D98FBA24282920AD00EFBE8F /* YAMLFile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,6 +503,7 @@
 				D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */,
 				D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */,
 				D98FBA0228265A7800EFBE8F /* Home */,
+				D98FBA0B28290AC000EFBE8F /* Config List */,
 				70BBA70C2824126800050521 /* Panel */,
 				D9864985282369350092E86E /* Setting */,
 				D99E3AF727EB10CA00464266 /* Country.mmdb */,
@@ -528,7 +530,6 @@
 				D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */,
 				D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */,
 				D90289E8281A50D600FEB376 /* SideBar */,
-				D90289E7281A50C600FEB376 /* Home */,
 				D90289E9281A518900FEB376 /* Setting */,
 				D9B1B4F427EAF72F007EE597 /* macOS.entitlements */,
 				D9B1B55627EB003C007EE597 /* Info.plist */,
@@ -540,7 +541,6 @@
 			isa = PBXGroup;
 			children = (
 				D99E3ACB27EB0F3600464266 /* AppDelegate.swift */,
-				D98FBA0B28290AC000EFBE8F /* Config List */,
 				D98FBA01282655C000EFBE8F /* UIKitViews */,
 				D9B1B50427EAF8DF007EE597 /* iOS.entitlements */,
 				D9B1B55427EB0021007EE597 /* Info.plist */,
@@ -798,6 +798,7 @@
 				D986498B28237A870092E86E /* DestructiveView.swift in Sources */,
 				D98FBA1828290BC300EFBE8F /* UTType+YAML.swift in Sources */,
 				D986498E28237B260092E86E /* TranslationView.swift in Sources */,
+				D98FBA25282920AD00EFBE8F /* YAMLFile.swift in Sources */,
 				D98FBA002826523700EFBE8F /* ContentView.swift in Sources */,
 				D90CBF7E2824D96000482684 /* PlaceholderView.swift in Sources */,
 				D98FBA0328265A8D00EFBE8F /* ConnectionDurationView.swift in Sources */,
@@ -811,6 +812,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90289D92819310300FEB376 /* HomeView.swift in Sources */,
+				D98FBA1D28290DC900EFBE8F /* ExportItem.swift in Sources */,
 				D998B61027F01F28004625FF /* SettingView.swift in Sources */,
 				D90289D728192C4F00FEB376 /* StatusView.swift in Sources */,
 				D927038027EC5CEA00E61944 /* GEOIPDatabaseManager.swift in Sources */,
@@ -821,11 +823,15 @@
 				D998B60C27F01A4F004625FF /* InstallView.swift in Sources */,
 				D99E3AFF27EB10E700464266 /* CoreDataStack.swift in Sources */,
 				D99E3ACE27EB0F5B00464266 /* AppDelegate.swift in Sources */,
+				D98FBA2228290DD900EFBE8F /* ConfigRenameView.swift in Sources */,
+				D98FBA2028290DD300EFBE8F /* ConfigListView.swift in Sources */,
 				D99E3B1127EB11A500464266 /* VPNManager.swift in Sources */,
 				D9B1B4F827EAF72F007EE597 /* ContentView.swift in Sources */,
 				D98FB9FA282615FF00EFBE8F /* AdapterType.swift in Sources */,
 				70BBA729282413FD00050521 /* PlaceholderView.swift in Sources */,
+				D98FBA1E28290DCD00EFBE8F /* ConfigListViewModel.swift in Sources */,
 				70BBA717282412B500050521 /* ProxyViewModel.swift in Sources */,
+				D98FBA2128290DD600EFBE8F /* ImportButton.swift in Sources */,
 				D90289D528192BF800FEB376 /* ConnectionDurationView.swift in Sources */,
 				70BBA71D282412E700050521 /* ProviderListViewModel.swift in Sources */,
 				702C1BBD27F3F65200DF9A98 /* Clash+Extension.swift in Sources */,
@@ -833,8 +839,8 @@
 				D986499228237BA00092E86E /* LogLevelView.swift in Sources */,
 				D99E3AB227EB0D9000464266 /* Clash.swift in Sources */,
 				D927039B27ED542200E61944 /* NSManagedObjectContext+File.swift in Sources */,
+				D98FBA26282920AD00EFBE8F /* YAMLFile.swift in Sources */,
 				70BBA7132824129600050521 /* MergedProxyData.swift in Sources */,
-				D998B60627F00F43004625FF /* ConfigListView.swift in Sources */,
 				70BBA725282413BC00050521 /* ProviderListView.swift in Sources */,
 				D986498C28237A870092E86E /* DestructiveView.swift in Sources */,
 				D99E3B1027EB11A200464266 /* ClashTrafficFormatter.swift in Sources */,
@@ -853,10 +859,12 @@
 				70BBA7232824139500050521 /* ProviderView.swift in Sources */,
 				D99E3AC227EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
 				D998B60A27F00F8F004625FF /* TrafficView.swift in Sources */,
+				D98FBA1F28290DD000EFBE8F /* FileDownloadViewModel.swift in Sources */,
 				70BBA7212824137900050521 /* ProxyListView.swift in Sources */,
 				70BBA71A282412D400050521 /* ProviderViewModel.swift in Sources */,
 				D9B1B4F627EAF72F007EE597 /* ClashApp.swift in Sources */,
 				70BBA7102824128100050521 /* DelayHistory.swift in Sources */,
+				D98FBA2328290DDC00EFBE8F /* FileDownloadView.swift in Sources */,
 				D90289D328192BD600FEB376 /* ConnectionStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

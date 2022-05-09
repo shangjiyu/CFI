@@ -8,6 +8,17 @@ class ConfigListViewModel: ObservableObject {
     @Published var importLocalFile: Bool = false
     @Published var downloadRemoteFile: Bool = false
     
+    var isFileExporterPresented: Binding<Bool> {
+        Binding {
+            guard let items = self.exportItems else {
+                return false
+            }
+            return items.first != nil
+        } set: { _ in
+            self.exportItems = nil
+        }
+    }
+    
     func onSelected(config: ClashConfig) {
         guard let uuid = config.uuid else {
             return
