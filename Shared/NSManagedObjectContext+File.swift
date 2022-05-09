@@ -3,14 +3,11 @@ import CoreData
 
 extension NSManagedObjectContext {
     
-    func importClashConfig(name: String, url: URL) async throws {
-        let content: String
-        if url.isFileURL {
-            content = try String(contentsOf: url)
-        } else {
-            let (data, _) = try await URLSession.shared.data(from: url, delegate: nil)
-            content = String(data: data, encoding: .utf8) ?? ""
+    func importConfig(localFileURL url: URL) async throws {
+        guard url.isFileURL else {
+            return
         }
+        let content = try String(contentsOf: url)
         let uuid = UUID()
         let directoryURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)")
         try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
@@ -18,7 +15,7 @@ extension NSManagedObjectContext {
         FileManager.default.createFile(atPath: targetURL.path, contents: content.data(using: .utf8), attributes: nil)
         let configuration = ClashConfig(context: self)
         configuration.uuid = uuid
-        configuration.name = name
+        configuration.name = url.deletingPathExtension().lastPathComponent
         configuration.link = targetURL
         configuration.date = Date()
         

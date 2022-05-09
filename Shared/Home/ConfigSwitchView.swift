@@ -30,13 +30,14 @@ struct ConfigSwitchView: View {
         }
 #else
         ModalPresentationLink {
-            ClashConfigListView()
+            ConfigListView()
         } label: {
             HStack {
                 Label("配置", systemImage: "square.text.square")
                 Spacer()
                 Text(title)
                     .fontWeight(.bold)
+                    .lineLimit(1)
                     .foregroundColor(Color.accentColor)
             }
         }

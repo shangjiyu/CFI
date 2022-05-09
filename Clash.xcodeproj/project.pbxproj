@@ -74,6 +74,13 @@
 		D98FBA08282673AB00EFBE8F /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D228192BD600FEB376 /* ConnectionStatusView.swift */; };
 		D98FBA09282675BA00EFBE8F /* ConfigSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */; };
 		D98FBA0A282677D000EFBE8F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D82819310300FEB376 /* HomeView.swift */; };
+		D98FBA0D28290AD100EFBE8F /* ConfigRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA0C28290AD100EFBE8F /* ConfigRenameView.swift */; };
+		D98FBA1128290B1600EFBE8F /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1028290B1600EFBE8F /* ConfigListView.swift */; };
+		D98FBA1328290B4300EFBE8F /* ConfigListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1228290B4300EFBE8F /* ConfigListViewModel.swift */; };
+		D98FBA1628290B8300EFBE8F /* ExportItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1528290B8300EFBE8F /* ExportItem.swift */; };
+		D98FBA1828290BC300EFBE8F /* UTType+YAML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */; };
+		D98FBA1928290BC300EFBE8F /* UTType+YAML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */; };
+		D98FBA1B28290C0B00EFBE8F /* FileDownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1A28290C0B00EFBE8F /* FileDownloadViewModel.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
 		D998B60627F00F43004625FF /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60527F00F43004625FF /* ConfigListView.swift */; };
 		D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
@@ -91,9 +98,8 @@
 		D99E3ACA27EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */; };
 		D99E3ACC27EB0F3600464266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ACB27EB0F3600464266 /* AppDelegate.swift */; };
 		D99E3ACE27EB0F5B00464266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */; };
-		D99E3AE527EB10B900464266 /* ClashConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD027EB10B800464266 /* ClashConfigListView.swift */; };
-		D99E3AE627EB10B900464266 /* ClashConfigImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* ClashConfigImportView.swift */; };
-		D99E3AE727EB10B900464266 /* ClashConfigImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ClashConfigImportButton.swift */; };
+		D99E3AE627EB10B900464266 /* FileDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* FileDownloadView.swift */; };
+		D99E3AE727EB10B900464266 /* ImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ImportButton.swift */; };
 		D99E3AF827EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
 		D99E3AF927EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
 		D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AFB27EB10E700464266 /* CoreDataStack.swift */; };
@@ -103,7 +109,6 @@
 		D99E3B0827EB110C00464266 /* ModalPresentationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0227EB110A00464266 /* ModalPresentationLink.swift */; };
 		D99E3B0927EB110C00464266 /* NSManagedObjectContext+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0327EB110B00464266 /* NSManagedObjectContext+File.swift */; };
 		D99E3B0A27EB110C00464266 /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0427EB110B00464266 /* VPNManager.swift */; };
-		D99E3B0B27EB110C00464266 /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0527EB110B00464266 /* DocumentPickerView.swift */; };
 		D99E3B0C27EB110C00464266 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */; };
 		D99E3B0F27EB117F00464266 /* ClashTrafficFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */; };
 		D99E3B1027EB11A200464266 /* ClashTrafficFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */; };
@@ -226,6 +231,12 @@
 		D986498D28237B260092E86E /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
 		D986499028237BA00092E86E /* LogLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevelView.swift; sourceTree = "<group>"; };
 		D98FB9F8282615FF00EFBE8F /* AdapterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterType.swift; sourceTree = "<group>"; };
+		D98FBA0C28290AD100EFBE8F /* ConfigRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigRenameView.swift; sourceTree = "<group>"; };
+		D98FBA1028290B1600EFBE8F /* ConfigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigListView.swift; sourceTree = "<group>"; };
+		D98FBA1228290B4300EFBE8F /* ConfigListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigListViewModel.swift; sourceTree = "<group>"; };
+		D98FBA1528290B8300EFBE8F /* ExportItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportItem.swift; sourceTree = "<group>"; };
+		D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+YAML.swift"; sourceTree = "<group>"; };
+		D98FBA1A28290C0B00EFBE8F /* FileDownloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadViewModel.swift; sourceTree = "<group>"; };
 		D998B60327F00F23004625FF /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		D998B60527F00F43004625FF /* ConfigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigListView.swift; sourceTree = "<group>"; };
 		D998B60727F00F69004625FF /* TunnelModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelModeView.swift; sourceTree = "<group>"; };
@@ -238,16 +249,14 @@
 		D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		D99E3ACB27EB0F3600464266 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D99E3AD027EB10B800464266 /* ClashConfigListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigListView.swift; sourceTree = "<group>"; };
-		D99E3AD127EB10B800464266 /* ClashConfigImportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigImportView.swift; sourceTree = "<group>"; };
-		D99E3AD227EB10B800464266 /* ClashConfigImportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashConfigImportButton.swift; sourceTree = "<group>"; };
+		D99E3AD127EB10B800464266 /* FileDownloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloadView.swift; sourceTree = "<group>"; };
+		D99E3AD227EB10B800464266 /* ImportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportButton.swift; sourceTree = "<group>"; };
 		D99E3AF727EB10CA00464266 /* Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Country.mmdb; sourceTree = "<group>"; };
 		D99E3AFB27EB10E700464266 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D99E3AFD27EB10E700464266 /* Clash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clash.xcdatamodel; sourceTree = "<group>"; };
 		D99E3B0227EB110A00464266 /* ModalPresentationLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresentationLink.swift; sourceTree = "<group>"; };
 		D99E3B0327EB110B00464266 /* NSManagedObjectContext+File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+File.swift"; sourceTree = "<group>"; };
 		D99E3B0427EB110B00464266 /* VPNManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
-		D99E3B0527EB110B00464266 /* DocumentPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
 		D99E3B0627EB110C00464266 /* ManagedObjectFetchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectFetchView.swift; sourceTree = "<group>"; };
 		D99E3B0E27EB117F00464266 /* ClashTrafficFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClashTrafficFormatter.swift; sourceTree = "<group>"; };
 		D9B1B4E527EAF72B007EE597 /* ClashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashApp.swift; sourceTree = "<group>"; };
@@ -396,7 +405,6 @@
 			isa = PBXGroup;
 			children = (
 				D944F5652815281F00DF0BBE /* ActivityView.swift */,
-				D99E3B0527EB110B00464266 /* DocumentPickerView.swift */,
 			);
 			path = UIKitViews;
 			sourceTree = "<group>";
@@ -416,6 +424,44 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		D98FBA0B28290AC000EFBE8F /* Config List */ = {
+			isa = PBXGroup;
+			children = (
+				D98FBA1428290B7200EFBE8F /* Model */,
+				D98FBA0F28290B0100EFBE8F /* ViewModel */,
+				D98FBA0E28290AFA00EFBE8F /* View */,
+			);
+			path = "Config List";
+			sourceTree = "<group>";
+		};
+		D98FBA0E28290AFA00EFBE8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D98FBA1028290B1600EFBE8F /* ConfigListView.swift */,
+				D99E3AD227EB10B800464266 /* ImportButton.swift */,
+				D98FBA0C28290AD100EFBE8F /* ConfigRenameView.swift */,
+				D99E3AD127EB10B800464266 /* FileDownloadView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D98FBA0F28290B0100EFBE8F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D98FBA1228290B4300EFBE8F /* ConfigListViewModel.swift */,
+				D98FBA1A28290C0B00EFBE8F /* FileDownloadViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D98FBA1428290B7200EFBE8F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D98FBA1528290B8300EFBE8F /* ExportItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D99E3AA027EB0D2E00464266 /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,16 +469,6 @@
 				D942D01A27EDBD4600A864AC /* PacketTunnelProvider+ClashKit.swift */,
 			);
 			path = PacketTunnel;
-			sourceTree = "<group>";
-		};
-		D99E3ACF27EB10B800464266 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				D99E3AD027EB10B800464266 /* ClashConfigListView.swift */,
-				D99E3AD127EB10B800464266 /* ClashConfigImportView.swift */,
-				D99E3AD227EB10B800464266 /* ClashConfigImportButton.swift */,
-			);
-			path = List;
 			sourceTree = "<group>";
 		};
 		D9B1B4DF27EAF72B007EE597 = {
@@ -464,6 +500,7 @@
 				702C1BBB27F3F65200DF9A98 /* Clash+Extension.swift */,
 				D99E3AA427EB0D8F00464266 /* Clash.swift */,
 				D99E3AA827EB0D9000464266 /* UserDefaults+AppGroup.swift */,
+				D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */,
 				D98FBA0228265A7800EFBE8F /* Home */,
 				70BBA70C2824126800050521 /* Panel */,
 				D9864985282369350092E86E /* Setting */,
@@ -503,8 +540,8 @@
 			isa = PBXGroup;
 			children = (
 				D99E3ACB27EB0F3600464266 /* AppDelegate.swift */,
+				D98FBA0B28290AC000EFBE8F /* Config List */,
 				D98FBA01282655C000EFBE8F /* UIKitViews */,
-				D99E3ACF27EB10B800464266 /* List */,
 				D9B1B50427EAF8DF007EE597 /* iOS.entitlements */,
 				D9B1B55427EB0021007EE597 /* Info.plist */,
 			);
@@ -722,19 +759,21 @@
 				D99E3B0A27EB110C00464266 /* VPNManager.swift in Sources */,
 				D90CBF832824DD2600482684 /* ProxyListView.swift in Sources */,
 				D90CBF802824DA0700482684 /* ProviderListContainerView.swift in Sources */,
-				D99E3AE727EB10B900464266 /* ClashConfigImportButton.swift in Sources */,
-				D99E3AE527EB10B900464266 /* ClashConfigListView.swift in Sources */,
-				D99E3AE627EB10B900464266 /* ClashConfigImportView.swift in Sources */,
+				D99E3AE727EB10B900464266 /* ImportButton.swift in Sources */,
+				D99E3AE627EB10B900464266 /* FileDownloadView.swift in Sources */,
 				D98FBA09282675BA00EFBE8F /* ConfigSwitchView.swift in Sources */,
 				70BBA7122824129600050521 /* MergedProxyData.swift in Sources */,
 				70BBA71C282412E700050521 /* ProviderListViewModel.swift in Sources */,
 				D944F5662815282800DF0BBE /* ActivityView.swift in Sources */,
+				D98FBA1128290B1600EFBE8F /* ConfigListView.swift in Sources */,
+				D98FBA0D28290AD100EFBE8F /* ConfigRenameView.swift in Sources */,
 				D99E3B0827EB110C00464266 /* ModalPresentationLink.swift in Sources */,
 				D90CBF822824DCAD00482684 /* ProviderView.swift in Sources */,
 				70BBA70F2824128100050521 /* DelayHistory.swift in Sources */,
 				D99E3B0027EB10E700464266 /* Clash.xcdatamodeld in Sources */,
 				70BBA716282412B500050521 /* ProxyViewModel.swift in Sources */,
 				702C1BBC27F3F65200DF9A98 /* Clash+Extension.swift in Sources */,
+				D98FBA1B28290C0B00EFBE8F /* FileDownloadViewModel.swift in Sources */,
 				D98FBA08282673AB00EFBE8F /* ConnectionStatusView.swift in Sources */,
 				D98FBA0528266B4000EFBE8F /* TunnelModeView.swift in Sources */,
 				D98FBA0A282677D000EFBE8F /* HomeView.swift in Sources */,
@@ -743,6 +782,7 @@
 				D98FBA04282668F900EFBE8F /* TrafficView.swift in Sources */,
 				D99E3B0F27EB117F00464266 /* ClashTrafficFormatter.swift in Sources */,
 				D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */,
+				D98FBA1628290B8300EFBE8F /* ExportItem.swift in Sources */,
 				D99E3ACC27EB0F3600464266 /* AppDelegate.swift in Sources */,
 				D90CBF862824FFE500482684 /* PatchData.swift in Sources */,
 				D99E3AB127EB0D9000464266 /* Clash.swift in Sources */,
@@ -756,11 +796,12 @@
 				D90CBF842824DD8E00482684 /* ProxyView.swift in Sources */,
 				D9864986282369460092E86E /* SettingView.swift in Sources */,
 				D986498B28237A870092E86E /* DestructiveView.swift in Sources */,
+				D98FBA1828290BC300EFBE8F /* UTType+YAML.swift in Sources */,
 				D986498E28237B260092E86E /* TranslationView.swift in Sources */,
 				D98FBA002826523700EFBE8F /* ContentView.swift in Sources */,
 				D90CBF7E2824D96000482684 /* PlaceholderView.swift in Sources */,
-				D99E3B0B27EB110C00464266 /* DocumentPickerView.swift in Sources */,
 				D98FBA0328265A8D00EFBE8F /* ConnectionDurationView.swift in Sources */,
+				D98FBA1328290B4300EFBE8F /* ConfigListViewModel.swift in Sources */,
 				D90CBF812824DA2500482684 /* ProviderListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,6 +847,7 @@
 				D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */,
 				D9864989282379810092E86E /* ThemeView.swift in Sources */,
 				D998B60E27F01A70004625FF /* ControlView.swift in Sources */,
+				D98FBA1928290BC300EFBE8F /* UTType+YAML.swift in Sources */,
 				D986498F28237B260092E86E /* TranslationView.swift in Sources */,
 				D99E3B0127EB10E700464266 /* Clash.xcdatamodeld in Sources */,
 				70BBA7232824139500050521 /* ProviderView.swift in Sources */,
