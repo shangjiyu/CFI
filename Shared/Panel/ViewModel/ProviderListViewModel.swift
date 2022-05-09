@@ -14,6 +14,33 @@ class ProviderListViewModel: ObservableObject {
     
     @Published var globalProviderViewModels: [ProviderViewModel] = []
     @Published var othersProviderViewModels: [ProviderViewModel] = []
+    
+    private let patchTrigger = CurrentValueSubject<Optional<Data>, Never>(.none)
+    private var cancellables: Set<AnyCancellable> = []
+    
+    init() {
+        self.patchTrigger
+            .compactMap { $0 }
+            .removeDuplicates()
+            .compactMap { (data: Data) -> Optional<[String: PatchData]> in
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .formatted(ProviderListViewModel.formatter)
+                    return try decoder.decode([String: PatchData].self, from: data)
+                } catch {
+                    return nil
+                }
+            }
+            .print()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] patch in
+                guard let self = self else {
+                    return
+                }
+                self.patch(data: patch)
+            }
+            .store(in: &self.cancellables)
+    }
         
     func fetchProxyData(controller: VPNController) async throws {
         guard let data = try await controller.execute(command: .mergedProxyData) else {
@@ -62,13 +89,7 @@ class ProviderListViewModel: ObservableObject {
     }
     
     func patchProxyData(controller: VPNController) async throws {
-        guard let data = try await controller.execute(command: .patchData) else {
-            return
-        }
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(ProviderListViewModel.formatter)
-        let patch = try decoder.decode([String: PatchData].self, from: data)
-        await MainActor.run { self.patch(data: patch) }
+        self.patchTrigger.send(try await controller.execute(command: .patchData))
     }
     
     private func patch(data: [String: PatchData]) {
