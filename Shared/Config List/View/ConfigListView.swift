@@ -1,5 +1,28 @@
 import SwiftUI
 
+struct DeleteConfirmButton<Label: View>: View {
+    
+    private let title: String
+    private let action: () -> Void
+    private let label: () -> Label
+    
+    @State private var isPresented = false
+    
+    init(title: String, action: @escaping () -> Void, label: @escaping () -> Label) {
+        self.title = title
+        self.action = action
+        self.label = label
+    }
+    
+    var body: some View {
+        Button(action: { isPresented.toggle() }, label: label)
+            .confirmationDialog(title, isPresented: $isPresented) {
+                Button("确定", role: .destructive, action: action)
+                Button("取消", role: .cancel, action: {})
+            }
+    }
+}
+
 struct ConfigListView: View {
     
     @StateObject private var viewModel = ConfigListViewModel()
@@ -85,7 +108,7 @@ struct ConfigListView: View {
                                         }
                                         .buttonStyle(.plain)
                                         
-                                        Button(role: .destructive) {
+                                        DeleteConfirmButton(title: "删除”\(config.name ?? "-" )“?") {
                                             viewModel.onDelete(config: config, context: context)
                                         } label: {
                                             Image(systemName: "trash")
@@ -164,6 +187,7 @@ struct ConfigListView: View {
                     } label: {
                         Label("分享", systemImage: "square.and.arrow.up")
                     }
+                    Divider()
                     Button(role: .destructive) {
                         viewModel.onDelete(config: config, context: context)
                     } label: {
