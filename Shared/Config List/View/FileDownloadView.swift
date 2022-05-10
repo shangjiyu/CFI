@@ -6,7 +6,7 @@ struct FileDownloadView: View {
     
     @StateObject private var viewModel = FileDownloadViewModel()
     
-    let onCompletion: (URL) -> Void
+    let onCompletion: (URL, URL) -> Void
     
     var body: some View {
 #if os(macOS)
@@ -34,11 +34,15 @@ struct FileDownloadView: View {
                         )
                     }
                     Button {
-                        guard let url = URL(string: viewModel.url.trimmingCharacters(in: .whitespacesAndNewlines)) else {
-                            return
+                        Task {
+                            do {
+                                let res = try await viewModel.download()
+                                onCompletion(res.0, res.1)
+                                dismiss()
+                            } catch {
+                                debugPrint(error.localizedDescription)
+                            }
                         }
-                        onCompletion(url)
-                        dismiss()
                     } label: {
                         HStack {
                             Spacer()
@@ -52,7 +56,7 @@ struct FileDownloadView: View {
                                 .foregroundColor(Color.accentColor)
                         )
                     }
-                    .disabled(viewModel.url.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    .disabled(viewModel.isProcessing || viewModel.url.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 }
                 .buttonStyle(.plain)
             }
@@ -69,7 +73,8 @@ struct FileDownloadView: View {
                     Button {
                         Task {
                             do {
-                                onCompletion(try await viewModel.download())
+                                let res = try await viewModel.download()
+                                onCompletion(res.0, res.1)
                                 dismiss()
                             } catch {
                                 debugPrint(error.localizedDescription)
@@ -86,13 +91,12 @@ struct FileDownloadView: View {
                             Spacer()
                         }
                     }
-                    .disabled(viewModel.url.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    .disabled(viewModel.isProcessing || viewModel.url.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 }
             }
             .navigationTitle("下载配置")
             .navigationBarTitleDisplayMode(.inline)
         }
-        .disabled(viewModel.isProcessing)
         .interactiveDismissDisabled(viewModel.isProcessing)
 #endif
     }

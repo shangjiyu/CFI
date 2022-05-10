@@ -31,7 +31,6 @@ class ProviderListViewModel: ObservableObject {
                     return nil
                 }
             }
-            .print()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] patch in
                 guard let self = self else {

@@ -3,20 +3,21 @@ import CoreData
 
 extension NSManagedObjectContext {
     
-    func importConfig(localFileURL url: URL) async throws {
-        guard url.isFileURL else {
+    func importConfig(localFileURL: URL, remoteFileURL: URL?) async throws {
+        guard localFileURL.isFileURL else {
             return
         }
-        let content = try String(contentsOf: url)
+        let content = try String(contentsOf: localFileURL)
         let uuid = UUID()
         let directoryURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)")
         try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
         let targetURL = directoryURL.appendingPathComponent("config.yaml")
         FileManager.default.createFile(atPath: targetURL.path, contents: content.data(using: .utf8), attributes: nil)
+        let url = remoteFileURL ?? localFileURL
         let configuration = ClashConfig(context: self)
         configuration.uuid = uuid
         configuration.name = url.deletingPathExtension().lastPathComponent
-        configuration.link = targetURL
+        configuration.link = url
         configuration.date = Date()
         
         try self.save()

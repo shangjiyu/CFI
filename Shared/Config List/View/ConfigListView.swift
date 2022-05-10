@@ -54,8 +54,8 @@ struct ConfigListView: View {
                 }
             }
             .sheet(isPresented: $viewModel.downloadRemoteFile) {
-                FileDownloadView { url in
-                    viewModel.onImportRemoteFile(url: url, context: context)
+                FileDownloadView { l, r in
+                    viewModel.onImportRemoteFile(local: l, remote: r, context: context)
                 }
             }
             .sheet(item: $viewModel.renamedConfig) { config in

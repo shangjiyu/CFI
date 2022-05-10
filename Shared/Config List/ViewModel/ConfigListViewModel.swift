@@ -66,7 +66,7 @@ class ConfigListViewModel: ObservableObject {
                 return
             }
             do {
-                try await context.importConfig(localFileURL: url)
+                try await context.importConfig(localFileURL: url, remoteFileURL: nil)
             } catch {
                 debugPrint(error.localizedDescription)
             }
@@ -74,10 +74,10 @@ class ConfigListViewModel: ObservableObject {
         }
     }
     
-    func onImportRemoteFile(url: URL, context: NSManagedObjectContext) {
+    func onImportRemoteFile(local: URL, remote: URL, context: NSManagedObjectContext) {
         Task {
             do {
-                try await context.importConfig(localFileURL: url)
+                try await context.importConfig(localFileURL: local, remoteFileURL: remote)
             } catch {
                 debugPrint(error.localizedDescription)
             }

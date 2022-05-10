@@ -5,7 +5,7 @@ class FileDownloadViewModel: ObservableObject {
     @Published var url: String = ""
     @Published var isProcessing: Bool = false
     
-    func download() async throws -> URL {
+    func download() async throws -> (URL, URL) {
         guard let url = URL(string: url) else {
             throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "URL不合法"])
         }
@@ -21,6 +21,6 @@ class FileDownloadViewModel: ObservableObject {
         await MainActor.run {
             isProcessing = false
         }
-        return destinationURL
+        return (destinationURL, url)
     }
 }
