@@ -3,17 +3,12 @@ import CoreData
 
 extension NSManagedObjectContext {
     
-    func importConfig(localFileURL: URL, remoteFileURL: URL?) async throws {
-        guard localFileURL.isFileURL else {
-            return
-        }
-        let content = try String(contentsOf: localFileURL)
+    func importConfig(url: URL, data: Data) async throws {
         let uuid = UUID()
         let directoryURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)")
         try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
         let targetURL = directoryURL.appendingPathComponent("config.yaml")
-        FileManager.default.createFile(atPath: targetURL.path, contents: content.data(using: .utf8), attributes: nil)
-        let url = remoteFileURL ?? localFileURL
+        FileManager.default.createFile(atPath: targetURL.path, contents: data, attributes: nil)
         let configuration = ClashConfig(context: self)
         configuration.uuid = uuid
         configuration.name = url.deletingPathExtension().lastPathComponent
@@ -29,6 +24,7 @@ extension NSManagedObjectContext {
         guard let uuid = config.uuid else {
             return
         }
+        UserDefaults.shared.set(nil, forKey: "\(uuid.uuidString)-PatchGroup")
         try FileManager.default.removeItem(at: Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)"))
     }
 }

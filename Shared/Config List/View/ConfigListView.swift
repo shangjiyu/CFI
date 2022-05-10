@@ -27,6 +27,8 @@ struct ConfigListView: View {
     
     @StateObject private var viewModel = ConfigListViewModel()
     
+    @EnvironmentObject private var manager: VPNManager
+    
     @AppStorage(Clash.currentConfigUUID, store: .shared) private var uuidString: String = ""
     
     @Environment(\.dismiss) private var dismiss
@@ -54,8 +56,8 @@ struct ConfigListView: View {
                 }
             }
             .sheet(isPresented: $viewModel.downloadRemoteFile) {
-                FileDownloadView { l, r in
-                    viewModel.onImportRemoteFile(local: l, remote: r, context: context)
+                ConfigDownloadView { url, data in
+                    viewModel.onImportRemoteFile(url: url, data: data, context: context)
                 }
             }
             .sheet(item: $viewModel.renamedConfig) { config in
@@ -71,7 +73,7 @@ struct ConfigListView: View {
             HStack {
                 Button("关闭") { dismiss() }
                 Spacer()
-                ImportButton(importLocalFile: $viewModel.importLocalFile, downloadRemoteFile: $viewModel.downloadRemoteFile)
+                ConfigImportButton(importLocalFile: $viewModel.importLocalFile, downloadRemoteFile: $viewModel.downloadRemoteFile)
             }
             .foregroundColor(.accentColor)
             .buttonStyle(.plain)
@@ -100,13 +102,16 @@ struct ConfigListView: View {
                                     HStack {
                                         Spacer()
                                         
-                                        Button(role: .destructive) {
-                                            print("更新")
-                                        } label: {
-                                            Image(systemName: "goforward")
-                                                .foregroundColor(.accentColor)
+                                        if let url = config.link, !url.isFileURL {
+                                            Button(role: nil) {
+                                                viewModel.onUpdate(config: config, manager: manager)
+                                            } label: {
+                                                Image(systemName: "goforward")
+                                                    .foregroundColor(.accentColor)
+                                            }
+                                            .buttonStyle(.plain)
+                                            .disabled(viewModel.updatingConfig == config)
                                         }
-                                        .buttonStyle(.plain)
                                         
                                         DeleteConfirmButton(title: "删除”\(config.name ?? "-" )“?") {
                                             viewModel.onDelete(config: config, context: context)
@@ -199,7 +204,7 @@ struct ConfigListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    ImportButton(importLocalFile: $viewModel.importLocalFile, downloadRemoteFile: $viewModel.downloadRemoteFile)
+                    ConfigImportButton(importLocalFile: $viewModel.importLocalFile, downloadRemoteFile: $viewModel.downloadRemoteFile)
                 }
             }
             .activitySheet(items: $viewModel.exportItems)

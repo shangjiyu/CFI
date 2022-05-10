@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ImportButton: View {
+struct ConfigImportButton: View {
     
     @State private var isConfirmationDialogPresented = false
     

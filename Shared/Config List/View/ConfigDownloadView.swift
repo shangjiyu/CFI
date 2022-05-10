@@ -1,12 +1,12 @@
 import SwiftUI
 
-struct FileDownloadView: View {
+struct ConfigDownloadView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    @StateObject private var viewModel = FileDownloadViewModel()
+    @StateObject private var viewModel = ConfigDownloadViewModel()
     
-    let onCompletion: (URL, URL) -> Void
+    let onCompletion: (URL, Data) -> Void
     
     var body: some View {
 #if os(macOS)

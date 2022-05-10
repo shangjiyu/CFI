@@ -80,14 +80,14 @@
 		D98FBA1628290B8300EFBE8F /* ExportItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1528290B8300EFBE8F /* ExportItem.swift */; };
 		D98FBA1828290BC300EFBE8F /* UTType+YAML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */; };
 		D98FBA1928290BC300EFBE8F /* UTType+YAML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */; };
-		D98FBA1B28290C0B00EFBE8F /* FileDownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1A28290C0B00EFBE8F /* FileDownloadViewModel.swift */; };
+		D98FBA1B28290C0B00EFBE8F /* ConfigDownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1A28290C0B00EFBE8F /* ConfigDownloadViewModel.swift */; };
 		D98FBA1D28290DC900EFBE8F /* ExportItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1528290B8300EFBE8F /* ExportItem.swift */; };
 		D98FBA1E28290DCD00EFBE8F /* ConfigListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1228290B4300EFBE8F /* ConfigListViewModel.swift */; };
-		D98FBA1F28290DD000EFBE8F /* FileDownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1A28290C0B00EFBE8F /* FileDownloadViewModel.swift */; };
+		D98FBA1F28290DD000EFBE8F /* ConfigDownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1A28290C0B00EFBE8F /* ConfigDownloadViewModel.swift */; };
 		D98FBA2028290DD300EFBE8F /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1028290B1600EFBE8F /* ConfigListView.swift */; };
-		D98FBA2128290DD600EFBE8F /* ImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ImportButton.swift */; };
+		D98FBA2128290DD600EFBE8F /* ConfigImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ConfigImportButton.swift */; };
 		D98FBA2228290DD900EFBE8F /* ConfigRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA0C28290AD100EFBE8F /* ConfigRenameView.swift */; };
-		D98FBA2328290DDC00EFBE8F /* FileDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* FileDownloadView.swift */; };
+		D98FBA2328290DDC00EFBE8F /* ConfigDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* ConfigDownloadView.swift */; };
 		D98FBA25282920AD00EFBE8F /* YAMLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA24282920AD00EFBE8F /* YAMLFile.swift */; };
 		D98FBA26282920AD00EFBE8F /* YAMLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA24282920AD00EFBE8F /* YAMLFile.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
@@ -106,8 +106,8 @@
 		D99E3ACA27EB0E2E00464266 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */; };
 		D99E3ACC27EB0F3600464266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ACB27EB0F3600464266 /* AppDelegate.swift */; };
 		D99E3ACE27EB0F5B00464266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */; };
-		D99E3AE627EB10B900464266 /* FileDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* FileDownloadView.swift */; };
-		D99E3AE727EB10B900464266 /* ImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ImportButton.swift */; };
+		D99E3AE627EB10B900464266 /* ConfigDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* ConfigDownloadView.swift */; };
+		D99E3AE727EB10B900464266 /* ConfigImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ConfigImportButton.swift */; };
 		D99E3AF827EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
 		D99E3AF927EB10CA00464266 /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D99E3AF727EB10CA00464266 /* Country.mmdb */; };
 		D99E3AFE27EB10E700464266 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AFB27EB10E700464266 /* CoreDataStack.swift */; };
@@ -244,7 +244,7 @@
 		D98FBA1228290B4300EFBE8F /* ConfigListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigListViewModel.swift; sourceTree = "<group>"; };
 		D98FBA1528290B8300EFBE8F /* ExportItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportItem.swift; sourceTree = "<group>"; };
 		D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+YAML.swift"; sourceTree = "<group>"; };
-		D98FBA1A28290C0B00EFBE8F /* FileDownloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadViewModel.swift; sourceTree = "<group>"; };
+		D98FBA1A28290C0B00EFBE8F /* ConfigDownloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigDownloadViewModel.swift; sourceTree = "<group>"; };
 		D98FBA24282920AD00EFBE8F /* YAMLFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAMLFile.swift; sourceTree = "<group>"; };
 		D998B60327F00F23004625FF /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		D998B60727F00F69004625FF /* TunnelModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelModeView.swift; sourceTree = "<group>"; };
@@ -257,8 +257,8 @@
 		D99E3AC627EB0E2E00464266 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		D99E3ACB27EB0F3600464266 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D99E3AD127EB10B800464266 /* FileDownloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloadView.swift; sourceTree = "<group>"; };
-		D99E3AD227EB10B800464266 /* ImportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportButton.swift; sourceTree = "<group>"; };
+		D99E3AD127EB10B800464266 /* ConfigDownloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigDownloadView.swift; sourceTree = "<group>"; };
+		D99E3AD227EB10B800464266 /* ConfigImportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigImportButton.swift; sourceTree = "<group>"; };
 		D99E3AF727EB10CA00464266 /* Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Country.mmdb; sourceTree = "<group>"; };
 		D99E3AFB27EB10E700464266 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D99E3AFD27EB10E700464266 /* Clash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clash.xcdatamodel; sourceTree = "<group>"; };
@@ -438,9 +438,9 @@
 			isa = PBXGroup;
 			children = (
 				D98FBA1028290B1600EFBE8F /* ConfigListView.swift */,
-				D99E3AD227EB10B800464266 /* ImportButton.swift */,
+				D99E3AD227EB10B800464266 /* ConfigImportButton.swift */,
 				D98FBA0C28290AD100EFBE8F /* ConfigRenameView.swift */,
-				D99E3AD127EB10B800464266 /* FileDownloadView.swift */,
+				D99E3AD127EB10B800464266 /* ConfigDownloadView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -449,7 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				D98FBA1228290B4300EFBE8F /* ConfigListViewModel.swift */,
-				D98FBA1A28290C0B00EFBE8F /* FileDownloadViewModel.swift */,
+				D98FBA1A28290C0B00EFBE8F /* ConfigDownloadViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -759,8 +759,8 @@
 				D99E3B0A27EB110C00464266 /* VPNManager.swift in Sources */,
 				D90CBF832824DD2600482684 /* ProxyListView.swift in Sources */,
 				D90CBF802824DA0700482684 /* ProviderListContainerView.swift in Sources */,
-				D99E3AE727EB10B900464266 /* ImportButton.swift in Sources */,
-				D99E3AE627EB10B900464266 /* FileDownloadView.swift in Sources */,
+				D99E3AE727EB10B900464266 /* ConfigImportButton.swift in Sources */,
+				D99E3AE627EB10B900464266 /* ConfigDownloadView.swift in Sources */,
 				D98FBA09282675BA00EFBE8F /* ConfigSwitchView.swift in Sources */,
 				70BBA7122824129600050521 /* MergedProxyData.swift in Sources */,
 				70BBA71C282412E700050521 /* ProviderListViewModel.swift in Sources */,
@@ -773,7 +773,7 @@
 				D99E3B0027EB10E700464266 /* Clash.xcdatamodeld in Sources */,
 				70BBA716282412B500050521 /* ProxyViewModel.swift in Sources */,
 				702C1BBC27F3F65200DF9A98 /* Clash+Extension.swift in Sources */,
-				D98FBA1B28290C0B00EFBE8F /* FileDownloadViewModel.swift in Sources */,
+				D98FBA1B28290C0B00EFBE8F /* ConfigDownloadViewModel.swift in Sources */,
 				D98FBA08282673AB00EFBE8F /* ConnectionStatusView.swift in Sources */,
 				D98FBA0528266B4000EFBE8F /* TunnelModeView.swift in Sources */,
 				D98FBA0A282677D000EFBE8F /* HomeView.swift in Sources */,
@@ -831,7 +831,7 @@
 				70BBA729282413FD00050521 /* PlaceholderView.swift in Sources */,
 				D98FBA1E28290DCD00EFBE8F /* ConfigListViewModel.swift in Sources */,
 				70BBA717282412B500050521 /* ProxyViewModel.swift in Sources */,
-				D98FBA2128290DD600EFBE8F /* ImportButton.swift in Sources */,
+				D98FBA2128290DD600EFBE8F /* ConfigImportButton.swift in Sources */,
 				D90289D528192BF800FEB376 /* ConnectionDurationView.swift in Sources */,
 				70BBA71D282412E700050521 /* ProviderListViewModel.swift in Sources */,
 				702C1BBD27F3F65200DF9A98 /* Clash+Extension.swift in Sources */,
@@ -859,12 +859,12 @@
 				70BBA7232824139500050521 /* ProviderView.swift in Sources */,
 				D99E3AC227EB0D9100464266 /* UserDefaults+AppGroup.swift in Sources */,
 				D998B60A27F00F8F004625FF /* TrafficView.swift in Sources */,
-				D98FBA1F28290DD000EFBE8F /* FileDownloadViewModel.swift in Sources */,
+				D98FBA1F28290DD000EFBE8F /* ConfigDownloadViewModel.swift in Sources */,
 				70BBA7212824137900050521 /* ProxyListView.swift in Sources */,
 				70BBA71A282412D400050521 /* ProviderViewModel.swift in Sources */,
 				D9B1B4F627EAF72F007EE597 /* ClashApp.swift in Sources */,
 				70BBA7102824128100050521 /* DelayHistory.swift in Sources */,
-				D98FBA2328290DDC00EFBE8F /* FileDownloadView.swift in Sources */,
+				D98FBA2328290DDC00EFBE8F /* ConfigDownloadView.swift in Sources */,
 				D90289D328192BD600FEB376 /* ConnectionStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

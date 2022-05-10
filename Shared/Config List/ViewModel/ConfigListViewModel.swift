@@ -7,6 +7,7 @@ class ConfigListViewModel: ObservableObject {
     @Published var exportItems: [Any]?
     @Published var importLocalFile: Bool = false
     @Published var downloadRemoteFile: Bool = false
+    @Published var updatingConfig: ClashConfig?
     
     var isFileExporterPresented: Binding<Bool> {
         Binding {
@@ -24,6 +25,39 @@ class ConfigListViewModel: ObservableObject {
             return
         }
         UserDefaults.shared.set(uuid.uuidString, forKey: Clash.currentConfigUUID)
+    }
+    
+    func onUpdate(config: ClashConfig, manager: VPNManager) {
+        guard let uuid = config.uuid, let url = config.link else {
+            return
+        }
+        Task {
+            await MainActor.run {
+                updatingConfig = config
+            }
+            let result: Result<Void, Error>
+            do {
+                let (data, _) = try await URLSession.shared.data(from: url, delegate: nil)
+                let directoryURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)")
+                let targetURL = directoryURL.appendingPathComponent("config.yaml")
+                FileManager.default.createFile(atPath: targetURL.path, contents: data, attributes: nil)
+                result = .success(())
+            } catch {
+                result = .failure(error)
+            }
+            await MainActor.run {
+                updatingConfig = nil
+            }
+            switch result {
+            case .success:
+                guard let controller = manager.controller else {
+                    return
+                }
+                try await controller.execute(command: .setConfig)
+            case .failure(let error):
+                throw error
+            }
+        }
     }
     
     func onRename(config: ClashConfig, newName: String, context: NSManagedObjectContext) {
@@ -66,7 +100,7 @@ class ConfigListViewModel: ObservableObject {
                 return
             }
             do {
-                try await context.importConfig(localFileURL: url, remoteFileURL: nil)
+                try await context.importConfig(url: url, data: try Data(contentsOf: url))
             } catch {
                 debugPrint(error.localizedDescription)
             }
@@ -74,10 +108,10 @@ class ConfigListViewModel: ObservableObject {
         }
     }
     
-    func onImportRemoteFile(local: URL, remote: URL, context: NSManagedObjectContext) {
+    func onImportRemoteFile(url: URL, data: Data, context: NSManagedObjectContext) {
         Task {
             do {
-                try await context.importConfig(localFileURL: local, remoteFileURL: remote)
+                try await context.importConfig(url: url, data: data)
             } catch {
                 debugPrint(error.localizedDescription)
             }
