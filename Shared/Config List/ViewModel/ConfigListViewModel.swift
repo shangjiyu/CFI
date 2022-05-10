@@ -50,7 +50,8 @@ class ConfigListViewModel: ObservableObject {
             }
             switch result {
             case .success:
-                guard let controller = manager.controller else {
+                guard let uuidString = UserDefaults.shared.string(forKey: Clash.currentConfigUUID), uuidString == uuid.uuidString,
+                      let controller = manager.controller else {
                     return
                 }
                 try await controller.execute(command: .setConfig)
