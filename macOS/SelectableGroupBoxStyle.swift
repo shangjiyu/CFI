@@ -7,8 +7,8 @@ struct SelectableGroupBoxStyle: GroupBoxStyle {
     func makeBody(configuration: Configuration) -> some View {
         GroupBox(configuration)
             .background(
-                RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 2)
-                    .foregroundColor(isSelected ? .green : .clear)
+                RoundedRectangle(cornerRadius: 8).stroke(lineWidth: 2)
+                    .foregroundColor(isSelected ? .accentColor : .clear)
             )
     }
 }
