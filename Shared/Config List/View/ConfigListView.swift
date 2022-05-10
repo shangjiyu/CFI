@@ -90,12 +90,6 @@ struct ConfigListView: View {
                                             Text(config.name ?? "")
                                             Text("\n")
                                             Spacer()
-                                            if let uuid = config.uuid,  uuidString == uuid.uuidString {
-                                                Circle()
-                                                    .frame(width: 12, height: 12)
-                                                    .foregroundColor(.green)
-                                                    .padding(EdgeInsets(top: 2, leading: 8, bottom: 0, trailing: 0))
-                                            }
                                         }
                                         .lineLimit(2)
                                     }
@@ -147,6 +141,7 @@ struct ConfigListView: View {
                             }
                             .padding(8)
                         }
+                        .groupBoxStyle(SelectableGroupBoxStyle(isSelected: config.uuid?.uuidString == uuidString))
                         .onTapGesture {
                             viewModel.onSelected(config: config)
                             dismiss()

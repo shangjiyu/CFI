@@ -90,6 +90,7 @@
 		D98FBA2328290DDC00EFBE8F /* ConfigDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* ConfigDownloadView.swift */; };
 		D98FBA25282920AD00EFBE8F /* YAMLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA24282920AD00EFBE8F /* YAMLFile.swift */; };
 		D98FBA26282920AD00EFBE8F /* YAMLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA24282920AD00EFBE8F /* YAMLFile.swift */; };
+		D98FED8C282A64C5008C73C3 /* SelectableGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FED8B282A64C5008C73C3 /* SelectableGroupBoxStyle.swift */; };
 		D998B60427F00F23004625FF /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60327F00F23004625FF /* SideBarView.swift */; };
 		D998B60827F00F69004625FF /* TunnelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60727F00F69004625FF /* TunnelModeView.swift */; };
 		D998B60A27F00F8F004625FF /* TrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B60927F00F8F004625FF /* TrafficView.swift */; };
@@ -246,6 +247,7 @@
 		D98FBA1728290BC300EFBE8F /* UTType+YAML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+YAML.swift"; sourceTree = "<group>"; };
 		D98FBA1A28290C0B00EFBE8F /* ConfigDownloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigDownloadViewModel.swift; sourceTree = "<group>"; };
 		D98FBA24282920AD00EFBE8F /* YAMLFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAMLFile.swift; sourceTree = "<group>"; };
+		D98FED8B282A64C5008C73C3 /* SelectableGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableGroupBoxStyle.swift; sourceTree = "<group>"; };
 		D998B60327F00F23004625FF /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		D998B60727F00F69004625FF /* TunnelModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelModeView.swift; sourceTree = "<group>"; };
 		D998B60927F00F8F004625FF /* TrafficView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficView.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 			children = (
 				D99E3ACD27EB0F5B00464266 /* AppDelegate.swift */,
 				D90289E3281A4F2300FEB376 /* SplitViewControllerInspector.swift */,
+				D98FED8B282A64C5008C73C3 /* SelectableGroupBoxStyle.swift */,
 				D90289E8281A50D600FEB376 /* SideBar */,
 				D90289E9281A518900FEB376 /* Setting */,
 				D9B1B4F427EAF72F007EE597 /* macOS.entitlements */,
@@ -838,6 +841,7 @@
 				D90289EC281A91E700FEB376 /* Theme.swift in Sources */,
 				D986499228237BA00092E86E /* LogLevelView.swift in Sources */,
 				D99E3AB227EB0D9000464266 /* Clash.swift in Sources */,
+				D98FED8C282A64C5008C73C3 /* SelectableGroupBoxStyle.swift in Sources */,
 				D927039B27ED542200E61944 /* NSManagedObjectContext+File.swift in Sources */,
 				D98FBA26282920AD00EFBE8F /* YAMLFile.swift in Sources */,
 				70BBA7132824129600050521 /* MergedProxyData.swift in Sources */,

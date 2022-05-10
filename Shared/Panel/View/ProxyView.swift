@@ -16,12 +16,6 @@ struct ProxyView: View {
                             Text(viewModel.name)
                             Text("\n")
                             Spacer()
-                            if selected == viewModel.name {
-                                Circle()
-                                    .frame(width: 12, height: 12)
-                                    .foregroundColor(.green)
-                                    .padding(EdgeInsets(top: 2, leading: 8, bottom: 0, trailing: 0))
-                            }
                         }
                         .lineLimit(2)
                     }
@@ -34,6 +28,7 @@ struct ProxyView: View {
             }
             .padding(8)
         }
+        .groupBoxStyle(SelectableGroupBoxStyle(isSelected: selected == viewModel.name))
 #else
         VStack(alignment: .leading, spacing: 4) {
             Text(viewModel.name)
