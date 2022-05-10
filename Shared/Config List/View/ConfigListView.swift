@@ -164,6 +164,9 @@ struct ConfigListView: View {
             List(configs) { config in
                 HStack {
                     Text(config.name ?? "-")
+                    if viewModel.updatingConfig == config {
+                        ProgressView()
+                    }
                     Spacer()
                     Text(Image(systemName: "checkmark"))
                         .fontWeight(.medium)
@@ -175,23 +178,38 @@ struct ConfigListView: View {
                     viewModel.onSelected(config: config)
                     dismiss()
                 }
-                .contextMenu {
-                    Button(role: nil) {
-                        viewModel.renamedConfig = config
-                    } label: {
-                        Label("重命名", systemImage: "pencil")
-                    }
-                    Button(role: nil) {
-                        viewModel.onShare(config: config)
-                    } label: {
-                        Label("分享", systemImage: "square.and.arrow.up")
-                    }
-                    Divider()
+                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                     Button(role: .destructive) {
                         viewModel.onDelete(config: config, context: context)
                     } label: {
                         Label("删除", systemImage: "trash")
                     }
+                    .tint(.red)
+                    
+                    Button(role: nil) {
+                        viewModel.renamedConfig = config
+                    } label: {
+                        Label("重命名", systemImage: "square.and.pencil")
+                    }
+                    .tint(.accentColor)
+                }
+                .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                    if let url = config.link, !url.isFileURL {
+                        Button(role: nil) {
+                            viewModel.onUpdate(config: config, manager: manager)
+                        } label: {
+                            Label("更新", systemImage: "goforward")
+                        }
+                        .tint(.green)
+                        .disabled(viewModel.updatingConfig == config)
+                    }
+                    
+                    Button(role: nil) {
+                        viewModel.onShare(config: config)
+                    } label: {
+                        Label("分享", systemImage: "square.and.arrow.up")
+                    }
+                    .tint(.yellow)
                 }
             }
             .navigationBarTitle("配置管理")
