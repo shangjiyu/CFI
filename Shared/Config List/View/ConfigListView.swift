@@ -90,6 +90,25 @@ struct ConfigListView: View {
                                             Text(config.name ?? "")
                                             Text("\n")
                                             Spacer()
+                                            Menu {
+                                                Button(role: nil) {
+                                                    viewModel.renamedConfig = config
+                                                } label: {
+                                                    Text("重命名")
+                                                }
+                                                Divider()
+                                                Button(role: nil) {
+                                                    viewModel.onShare(config: config)
+                                                } label: {
+                                                    Text("导出")
+                                                }
+                                            } label: {
+                                                Image(systemName: "ellipsis")
+                                            }
+                                            .menuStyle(.borderlessButton)
+                                            .menuIndicator(.hidden)
+                                            .fixedSize()
+                                            .padding(.trailing, -2)
                                         }
                                         .lineLimit(2)
                                     }
@@ -114,26 +133,6 @@ struct ConfigListView: View {
                                                 .foregroundColor(.red)
                                         }
                                         .buttonStyle(.plain)
-                                        
-                                        Menu {
-                                            Button(role: nil) {
-                                                viewModel.renamedConfig = config
-                                            } label: {
-                                                Text("重命名")
-                                            }
-                                            Divider()
-                                            Button(role: nil) {
-                                                viewModel.onShare(config: config)
-                                            } label: {
-                                                Text("导出")
-                                            }
-                                        } label: {
-                                            Image(systemName: "ellipsis.circle")
-                                        }
-                                        .menuStyle(.borderlessButton)
-                                        .menuIndicator(.hidden)
-                                        .fixedSize()
-                                        .offset(x: 4, y: 0)
                                     }
                                 }
                                 .lineLimit(1)
