@@ -1328,7 +1328,7 @@
 			repositoryURL = "https://github.com/AppleClash/ClashKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 2.10.0;
+				version = 3.2.0;
 			};
 		};
 		D9C3E955280EBE8800D6CFF9 /* XCRemoteSwiftPackageReference "T2SKit" */ = {
@@ -1336,7 +1336,7 @@
 			repositoryURL = "https://github.com/AppleClash/T2SKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.2.0;
+				version = 1.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
