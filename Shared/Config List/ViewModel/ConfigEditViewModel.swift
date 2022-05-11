@@ -31,10 +31,16 @@ class ConfigEditViewModel: ConfigDownloadViewModel {
             let targetURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)").appendingPathComponent("config.yaml")
             FileManager.default.createFile(atPath: targetURL.path, contents: data, attributes: nil)
         }
-        config.name = name
-        config.link = URL(string: url)
-        config.update = Date()
-        try context.save()
+        await MainActor.run {
+            do {
+                config.name = name
+                config.link = URL(string: url)
+                config.update = Date()
+                try context.save()
+            } catch {
+                debugPrint(error.localizedDescription)
+            }
+        }
         guard let uuidString = UserDefaults.shared.string(forKey: Clash.currentConfigUUID), uuidString == uuid.uuidString,
               let controller = manager.controller else {
             return
