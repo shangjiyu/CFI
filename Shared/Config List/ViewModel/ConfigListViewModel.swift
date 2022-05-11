@@ -3,7 +3,7 @@ import CoreData
 
 class ConfigListViewModel: ObservableObject {
         
-    @Published var renamedConfig: ClashConfig? = nil
+    @Published var editConfig: ClashConfig? = nil
     @Published var exportItems: [Any]?
     @Published var importLocalFile: Bool = false
     @Published var downloadRemoteFile: Bool = false

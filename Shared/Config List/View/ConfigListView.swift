@@ -60,10 +60,8 @@ struct ConfigListView: View {
                     viewModel.onImportRemoteFile(url: url, data: data, context: context)
                 }
             }
-            .sheet(item: $viewModel.renamedConfig) { config in
-                ConfigRenameView(name: config.name ?? "") { new in
-                    viewModel.onRename(config: config, newName: new, context: context)
-                }
+            .sheet(item: $viewModel.editConfig) { config in
+                ConfigEditView(config: config)
             }
     }
     
@@ -92,15 +90,15 @@ struct ConfigListView: View {
                                             Spacer()
                                             Menu {
                                                 Button(role: nil) {
-                                                    viewModel.renamedConfig = config
+                                                    viewModel.editConfig = config
                                                 } label: {
-                                                    Text("重命名")
+                                                    Text("编辑配置")
                                                 }
                                                 Divider()
                                                 Button(role: nil) {
                                                     viewModel.onShare(config: config)
                                                 } label: {
-                                                    Text("导出")
+                                                    Text("导出配置")
                                                 }
                                             } label: {
                                                 Image(systemName: "ellipsis")
@@ -187,7 +185,7 @@ struct ConfigListView: View {
                     .tint(.red)
                     
                     Button(role: nil) {
-                        viewModel.renamedConfig = config
+                        viewModel.editConfig = config
                     } label: {
                         Label("重命名", systemImage: "square.and.pencil")
                     }

@@ -74,7 +74,7 @@
 		D98FBA08282673AB00EFBE8F /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D228192BD600FEB376 /* ConnectionStatusView.swift */; };
 		D98FBA09282675BA00EFBE8F /* ConfigSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289E5281A4F6C00FEB376 /* ConfigSwitchView.swift */; };
 		D98FBA0A282677D000EFBE8F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90289D82819310300FEB376 /* HomeView.swift */; };
-		D98FBA0D28290AD100EFBE8F /* ConfigRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA0C28290AD100EFBE8F /* ConfigRenameView.swift */; };
+		D98FBA0D28290AD100EFBE8F /* ConfigEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA0C28290AD100EFBE8F /* ConfigEditView.swift */; };
 		D98FBA1128290B1600EFBE8F /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1028290B1600EFBE8F /* ConfigListView.swift */; };
 		D98FBA1328290B4300EFBE8F /* ConfigListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1228290B4300EFBE8F /* ConfigListViewModel.swift */; };
 		D98FBA1628290B8300EFBE8F /* ExportItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1528290B8300EFBE8F /* ExportItem.swift */; };
@@ -86,7 +86,7 @@
 		D98FBA1F28290DD000EFBE8F /* ConfigDownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1A28290C0B00EFBE8F /* ConfigDownloadViewModel.swift */; };
 		D98FBA2028290DD300EFBE8F /* ConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA1028290B1600EFBE8F /* ConfigListView.swift */; };
 		D98FBA2128290DD600EFBE8F /* ConfigImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD227EB10B800464266 /* ConfigImportButton.swift */; };
-		D98FBA2228290DD900EFBE8F /* ConfigRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA0C28290AD100EFBE8F /* ConfigRenameView.swift */; };
+		D98FBA2228290DD900EFBE8F /* ConfigEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA0C28290AD100EFBE8F /* ConfigEditView.swift */; };
 		D98FBA2328290DDC00EFBE8F /* ConfigDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3AD127EB10B800464266 /* ConfigDownloadView.swift */; };
 		D98FBA25282920AD00EFBE8F /* YAMLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA24282920AD00EFBE8F /* YAMLFile.swift */; };
 		D98FBA26282920AD00EFBE8F /* YAMLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBA24282920AD00EFBE8F /* YAMLFile.swift */; };
@@ -240,7 +240,7 @@
 		D986498D28237B260092E86E /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
 		D986499028237BA00092E86E /* LogLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevelView.swift; sourceTree = "<group>"; };
 		D98FB9F8282615FF00EFBE8F /* AdapterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterType.swift; sourceTree = "<group>"; };
-		D98FBA0C28290AD100EFBE8F /* ConfigRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigRenameView.swift; sourceTree = "<group>"; };
+		D98FBA0C28290AD100EFBE8F /* ConfigEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigEditView.swift; sourceTree = "<group>"; };
 		D98FBA1028290B1600EFBE8F /* ConfigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigListView.swift; sourceTree = "<group>"; };
 		D98FBA1228290B4300EFBE8F /* ConfigListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigListViewModel.swift; sourceTree = "<group>"; };
 		D98FBA1528290B8300EFBE8F /* ExportItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportItem.swift; sourceTree = "<group>"; };
@@ -441,7 +441,7 @@
 			children = (
 				D98FBA1028290B1600EFBE8F /* ConfigListView.swift */,
 				D99E3AD227EB10B800464266 /* ConfigImportButton.swift */,
-				D98FBA0C28290AD100EFBE8F /* ConfigRenameView.swift */,
+				D98FBA0C28290AD100EFBE8F /* ConfigEditView.swift */,
 				D99E3AD127EB10B800464266 /* ConfigDownloadView.swift */,
 			);
 			path = View;
@@ -769,7 +769,7 @@
 				70BBA71C282412E700050521 /* ProviderListViewModel.swift in Sources */,
 				D944F5662815282800DF0BBE /* ActivityView.swift in Sources */,
 				D98FBA1128290B1600EFBE8F /* ConfigListView.swift in Sources */,
-				D98FBA0D28290AD100EFBE8F /* ConfigRenameView.swift in Sources */,
+				D98FBA0D28290AD100EFBE8F /* ConfigEditView.swift in Sources */,
 				D99E3B0827EB110C00464266 /* ModalPresentationLink.swift in Sources */,
 				D90CBF822824DCAD00482684 /* ProviderView.swift in Sources */,
 				70BBA70F2824128100050521 /* DelayHistory.swift in Sources */,
@@ -826,7 +826,7 @@
 				D998B60C27F01A4F004625FF /* InstallView.swift in Sources */,
 				D99E3AFF27EB10E700464266 /* CoreDataStack.swift in Sources */,
 				D99E3ACE27EB0F5B00464266 /* AppDelegate.swift in Sources */,
-				D98FBA2228290DD900EFBE8F /* ConfigRenameView.swift in Sources */,
+				D98FBA2228290DD900EFBE8F /* ConfigEditView.swift in Sources */,
 				D98FBA2028290DD300EFBE8F /* ConfigListView.swift in Sources */,
 				D99E3B1127EB11A500464266 /* VPNManager.swift in Sources */,
 				D9B1B4F827EAF72F007EE597 /* ContentView.swift in Sources */,
