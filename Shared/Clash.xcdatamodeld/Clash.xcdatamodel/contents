@@ -4,9 +4,10 @@
         <attribute name="date" attributeType="Date" defaultDateTimeInterval="-72000" usesScalarValueType="NO"/>
         <attribute name="link" attributeType="URI" defaultValueString="file:///"/>
         <attribute name="name" attributeType="String" defaultValueString="Clash"/>
+        <attribute name="update" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="uuid" attributeType="UUID" defaultValueString="00000000-0000-0000-0000-000000000000" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="ClashConfig" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="ClashConfig" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

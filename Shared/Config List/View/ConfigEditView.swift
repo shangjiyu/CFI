@@ -2,21 +2,14 @@ import SwiftUI
 
 struct ConfigEditView: View {
     
+    @EnvironmentObject private var manager: VPNManager
     @Environment(\.managedObjectContext) private var context
     @Environment(\.dismiss) private var dismiss
     
-    let config: ClashConfig
-    
-    private let isLinkEditEnable: Bool
-    
-    @State private var name: String
-    @State private var urlString: String
+    @StateObject private var viewModel: ConfigEditViewModel
     
     init(config: ClashConfig) {
-        self._name = State(initialValue: config.name ?? "")
-        self._urlString = State(initialValue: config.link?.absoluteString ?? "")
-        self.isLinkEditEnable = !(config.link?.isFileURL ?? false)
-        self.config = config
+        self._viewModel = StateObject(wrappedValue: ConfigEditViewModel(config: config))
     }
     
     var body: some View {
@@ -25,9 +18,9 @@ struct ConfigEditView: View {
             Text("编辑配置")
                 .font(.title2)
             Form {
-                TextField("名称: ", text: $name, prompt: nil)
-                TextField("地址: ", text: $urlString, prompt: nil)
-                    .disabled(!isLinkEditEnable)
+                TextField("名称: ", text: $viewModel.name, prompt: nil)
+                TextField("地址: ", text: $viewModel.url, prompt: nil)
+                    .disabled(!viewModel.isLinkEditEnable)
             }
             HStack {
                 Spacer()
@@ -45,18 +38,19 @@ struct ConfigEditView: View {
                         .padding()
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(isConfirmDiable)
+                .disabled(viewModel.isConfirmDiable)
             }
         }
+        .disabled(viewModel.isProcessing)
         .padding()
         .frame(width: 360)
 #else
         NavigationView {
             Form {
                 Section {
-                    TextField("名称: ", text: $name, prompt: Text("请输入名称"))
-                    TextField("地址: ", text: $urlString, prompt: Text("请输入地址"))
-                        .disabled(!isLinkEditEnable)
+                    TextField("名称: ", text: $viewModel.name, prompt: Text("请输入名称"))
+                    TextField("地址: ", text: $viewModel.url, prompt: Text("请输入地址"))
+                        .disabled(!viewModel.isLinkEditEnable)
                 }
                 Section {
                     Button {
@@ -65,33 +59,32 @@ struct ConfigEditView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Text("确定")
+                            Text(viewModel.isProcessing ? "正在下载配置..." : "确定")
                                 .fontWeight(.medium)
                             Spacer()
                         }
                     }
-                    .disabled(isConfirmDiable)
+                    .disabled(viewModel.isConfirmDiable)
                 }
             }
+            .disabled(viewModel.isProcessing)
+            .interactiveDismissDisabled(viewModel.isProcessing)
             .navigationTitle("编辑配置")
             .navigationBarTitleDisplayMode(.inline)
         }
 #endif
     }
     
-    private var isConfirmDiable: Bool {
-        name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
-        urlString.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-    }
-    
     private func save() {
-        config.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        config.link = URL(string: urlString.trimmingCharacters(in: .whitespacesAndNewlines))
-        do {
-            try context.save()
-            dismiss()
-        } catch {
-            debugPrint(error.localizedDescription)
+        Task {
+            do {
+                try await viewModel.save(manager: manager)
+                await MainActor.run {
+                    dismiss()
+                }
+            } catch {
+                debugPrint(error.localizedDescription)
+            }
         }
     }
 }
