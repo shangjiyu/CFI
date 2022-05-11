@@ -64,12 +64,4 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             return error.localizedDescription.data(using: .utf8)
         }
     }
-    
-    private var tunnelFileDescriptor: Int32? {
-        var buf = Array<CChar>(repeating: 0, count: Int(IFNAMSIZ))
-        return (1...1024).first {
-            var len = socklen_t(buf.count)
-            return getsockopt($0, 2, 2, &buf, &len) == 0 && String(cString: buf).hasPrefix("utun")
-        }
-    }
 }
