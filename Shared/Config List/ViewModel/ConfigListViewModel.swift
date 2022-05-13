@@ -96,26 +96,22 @@ class ConfigListViewModel: ObservableObject {
     }
     
     func onImportLocalFile(url: URL, context: NSManagedObjectContext) {
-        Task {
-            guard url.startAccessingSecurityScopedResource() else {
-                return
-            }
-            do {
-                try await context.importConfig(url: url, data: try Data(contentsOf: url))
-            } catch {
-                debugPrint(error.localizedDescription)
-            }
-            url.stopAccessingSecurityScopedResource()
+        guard url.startAccessingSecurityScopedResource() else {
+            return
         }
+        do {
+            try context.importConfig(url: url, data: try Data(contentsOf: url))
+        } catch {
+            debugPrint(error.localizedDescription)
+        }
+        url.stopAccessingSecurityScopedResource()
     }
     
     func onImportRemoteFile(url: URL, data: Data, context: NSManagedObjectContext) {
-        Task {
-            do {
-                try await context.importConfig(url: url, data: data)
-            } catch {
-                debugPrint(error.localizedDescription)
-            }
+        do {
+            try context.importConfig(url: url, data: data)
+        } catch {
+            debugPrint(error.localizedDescription)
         }
     }
 }

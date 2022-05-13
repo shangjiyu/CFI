@@ -3,7 +3,7 @@ import CoreData
 
 extension NSManagedObjectContext {
     
-    func importConfig(url: URL, data: Data) async throws {
+    func importConfig(url: URL, data: Data) throws {
         let uuid = UUID()
         let directoryURL = Clash.homeDirectoryURL.appendingPathComponent("\(uuid.uuidString)")
         try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
