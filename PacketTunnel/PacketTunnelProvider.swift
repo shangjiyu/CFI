@@ -47,9 +47,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             case .setConfig:
                 try self.setConfig()
             case .setTunnelMode:
-                ClashSetTunnelMode(UserDefaults.shared.string(forKey: Clash.tunnelMode))
+                ClashSetTunnelMode(tunnelMode.rawValue)
             case .setLogLevel:
-                ClashSetLogLevel(UserDefaults.shared.string(forKey: Clash.logLevel))
+                ClashSetLogLevel(logLevel.rawValue)
             case .setSelectGroup:
                 self.setSelectGroup()
             case .mergedProxyData:

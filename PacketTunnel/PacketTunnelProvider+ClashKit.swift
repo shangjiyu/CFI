@@ -9,11 +9,19 @@ fileprivate extension Logger {
 
 extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerProtocol {
     
+    var tunnelMode: Clash.TunnelMode {
+        UserDefaults.shared.string(forKey: Clash.tunnelMode).flatMap(Clash.TunnelMode.init(rawValue:)) ?? .rule
+    }
+    
+    var logLevel: Clash.LogLevel {
+        UserDefaults.shared.string(forKey: Clash.logLevel).flatMap(Clash.LogLevel.init(rawValue:)) ?? .silent
+    }
+    
     func setupClash() throws {
         let config = """
         mixed-port: 8080
-        mode: \(UserDefaults.shared.string(forKey: Clash.tunnelMode) ?? Clash.TunnelMode.rule.rawValue)
-        log-level: \(UserDefaults.shared.string(forKey: Clash.logLevel) ?? Clash.LogLevel.silent.rawValue)
+        mode: \(tunnelMode.rawValue)
+        log-level: \(logLevel.rawValue)
         """
         var error: NSError? = nil
         ClashSetup(Clash.homeDirectoryURL.path, config, &error)

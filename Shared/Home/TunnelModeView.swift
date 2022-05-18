@@ -26,14 +26,16 @@ struct TunnelModeView: View {
         .pickerStyle(.inline)
         .labelsHidden()
 #endif
-        .task(id: tunnelMode) {
-            guard let controller = self.manager.controller else {
-                return
-            }
-            do {
-                try await controller.execute(command: .setTunnelMode)
-            } catch {
-                debugPrint(error)
+        .onChange(of: tunnelMode) { new in
+            Task {
+                guard let controller = self.manager.controller else {
+                    return
+                }
+                do {
+                    try await controller.execute(command: .setTunnelMode)
+                } catch {
+                    debugPrint(error)
+                }
             }
         }
     }
