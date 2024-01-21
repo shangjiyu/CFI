@@ -1,7 +1,7 @@
 import Combine
 import NetworkExtension
 
-@MainActor public final class VPNManager: ObservableObject {
+public final class VPNManager: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
         
@@ -10,11 +10,8 @@ import NetworkExtension
     public static let shared = VPNManager()
     
     private let providerBundleIdentifier: String = {
-#if os(macOS)
-        return "com.Arror.Clash.PacketTunnel-macOS"
-#else
-        return "com.Arror.Clash.PacketTunnel-iOS"
-#endif
+        let identifier = Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String
+        return "\(identifier).PacketTunnel"
     }()
     
     private init() {
@@ -39,10 +36,14 @@ import NetworkExtension
             if let controller = self.controller, controller.isEqually(manager: manager) {
                 // Nothing
             } else {
-                self.controller = VPNController(providerManager: manager)
+                await MainActor.run {
+                    self.controller = VPNController(providerManager: manager)
+                }
             }
         } else {
-            self.controller = nil
+            await MainActor.run {
+                self.controller = nil
+            }
         }
     }
     
@@ -71,9 +72,8 @@ import NetworkExtension
         manager.localizedDescription = "Clash"
         manager.protocolConfiguration = {
             let configuration = NETunnelProviderProtocol()
-            configuration.providerBundleIdentifier = providerBundleIdentifier
+            configuration.providerBundleIdentifier = self.providerBundleIdentifier
             configuration.serverAddress = "Clash"
-            configuration.includeAllNetworks = true
             configuration.excludeLocalNetworks = true
             return configuration
         }()
@@ -83,7 +83,7 @@ import NetworkExtension
     }
 }
 
-@MainActor public final class VPNController: ObservableObject {
+public final class VPNController: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
     private let providerManager: NETunnelProviderManager
@@ -147,8 +147,12 @@ import NetworkExtension
         try await self.providerManager.removeFromPreferences()
     }
     
-    public func execute(command: Clash.Command) async throws {
-        try await self.providerManager.sendProviderMessage(data: Data(repeating: command.rawValue, count: 1))
+    @discardableResult
+    public func execute(command: Clash.Command) async throws -> Data? {
+        guard self.connectionStatus != .invalid || self.connectionStatus != .disconnected else {
+            return nil
+        }
+        return try await self.providerManager.sendProviderMessage(data: try JSONEncoder().encode(command))
     }
 }
 

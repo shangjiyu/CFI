@@ -6,12 +6,11 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         
     override func startTunnel(options: [String : NSObject]? = nil) async throws {
         try self.setupClash()
-        try self.setCurrentConfig()
-        self.patchSelectGroup()
-        let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "240.240.240.240")
+        try self.setConfig()
+        let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "254.1.1.1")
         settings.mtu = 1500
         settings.ipv4Settings = {
-            let settings = NEIPv4Settings(addresses: ["240.0.0.1"], subnetMasks: ["255.255.255.0"])
+            let settings = NEIPv4Settings(addresses: ["198.18.0.1"], subnetMasks: ["255.255.0.0"])
             settings.includedRoutes = [NEIPv4Route.default()]
             return settings
         }()
@@ -30,14 +29,6 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             return settings
         }()
         try await self.setTunnelNetworkSettings(settings)
-        DispatchQueue.main.async { self.readPackets() }
-    }
-    
-    private func readPackets() {
-        self.packetFlow.readPackets { packets, _ in
-            packets.forEach(ClashReadPacket(_:))
-            self.readPackets()
-        }
     }
     
     override func stopTunnel(with reason: NEProviderStopReason) async {
@@ -50,23 +41,27 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     }
     
     override func handleAppMessage(_ messageData: Data) async -> Data? {
-        guard let command = messageData.first.flatMap(Clash.Command.init(rawValue:)) else {
-            return nil
-        }
-        switch command {
-        case .setConfig:
-            do {
-                try self.setCurrentConfig()
-            } catch {
-                return error.localizedDescription.data(using: .utf8)
+        do {
+            let command = try JSONDecoder().decode(Clash.Command.self, from: messageData)
+            switch command {
+            case .setConfig:
+                try self.setConfig()
+            case .setTunnelMode:
+                ClashSetTunnelMode(tunnelMode.rawValue)
+            case .setLogLevel:
+                ClashSetLogLevel(logLevel.rawValue)
+            case .setSelectGroup:
+                self.setSelectGroup()
+            case .mergedProxyData:
+                return ClashMergedProxyData()
+            case .patchData:
+                return ClashPatchData()
+            case .healthCheck(let name, let url, let timeout):
+                ClashHealthCheck(name, url.absoluteString, timeout)
             }
-        case .setTunnelMode:
-            ClashSetTunnelMode(UserDefaults.shared.string(forKey: Clash.tunnelMode))
-        case .setLogLevel:
-            ClashSetLogLevel(UserDefaults.shared.string(forKey: Clash.logLevel))
-        case .setSelectGroup:
-            self.patchSelectGroup()
+            return nil
+        } catch {
+            return error.localizedDescription.data(using: .utf8)
         }
-        return nil
     }
 }

@@ -8,6 +8,8 @@ public enum Clash {
     
     public static let logLevel: String = "ClashLogLevel"
     
+    public static let theme: String = "ClashTheme"
+    
     public static let currentConfigUUID: String = "CurrentConfigUUID"
     
     public static let homeDirectoryURL: URL = {
@@ -29,11 +31,14 @@ public enum Clash {
 
 extension Clash {
     
-    public enum Command: UInt8 {
+    public enum Command: Codable {
         case setConfig
         case setTunnelMode
         case setLogLevel
         case setSelectGroup
+        case mergedProxyData
+        case patchData
+        case healthCheck(String, URL, Int)
     }
     
     public enum LogLevel: String, Identifiable, CaseIterable {

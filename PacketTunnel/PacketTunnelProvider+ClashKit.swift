@@ -1,39 +1,55 @@
+import Foundation
 import os
 import ClashKit
+import T2SKit
 
 fileprivate extension Logger {
-    static let tunnel = Logger(subsystem: "com.Arror.Clash.PacketTunnel", category: "Clash")
+    static let tunnel = Logger(subsystem: Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String, category: "Clash")
 }
 
-extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverProtocol, ClashRealTimeLoggerProtocol {
+extension PacketTunnelProvider: ClashTrafficReceiverProtocol, ClashNativeLoggerProtocol {
+    
+    var tunnelMode: Clash.TunnelMode {
+        UserDefaults.shared.string(forKey: Clash.tunnelMode).flatMap(Clash.TunnelMode.init(rawValue:)) ?? .rule
+    }
+    
+    var logLevel: Clash.LogLevel {
+        UserDefaults.shared.string(forKey: Clash.logLevel).flatMap(Clash.LogLevel.init(rawValue:)) ?? .silent
+    }
     
     func setupClash() throws {
         let config = """
         mixed-port: 8080
-        mode: \(UserDefaults.shared.string(forKey: Clash.tunnelMode) ?? Clash.TunnelMode.rule.rawValue)
-        log-level: \(UserDefaults.shared.string(forKey: Clash.logLevel) ?? Clash.LogLevel.silent.rawValue)
+        mode: \(tunnelMode.rawValue)
+        log-level: \(logLevel.rawValue)
         """
         var error: NSError? = nil
-        ClashSetup(self, Clash.homeDirectoryURL.path, config, &error)
+        ClashSetup(Clash.homeDirectoryURL.path, config, &error)
         if let error = error {
             throw error
         }
-        ClashSetRealTimeLogger(self)
+        ClashSetNativeLogger(self)
         ClashSetTrafficReceiver(self)
+        DispatchQueue.global(qos: .userInteractive).async {
+            guard let fd = self.tunnelFileDescriptor else {
+                return
+            }
+            Tun2Socks.start(fd: fd, host: "127.0.0.1", port: 8080)
+        }
     }
     
-    func setCurrentConfig() throws {
+    func setConfig() throws {
         var error: NSError? = nil
         ClashSetConfig(UserDefaults.shared.string(forKey: Clash.currentConfigUUID), &error)
-        guard let error = error else {
-            return
+        if let error = error {
+            throw error
         }
-        throw error
+        self.setSelectGroup()
     }
     
-    func patchSelectGroup() {
+    func setSelectGroup() {
         guard let id = UserDefaults.shared.string(forKey: Clash.currentConfigUUID), !id.isEmpty,
-              let mapping = UserDefaults.shared.dictionary(forKey: id) as? [String: String], !mapping.isEmpty else {
+              let mapping = UserDefaults.shared.dictionary(forKey: "\(id)-PatchGroup") as? [String: String], !mapping.isEmpty else {
             return
         }
         do {
@@ -41,13 +57,6 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
         } catch {
             debugPrint(error.localizedDescription)
         }
-    }
-    
-    func writePacket(_ packet: Data?) {
-        guard let packet = packet else {
-            return
-        }
-        self.packetFlow.writePackets([packet], withProtocols: [AF_INET as NSNumber])
     }
     
     func receiveTraffic(_ up: Int64, down: Int64) {
@@ -69,6 +78,14 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
             Logger.tunnel.warning("\(payload, privacy: .public)")
         case .error:
             Logger.tunnel.critical("\(payload, privacy: .public)")
+        }
+    }
+    
+    private var tunnelFileDescriptor: Int32? {
+        var buf = Array<CChar>(repeating: 0, count: Int(IFNAMSIZ))
+        return (1...1024).first {
+            var len = socklen_t(buf.count)
+            return getsockopt($0, 2, 2, &buf, &len) == 0 && String(cString: buf).hasPrefix("utun")
         }
     }
 }

@@ -5,6 +5,7 @@ struct ClashApp: App {
     
 #if os(macOS)
     @NSApplicationDelegateAdaptor private var delegate: AppDelegate
+    @AppStorage(Clash.theme) private var theme: Theme = .system
 #else
     @UIApplicationDelegateAdaptor private var delegate: AppDelegate
 #endif
@@ -15,18 +16,19 @@ struct ClashApp: App {
                 .environmentObject(VPNManager.shared)
                 .environment(\.trafficFormatter, ClashTrafficFormatterKey.defaultValue)
                 .environment(\.managedObjectContext, CoreDataStack.shared.container.viewContext)
-#if !os(macOS)
+#if os(macOS)
+                .onChange(of: theme) { newValue in
+                    newValue.applyAppearance()
+                }
+#else
                 .environment(\.horizontalSizeClass, .compact)
 #endif
         }
 #if os(macOS)
         .windowStyle(.hiddenTitleBar)
-#endif
-        
-#if os(macOS)
-        Settings {
-            SettingsView()
-                .environmentObject(VPNManager.shared)
+        .commands {
+            CommandGroup(replacing: .newItem) {}
+            CommandGroup(replacing: .systemServices) {}
         }
 #endif
     }

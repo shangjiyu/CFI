@@ -63,6 +63,17 @@ extension Clash.TunnelMode {
             return "直连"
         }
     }
+    
+    var detail: String {
+        switch self {
+        case .global:
+            return "流量全部经过指定的全局代理"
+        case .rule:
+            return "流量按规则分流"
+        case .direct:
+            return "流量不会经过任何代理"
+        }
+    }
 }
 
 extension Clash.Traffic {
